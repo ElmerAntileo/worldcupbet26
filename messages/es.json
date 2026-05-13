@@ -1,0 +1,16 @@
+{
+  "HomePage": {
+    "title": "¡Hola mundo!",
+    "editHint": "Empieza editando",
+    "editFile": "src/app/[locale]/page.tsx",
+    "saveHint": "Guarda y verás los cambios al instante."
+  },
+  "MatchesPage": {
+    "title": "Partidos"
+  },
+  "Nav": {
+    "brand": "WorldCupBet26",
+    "matches": "Partidos",
+    "language": "Idioma"
+  }
+}
