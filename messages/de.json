@@ -1,9 +1,32 @@
 {
   "HomePage": {
-    "title": "Hallo Welt!",
-    "editHint": "Leg los mit dem Bearbeiten von",
-    "editFile": "src/app/[locale]/page.tsx",
-    "saveHint": "Speichern und Änderungen sofort sehen."
+    "metaTitle": "WM 2026 Wettquoten & Tipps | WorldCupBet26",
+    "metaDescription": "Vergleichen Sie WM 2026 Quoten führender Buchmacher, lesen Sie WM-Wett-Tipps und verfolgen Sie Live-Preise zur FIFA WM 2026 — regelmäßig aktualisiert auf WorldCupBet26.",
+    "heroTitle": "WM 2026 Wettquoten & Tipps",
+    "heroSubtitle": "Vergleichen Sie die besten Quoten führender Buchmacher mit live aktualisierten Linien — alles an einem Ort für ambitionierte WM-Wetter.",
+    "featuredTitle": "Top-Spiele",
+    "featuredSubtitle": "Anstehende WM-2026-Partien mit 1X2-Quoten der Top-Buchmacher.",
+    "featuredViewAll": "Alle Spiele ansehen",
+    "featuredH2hCaption": "1X2 (Top-Books)",
+    "vsLabel": "gegen",
+    "whyTitle": "Warum WorldCupBet26",
+    "whyOddsTitle": "Beste Quoten",
+    "whyOddsText": "Preise großer Buchmacher im direkten Vergleich, damit Sie vor der Wette die schärfsten Linien sehen.",
+    "whyLangTitle": "6 Sprachen",
+    "whyLangText": "Vergleiche und FAQs auf Englisch, Spanisch, Portugiesisch, Deutsch, Französisch und Italienisch.",
+    "whyLiveTitle": "Live-Updates",
+    "whyLiveText": "Märkte werden über unser Quoten-Feed aktualisiert und spiegeln die neuesten WM-2026-Preise wider.",
+    "faqTitle": "FAQ: Wetten zur WM 2026",
+    "faq1q": "Wann beginnt die FIFA WM 2026?",
+    "faq1a": "Die FIFA WM 2026 startet im Juni 2026 mit Spielen in den USA, Mexiko und Kanada. Anstoßzeiten und Spielplan werden näher am Turnier finalisiert.",
+    "faq2q": "Wie lese ich 1X2- (Moneyline-)Quoten?",
+    "faq2a": "Der Dreiweg-Markt listet Sieg Heim, Unentschieden oder Sieg Auswärts. Niedrigere Dezimalquoten bedeuten höhere implizite Wahrscheinlichkeit; der Vergleich lohnt sich.",
+    "faq3q": "Sind WM-Quoten bei jedem Buchmacher gleich?",
+    "faq3a": "Nein — jeder Anbieter setzt eigene Margen. Kleine Unterschiede summieren sich; deshalb lohnt sich der Vergleich der WM 2026 Quoten.",
+    "faq4q": "Kann ich von Großbritannien aus auf die WM 2026 wetten?",
+    "faq4a": "Das hängt von Ihrem Standort und der Lizenz des Anbieters ab. Nutzen Sie nur regulierte Marken in Ihrer Jurisdiktion und lesen Sie die AGB.",
+    "faq5q": "Bietet ihr WM-Wett-Tipps?",
+    "faq5a": "Wir konzentrieren uns auf Quotenvergleich und erklärende Inhalte. Setzen Sie niemals mehr ein, als Sie verlieren können."
   },
   "MatchesPage": {
     "title": "Spiele"

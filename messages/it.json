@@ -1,9 +1,32 @@
 {
   "HomePage": {
-    "title": "Ciao mondo!",
-    "editHint": "Inizia modificando",
-    "editFile": "src/app/[locale]/page.tsx",
-    "saveHint": "Salva e vedi subito le modifiche."
+    "metaTitle": "Quote scommesse Mondiale 2026 | WorldCupBet26",
+    "metaDescription": "Confronta le quote mondiali 2026 dei migliori bookmaker, leggi consigli scommesse mondiale e segui i prezzi live della FIFA World Cup 2026 — aggiornato su WorldCupBet26.",
+    "heroTitle": "Quote e consigli scommesse Mondiale 2026",
+    "heroSubtitle": "Confronta le migliori quote tra i bookmaker leader con linee aggiornate in tempo reale — tutto in un unico posto per chi scommede seriamente sul Mondiale.",
+    "featuredTitle": "Partite in evidenza",
+    "featuredSubtitle": "Prossime partite del Mondiale 2026 con quote 1X2 dai principali bookmaker.",
+    "featuredViewAll": "Vedi tutte le partite",
+    "featuredH2hCaption": "1X2 (top book)",
+    "vsLabel": "vs",
+    "whyTitle": "Perché WorldCupBet26",
+    "whyOddsTitle": "Migliori quote",
+    "whyOddsText": "Prezzi affiancati dei grandi operatori per vedere le linee più competitive prima di scommettere.",
+    "whyLangTitle": "6 lingue",
+    "whyLangText": "FAQ e confronti in inglese, spagnolo, portoghese, tedesco, francese e italiano.",
+    "whyLiveTitle": "Aggiornamenti live",
+    "whyLiveText": "I mercati si aggiornano dal nostro feed quote per riflettere gli ultimi prezzi sul Mondiale 2026.",
+    "faqTitle": "FAQ scommesse Mondiale 2026",
+    "faq1q": "Quando inizia la FIFA World Cup 2026?",
+    "faq1a": "Il Mondiale 2026 inizia a giugno 2026, con partite negli Stati Uniti, in Messico e in Canada. Orari e calendario completo sono confermati vicino al torneo.",
+    "faq2q": "Come si leggono le quote 1X2 (moneyline)?",
+    "faq2a": "Il mercato a tre esiti mostra vittoria in casa, pareggio o vittoria in trasferta. Quote decimali più basse implicano probabilità implicita più alta.",
+    "faq3q": "Le quote del Mondiale sono uguali ovunque?",
+    "faq3a": "No — ogni bookmaker imposta margini e prezzi. Piccole differenze contano: confronta le quote mondiali 2026 prima di giocare.",
+    "faq4q": "Posso scommettere dal Regno Unito?",
+    "faq4a": "Dipende dalla tua posizione e dalla licenza dell'operatore. Usa solo brand regolamentati nella tua giurisdizione e leggi i termini.",
+    "faq5q": "Offrite consigli scommesse mondiale?",
+    "faq5a": "Ci concentriamo su confronto quote e contenuti educativi. Non scommettere mai più di quanto puoi permetterti di perdere."
   },
   "MatchesPage": {
     "title": "Partite"

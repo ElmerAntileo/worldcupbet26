@@ -1,9 +1,32 @@
 {
   "HomePage": {
-    "title": "Bonjour le monde !",
-    "editHint": "Commencez par modifier",
-    "editFile": "src/app/[locale]/page.tsx",
-    "saveHint": "Enregistrez et voyez vos changements instantanément."
+    "metaTitle": "Cotes paris Coupe du monde 2026 | WorldCupBet26",
+    "metaDescription": "Comparez les cotes coupe du monde 2026 des meilleurs opérateurs, lisez des conseils de paris foot coupe du monde et suivez les prix en direct de la Coupe du monde FIFA 2026 — mis à jour sur WorldCupBet26.",
+    "heroTitle": "Cotes et conseils de paris — Coupe du monde 2026",
+    "heroSubtitle": "Comparez les meilleures cotes des bookmakers leaders avec des lignes mises à jour en direct — tout au même endroit pour les parieurs sérieux.",
+    "featuredTitle": "Matchs à la une",
+    "featuredSubtitle": "Prochains matchs de la Coupe du monde 2026 avec cotes 1X2 des principaux opérateurs.",
+    "featuredViewAll": "Voir tous les matchs",
+    "featuredH2hCaption": "1X2 (top books)",
+    "vsLabel": "vs",
+    "whyTitle": "Pourquoi WorldCupBet26",
+    "whyOddsTitle": "Meilleures cotes",
+    "whyOddsText": "Cotes côte à côte des grands opérateurs pour repérer les lignes les plus avantageuses avant de parier.",
+    "whyLangTitle": "6 langues",
+    "whyLangText": "FAQ et comparatifs en anglais, espagnol, portugais, allemand, français et italien.",
+    "whyLiveTitle": "Mises à jour en direct",
+    "whyLiveText": "Les marchés sont rafraîchis via notre flux de cotes pour refléter les derniers prix de la Coupe du monde 2026.",
+    "faqTitle": "FAQ — paris Coupe du monde 2026",
+    "faq1q": "Quand commence la Coupe du monde FIFA 2026 ?",
+    "faq1a": "La compétition débute en juin 2026, avec des matchs aux États-Unis, au Mexique et au Canada. Les horaires définitifs sont confirmés plus près du tournoi.",
+    "faq2q": "Comment lire les cotes 1X2 (moneyline) ?",
+    "faq2a": "Le marché à trois issues affiche victoire à domicile, match nul ou victoire à l'extérieur. Des cotes décimales plus basses impliquent une probabilité implicite plus élevée.",
+    "faq3q": "Les cotes sont-elles identiques partout ?",
+    "faq3a": "Non — chaque bookmaker fixe ses marges. Les petits écarts comptent : comparez les cotes coupe du monde 2026 avant de parier.",
+    "faq4q": "Puis-je parier depuis le Royaume-Uni ?",
+    "faq4a": "Cela dépend de votre lieu de résidence et de la licence de l'opérateur. Utilisez uniquement des marques régulées et lisez les conditions.",
+    "faq5q": "Proposez-vous des conseils de paris ?",
+    "faq5a": "Nous privilégions la comparaison de cotes et des contenus pédagogiques. Ne pariez jamais au-delà de vos moyens."
   },
   "MatchesPage": {
     "title": "Matchs"

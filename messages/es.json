@@ -1,9 +1,32 @@
 {
   "HomePage": {
-    "title": "¡Hola mundo!",
-    "editHint": "Empieza editando",
-    "editFile": "src/app/[locale]/page.tsx",
-    "saveHint": "Guarda y verás los cambios al instante."
+    "metaTitle": "Cuotas de apuestas del Mundial 2026 | WorldCupBet26",
+    "metaDescription": "Compara cuotas del mundial 2026 en casas líderes, lee consejos de apuestas del mundial y sigue precios en vivo de la Copa del Mundo FIFA 2026 — actualizado en WorldCupBet26.",
+    "heroTitle": "Cuotas y consejos de apuestas del Mundial 2026",
+    "heroSubtitle": "Compara las mejores cuotas entre casas destacadas con líneas actualizadas en vivo cuando se mueven los mercados — todo en un solo sitio para apostadores serios del Mundial.",
+    "featuredTitle": "Partidos destacados",
+    "featuredSubtitle": "Próximos partidos del Mundial 2026 con cuotas 1X2 de las principales casas.",
+    "featuredViewAll": "Ver todos los partidos",
+    "featuredH2hCaption": "1X2 (principales casas)",
+    "vsLabel": "vs",
+    "whyTitle": "Por qué WorldCupBet26",
+    "whyOddsTitle": "Mejores cuotas",
+    "whyOddsText": "Precios lado a lado de casas importantes para ver siempre las líneas más ajustadas antes de apostar.",
+    "whyLangTitle": "6 idiomas",
+    "whyLangText": "Lee comparativas y preguntas frecuentes en inglés, español, portugués, alemán, francés e italiano.",
+    "whyLiveTitle": "Actualizaciones en vivo",
+    "whyLiveText": "Los mercados se actualizan desde nuestro feed de cuotas para reflejar las últimas cotizaciones del Mundial 2026.",
+    "faqTitle": "Preguntas frecuentes sobre apuestas del Mundial 2026",
+    "faq1q": "¿Cuándo empieza la Copa del Mundo FIFA 2026?",
+    "faq1a": "La Copa del Mundo FIFA 2026 comienza en junio de 2026, con partidos en Estados Unidos, México y Canadá. Los horarios definitivos se confirman más cerca del torneo.",
+    "faq2q": "¿Cómo leo las cuotas 1X2 (moneyline) del Mundial?",
+    "faq2a": "El mercado de tres vías muestra precios para victoria local, empate o victoria visitante. Cuotas decimales más bajas implican mayor probabilidad implícita; comparar casas te ayuda a obtener mejor retorno.",
+    "faq3q": "¿Son iguales las cuotas del Mundial en todas las casas?",
+    "faq3a": "No: cada casa fija sus márgenes y precios. Pequeñas diferencias suman; por eso conviene comparar cuotas del mundial 2026 antes de apostar.",
+    "faq4q": "¿Puedo apostar al Mundial 2026 desde el Reino Unido?",
+    "faq4a": "Depende de tu ubicación y la licencia de cada operador. Usa solo marcas reguladas en tu jurisdicción y lee los términos antes de apostar.",
+    "faq5q": "¿Ofrecen consejos de apuestas del mundial?",
+    "faq5a": "Nos centramos en comparar cuotas y explicaciones educativas para que decidas con información. Nunca apuestes más de lo que puedas permitirte perder."
   },
   "MatchesPage": {
     "title": "Partidos"

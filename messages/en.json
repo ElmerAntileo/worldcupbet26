@@ -1,9 +1,32 @@
 {
   "HomePage": {
-    "title": "Hello world!",
-    "editHint": "Get started by editing",
-    "editFile": "src/app/[locale]/page.tsx",
-    "saveHint": "Save and see your changes instantly."
+    "metaTitle": "World Cup 2026 Betting Odds | WorldCupBet26",
+    "metaDescription": "Compare world cup 2026 odds from top sportsbooks, read world cup betting tips, and track live FIFA World Cup 2026 prices — updated regularly on WorldCupBet26.",
+    "heroTitle": "World Cup 2026 Betting Odds & Tips",
+    "heroSubtitle": "Compare the best odds across leading bookmakers with lines updated live as markets move — all in one place for serious World Cup bettors.",
+    "featuredTitle": "Featured Matches",
+    "featuredSubtitle": "Upcoming World Cup 2026 fixtures with three-way (1X2) prices from top books.",
+    "featuredViewAll": "View all matches",
+    "featuredH2hCaption": "H2H (top books)",
+    "vsLabel": "vs",
+    "whyTitle": "Why WorldCupBet26",
+    "whyOddsTitle": "Best odds",
+    "whyOddsText": "Side-by-side prices from major bookmakers so you always see the sharpest lines before you bet.",
+    "whyLangTitle": "6 languages",
+    "whyLangText": "Read tips, comparisons, and FAQs in English, Spanish, Portuguese, German, French, and Italian.",
+    "whyLiveTitle": "Live updates",
+    "whyLiveText": "Markets refresh from our odds feed to reflect the latest World Cup 2026 prices.",
+    "faqTitle": "World Cup 2026 betting FAQ",
+    "faq1q": "When does the FIFA World Cup 2026 start?",
+    "faq1a": "FIFA World Cup 2026 begins in June 2026, with matches across the United States, Mexico, and Canada. Kickoff times and full schedules are confirmed closer to the tournament.",
+    "faq2q": "How do I read World Cup moneyline (1X2) odds?",
+    "faq2a": "The three-way market lists prices for a home win, draw, or away win. Lower decimal odds imply a higher implied probability; comparing books helps you find the best return on the same outcome.",
+    "faq3q": "Are World Cup odds the same at every sportsbook?",
+    "faq3a": "No — books set their own prices and margins. Small differences add up, which is why comparing world cup 2026 odds before you bet matters.",
+    "faq4q": "Can I bet on World Cup 2026 from the United Kingdom?",
+    "faq4a": "Access depends on your location and each operator's licence. Use only regulated brands available in your jurisdiction and read each site's terms before wagering.",
+    "faq5q": "Do you provide world cup betting tips?",
+    "faq5a": "We focus on odds comparison and educational explainers so you can make informed decisions. Never bet more than you can afford to lose."
   },
   "MatchesPage": {
     "title": "Matches"

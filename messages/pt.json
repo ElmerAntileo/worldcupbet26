@@ -1,9 +1,32 @@
 {
   "HomePage": {
-    "title": "Olá mundo!",
-    "editHint": "Comece editando",
-    "editFile": "src/app/[locale]/page.tsx",
-    "saveHint": "Salve e veja as alterações na hora."
+    "metaTitle": "Odds de apostas na Copa do Mundo 2026 | WorldCupBet26",
+    "metaDescription": "Compare odds da copa do mundo 2026 nas principais casas, leia dicas de apostas na copa e acompanhe cotações ao vivo da FIFA World Cup 2026 — atualizado na WorldCupBet26.",
+    "heroTitle": "Odds e dicas de apostas na Copa do Mundo 2026",
+    "heroSubtitle": "Compare as melhores odds entre casas líderes com linhas atualizadas ao vivo conforme o mercado se move — tudo num só lugar para apostadores sérios na Copa.",
+    "featuredTitle": "Jogos em destaque",
+    "featuredSubtitle": "Próximos jogos da Copa do Mundo 2026 com preços 1X2 das principais casas.",
+    "featuredViewAll": "Ver todos os jogos",
+    "featuredH2hCaption": "1X2 (principais casas)",
+    "vsLabel": "x",
+    "whyTitle": "Por que a WorldCupBet26",
+    "whyOddsTitle": "Melhores odds",
+    "whyOddsText": "Preços lado a lado das principais casas para você ver as linhas mais agressivas antes de apostar.",
+    "whyLangTitle": "6 idiomas",
+    "whyLangText": "Leia comparações e perguntas frequentes em inglês, espanhol, português, alemão, francês e italiano.",
+    "whyLiveTitle": "Atualizações ao vivo",
+    "whyLiveText": "Os mercados são atualizados pelo nosso feed de odds para refletir as últimas cotações da Copa 2026.",
+    "faqTitle": "FAQ sobre apostas na Copa do Mundo 2026",
+    "faq1q": "Quando começa a FIFA World Cup 2026?",
+    "faq1a": "A Copa de 2026 começa em junho de 2026, com jogos nos Estados Unidos, México e Canadá. Horários completos são confirmados perto do torneio.",
+    "faq2q": "Como leio odds 1X2 (moneyline) na Copa?",
+    "faq2a": "O mercado de três vias mostra vitória da casa, empate ou vitória fora. Odds decimais menores indicam maior probabilidade implícita; comparar casas melhora o retorno.",
+    "faq3q": "As odds da Copa são iguais em todas as casas?",
+    "faq3a": "Não — cada casa define margens e preços. Diferenças pequenas importam; por isso vale comparar odds da copa do mundo 2026 antes de apostar.",
+    "faq4q": "Posso apostar na Copa 2026 do Reino Unido?",
+    "faq4a": "Depende da sua localização e da licença de cada operador. Use apenas marcas reguladas na sua jurisdição e leia os termos antes de apostar.",
+    "faq5q": "Vocês dão dicas de apostas na copa?",
+    "faq5a": "Focamos em comparação de odds e conteúdo educativo para decisões informadas. Nunca aposte mais do que pode perder."
   },
   "MatchesPage": {
     "title": "Jogos"
