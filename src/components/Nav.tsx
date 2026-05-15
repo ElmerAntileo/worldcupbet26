@@ -30,6 +30,12 @@ export function Nav() {
           </Link>
           <nav className="flex gap-4 text-sm font-medium text-zinc-700 dark:text-zinc-300">
             <Link
+              href="/blog"
+              className="hover:text-emerald-700 dark:hover:text-emerald-400"
+            >
+              Blog
+            </Link>
+            <Link
               href="/matches"
               className="hover:text-emerald-700 dark:hover:text-emerald-400"
             >
