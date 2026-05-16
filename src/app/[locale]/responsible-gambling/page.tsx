@@ -1,22 +1,45 @@
+export const metadata = { title: "Responsible Gambling | WorldCupBet26", description: "WorldCupBet26 is committed to responsible gambling. 18+ only." };
+
 export default function ResponsibleGamblingPage() {
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">Responsible Gambling</h1>
-      <p className="mb-4">WorldCupBet26 is committed to promoting responsible gambling. Gambling should be fun and entertaining, never a way to make money.</p>
-      <h2 className="text-xl font-bold mt-6 mb-3">18+ Only</h2>
-      <p className="mb-4">You must be 18 years or older to use this website and place bets. We do not accept users under the legal gambling age.</p>
-      <h2 className="text-xl font-bold mt-6 mb-3">Set Your Limits</h2>
-      <p className="mb-4">Always set a budget before betting. Never chase losses. Only bet what you can afford to lose.</p>
-      <h2 className="text-xl font-bold mt-6 mb-3">Get Help</h2>
-      <p className="mb-4">If you feel gambling is becoming a problem, contact these free support services:</p>
-      <ul className="list-disc pl-6 mb-4">
-        <li>GamCare (UK): gamcare.org.uk</li>
-        <li>Gamblers Anonymous: gamblersanonymous.org</li>
-        <li>Bundeszentrale fur gesundheitliche Aufklarung (DE): bzga.de</li>
-        <li>National Problem Gambling Helpline (US): 1-800-522-4700</li>
-      </ul>
-      <h2 className="text-xl font-bold mt-6 mb-3">Affiliate Disclosure</h2>
-      <p className="mb-4">WorldCupBet26 contains affiliate links. We may earn a commission when you click on bookmaker links and register an account. This does not affect the odds or offers you receive. We only recommend licensed and regulated bookmakers.</p>
+    <div style={{maxWidth: "900px", margin: "0 auto", padding: "2rem 1rem"}}>
+      <div style={{background: "var(--accent)", color: "#0d1117", padding: "1rem 1.5rem", borderRadius: "8px", marginBottom: "2rem", fontWeight: 700, fontSize: "1.1rem"}}>
+        18+ Only — Please gamble responsibly
+      </div>
+      <h1 className="section-title">Responsible Gambling</h1>
+      <p style={{color: "var(--muted)", marginBottom: "2rem", lineHeight: 1.8}}>WorldCupBet26 is committed to promoting responsible gambling. Gambling should always be fun and entertaining — never a way to make money or solve financial problems.</p>
+      <div style={{display: "grid", gap: "1rem", marginBottom: "2rem"}}>
+        {[
+          {title: "Set a Budget", text: "Decide how much you can afford to lose before you start. Never exceed that limit."},
+          {title: "Never Chase Losses", text: "If you lose, accept it and walk away. Chasing losses leads to bigger losses."},
+          {title: "Take Breaks", text: "Set time limits on your betting sessions. Take regular breaks."},
+          {title: "Keep it Fun", text: "Gambling is entertainment, not income. Stop if it stops being fun."},
+        ].map((item) => (
+          <div key={item.title} className="card" style={{padding: "1.25rem"}}>
+            <div style={{color: "var(--accent)", fontWeight: 700, marginBottom: "0.25rem"}}>{item.title}</div>
+            <div style={{color: "var(--muted)", fontSize: "0.9rem"}}>{item.text}</div>
+          </div>
+        ))}
+      </div>
+      <h2 className="section-title">Get Help</h2>
+      <div style={{display: "grid", gap: "0.75rem", marginBottom: "2rem"}}>
+        {[
+          {name: "GamCare (UK)", url: "https://www.gamcare.org.uk", desc: "Free support, information and counselling"},
+          {name: "Gamblers Anonymous", url: "https://www.gamblersanonymous.org", desc: "Worldwide fellowship for problem gamblers"},
+          {name: "BZgA (Germany)", url: "https://www.bzga.de", desc: "German Federal Centre for Health Education"},
+          {name: "NCPG Helpline (US)", url: "tel:1-800-522-4700", desc: "1-800-522-4700 — Free, confidential helpline"},
+        ].map((item) => (
+          <a key={item.name} href={item.url} target="_blank" rel="noopener noreferrer" className="card" style={{padding: "1rem 1.25rem", display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+            <div>
+              <div style={{fontWeight: 700, color: "var(--foreground)"}}>{item.name}</div>
+              <div style={{color: "var(--muted)", fontSize: "0.85rem"}}>{item.desc}</div>
+            </div>
+            <div style={{color: "var(--accent)", fontSize: "1.2rem"}}>→</div>
+          </a>
+        ))}
+      </div>
+      <h2 className="section-title">Affiliate Disclosure</h2>
+      <p style={{color: "var(--muted)", lineHeight: 1.8}}>WorldCupBet26 contains affiliate links. We may earn a commission when you click bookmaker links and register an account. This does not affect the odds or offers you receive. We only recommend licensed and regulated bookmakers.</p>
     </div>
   );
 }
