@@ -1,7 +1,6 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "regions": ["iad1", "lhr1", "fra1"],
   "headers": [
     {
       "source": "/robots.txt",
