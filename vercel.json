@@ -20,5 +20,18 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "worldcupbet26.com"
+        }
+      ],
+      "destination": "https://www.worldcupbet26.com/$1",
+      "permanent": true
+    }
   ]
 }
