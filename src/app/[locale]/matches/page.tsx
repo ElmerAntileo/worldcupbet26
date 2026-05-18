@@ -182,6 +182,114 @@ const matches = [
     ],
     status: 'upcoming',
   },
+  // GROUP E (cont.)
+  {
+    id: 14, group: 'E', stage: 'Group Stage',
+    date: 'Jun 19, 2026', time: '15:00 ET', venue: "Levi's Stadium", city: 'San Francisco, USA',
+    home: { team: 'England', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', form: ['W','W','W','W','D'] },
+    away: { team: 'Colombia', flag: '🇨🇴', form: ['W','W','D','W','W'] },
+    odds: { home: '1.60', draw: '3.80', away: '5.80' },
+    bookmakers: [
+      { name: 'Bet365', home: '1.60', draw: '3.80', away: '5.80', url: 'https://bet365.com' },
+      { name: 'Betway', home: '1.58', draw: '3.90', away: '5.90', url: 'https://betway.com' },
+      { name: '888Sport', home: '1.62', draw: '3.75', away: '5.70', url: 'https://888sport.com' },
+    ],
+    status: 'upcoming',
+  },
+  {
+    id: 15, group: 'E', stage: 'Group Stage',
+    date: 'Jun 23, 2026', time: '18:00 ET', venue: 'Lincoln Financial Field', city: 'Philadelphia, USA',
+    home: { team: 'Serbia', flag: '🇷🇸', form: ['W','D','W','L','W'] },
+    away: { team: 'Colombia', flag: '🇨🇴', form: ['W','W','D','W','W'] },
+    odds: { home: '2.90', draw: '3.10', away: '2.50' },
+    bookmakers: [
+      { name: 'Bet365', home: '2.90', draw: '3.10', away: '2.50', url: 'https://bet365.com' },
+      { name: 'Betway', home: '2.85', draw: '3.15', away: '2.55', url: 'https://betway.com' },
+      { name: '888Sport', home: '2.95', draw: '3.05', away: '2.45', url: 'https://888sport.com' },
+    ],
+    status: 'upcoming',
+  },
+  // GROUP F (cont.)
+  {
+    id: 16, group: 'F', stage: 'Group Stage',
+    date: 'Jun 20, 2026', time: '18:00 ET', venue: 'Rose Bowl', city: 'Pasadena, USA',
+    home: { team: 'Spain', flag: '🇪🇸', form: ['W','W','W','D','W'] },
+    away: { team: 'Belgium', flag: '🇧🇪', form: ['W','D','W','W','D'] },
+    odds: { home: '1.80', draw: '3.50', away: '4.80' },
+    bookmakers: [
+      { name: 'Bet365', home: '1.80', draw: '3.50', away: '4.80', url: 'https://bet365.com' },
+      { name: 'Betway', home: '1.77', draw: '3.60', away: '4.90', url: 'https://betway.com' },
+      { name: '888Sport', home: '1.83', draw: '3.45', away: '4.70', url: 'https://888sport.com' },
+    ],
+    status: 'upcoming',
+  },
+  {
+    id: 17, group: 'F', stage: 'Group Stage',
+    date: 'Jun 24, 2026', time: '21:00 ET', venue: 'SoFi Stadium', city: 'Los Angeles, USA',
+    home: { team: 'Croatia', flag: '🇭🇷', form: ['D','W','W','W','D'] },
+    away: { team: 'Belgium', flag: '🇧🇪', form: ['W','D','W','W','D'] },
+    odds: { home: '2.60', draw: '3.20', away: '2.70' },
+    bookmakers: [
+      { name: 'Bet365', home: '2.60', draw: '3.20', away: '2.70', url: 'https://bet365.com' },
+      { name: 'Betway', home: '2.55', draw: '3.25', away: '2.75', url: 'https://betway.com' },
+      { name: '888Sport', home: '2.65', draw: '3.15', away: '2.65', url: 'https://888sport.com' },
+    ],
+    status: 'upcoming',
+  },
+  // GROUP G (cont.)
+  {
+    id: 18, group: 'G', stage: 'Group Stage',
+    date: 'Jun 21, 2026', time: '20:00 ET', venue: 'Arrowhead Stadium', city: 'Kansas City, USA',
+    home: { team: 'Portugal', flag: '🇵🇹', form: ['W','W','D','W','W'] },
+    away: { team: 'Uruguay', flag: '🇺🇾', form: ['W','W','W','D','L'] },
+    odds: { home: '1.85', draw: '3.50', away: '4.40' },
+    bookmakers: [
+      { name: 'Bet365', home: '1.85', draw: '3.50', away: '4.40', url: 'https://bet365.com' },
+      { name: 'Betway', home: '1.82', draw: '3.55', away: '4.50', url: 'https://betway.com' },
+      { name: '888Sport', home: '1.88', draw: '3.45', away: '4.30', url: 'https://888sport.com' },
+    ],
+    status: 'upcoming',
+  },
+  {
+    id: 19, group: 'G', stage: 'Group Stage',
+    date: 'Jun 25, 2026', time: '15:00 ET', venue: 'Empower Field', city: 'Denver, USA',
+    home: { team: 'Morocco', flag: '🇲🇦', form: ['W','W','W','D','W'] },
+    away: { team: 'Uruguay', flag: '🇺🇾', form: ['W','W','W','D','L'] },
+    odds: { home: '2.40', draw: '3.20', away: '2.90' },
+    bookmakers: [
+      { name: 'Bet365', home: '2.40', draw: '3.20', away: '2.90', url: 'https://bet365.com' },
+      { name: 'Betway', home: '2.35', draw: '3.25', away: '2.95', url: 'https://betway.com' },
+      { name: '888Sport', home: '2.45', draw: '3.15', away: '2.85', url: 'https://888sport.com' },
+    ],
+    status: 'upcoming',
+  },
+  // GROUP H (cont.)
+  {
+    id: 20, group: 'H', stage: 'Group Stage',
+    date: 'Jun 22, 2026', time: '15:00 ET', venue: 'BC Place', city: 'Vancouver, CAN',
+    home: { team: 'Netherlands', flag: '🇳🇱', form: ['W','W','D','W','W'] },
+    away: { team: 'South Korea', flag: '🇰🇷', form: ['W','D','W','W','L'] },
+    odds: { home: '1.65', draw: '3.70', away: '5.50' },
+    bookmakers: [
+      { name: 'Bet365', home: '1.65', draw: '3.70', away: '5.50', url: 'https://bet365.com' },
+      { name: 'Betway', home: '1.62', draw: '3.80', away: '5.60', url: 'https://betway.com' },
+      { name: '888Sport', home: '1.68', draw: '3.65', away: '5.40', url: 'https://888sport.com' },
+    ],
+    status: 'upcoming',
+  },
+  {
+    id: 21, group: 'H', stage: 'Group Stage',
+    date: 'Jun 26, 2026', time: '18:00 ET', venue: 'Gillette Stadium', city: 'Boston, USA',
+    home: { team: 'Senegal', flag: '🇸🇳', form: ['W','D','W','W','L'] },
+    away: { team: 'South Korea', flag: '🇰🇷', form: ['W','D','W','W','L'] },
+    odds: { home: '2.20', draw: '3.20', away: '3.20' },
+    bookmakers: [
+      { name: 'Bet365', home: '2.20', draw: '3.20', away: '3.20', url: 'https://bet365.com' },
+      { name: 'Betway', home: '2.15', draw: '3.25', away: '3.25', url: 'https://betway.com' },
+      { name: '888Sport', home: '2.25', draw: '3.15', away: '3.15', url: 'https://888sport.com' },
+    ],
+    status: 'upcoming',
+  },
 ];
 
 function FormBadge({ result }: { result: string }) {
