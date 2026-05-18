@@ -290,6 +290,49 @@ const matches = [
     ],
     status: 'upcoming',
   },
+  // GROUP B (cont.)
+  {
+    id: 22, group: 'B', stage: 'Group Stage',
+    date: 'Jun 17, 2026', time: '15:00 ET', venue: 'AT&T Stadium', city: 'Dallas, USA',
+    home: { team: 'Panama', flag: '🇵🇦', form: ['D','W','L','W','D'] },
+    away: { team: 'Mexico', flag: '🇲🇽', form: ['W','W','D','W','L'] },
+    odds: { home: '5.20', draw: '3.40', away: '1.65' },
+    bookmakers: [
+      { name: 'Bet365', home: '5.20', draw: '3.40', away: '1.65', url: 'https://bet365.com' },
+      { name: 'Betway', home: '5.30', draw: '3.45', away: '1.62', url: 'https://betway.com' },
+      { name: '888Sport', home: '5.10', draw: '3.35', away: '1.68', url: 'https://888sport.com' },
+    ],
+    status: 'upcoming',
+  },
+  // GROUP C (cont.)
+  {
+    id: 23, group: 'C', stage: 'Group Stage',
+    date: 'Jun 20, 2026', time: '21:00 ET', venue: 'Hard Rock Stadium', city: 'Miami, USA',
+    home: { team: 'Brazil', flag: '🇧🇷', form: ['W','W','D','W','W'] },
+    away: { team: 'Ecuador', flag: '🇪🇨', form: ['W','D','L','W','W'] },
+    odds: { home: '1.60', draw: '3.80', away: '6.00' },
+    bookmakers: [
+      { name: 'Bet365', home: '1.60', draw: '3.80', away: '6.00', url: 'https://bet365.com' },
+      { name: 'Betway', home: '1.57', draw: '3.90', away: '6.20', url: 'https://betway.com' },
+      { name: '888Sport', home: '1.63', draw: '3.75', away: '5.90', url: 'https://888sport.com' },
+    ],
+    status: 'upcoming',
+  },
+  // GROUP D (cont.)
+  {
+    id: 24, group: 'D', stage: 'Group Stage',
+    date: 'Jun 21, 2026', time: '15:00 ET', venue: 'BC Place', city: 'Vancouver, CAN',
+    home: { team: 'Japan', flag: '🇯🇵', form: ['W','D','W','W','L'] },
+    away: { team: 'France', flag: '🇫🇷', form: ['W','D','W','W','W'] },
+    odds: { home: '4.50', draw: '3.50', away: '1.80' },
+    bookmakers: [
+      { name: 'Bet365', home: '4.50', draw: '3.50', away: '1.80', url: 'https://bet365.com' },
+      { name: 'Betway', home: '4.60', draw: '3.55', away: '1.77', url: 'https://betway.com' },
+      { name: '888Sport', home: '4.40', draw: '3.45', away: '1.83', url: 'https://888sport.com' },
+    ],
+    status: 'upcoming',
+  },
+
 ];
 
 function FormBadge({ result }: { result: string }) {
