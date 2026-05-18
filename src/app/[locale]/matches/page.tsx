@@ -9,8 +9,8 @@ const matches = [
   {
     id: 1, group: 'A', stage: 'Group Stage',
     date: 'Jun 11, 2026', time: '18:00 ET', venue: 'Estadio Azteca', city: 'Mexico City, MEX',
-    home: { team: 'Mexico', flag: '\U0001f1f2\U0001f1fd', form: ['W','W','D','W','L'] },
-    away: { team: 'Poland', flag: '\U0001f1f5\U0001f1f1', form: ['W','D','W','L','W'] },
+    home: { team: 'Mexico', flag: '🇲🇽', form: ['W','W','D','W','L'] },
+    away: { team: 'Poland', flag: '🇵🇱', form: ['W','D','W','L','W'] },
     odds: { home: '2.10', draw: '3.20', away: '3.60' },
     bookmakers: [
       { name: 'Bet365', home: '2.10', draw: '3.20', away: '3.60', url: 'https://bet365.com' },
@@ -22,8 +22,8 @@ const matches = [
   {
     id: 2, group: 'A', stage: 'Group Stage',
     date: 'Jun 15, 2026', time: '15:00 ET', venue: 'Estadio Akron', city: 'Guadalajara, MEX',
-    home: { team: 'Saudi Arabia', flag: '\U0001f1f8\U0001f1e6', form: ['W','L','D','W','W'] },
-    away: { team: 'Poland', flag: '\U0001f1f5\U0001f1f1', form: ['W','D','W','L','W'] },
+    home: { team: 'Saudi Arabia', flag: '🇸🇦', form: ['W','L','D','W','W'] },
+    away: { team: 'Poland', flag: '🇵🇱', form: ['W','D','W','L','W'] },
     odds: { home: '3.40', draw: '3.10', away: '2.10' },
     bookmakers: [
       { name: 'Bet365', home: '3.40', draw: '3.10', away: '2.10', url: 'https://bet365.com' },
@@ -35,8 +35,8 @@ const matches = [
   {
     id: 3, group: 'A', stage: 'Group Stage',
     date: 'Jun 19, 2026', time: '20:00 ET', venue: 'Estadio Azteca', city: 'Mexico City, MEX',
-    home: { team: 'Mexico', flag: '\U0001f1f2\U0001f1fd', form: ['W','W','D','W','L'] },
-    away: { team: 'Saudi Arabia', flag: '\U0001f1f8\U0001f1e6', form: ['W','L','D','W','W'] },
+    home: { team: 'Mexico', flag: '🇲🇽', form: ['W','W','D','W','L'] },
+    away: { team: 'Saudi Arabia', flag: '🇸🇦', form: ['W','L','D','W','W'] },
     odds: { home: '1.90', draw: '3.50', away: '4.20' },
     bookmakers: [
       { name: 'Bet365', home: '1.90', draw: '3.50', away: '4.20', url: 'https://bet365.com' },
@@ -49,8 +49,8 @@ const matches = [
   {
     id: 4, group: 'B', stage: 'Group Stage',
     date: 'Jun 12, 2026', time: '20:00 ET', venue: 'MetLife Stadium', city: 'New York, USA',
-    home: { team: 'USA', flag: '\U0001f1fa\U0001f1f8', form: ['W','W','W','D','W'] },
-    away: { team: 'Panama', flag: '\U0001f1f5\U0001f1e6', form: ['D','W','L','W','D'] },
+    home: { team: 'USA', flag: '🇺🇸', form: ['W','W','W','D','W'] },
+    away: { team: 'Panama', flag: '🇵🇦', form: ['D','W','L','W','D'] },
     odds: { home: '1.55', draw: '3.90', away: '6.50' },
     bookmakers: [
       { name: 'Bet365', home: '1.55', draw: '3.90', away: '6.50', url: 'https://bet365.com' },
@@ -62,8 +62,8 @@ const matches = [
   {
     id: 5, group: 'B', stage: 'Group Stage',
     date: 'Jun 22, 2026', time: '20:00 ET', venue: 'AT&T Stadium', city: 'Dallas, USA',
-    home: { team: 'USA', flag: '\U0001f1fa\U0001f1f8', form: ['W','W','W','D','W'] },
-    away: { team: 'Mexico', flag: '\U0001f1f2\U0001f1fd', form: ['W','W','D','W','L'] },
+    home: { team: 'USA', flag: '🇺🇸', form: ['W','W','W','D','W'] },
+    away: { team: 'Mexico', flag: '🇲🇽', form: ['W','W','D','W','L'] },
     odds: { home: '2.30', draw: '3.20', away: '3.00' },
     bookmakers: [
       { name: 'Bet365', home: '2.30', draw: '3.20', away: '3.00', url: 'https://bet365.com' },
@@ -76,8 +76,8 @@ const matches = [
   {
     id: 6, group: 'C', stage: 'Group Stage',
     date: 'Jun 13, 2026', time: '15:00 ET', venue: 'SoFi Stadium', city: 'Los Angeles, USA',
-    home: { team: 'Argentina', flag: '\U0001f1e6\U0001f1f7', form: ['W','W','W','W','D'] },
-    away: { team: 'Ecuador', flag: '\U0001f1ea\U0001f1e8', form: ['W','D','L','W','W'] },
+    home: { team: 'Argentina', flag: '🇦🇷', form: ['W','W','W','W','D'] },
+    away: { team: 'Ecuador', flag: '🇪🇨', form: ['W','D','L','W','W'] },
     odds: { home: '1.45', draw: '4.20', away: '7.50' },
     bookmakers: [
       { name: 'Bet365', home: '1.45', draw: '4.20', away: '7.50', url: 'https://bet365.com' },
@@ -89,8 +89,8 @@ const matches = [
   {
     id: 7, group: 'C', stage: 'Group Stage',
     date: 'Jun 26, 2026', time: '21:00 ET', venue: 'Hard Rock Stadium', city: 'Miami, USA',
-    home: { team: 'Brazil', flag: '\U0001f1e7\U0001f1f7', form: ['W','W','D','W','W'] },
-    away: { team: 'Argentina', flag: '\U0001f1e6\U0001f1f7', form: ['W','W','W','W','D'] },
+    home: { team: 'Brazil', flag: '🇧🇷', form: ['W','W','D','W','W'] },
+    away: { team: 'Argentina', flag: '🇦🇷', form: ['W','W','W','W','D'] },
     odds: { home: '2.30', draw: '3.10', away: '3.00' },
     bookmakers: [
       { name: 'Bet365', home: '2.30', draw: '3.10', away: '3.00', url: 'https://bet365.com' },
@@ -103,8 +103,8 @@ const matches = [
   {
     id: 8, group: 'D', stage: 'Group Stage',
     date: 'Jun 14, 2026', time: '18:00 CET', venue: 'BC Place', city: 'Vancouver, CAN',
-    home: { team: 'Germany', flag: '\U0001f1e9\U0001f1ea', form: ['W','W','D','W','W'] },
-    away: { team: 'Japan', flag: '\U0001f1ef\U0001f1f5', form: ['W','D','W','W','L'] },
+    home: { team: 'Germany', flag: '🇩🇪', form: ['W','W','D','W','W'] },
+    away: { team: 'Japan', flag: '🇯🇵', form: ['W','D','W','W','L'] },
     odds: { home: '1.75', draw: '3.60', away: '5.00' },
     bookmakers: [
       { name: 'Bet365', home: '1.75', draw: '3.60', away: '5.00', url: 'https://bet365.com' },
@@ -116,8 +116,8 @@ const matches = [
   {
     id: 9, group: 'D', stage: 'Group Stage',
     date: 'Jun 24, 2026', time: '18:00 CET', venue: 'Gillette Stadium', city: 'Boston, USA',
-    home: { team: 'Germany', flag: '\U0001f1e9\U0001f1ea', form: ['W','W','D','W','W'] },
-    away: { team: 'France', flag: '\U0001f1eb\U0001f1f7', form: ['W','D','W','W','W'] },
+    home: { team: 'Germany', flag: '🇩🇪', form: ['W','W','D','W','W'] },
+    away: { team: 'France', flag: '🇫🇷', form: ['W','D','W','W','W'] },
     odds: { home: '2.70', draw: '3.20', away: '2.60' },
     bookmakers: [
       { name: 'Bet365', home: '2.70', draw: '3.20', away: '2.60', url: 'https://bet365.com' },
@@ -130,8 +130,8 @@ const matches = [
   {
     id: 10, group: 'E', stage: 'Group Stage',
     date: 'Jun 15, 2026', time: '18:00 ET', venue: 'Lincoln Financial Field', city: 'Philadelphia, USA',
-    home: { team: 'England', flag: '\U0001f3f4\U000e0067\U000e0062\U000e0065\U000e006e\U000e0067\U000e007f', form: ['W','W','W','W','D'] },
-    away: { team: 'Serbia', flag: '\U0001f1f7\U0001f1f8', form: ['W','D','W','L','W'] },
+    home: { team: 'England', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', form: ['W','W','W','W','D'] },
+    away: { team: 'Serbia', flag: '🇷🇸', form: ['W','D','W','L','W'] },
     odds: { home: '1.50', draw: '3.90', away: '7.00' },
     bookmakers: [
       { name: 'Bet365', home: '1.50', draw: '3.90', away: '7.00', url: 'https://bet365.com' },
@@ -144,8 +144,8 @@ const matches = [
   {
     id: 11, group: 'F', stage: 'Group Stage',
     date: 'Jun 16, 2026', time: '18:00 ET', venue: 'Rose Bowl', city: 'Pasadena, USA',
-    home: { team: 'Spain', flag: '\U0001f1ea\U0001f1f8', form: ['W','W','W','D','W'] },
-    away: { team: 'Croatia', flag: '\U0001f1ed\U0001f1f7', form: ['D','W','W','W','D'] },
+    home: { team: 'Spain', flag: '🇪🇸', form: ['W','W','W','D','W'] },
+    away: { team: 'Croatia', flag: '🇭🇷', form: ['D','W','W','W','D'] },
     odds: { home: '1.85', draw: '3.40', away: '4.60' },
     bookmakers: [
       { name: 'Bet365', home: '1.85', draw: '3.40', away: '4.60', url: 'https://bet365.com' },
@@ -158,8 +158,8 @@ const matches = [
   {
     id: 12, group: 'G', stage: 'Group Stage',
     date: 'Jun 17, 2026', time: '20:00 ET', venue: 'Arrowhead Stadium', city: 'Kansas City, USA',
-    home: { team: 'Portugal', flag: '\U0001f1f5\U0001f1f9', form: ['W','W','D','W','W'] },
-    away: { team: 'Morocco', flag: '\U0001f1f2\U0001f1e6', form: ['W','W','W','D','W'] },
+    home: { team: 'Portugal', flag: '🇵🇹', form: ['W','W','D','W','W'] },
+    away: { team: 'Morocco', flag: '🇲🇦', form: ['W','W','W','D','W'] },
     odds: { home: '1.95', draw: '3.40', away: '4.10' },
     bookmakers: [
       { name: 'Bet365', home: '1.95', draw: '3.40', away: '4.10', url: 'https://bet365.com' },
@@ -172,8 +172,8 @@ const matches = [
   {
     id: 13, group: 'H', stage: 'Group Stage',
     date: 'Jun 18, 2026', time: '15:00 ET', venue: 'Empower Field', city: 'Denver, USA',
-    home: { team: 'Netherlands', flag: '\U0001f1f3\U0001f1f1', form: ['W','W','D','W','W'] },
-    away: { team: 'Senegal', flag: '\U0001f1f8\U0001f1f3', form: ['W','D','W','W','L'] },
+    home: { team: 'Netherlands', flag: '🇳🇱', form: ['W','W','D','W','W'] },
+    away: { team: 'Senegal', flag: '🇸🇳', form: ['W','D','W','W','L'] },
     odds: { home: '1.70', draw: '3.60', away: '5.20' },
     bookmakers: [
       { name: 'Bet365', home: '1.70', draw: '3.60', away: '5.20', url: 'https://bet365.com' },
