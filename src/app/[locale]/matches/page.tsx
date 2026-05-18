@@ -431,6 +431,23 @@ export default function MatchesPage() {
       <section style={{ padding: '24px 20px 60px' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '10px' }}>
 
+          {/* LEGEND */}
+          <div style={{
+            display: 'flex', alignItems: 'center', gap: '16px',
+            padding: '10px 16px', marginBottom: '4px',
+            background: 'rgba(255,255,255,0.03)', borderRadius: '8px',
+            border: '1px solid var(--card-border)',
+          }}>
+            <span style={{ fontSize: '11px', color: 'var(--muted)', fontWeight: 600 }}>Form key:</span>
+            {[{ label: 'W', desc: 'Win', bg: '#00d084', color: '#000' }, { label: 'D', desc: 'Draw', bg: '#f59e0b', color: '#000' }, { label: 'L', desc: 'Loss', bg: '#ef4444', color: '#fff' }].map(item => (
+              <div key={item.label} style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '20px', height: '20px', borderRadius: '4px', fontSize: '10px', fontWeight: 700, background: item.bg, color: item.color }}>{item.label}</span>
+                <span style={{ fontSize: '11px', color: 'var(--muted)' }}>{item.desc}</span>
+              </div>
+            ))}
+            <span style={{ fontSize: '11px', color: 'var(--muted)', marginLeft: 'auto' }}>Click any match to compare bookmaker odds</span>
+          </div>
+
           {filtered.map(m => (
             <div key={m.id} style={{
               background: 'var(--card-bg)',
@@ -457,8 +474,11 @@ export default function MatchesPage() {
                     <span style={{ fontSize: '24px' }}>{m.home.flag}</span>
                     <span style={{ fontWeight: 700, fontSize: '15px' }}>{m.home.team}</span>
                   </div>
-                  <div style={{ display: 'flex', gap: '3px' }}>
-                    {m.home.form.map((r, i) => <FormBadge key={i} result={r} />)}
+                  <div>
+                    <div style={{ fontSize: '10px', color: 'var(--muted)', marginBottom: '3px', fontWeight: 500 }}>Form (last 5)</div>
+                    <div style={{ display: 'flex', gap: '3px' }}>
+                      {m.home.form.map((r, i) => <FormBadge key={i} result={r} />)}
+                    </div>
                   </div>
                 </div>
 
@@ -503,8 +523,11 @@ export default function MatchesPage() {
                     <span style={{ fontWeight: 700, fontSize: '15px' }}>{m.away.team}</span>
                     <span style={{ fontSize: '24px' }}>{m.away.flag}</span>
                   </div>
-                  <div style={{ display: 'flex', gap: '3px' }}>
-                    {m.away.form.map((r, i) => <FormBadge key={i} result={r} />)}
+                  <div style={{ alignItems: 'flex-end' }}>
+                    <div style={{ fontSize: '10px', color: 'var(--muted)', marginBottom: '3px', fontWeight: 500, textAlign: 'right' }}>Form (last 5)</div>
+                    <div style={{ display: 'flex', gap: '3px', justifyContent: 'flex-end' }}>
+                      {m.away.form.map((r, i) => <FormBadge key={i} result={r} />)}
+                    </div>
                   </div>
                 </div>
               </div>
