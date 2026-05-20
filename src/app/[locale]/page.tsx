@@ -94,6 +94,28 @@ export default function HomePage() {
   return (
     <div style={{ background: 'var(--background)', minHeight: '100vh', color: 'var(--foreground)' }}>
 
+      {/* BETSSON PROMO BANNER */}
+      <div style={{
+        background: "linear-gradient(90deg, #1a2332 0%, #0f3d2e 100%)",
+        borderBottom: "2px solid var(--accent)",
+        padding: "12px 20px",
+      }}>
+        <div style={{ maxWidth: "900px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <span style={{ fontSize: "20px" }}>🏆</span>
+            <div>
+              <span style={{ fontWeight: 800, fontSize: "14px" }}>Betsson</span>
+              <span style={{ color: "var(--accent)", fontWeight: 700, fontSize: "14px" }}> — 100% Welcome Bonus up to €100</span>
+              <span style={{ color: "var(--muted)", fontSize: "12px" }}> · World Cup 2026 specials available</span>
+            </div>
+          </div>
+          <a href="https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow"
+            style={{ background: "var(--accent)", color: "#000", padding: "9px 22px", borderRadius: "6px", fontWeight: 800, fontSize: "13px", textDecoration: "none", whiteSpace: "nowrap" }}>
+            Claim Bonus →
+          </a>
+        </div>
+      </div>
+
       {/* HERO */}
       <section style={{
         background: 'linear-gradient(135deg, #0d1117 0%, #1a2332 50%, #0d1117 100%)',
