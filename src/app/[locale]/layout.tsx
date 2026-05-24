@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Nav } from "@/components/Nav";
 import { routing } from "@/i18n/routing";
 import Footer from "@/components/Footer";
+import StickyOddsBar from "@/components/StickyOddsBar";
 
 type Props = {
   children: React.ReactNode;
@@ -26,6 +27,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
       <Nav />
+      <StickyOddsBar />
       <main className="min-h-dvh bg-zinc-50 dark:bg-zinc-950">{children}</main>
       <Footer />
     </NextIntlClientProvider>

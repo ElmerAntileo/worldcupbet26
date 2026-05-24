@@ -15,6 +15,7 @@ const matches = [
     bookmakers: [
       { name: 'Bet365', home: '2.10', draw: '3.20', away: '3.60', url: 'https://bet365.com' },
       { name: 'Betway', home: '2.05', draw: '3.25', away: '3.70', url: 'https://betway.com' },
+      { name: '1xBet ★', home: '', draw: '', away: '', url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97' },
       { name: '888Sport', home: '2.15', draw: '3.15', away: '3.55', url: 'https://888sport.com' },
     ],
     status: 'upcoming',
@@ -28,6 +29,7 @@ const matches = [
     bookmakers: [
       { name: 'Bet365', home: '3.40', draw: '3.10', away: '2.10', url: 'https://bet365.com' },
       { name: 'Betway', home: '3.35', draw: '3.20', away: '2.05', url: 'https://betway.com' },
+      { name: '1xBet ★', home: '', draw: '', away: '', url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97' },
       { name: '888Sport', home: '3.50', draw: '3.00', away: '2.15', url: 'https://888sport.com' },
     ],
     status: 'upcoming',
@@ -41,6 +43,7 @@ const matches = [
     bookmakers: [
       { name: 'Bet365', home: '1.90', draw: '3.50', away: '4.20', url: 'https://bet365.com' },
       { name: 'Betway', home: '1.85', draw: '3.60', away: '4.30', url: 'https://betway.com' },
+      { name: '1xBet ★', home: '', draw: '', away: '', url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97' },
       { name: '888Sport', home: '1.95', draw: '3.45', away: '4.10', url: 'https://888sport.com' },
     ],
     status: 'upcoming',
@@ -55,6 +58,7 @@ const matches = [
     bookmakers: [
       { name: 'Bet365', home: '1.55', draw: '3.90', away: '6.50', url: 'https://bet365.com' },
       { name: 'Betway', home: '1.50', draw: '4.00', away: '6.80', url: 'https://betway.com' },
+      { name: '1xBet ★', home: '', draw: '', away: '', url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97' },
       { name: '888Sport', home: '1.57', draw: '3.80', away: '6.40', url: 'https://888sport.com' },
     ],
     status: 'upcoming',
@@ -68,6 +72,7 @@ const matches = [
     bookmakers: [
       { name: 'Bet365', home: '2.30', draw: '3.20', away: '3.00', url: 'https://bet365.com' },
       { name: 'Betway', home: '2.25', draw: '3.30', away: '3.10', url: 'https://betway.com' },
+      { name: '1xBet ★', home: '', draw: '', away: '', url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97' },
       { name: '888Sport', home: '2.35', draw: '3.10', away: '2.95', url: 'https://888sport.com' },
     ],
     status: 'upcoming',
@@ -82,6 +87,7 @@ const matches = [
     bookmakers: [
       { name: 'Bet365', home: '1.45', draw: '4.20', away: '7.50', url: 'https://bet365.com' },
       { name: 'Betway', home: '1.43', draw: '4.30', away: '7.80', url: 'https://betway.com' },
+      { name: '1xBet ★', home: '', draw: '', away: '', url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97' },
       { name: '888Sport', home: '1.47', draw: '4.10', away: '7.40', url: 'https://888sport.com' },
     ],
     status: 'upcoming',
@@ -95,6 +101,7 @@ const matches = [
     bookmakers: [
       { name: 'Bet365', home: '2.30', draw: '3.10', away: '3.00', url: 'https://bet365.com' },
       { name: 'Betway', home: '2.25', draw: '3.15', away: '3.05', url: 'https://betway.com' },
+      { name: '1xBet ★', home: '', draw: '', away: '', url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97' },
       { name: '888Sport', home: '2.35', draw: '3.05', away: '2.95', url: 'https://888sport.com' },
     ],
     status: 'upcoming',
@@ -109,6 +116,7 @@ const matches = [
     bookmakers: [
       { name: 'Bet365', home: '1.75', draw: '3.60', away: '5.00', url: 'https://bet365.com' },
       { name: 'Betway', home: '1.72', draw: '3.70', away: '5.10', url: 'https://betway.com' },
+      { name: '1xBet ★', home: '', draw: '', away: '', url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97' },
       { name: '888Sport', home: '1.78', draw: '3.55', away: '4.90', url: 'https://888sport.com' },
     ],
     status: 'upcoming',
@@ -122,6 +130,7 @@ const matches = [
     bookmakers: [
       { name: 'Bet365', home: '2.70', draw: '3.20', away: '2.60', url: 'https://bet365.com' },
       { name: 'Betway', home: '2.65', draw: '3.25', away: '2.65', url: 'https://betway.com' },
+      { name: '1xBet ★', home: '', draw: '', away: '', url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97' },
       { name: '888Sport', home: '2.75', draw: '3.15', away: '2.55', url: 'https://888sport.com' },
     ],
     status: 'upcoming',
@@ -136,6 +145,7 @@ const matches = [
     bookmakers: [
       { name: 'Bet365', home: '1.50', draw: '3.90', away: '7.00', url: 'https://bet365.com' },
       { name: 'Betway', home: '1.48', draw: '4.00', away: '7.20', url: 'https://betway.com' },
+      { name: '1xBet ★', home: '', draw: '', away: '', url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97' },
       { name: '888Sport', home: '1.52', draw: '3.80', away: '6.90', url: 'https://888sport.com' },
     ],
     status: 'upcoming',
@@ -150,6 +160,7 @@ const matches = [
     bookmakers: [
       { name: 'Bet365', home: '1.85', draw: '3.40', away: '4.60', url: 'https://bet365.com' },
       { name: 'Betway', home: '1.82', draw: '3.50', away: '4.70', url: 'https://betway.com' },
+      { name: '1xBet ★', home: '', draw: '', away: '', url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97' },
       { name: '888Sport', home: '1.88', draw: '3.35', away: '4.50', url: 'https://888sport.com' },
     ],
     status: 'upcoming',
@@ -164,6 +175,7 @@ const matches = [
     bookmakers: [
       { name: 'Bet365', home: '1.95', draw: '3.40', away: '4.10', url: 'https://bet365.com' },
       { name: 'Betway', home: '1.92', draw: '3.45', away: '4.20', url: 'https://betway.com' },
+      { name: '1xBet ★', home: '', draw: '', away: '', url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97' },
       { name: '888Sport', home: '1.98', draw: '3.35', away: '4.00', url: 'https://888sport.com' },
     ],
     status: 'upcoming',
@@ -178,6 +190,7 @@ const matches = [
     bookmakers: [
       { name: 'Bet365', home: '1.70', draw: '3.60', away: '5.20', url: 'https://bet365.com' },
       { name: 'Betway', home: '1.68', draw: '3.70', away: '5.30', url: 'https://betway.com' },
+      { name: '1xBet ★', home: '', draw: '', away: '', url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97' },
       { name: '888Sport', home: '1.72', draw: '3.55', away: '5.10', url: 'https://888sport.com' },
     ],
     status: 'upcoming',
@@ -192,6 +205,7 @@ const matches = [
     bookmakers: [
       { name: 'Bet365', home: '1.60', draw: '3.80', away: '5.80', url: 'https://bet365.com' },
       { name: 'Betway', home: '1.58', draw: '3.90', away: '5.90', url: 'https://betway.com' },
+      { name: '1xBet ★', home: '', draw: '', away: '', url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97' },
       { name: '888Sport', home: '1.62', draw: '3.75', away: '5.70', url: 'https://888sport.com' },
     ],
     status: 'upcoming',
@@ -205,6 +219,7 @@ const matches = [
     bookmakers: [
       { name: 'Bet365', home: '2.90', draw: '3.10', away: '2.50', url: 'https://bet365.com' },
       { name: 'Betway', home: '2.85', draw: '3.15', away: '2.55', url: 'https://betway.com' },
+      { name: '1xBet ★', home: '', draw: '', away: '', url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97' },
       { name: '888Sport', home: '2.95', draw: '3.05', away: '2.45', url: 'https://888sport.com' },
     ],
     status: 'upcoming',
@@ -219,6 +234,7 @@ const matches = [
     bookmakers: [
       { name: 'Bet365', home: '1.80', draw: '3.50', away: '4.80', url: 'https://bet365.com' },
       { name: 'Betway', home: '1.77', draw: '3.60', away: '4.90', url: 'https://betway.com' },
+      { name: '1xBet ★', home: '', draw: '', away: '', url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97' },
       { name: '888Sport', home: '1.83', draw: '3.45', away: '4.70', url: 'https://888sport.com' },
     ],
     status: 'upcoming',
@@ -232,6 +248,7 @@ const matches = [
     bookmakers: [
       { name: 'Bet365', home: '2.60', draw: '3.20', away: '2.70', url: 'https://bet365.com' },
       { name: 'Betway', home: '2.55', draw: '3.25', away: '2.75', url: 'https://betway.com' },
+      { name: '1xBet ★', home: '', draw: '', away: '', url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97' },
       { name: '888Sport', home: '2.65', draw: '3.15', away: '2.65', url: 'https://888sport.com' },
     ],
     status: 'upcoming',
@@ -246,6 +263,7 @@ const matches = [
     bookmakers: [
       { name: 'Bet365', home: '1.85', draw: '3.50', away: '4.40', url: 'https://bet365.com' },
       { name: 'Betway', home: '1.82', draw: '3.55', away: '4.50', url: 'https://betway.com' },
+      { name: '1xBet ★', home: '', draw: '', away: '', url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97' },
       { name: '888Sport', home: '1.88', draw: '3.45', away: '4.30', url: 'https://888sport.com' },
     ],
     status: 'upcoming',
@@ -259,6 +277,7 @@ const matches = [
     bookmakers: [
       { name: 'Bet365', home: '2.40', draw: '3.20', away: '2.90', url: 'https://bet365.com' },
       { name: 'Betway', home: '2.35', draw: '3.25', away: '2.95', url: 'https://betway.com' },
+      { name: '1xBet ★', home: '', draw: '', away: '', url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97' },
       { name: '888Sport', home: '2.45', draw: '3.15', away: '2.85', url: 'https://888sport.com' },
     ],
     status: 'upcoming',
@@ -273,6 +292,7 @@ const matches = [
     bookmakers: [
       { name: 'Bet365', home: '1.65', draw: '3.70', away: '5.50', url: 'https://bet365.com' },
       { name: 'Betway', home: '1.62', draw: '3.80', away: '5.60', url: 'https://betway.com' },
+      { name: '1xBet ★', home: '', draw: '', away: '', url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97' },
       { name: '888Sport', home: '1.68', draw: '3.65', away: '5.40', url: 'https://888sport.com' },
     ],
     status: 'upcoming',
@@ -286,6 +306,7 @@ const matches = [
     bookmakers: [
       { name: 'Bet365', home: '2.20', draw: '3.20', away: '3.20', url: 'https://bet365.com' },
       { name: 'Betway', home: '2.15', draw: '3.25', away: '3.25', url: 'https://betway.com' },
+      { name: '1xBet ★', home: '', draw: '', away: '', url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97' },
       { name: '888Sport', home: '2.25', draw: '3.15', away: '3.15', url: 'https://888sport.com' },
     ],
     status: 'upcoming',
@@ -300,6 +321,7 @@ const matches = [
     bookmakers: [
       { name: 'Bet365', home: '5.20', draw: '3.40', away: '1.65', url: 'https://bet365.com' },
       { name: 'Betway', home: '5.30', draw: '3.45', away: '1.62', url: 'https://betway.com' },
+      { name: '1xBet ★', home: '', draw: '', away: '', url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97' },
       { name: '888Sport', home: '5.10', draw: '3.35', away: '1.68', url: 'https://888sport.com' },
     ],
     status: 'upcoming',
@@ -314,6 +336,7 @@ const matches = [
     bookmakers: [
       { name: 'Bet365', home: '1.60', draw: '3.80', away: '6.00', url: 'https://bet365.com' },
       { name: 'Betway', home: '1.57', draw: '3.90', away: '6.20', url: 'https://betway.com' },
+      { name: '1xBet ★', home: '', draw: '', away: '', url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97' },
       { name: '888Sport', home: '1.63', draw: '3.75', away: '5.90', url: 'https://888sport.com' },
     ],
     status: 'upcoming',
@@ -328,6 +351,7 @@ const matches = [
     bookmakers: [
       { name: 'Bet365', home: '4.50', draw: '3.50', away: '1.80', url: 'https://bet365.com' },
       { name: 'Betway', home: '4.60', draw: '3.55', away: '1.77', url: 'https://betway.com' },
+      { name: '1xBet ★', home: '', draw: '', away: '', url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97' },
       { name: '888Sport', home: '4.40', draw: '3.45', away: '1.83', url: 'https://888sport.com' },
     ],
     status: 'upcoming',
@@ -359,6 +383,38 @@ function BestOdds({ bookmakers, type }: { bookmakers: typeof matches[0]['bookmak
     <span style={{ color: '#00d084', fontSize: '11px', fontWeight: 600 }}>
       Best: {best.toFixed(2)}
     </span>
+  );
+}
+
+function getBestByType(bookmakers: typeof matches[0]['bookmakers'], type: 'home' | 'draw' | 'away'): number {
+  const values = bookmakers.map(b => parseFloat(b[type])).filter(v => !isNaN(v));
+  return Math.max(...values);
+}
+
+function OddsCell({ value, isBest }: { value: string; isBest: boolean }) {
+  const parsed = parseFloat(value);
+  const hasValue = !isNaN(parsed) && value !== '';
+  return (
+    <div style={{ minWidth: '80px', textAlign: 'center', position: 'relative', display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: '2px' }}>
+      <span style={{ fontWeight: 600, fontSize: '15px', color: isBest && hasValue ? '#00d084' : 'var(--foreground)' }}>
+        {hasValue ? value : '—'}
+      </span>
+      {isBest && hasValue && (
+        <span style={{
+          background: 'rgba(0,208,132,0.15)',
+          border: '1px solid rgba(0,208,132,0.4)',
+          color: '#00d084',
+          fontSize: '9px',
+          fontWeight: 800,
+          borderRadius: '3px',
+          padding: '1px 5px',
+          letterSpacing: '0.03em',
+          lineHeight: 1.4,
+        }}>
+          BEST
+        </span>
+      )}
+    </div>
   );
 }
 
@@ -550,34 +606,39 @@ export default function MatchesPage() {
                       <span style={{ minWidth: '90px' }}></span>
                     </div>
                   </div>
-                  {m.bookmakers.map(bk => (
-                    <div key={bk.name} style={{
-                      display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                      padding: '10px 0', borderBottom: '1px solid rgba(255,255,255,0.05)',
-                    }}>
-                      <span style={{ fontWeight: 700, fontSize: '13px', minWidth: '80px' }}>{bk.name}</span>
-                      <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
-                        <span style={{ minWidth: '80px', textAlign: 'center', fontWeight: 600, fontSize: '15px' }}>{bk.home}</span>
-                        <span style={{ minWidth: '60px', textAlign: 'center', fontWeight: 600, fontSize: '15px', color: 'var(--muted)' }}>{bk.draw}</span>
-                        <span style={{ minWidth: '80px', textAlign: 'center', fontWeight: 600, fontSize: '15px' }}>{bk.away}</span>
-                        <a
-                          href={bk.url}
-                          target="_blank"
-                          rel="noopener noreferrer nofollow"
-                          style={{
-                            background: 'var(--accent)', color: '#000',
-                            padding: '7px 16px', borderRadius: '6px',
-                            fontWeight: 700, fontSize: '12px',
-                            textDecoration: 'none', minWidth: '90px', textAlign: 'center',
-                            display: 'inline-block',
-                          }}
-                          onClick={e => e.stopPropagation()}
-                        >
-                          Bet Now
-                        </a>
+                  {(() => {
+                    const bestHome = getBestByType(m.bookmakers, 'home');
+                    const bestDraw = getBestByType(m.bookmakers, 'draw');
+                    const bestAway = getBestByType(m.bookmakers, 'away');
+                    return m.bookmakers.map(bk => (
+                      <div key={bk.name} style={{
+                        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                        padding: '10px 0', borderBottom: '1px solid rgba(255,255,255,0.05)',
+                      }}>
+                        <span style={{ fontWeight: 700, fontSize: '13px', minWidth: '80px' }}>{bk.name}</span>
+                        <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+                          <OddsCell value={bk.home} isBest={parseFloat(bk.home) === bestHome} />
+                          <OddsCell value={bk.draw} isBest={parseFloat(bk.draw) === bestDraw} />
+                          <OddsCell value={bk.away} isBest={parseFloat(bk.away) === bestAway} />
+                          <a
+                            href={bk.url}
+                            target="_blank"
+                            rel="noopener noreferrer nofollow"
+                            style={{
+                              background: 'var(--accent)', color: '#000',
+                              padding: '7px 16px', borderRadius: '6px',
+                              fontWeight: 700, fontSize: '12px',
+                              textDecoration: 'none', minWidth: '90px', textAlign: 'center',
+                              display: 'inline-block',
+                            }}
+                            onClick={e => e.stopPropagation()}
+                          >
+                            Bet Now
+                          </a>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ));
+                  })()}
                   <div style={{ marginTop: '12px', display: 'flex', gap: '24px' }}>
                     <div>
                       <div style={{ fontSize: '10px', color: 'var(--muted)', marginBottom: '2px' }}>{m.home.team} — Best odds</div>
