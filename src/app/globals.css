@@ -2,65 +2,270 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─────────────────────────────────────────────
+   DESIGN SYSTEM — WorldCupBet26
+   Inspired by FIFA 2026 • Premium Sports Book
+───────────────────────────────────────────── */
 :root {
-  --background: #0d1117;
-  --foreground: #e6edf3;
-  --accent: #00d084;
-  --accent-hover: #00b870;
-  --card-bg: #161b22;
-  --card-border: #30363d;
-  --nav-bg: #0d1117;
-  --muted: #8b949e;
+  /* Backgrounds */
+  --bg-base:     #040c18;
+  --bg-surface:  #071525;
+  --bg-elevated: #0c1e35;
+  --bg-glass:    rgba(8,22,42,0.7);
+
+  /* Borders */
+  --border:        rgba(255,255,255,0.07);
+  --border-bright: rgba(255,255,255,0.14);
+  --border-accent: rgba(0,208,132,0.35);
+  --border-gold:   rgba(255,184,0,0.4);
+
+  /* Brand */
+  --accent:       #00d084;
+  --accent-hover: #00f09a;
+  --accent-dim:   rgba(0,208,132,0.12);
+  --gold:         #FFB800;
+  --gold-light:   #FFD756;
+  --hot:          #FF4444;
+  --hot-dim:      rgba(255,68,68,0.12);
+
+  /* Text */
+  --foreground:   #EEF4FF;
+  --muted:        #6b7e95;
+  --muted-light:  #9aabbd;
+
+  /* Shadows / Glows */
+  --glow-green: 0 0 24px rgba(0,208,132,0.18), 0 0 60px rgba(0,208,132,0.06);
+  --glow-gold:  0 0 20px rgba(255,184,0,0.22);
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.4);
+  --shadow-deep: 0 8px 40px rgba(0,0,0,0.6);
+
+  /* Legacy aliases (keep components working) */
+  --background:   var(--bg-base);
+  --card-bg:      var(--bg-surface);
+  --card-border:  var(--border);
+  --nav-bg:       rgba(4,12,24,0.96);
 }
+
+/* ── Base ── */
+*, *::before, *::after { box-sizing: border-box; }
 
 body {
   color: var(--foreground);
-  background: var(--background);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg-base);
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 a { color: inherit; text-decoration: none; }
 
+/* ── Card — Glass morphism ── */
 .card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 8px;
-  transition: border-color 0.2s, transform 0.2s;
+  background: linear-gradient(145deg, var(--bg-surface), var(--bg-elevated));
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
 .card:hover {
-  border-color: var(--accent);
+  border-color: var(--border-accent);
   transform: translateY(-2px);
+  box-shadow: var(--glow-green), var(--shadow-card);
 }
 
-.btn-primary {
-  background: var(--accent);
-  color: #0d1117;
-  font-weight: 700;
-  padding: 10px 20px;
-  border-radius: 6px;
-  display: inline-block;
-  transition: background 0.2s;
-}
-
-.btn-primary:hover { background: var(--accent-hover); }
-
+/* ── Odds badge ── */
 .odds-badge {
-  background: #1c2128;
-  border: 1px solid var(--card-border);
-  border-radius: 4px;
-  padding: 4px 10px;
-  font-weight: 600;
-  font-size: 0.9rem;
+  background: linear-gradient(135deg, #0a1e36, #0d2544);
+  border: 1px solid rgba(0,208,132,0.25);
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-weight: 800;
+  font-size: 1rem;
   color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+  transition: border-color 0.15s, box-shadow 0.15s;
 }
 
-.section-title {
-  font-size: 1.5rem;
-  font-weight: 700;
+.odds-badge:hover {
+  border-color: var(--accent);
+  box-shadow: var(--glow-green);
+}
+
+/* ── Buttons ── */
+.btn-primary {
+  background: linear-gradient(135deg, #00d084, #00b870);
+  color: #040c18;
+  font-weight: 800;
+  padding: 12px 28px;
+  border-radius: 8px;
+  display: inline-block;
+  transition: all 0.2s;
+  box-shadow: 0 4px 14px rgba(0,208,132,0.3);
+  letter-spacing: 0.01em;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #00f09a, #00d084);
+  box-shadow: 0 6px 20px rgba(0,208,132,0.45);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
   color: var(--foreground);
-  border-left: 4px solid var(--accent);
-  padding-left: 12px;
+  border: 1px solid var(--border-bright);
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 8px;
+  display: inline-block;
+  transition: all 0.2s;
+}
+
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+/* ── Section title ── */
+.section-title {
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  font-weight: 800;
+  color: var(--foreground);
+  letter-spacing: -0.02em;
+  position: relative;
+  padding-left: 16px;
   margin-bottom: 1.5rem;
+}
+
+.section-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--accent), var(--gold));
+  border-radius: 4px;
+}
+
+/* ── Live pill ── */
+.live-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(0,208,132,0.1);
+  border: 1px solid rgba(0,208,132,0.3);
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+/* ── Tag / chip ── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--accent-dim);
+  border: 1px solid var(--border-accent);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ── Bookmaker rank borders ── */
+.rank-1 { border-left: 3px solid var(--gold) !important; }
+.rank-2 { border-left: 3px solid #c0c0c0 !important; }
+.rank-3 { border-left: 3px solid #cd7f32 !important; }
+
+/* ── Section divider ── */
+.section-gradient-top {
+  background: linear-gradient(180deg, var(--bg-base) 0%, var(--bg-surface) 100%);
+}
+
+.section-gradient-bottom {
+  background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-base) 100%);
+}
+
+/* ── Pitch background pattern ── */
+.pitch-bg {
+  background-color: var(--bg-base);
+  background-image:
+    /* center circle */
+    radial-gradient(circle, transparent 58px, rgba(255,255,255,0.03) 58px, rgba(255,255,255,0.03) 60px, transparent 60px),
+    /* center spot */
+    radial-gradient(circle, rgba(255,255,255,0.05) 3px, transparent 3px),
+    /* halfway line */
+    linear-gradient(90deg, transparent 49.8%, rgba(255,255,255,0.04) 49.8%, rgba(255,255,255,0.04) 50.2%, transparent 50.2%),
+    /* outer border */
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100px 100px, 100px 100px;
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat, repeat;
+}
+
+/* ── Animations ── */
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 12px rgba(0,208,132,0.2); }
+  50%       { box-shadow: 0 0 28px rgba(0,208,132,0.45); }
+}
+
+/* ── Gradient text ── */
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff 50%, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gold-text {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: #1a3050; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* ── Responsive utilities ── */
+@media (max-width: 640px) {
+  .hide-mobile { display: none !important; }
 }

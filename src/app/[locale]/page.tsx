@@ -148,236 +148,274 @@ export default async function HomePage() {
     ? [...bookmakers].sort((a) => (a.name === '1xBet' ? -1 : 0))
     : bookmakers;
 
-  return (
-    <div style={{ background: 'var(--background)', minHeight: '100vh', color: 'var(--foreground)' }}>
-      <Script
-        id="homepage-jsonld"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+  const rankBorder = ['3px solid #FFB800', '3px solid #c0c0c0', '3px solid #cd7f32', '1px solid rgba(255,255,255,0.07)'];
 
-      {/* BETSSON PROMO BANNER */}
+  return (
+    <div style={{ background: 'var(--bg-base)', minHeight: '100vh', color: 'var(--foreground)' }}>
+      <Script id="homepage-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+      {/* ── BETSSON PROMO BANNER ── */}
       <div style={{
-        background: "linear-gradient(90deg, #1a2332 0%, #0f3d2e 100%)",
-        borderBottom: "2px solid var(--accent)",
-        padding: "12px 20px",
+        background: 'linear-gradient(90deg, #071525 0%, #0a1e12 50%, #071525 100%)',
+        borderBottom: '1px solid rgba(0,208,132,0.2)',
+        padding: '10px 20px',
       }}>
-        <div style={{ maxWidth: "900px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", flexWrap: "wrap" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <span style={{ fontSize: "20px" }}>🏆</span>
-            <div>
-              <span style={{ fontWeight: 800, fontSize: "14px" }}>Betsson</span>
-              <span style={{ color: "var(--accent)", fontWeight: 700, fontSize: "14px" }}> — 100% Welcome Bonus up to €100</span>
-              <span style={{ color: "var(--muted)", fontSize: "12px" }}> · World Cup 2026 specials available</span>
+        <div style={{ maxWidth: '960px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <span style={{ fontSize: '18px' }}>🏆</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
+              <span style={{ fontWeight: 800, fontSize: '13px', color: 'var(--foreground)' }}>Betsson</span>
+              <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '13px' }}>— 100% Bonus up to €100</span>
+              <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· World Cup 2026 specials</span>
               {isDE && (
-                <span style={{
-                  display: 'inline-flex', alignItems: 'center', gap: '4px',
-                  marginLeft: '8px',
-                  background: 'rgba(239,68,68,0.12)', border: '1px solid rgba(239,68,68,0.35)',
-                  color: '#f87171', borderRadius: '4px', padding: '1px 7px',
-                  fontSize: '11px', fontWeight: 600,
-                }}>
-                  ⚠️ Möglicherweise in Deutschland nicht verfügbar
+                <span style={{ background: 'rgba(239,68,68,0.12)', border: '1px solid rgba(239,68,68,0.35)', color: '#f87171', borderRadius: '4px', padding: '1px 7px', fontSize: '10px', fontWeight: 600 }}>
+                  ⚠️ Möglicherweise in DE nicht verfügbar
                 </span>
               )}
             </div>
           </div>
           <a href="https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow"
-            style={{ background: "var(--accent)", color: "#000", padding: "9px 22px", borderRadius: "6px", fontWeight: 800, fontSize: "13px", textDecoration: "none", whiteSpace: "nowrap" }}>
+            style={{ background: 'linear-gradient(135deg,#00d084,#00b870)', color: '#040c18', padding: '8px 20px', borderRadius: '7px', fontWeight: 800, fontSize: '12px', textDecoration: 'none', whiteSpace: 'nowrap', boxShadow: '0 3px 10px rgba(0,208,132,0.3)' }}>
             Claim Bonus →
           </a>
         </div>
       </div>
 
-      {/* HERO */}
+      {/* ── HERO ── */}
       <section style={{
-        background: 'linear-gradient(135deg, #0d1117 0%, #1a2332 50%, #0d1117 100%)',
-        borderBottom: '1px solid var(--card-border)',
-        padding: '60px 20px 50px',
-        textAlign: 'center',
         position: 'relative',
         overflow: 'hidden',
+        padding: '72px 20px 60px',
+        textAlign: 'center',
+        background: 'linear-gradient(160deg, #040c18 0%, #071a30 45%, #050e1c 100%)',
       }}>
         <WorldCupBg />
-        <div style={{
-          position: 'absolute', inset: 0, opacity: 0.03,
-          backgroundImage: 'radial-gradient(circle at 25% 50%, #00d084 0%, transparent 50%), radial-gradient(circle at 75% 50%, #00d084 0%, transparent 50%)',
+        {/* Pitch glow accents */}
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none',
+          background: 'radial-gradient(ellipse 70% 50% at 50% 100%, rgba(0,208,132,0.07) 0%, transparent 70%)',
         }} />
-        <div style={{ position: 'relative', maxWidth: '800px', margin: '0 auto' }}>
-          <div style={{
-            display: 'inline-flex', alignItems: 'center', gap: '8px',
-            background: 'rgba(0,208,132,0.1)', border: '1px solid rgba(0,208,132,0.3)',
-            borderRadius: '20px', padding: '6px 16px', marginBottom: '24px',
-            fontSize: '13px', color: 'var(--accent)', fontWeight: 600,
-          }}>
-            <span style={{ width: '8px', height: '8px', background: 'var(--accent)', borderRadius: '50%', display: 'inline-block', animation: 'pulse 2s infinite' }} />
-            LIVE — FIFA World Cup 2026 · Jun 11 – Jul 19, USA/CA/MX
+        <div style={{ position: 'absolute', top: '-80px', left: '50%', transform: 'translateX(-50%)',
+          width: '600px', height: '600px', borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(0,208,132,0.04) 0%, transparent 70%)',
+          pointerEvents: 'none',
+        }} />
+
+        <div style={{ position: 'relative', maxWidth: '820px', margin: '0 auto' }}>
+          {/* Live pill */}
+          <div className="live-pill" style={{ marginBottom: '28px' }}>
+            <span className="live-dot" />
+            LIVE — FIFA World Cup 2026™ · Jun 11 – Jul 19
           </div>
+
+          {/* Host nations */}
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginBottom: '28px', flexWrap: 'wrap' }}>
+            {[
+              { flag: '🇺🇸', name: 'USA', color: '#B22234' },
+              { flag: '🇨🇦', name: 'Canada', color: '#FF0000' },
+              { flag: '🇲🇽', name: 'Mexico', color: '#006847' },
+            ].map((h) => (
+              <div key={h.name} style={{
+                display: 'flex', alignItems: 'center', gap: '6px',
+                background: 'rgba(255,255,255,0.05)',
+                border: '1px solid rgba(255,255,255,0.1)',
+                borderRadius: '999px', padding: '5px 14px',
+                fontSize: '12px', fontWeight: 700, color: 'var(--muted-light)',
+              }}>
+                <span style={{ fontSize: '16px' }}>{h.flag}</span> {h.name}
+              </div>
+            ))}
+          </div>
+
           <h1 style={{
-            fontSize: 'clamp(32px, 6vw, 72px)', fontWeight: 800,
-            lineHeight: 1.15, marginBottom: '20px',
-            background: 'linear-gradient(135deg, #ffffff 60%, #00d084)',
-            WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
+            fontSize: 'clamp(36px, 7vw, 78px)',
+            fontWeight: 900,
+            lineHeight: 1.08,
+            marginBottom: '22px',
+            letterSpacing: '-0.02em',
+            background: 'linear-gradient(135deg, #ffffff 55%, #00d084 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
           }}>
             Best World Cup 2026<br />Betting Odds Compared
           </h1>
+
           <p style={{
-            fontSize: 'clamp(15px, 2.5vw, 19px)', color: 'var(--muted)',
-            maxWidth: '600px', margin: '0 auto 32px', lineHeight: 1.6,
+            fontSize: 'clamp(15px, 2.2vw, 18px)',
+            color: 'var(--muted-light)',
+            maxWidth: '580px',
+            margin: '0 auto 36px',
+            lineHeight: 1.65,
           }}>
-            Compare live odds from 32+ top bookmakers. Find the best value bets, claim exclusive bonuses, and follow every match of the 2026 World Cup.
+            Compare live odds from 32+ licensed bookmakers. Find the best value bets, claim exclusive bonuses, and follow every match.
           </p>
-        <CountdownTimer />
-          <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="#odds" style={{
-              background: 'var(--accent)', color: '#000', padding: '14px 32px',
-              borderRadius: '8px', fontWeight: 700, fontSize: '15px',
-              textDecoration: 'none', display: 'inline-block',
-              transition: 'background 0.2s',
-            }}>
-              View Live Odds
+
+          <CountdownTimer />
+
+          <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap', marginTop: '32px' }}>
+            <a href="#odds" className="btn-primary" style={{ padding: '15px 36px', fontSize: '15px', borderRadius: '9px' }}>
+              ⚡ View Live Odds
             </a>
-            <Link href="/blog" style={{
-              background: 'transparent', color: 'var(--foreground)',
-              border: '1px solid var(--card-border)', padding: '14px 32px',
-              borderRadius: '8px', fontWeight: 600, fontSize: '15px',
-              textDecoration: 'none', display: 'inline-block',
-            }}>
-              Match Previews
+            <Link href="/matches" className="btn-outline" style={{ padding: '15px 36px', fontSize: '15px', borderRadius: '9px' }}>
+              All Matches →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* STATS BAR */}
+      {/* ── STATS BAR ── */}
       <section style={{
-        background: 'var(--card-bg)', borderBottom: '1px solid var(--card-border)',
-        padding: '20px',
+        background: 'linear-gradient(90deg, #071525, #071e30, #071525)',
+        borderTop: '1px solid rgba(0,208,132,0.12)',
+        borderBottom: '1px solid rgba(0,208,132,0.12)',
+        padding: '0 20px',
       }}>
         <div style={{
-          maxWidth: '900px', margin: '0 auto',
-          display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px',
+          maxWidth: '960px', margin: '0 auto',
+          display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)',
           textAlign: 'center',
         }}>
-          {stats.map((s) => (
-            <div key={s.label}>
-              <div style={{ fontSize: '26px', fontWeight: 800, color: 'var(--accent)' }}>{s.value}</div>
-              <div style={{ fontSize: '12px', color: 'var(--muted)', marginTop: '2px' }}>{s.label}</div>
+          {[
+            { value: '32+', label: 'Bookmakers', icon: '📊' },
+            { value: '100%', label: 'Free to Use', icon: '✅' },
+            { value: '6', label: 'Languages', icon: '🌍' },
+            { value: '48', label: 'Group Matches', icon: '⚽' },
+          ].map((s, i) => (
+            <div key={s.label} style={{
+              padding: '22px 12px',
+              borderRight: i < 3 ? '1px solid rgba(255,255,255,0.06)' : 'none',
+            }}>
+              <div style={{ fontSize: '13px', marginBottom: '4px' }}>{s.icon}</div>
+              <div style={{ fontSize: '28px', fontWeight: 900, color: 'var(--accent)', letterSpacing: '-0.02em', fontVariantNumeric: 'tabular-nums' }}>{s.value}</div>
+              <div style={{ fontSize: '11px', color: 'var(--muted)', marginTop: '2px', fontWeight: 600, letterSpacing: '0.04em', textTransform: 'uppercase' }}>{s.label}</div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* LIVE ODDS */}
-      <section id="odds" style={{ padding: '48px 20px' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
+      {/* ── FEATURED MATCH ODDS ── */}
+      <section id="odds" style={{ padding: '56px 20px 48px' }}>
+        <div style={{ maxWidth: '960px', margin: '0 auto' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '28px' }}>
             <h2 className="section-title" style={{ marginBottom: 0 }}>Featured Match Odds</h2>
-            <Link href="/matches" style={{ color: 'var(--accent)', fontSize: '14px', textDecoration: 'none', fontWeight: 600 }}>
-              All Matches →
+            <Link href="/matches" style={{ color: 'var(--accent)', fontSize: '13px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '4px' }}>
+              All 24 Matches →
             </Link>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             {featuredOdds.map((m) => (
-              <div key={m.match} className="card" style={{ padding: '20px 24px' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+              <div key={m.match} className="card" style={{ padding: '22px 28px', borderRadius: '14px' }}>
+                {/* Header row */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '18px' }}>
                   <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                    <span style={{
-                      background: 'rgba(0,208,132,0.1)', color: 'var(--accent)',
-                      border: '1px solid rgba(0,208,132,0.3)', borderRadius: '4px',
-                      padding: '2px 8px', fontSize: '11px', fontWeight: 600,
-                    }}>{m.group}</span>
+                    <span className="tag">{m.group}</span>
                     <span style={{ color: 'var(--muted)', fontSize: '12px' }}>{m.date} · {m.time}</span>
                   </div>
-                  <span style={{
-                    background: 'rgba(0,208,132,0.1)', color: 'var(--accent)',
-                    borderRadius: '4px', padding: '2px 8px', fontSize: '11px', fontWeight: 600,
-                  }}>LIVE ODDS</span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '5px', background: 'rgba(255,68,68,0.1)', border: '1px solid rgba(255,68,68,0.25)', borderRadius: '4px', padding: '2px 8px' }}>
+                    <span style={{ width: '6px', height: '6px', background: 'var(--hot)', borderRadius: '50%', animation: 'pulse 1.5s infinite', display: 'inline-block' }} />
+                    <span style={{ fontSize: '10px', fontWeight: 700, color: 'var(--hot)', letterSpacing: '0.05em' }}>LIVE ODDS</span>
+                  </div>
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', gap: '12px', alignItems: 'center' }}>
+                {/* Odds grid */}
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', gap: '16px', alignItems: 'center' }}>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: '22px', marginBottom: '4px' }}>{m.home.flag}</div>
-                    <div style={{ fontWeight: 700, fontSize: '14px', marginBottom: '8px' }}>{m.home.team}</div>
-                    <div className="odds-badge" style={{ display: 'inline-block', minWidth: '60px', textAlign: 'center' }}>{m.home.odds}</div>
+                    <div style={{ fontSize: '36px', marginBottom: '6px', filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))' }}>{m.home.flag}</div>
+                    <div style={{ fontWeight: 800, fontSize: '15px', marginBottom: '10px', letterSpacing: '-0.01em' }}>{m.home.team}</div>
+                    <div className="odds-badge" style={{ display: 'inline-block', minWidth: '68px', textAlign: 'center', fontSize: '1.1rem' }}>{m.home.odds}</div>
                   </div>
-                  <div style={{ textAlign: 'center' }}>
-                    <div style={{ color: 'var(--muted)', fontSize: '11px', marginBottom: '4px', fontWeight: 600 }}>DRAW</div>
+                  <div style={{ textAlign: 'center', padding: '0 8px' }}>
+                    <div style={{ color: 'var(--muted)', fontSize: '10px', marginBottom: '6px', fontWeight: 700, letterSpacing: '0.08em' }}>DRAW</div>
                     <div style={{
-                      background: '#1e2430', border: '1px solid var(--card-border)',
-                      borderRadius: '6px', padding: '8px 16px', fontWeight: 700, fontSize: '16px',
+                      background: 'linear-gradient(135deg, #0a1e36, #0d2544)',
+                      border: '1px solid rgba(255,255,255,0.1)',
+                      borderRadius: '8px', padding: '10px 20px',
+                      fontWeight: 800, fontSize: '18px', color: 'var(--muted-light)',
                     }}>{m.draw.odds}</div>
-                    <div style={{ color: 'var(--muted)', fontSize: '11px', marginTop: '4px' }}>VS</div>
+                    <div style={{ color: 'var(--muted)', fontSize: '10px', marginTop: '6px', fontWeight: 700, letterSpacing: '0.12em' }}>VS</div>
                   </div>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: '22px', marginBottom: '4px' }}>{m.away.flag}</div>
-                    <div style={{ fontWeight: 700, fontSize: '14px', marginBottom: '8px' }}>{m.away.team}</div>
-                    <div className="odds-badge" style={{ display: 'inline-block', minWidth: '60px', textAlign: 'center' }}>{m.away.odds}</div>
+                    <div style={{ fontSize: '36px', marginBottom: '6px', filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))' }}>{m.away.flag}</div>
+                    <div style={{ fontWeight: 800, fontSize: '15px', marginBottom: '10px', letterSpacing: '-0.01em' }}>{m.away.team}</div>
+                    <div className="odds-badge" style={{ display: 'inline-block', minWidth: '68px', textAlign: 'center', fontSize: '1.1rem' }}>{m.away.odds}</div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-          <p style={{ textAlign: 'center', color: 'var(--muted)', fontSize: '12px', marginTop: '16px' }}>
-            Odds shown are indicative. Always verify on the bookmaker&apos;s site before placing a bet. 18+ only.
+          <p style={{ textAlign: 'center', color: 'var(--muted)', fontSize: '11px', marginTop: '14px' }}>
+            Odds are indicative. Always verify on the bookmaker&apos;s site before placing a bet. 18+ only.
           </p>
         </div>
       </section>
 
-      {/* TOP BOOKMAKERS */}
-      <section style={{ padding: '0 20px 48px', background: 'var(--background)' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+      {/* ── TOP BOOKMAKERS ── */}
+      <section style={{ padding: '0 20px 56px', background: 'linear-gradient(180deg, var(--bg-base), var(--bg-surface))' }}>
+        <div style={{ maxWidth: '960px', margin: '0 auto' }}>
           <h2 className="section-title">Top Rated Bookmakers</h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
             {displayBookmakers.map((bk, i) => (
-              <div key={bk.name} className="card" style={{ padding: '20px 24px' }}>
+              <div key={bk.name} className="card" style={{
+                padding: '20px 24px',
+                borderLeft: rankBorder[i] ?? rankBorder[3],
+                borderRadius: '12px',
+              }}>
                 <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr auto', gap: '20px', alignItems: 'center' }}>
-                  <div style={{ textAlign: 'center' }}>
+                  {/* Logo / rating col */}
+                  <div style={{ textAlign: 'center', minWidth: '80px' }}>
                     {i === 0 && (
                       <div style={{
-                        background: 'linear-gradient(135deg, #ffd700, #ffb300)',
-                        color: '#000', fontSize: '10px', fontWeight: 700,
-                        borderRadius: '4px', padding: '2px 6px', marginBottom: '6px', textAlign: 'center',
+                        background: 'linear-gradient(135deg, #FFD756, #FFB800)',
+                        color: '#040c18', fontSize: '9px', fontWeight: 800,
+                        borderRadius: '4px', padding: '2px 6px', marginBottom: '6px',
+                        letterSpacing: '0.06em', display: 'inline-block',
                       }}>
-                        #1 RATED
+                        🥇 #1 RATED
                       </div>
                     )}
-                    <div style={{ fontSize: '32px' }}>{bk.logo}</div>
-                    <div style={{ fontWeight: 800, fontSize: '15px', marginTop: '4px' }}>{bk.name}</div>
-                    <div style={{ color: '#ffd700', fontSize: '12px' }}>
-                      {'★'.repeat(Math.floor(bk.rating))} {bk.rating}
+                    {i === 1 && (
+                      <div style={{ fontSize: '9px', fontWeight: 800, color: '#c0c0c0', marginBottom: '6px', letterSpacing: '0.06em' }}>🥈 #2 RATED</div>
+                    )}
+                    {i === 2 && (
+                      <div style={{ fontSize: '9px', fontWeight: 800, color: '#cd7f32', marginBottom: '6px', letterSpacing: '0.06em' }}>🥉 #3 RATED</div>
+                    )}
+                    <div style={{ fontSize: '28px', lineHeight: 1 }}>{bk.logo}</div>
+                    <div style={{ fontWeight: 800, fontSize: '14px', marginTop: '5px', color: 'var(--foreground)' }}>{bk.name}</div>
+                    <div style={{ color: 'var(--gold)', fontSize: '11px', marginTop: '2px' }}>
+                      {'★'.repeat(Math.floor(bk.rating))}
+                      <span style={{ color: 'var(--muted)', marginLeft: '3px' }}>{bk.rating}</span>
                     </div>
                   </div>
+                  {/* Info col */}
                   <div>
-                    <div style={{
-                      color: 'var(--accent)', fontWeight: 700, fontSize: '15px', marginBottom: '8px',
-                    }}>
-                      {bk.bonus}
+                    <div style={{ color: 'var(--accent)', fontWeight: 800, fontSize: '14px', marginBottom: '8px' }}>
+                      🎁 {bk.bonus}
                     </div>
-                    <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                    <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
                       {bk.features.map((f) => (
                         <span key={f} style={{
-                          background: 'rgba(255,255,255,0.05)', border: '1px solid var(--card-border)',
-                          borderRadius: '4px', padding: '3px 8px', fontSize: '11px', color: 'var(--muted)',
+                          background: 'rgba(255,255,255,0.04)',
+                          border: '1px solid var(--border)',
+                          borderRadius: '5px', padding: '3px 9px',
+                          fontSize: '11px', color: 'var(--muted-light)',
+                          fontWeight: 500,
                         }}>{f}</span>
                       ))}
                     </div>
                   </div>
+                  {/* CTA col */}
                   <div style={{ textAlign: 'right' }}>
-                    <a
-                      href={bk.url}
-                      target="_blank"
-                      rel="noopener noreferrer nofollow"
+                    <a href={bk.url} target="_blank" rel="noopener noreferrer nofollow"
                       style={{
-                        display: 'inline-block', background: 'var(--accent)', color: '#000',
-                        padding: '12px 24px', borderRadius: '8px', fontWeight: 700,
-                        fontSize: '14px', textDecoration: 'none', whiteSpace: 'nowrap',
-                      }}
-                    >
+                        display: 'inline-block',
+                        background: i === 0 ? 'linear-gradient(135deg,#FFD756,#FFB800)' : 'linear-gradient(135deg,#00d084,#00b870)',
+                        color: '#040c18',
+                        padding: '11px 22px', borderRadius: '8px', fontWeight: 800,
+                        fontSize: '13px', textDecoration: 'none', whiteSpace: 'nowrap',
+                        boxShadow: i === 0 ? '0 4px 14px rgba(255,184,0,0.3)' : '0 4px 14px rgba(0,208,132,0.25)',
+                      }}>
                       Claim Bonus
                     </a>
-                    <div style={{ color: 'var(--muted)', fontSize: '10px', marginTop: '6px' }}>
-                      T&Cs apply. 18+
-                    </div>
+                    <div style={{ color: 'var(--muted)', fontSize: '10px', marginTop: '6px' }}>T&Cs apply · 18+</div>
                   </div>
                 </div>
               </div>
@@ -386,86 +424,91 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* WHY US */}
+      {/* ── WHY US ── */}
       <section style={{
-        padding: '48px 20px',
-        background: 'var(--card-bg)',
-        borderTop: '1px solid var(--card-border)',
-        borderBottom: '1px solid var(--card-border)',
+        padding: '56px 20px',
+        background: 'linear-gradient(180deg, var(--bg-surface), var(--bg-elevated))',
+        borderTop: '1px solid var(--border)',
+        borderBottom: '1px solid var(--border)',
       }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <h2 className="section-title" style={{ textAlign: 'center' }}>Why Use WorldCupBet26?</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
-            {whyUs.map((w) => (
-              <div key={w.title} className="card" style={{ padding: '24px', textAlign: 'center' }}>
-                <div style={{ fontSize: '32px', marginBottom: '12px' }}>{w.icon}</div>
-                <div style={{ fontWeight: 700, fontSize: '15px', marginBottom: '8px' }}>{w.title}</div>
-                <div style={{ color: 'var(--muted)', fontSize: '13px', lineHeight: 1.5 }}>{w.desc}</div>
+        <div style={{ maxWidth: '960px', margin: '0 auto' }}>
+          <h2 className="section-title" style={{ textAlign: 'center', paddingLeft: 0 }}>
+            <span style={{ borderLeft: 'none' }}>Why Use WorldCupBet26?</span>
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '16px', marginTop: '32px' }}>
+            {[
+              { icon: '⚡', title: 'Real-Time Odds', desc: 'Odds refresh live from 32+ licensed bookmakers. Never miss a value bet before kick-off.', accent: 'var(--accent)' },
+              { icon: '🛡️', title: 'Licensed Books Only', desc: 'We list only regulated, licensed sportsbooks. Your safety and security is our priority.', accent: 'var(--accent)' },
+              { icon: '💰', title: 'Exclusive Bonuses', desc: 'Access welcome offers and free bets only available through WorldCupBet26.', accent: 'var(--gold)' },
+              { icon: '📊', title: 'Expert Analysis', desc: 'Match previews, value bets and tips from experienced World Cup betting analysts.', accent: 'var(--gold)' },
+            ].map((w) => (
+              <div key={w.title} className="card" style={{ padding: '28px 22px', textAlign: 'center', borderRadius: '14px' }}>
+                <div style={{
+                  width: '56px', height: '56px', borderRadius: '14px',
+                  background: 'rgba(0,208,132,0.08)', border: '1px solid rgba(0,208,132,0.2)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontSize: '24px', margin: '0 auto 16px',
+                }}>
+                  {w.icon}
+                </div>
+                <div style={{ fontWeight: 800, fontSize: '15px', marginBottom: '8px', color: 'var(--foreground)' }}>{w.title}</div>
+                <div style={{ color: 'var(--muted)', fontSize: '13px', lineHeight: 1.6 }}>{w.desc}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* LATEST ANALYSIS */}
-      <section style={{ padding: '48px 20px' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
+      {/* ── LATEST ANALYSIS ── */}
+      <section style={{ padding: '56px 20px' }}>
+        <div style={{ maxWidth: '960px', margin: '0 auto' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '28px' }}>
             <h2 className="section-title" style={{ marginBottom: 0 }}>Latest Analysis</h2>
-            <Link href="/blog" style={{ color: 'var(--accent)', fontSize: '14px', textDecoration: 'none', fontWeight: 600 }}>
+            <Link href="/blog" style={{ color: 'var(--accent)', fontSize: '13px', fontWeight: 700 }}>
               All Articles →
             </Link>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '14px' }}>
             {[
+              { tag: 'Odds Guide', title: 'Best World Cup 2026 Betting Odds', slug: 'best-world-cup-2026-betting-odds', desc: 'Compare odds across 30+ bookmakers and find maximum value on every group stage match.', hot: true },
               { tag: 'Preview', title: 'Group Stage Preview 2026', slug: 'group-stage-preview', desc: 'Complete breakdown of all 8 groups with predictions and value bets.' },
-              { tag: 'Tips', title: 'Best Value Bets to Watch', slug: 'best-value-bets', desc: 'Our analysts have identified the top value opportunities across all groups.' },
-              { tag: 'Guide', title: 'How to Bet on the World Cup', slug: 'how-to-bet-world-cup', desc: 'A beginner&apos;s guide to betting on the 2026 World Cup safely and smartly.' },
+              { tag: 'Guide', title: 'How to Bet on the World Cup', slug: 'how-to-bet-world-cup', desc: "A beginner's guide to betting on the 2026 World Cup safely and smartly." },
             ].map((a) => (
-              <div key={a.slug} className="card" style={{ padding: '20px' }}>
-                <span style={{
-                  background: 'rgba(0,208,132,0.1)', color: 'var(--accent)',
-                  border: '1px solid rgba(0,208,132,0.3)', borderRadius: '4px',
-                  padding: '3px 8px', fontSize: '11px', fontWeight: 600,
-                }}>{a.tag}</span>
-                <h3 style={{ fontSize: '15px', fontWeight: 700, margin: '12px 0 8px', lineHeight: 1.3 }}>{a.title}</h3>
-                <p style={{ color: 'var(--muted)', fontSize: '13px', lineHeight: 1.5, marginBottom: '16px' }}>{a.desc}</p>
-                <Link href={`/blog/${a.slug}`} style={{ color: 'var(--accent)', fontWeight: 600, fontSize: '13px', textDecoration: 'none' }}>
-                  Read more →
-                </Link>
-              </div>
+              <Link key={a.slug} href={`/blog/${a.slug}`} style={{ textDecoration: 'none' }}>
+                <div className="card" style={{ padding: '22px', borderRadius: '14px', height: '100%', cursor: 'pointer' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
+                    <span className="tag">{a.tag}</span>
+                    {'hot' in a && a.hot && (
+                      <span style={{ background: 'rgba(255,68,68,0.12)', border: '1px solid rgba(255,68,68,0.3)', color: 'var(--hot)', borderRadius: '4px', padding: '1px 6px', fontSize: '10px', fontWeight: 700 }}>🔥 NEW</span>
+                    )}
+                  </div>
+                  <h3 style={{ fontSize: '15px', fontWeight: 800, margin: '0 0 8px', lineHeight: 1.3, color: 'var(--foreground)' }}>{a.title}</h3>
+                  <p style={{ color: 'var(--muted)', fontSize: '13px', lineHeight: 1.6, marginBottom: '16px' }}>{a.desc}</p>
+                  <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '13px' }}>Read more →</span>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* RESPONSIBLE GAMBLING BANNER */}
+      {/* ── RESPONSIBLE GAMBLING ── */}
       <section style={{
-        padding: '24px 20px',
-        background: '#1a1a2e',
-        borderTop: '1px solid var(--card-border)',
+        padding: '22px 20px',
+        background: 'linear-gradient(90deg, #07101e, #0a1628, #07101e)',
+        borderTop: '1px solid rgba(255,255,255,0.05)',
       }}>
-        <div style={{
-          maxWidth: '900px', margin: '0 auto',
-          display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap',
-        }}>
-          <div style={{
-            background: '#e53e3e', color: '#fff',
-            borderRadius: '6px', padding: '6px 12px',
-            fontWeight: 800, fontSize: '14px', whiteSpace: 'nowrap',
-          }}>18+</div>
-          <p style={{ color: 'var(--muted)', fontSize: '13px', lineHeight: 1.5, flex: 1, margin: 0 }}>
+        <div style={{ maxWidth: '960px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+          <div style={{ background: 'var(--hot)', color: '#fff', borderRadius: '6px', padding: '5px 11px', fontWeight: 900, fontSize: '13px', whiteSpace: 'nowrap', letterSpacing: '0.02em' }}>
+            18+
+          </div>
+          <p style={{ color: 'var(--muted)', fontSize: '12px', lineHeight: 1.5, flex: 1, margin: 0 }}>
             Gambling should be fun. Please bet responsibly and only with money you can afford to lose.{' '}
-            <Link href="/responsible-gambling" style={{ color: 'var(--accent)', textDecoration: 'none' }}>
-              Help &amp; Resources
-            </Link>
+            <Link href="/responsible-gambling" style={{ color: 'var(--accent)', fontWeight: 600 }}>Help &amp; Resources</Link>
           </p>
-          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
             {['GamCare', 'BeGambleAware', 'GamStop'].map((org) => (
-              <span key={org} style={{
-                border: '1px solid var(--card-border)', borderRadius: '4px',
-                padding: '4px 10px', fontSize: '11px', color: 'var(--muted)',
-              }}>{org}</span>
+              <span key={org} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: '4px', padding: '3px 9px', fontSize: '10px', color: 'var(--muted)', fontWeight: 600 }}>{org}</span>
             ))}
           </div>
         </div>
