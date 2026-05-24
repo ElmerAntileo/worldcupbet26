@@ -31,9 +31,53 @@ const markets = [
   { name: "Top Goalscorer", rating: 4, note: "Ante-post markets open now" },
 ];
 
-export default function BetssonReviewPage() {
+type Props = { params: { locale: string } };
+
+export default function BetssonReviewPage({ params }: Props) {
+  const isDE = params.locale === 'de';
+
   return (
     <div style={{ background: "var(--background)", minHeight: "100vh", color: "var(--foreground)" }}>
+
+      {/* GEO-RESTRICTION WARNING — DE only */}
+      {isDE && (
+        <div style={{
+          background: "rgba(239,68,68,0.08)",
+          borderBottom: "2px solid rgba(239,68,68,0.4)",
+          padding: "12px 20px",
+        }}>
+          <div style={{ maxWidth: "860px", margin: "0 auto", display: "flex", alignItems: "flex-start", gap: "10px" }}>
+            <span style={{ fontSize: "18px", flexShrink: 0 }}>⚠️</span>
+            <div>
+              <span style={{ fontWeight: 700, fontSize: "13px", color: "#f87171" }}>
+                Hinweis für Nutzer in Deutschland:{" "}
+              </span>
+              <span style={{ fontSize: "13px", color: "var(--muted)", lineHeight: 1.5 }}>
+                Betsson ist in Deutschland möglicherweise nicht verfügbar oder geo-gesperrt.
+                Bitte prüfe die Verfügbarkeit, bevor du dich registrierst.
+                Empfohlene Alternativen für Deutschland:{" "}
+              </span>
+              <a
+                href="https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97"
+                target="_blank"
+                rel="noopener noreferrer nofollow sponsored"
+                style={{ color: "var(--accent)", fontWeight: 700, fontSize: "13px" }}
+              >
+                1xBet
+              </a>
+              {" · "}
+              <a
+                href="https://betway.com"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                style={{ color: "var(--accent)", fontWeight: 700, fontSize: "13px" }}
+              >
+                Betway
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* HERO */}
       <section style={{
@@ -69,6 +113,11 @@ export default function BetssonReviewPage() {
             Claim Betsson Bonus — 100% up to €100
           </a>
           <div style={{ color: "var(--muted)", fontSize: "11px", marginTop: "8px" }}>18+ · New customers only · T&Cs apply · Bet responsibly</div>
+          {isDE && (
+            <div style={{ color: "#f87171", fontSize: "11px", marginTop: "4px", fontWeight: 600 }}>
+              ⚠️ Möglicherweise in Deutschland nicht verfügbar
+            </div>
+          )}
         </div>
       </section>
 

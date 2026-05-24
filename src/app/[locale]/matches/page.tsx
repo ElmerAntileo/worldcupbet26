@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
 import Link from 'next/link';
+import { useLocale } from 'next-intl';
 
 const groups = ['All', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 
@@ -419,10 +420,18 @@ function OddsCell({ value, isBest }: { value: string; isBest: boolean }) {
 }
 
 export default function MatchesPage() {
+  const locale = useLocale();
+  const isDE = locale === 'de';
   const [activeGroup, setActiveGroup] = useState('All');
   const [expanded, setExpanded] = useState<number | null>(null);
 
   const filtered = activeGroup === 'All' ? matches : matches.filter(m => m.group === activeGroup);
+
+  // For DE: sort each match's bookmakers so 1xBet appears first
+  function getBookmakers(bks: typeof matches[0]['bookmakers']) {
+    if (!isDE) return bks;
+    return [...bks].sort((a) => (a.name.startsWith('1xBet') ? -1 : 0));
+  }
 
   return (
     <div style={{ background: 'var(--background)', minHeight: '100vh', color: 'var(--foreground)' }}>
@@ -607,10 +616,11 @@ export default function MatchesPage() {
                     </div>
                   </div>
                   {(() => {
-                    const bestHome = getBestByType(m.bookmakers, 'home');
-                    const bestDraw = getBestByType(m.bookmakers, 'draw');
-                    const bestAway = getBestByType(m.bookmakers, 'away');
-                    return m.bookmakers.map(bk => (
+                    const bks = getBookmakers(m.bookmakers);
+                    const bestHome = getBestByType(bks, 'home');
+                    const bestDraw = getBestByType(bks, 'draw');
+                    const bestAway = getBestByType(bks, 'away');
+                    return bks.map(bk => (
                       <div key={bk.name} style={{
                         display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                         padding: '10px 0', borderBottom: '1px solid rgba(255,255,255,0.05)',

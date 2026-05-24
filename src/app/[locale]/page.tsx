@@ -2,6 +2,7 @@ import WorldCupBg from '@/components/WorldCupBg';
 import CountdownTimer from '@/components/CountdownTimer';
 import Link from 'next/link';
 import Script from 'next/script';
+import { getLocale } from 'next-intl/server';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -138,7 +139,15 @@ const whyUs = [
   },
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
+  const locale = await getLocale();
+  const isDE = locale === 'de';
+
+  // For German visitors: 1xBet available in DE; Betsson is geo-blocked — rank accordingly
+  const displayBookmakers = isDE
+    ? [...bookmakers].sort((a) => (a.name === '1xBet' ? -1 : 0))
+    : bookmakers;
+
   return (
     <div style={{ background: 'var(--background)', minHeight: '100vh', color: 'var(--foreground)' }}>
       <Script
@@ -160,6 +169,17 @@ export default function HomePage() {
               <span style={{ fontWeight: 800, fontSize: "14px" }}>Betsson</span>
               <span style={{ color: "var(--accent)", fontWeight: 700, fontSize: "14px" }}> — 100% Welcome Bonus up to €100</span>
               <span style={{ color: "var(--muted)", fontSize: "12px" }}> · World Cup 2026 specials available</span>
+              {isDE && (
+                <span style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '4px',
+                  marginLeft: '8px',
+                  background: 'rgba(239,68,68,0.12)', border: '1px solid rgba(239,68,68,0.35)',
+                  color: '#f87171', borderRadius: '4px', padding: '1px 7px',
+                  fontSize: '11px', fontWeight: 600,
+                }}>
+                  ⚠️ Möglicherweise in Deutschland nicht verfügbar
+                </span>
+              )}
             </div>
           </div>
           <a href="https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow"
@@ -308,7 +328,7 @@ export default function HomePage() {
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 className="section-title">Top Rated Bookmakers</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            {bookmakers.map((bk, i) => (
+            {displayBookmakers.map((bk, i) => (
               <div key={bk.name} className="card" style={{ padding: '20px 24px' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr auto', gap: '20px', alignItems: 'center' }}>
                   <div style={{ textAlign: 'center' }}>
