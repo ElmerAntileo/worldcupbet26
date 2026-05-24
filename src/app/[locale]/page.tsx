@@ -109,35 +109,6 @@ const featuredOdds = [
   },
 ];
 
-const stats = [
-  { value: '32+', label: 'Bookmakers Compared' },
-  { value: '100%', label: 'Free to Use' },
-  { value: '6', label: 'Languages Available' },
-  { value: '48', label: 'Group Stage Matches' },
-];
-
-const whyUs = [
-  {
-    icon: '🔴',
-    title: 'Live Odds Updates',
-    desc: 'Odds refresh in real-time from 32+ licensed bookmakers. Never miss a value bet.',
-  },
-  {
-    icon: '🛡️',
-    title: 'Licensed Books Only',
-    desc: 'We only list regulated, licensed sportsbooks. Your safety is our priority.',
-  },
-  {
-    icon: '💰',
-    title: 'Exclusive Bonuses',
-    desc: 'Access welcome offers and free bets only available through our site.',
-  },
-  {
-    icon: '📊',
-    title: 'Expert Analysis',
-    desc: 'Match previews, value bets and tips from experienced World Cup analysts.',
-  },
-];
 
 export default async function HomePage() {
   const locale = await getLocale();
