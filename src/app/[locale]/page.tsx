@@ -1,4 +1,43 @@
+import WorldCupBg from '@/components/WorldCupBg';
+import CountdownTimer from '@/components/CountdownTimer';
 import Link from 'next/link';
+import Script from 'next/script';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': 'https://www.worldcupbet26.com/#website',
+      url: 'https://www.worldcupbet26.com',
+      name: 'WorldCupBet26',
+      description:
+        'Compare live World Cup 2026 betting odds from 30+ top bookmakers. Best bonuses, match previews and expert tips for FIFA World Cup USA, Canada, Mexico 2026.',
+      inLanguage: ['en', 'es', 'pt', 'fr', 'de', 'it'],
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: {
+          '@type': 'EntryPoint',
+          urlTemplate: 'https://www.worldcupbet26.com/matches',
+        },
+        'query-input': 'required name=search_term_string',
+      },
+    },
+    {
+      '@type': 'Organization',
+      '@id': 'https://www.worldcupbet26.com/#organization',
+      name: 'WorldCupBet26',
+      url: 'https://www.worldcupbet26.com',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.worldcupbet26.com/favicon.ico',
+      },
+      description:
+        'Independent World Cup 2026 betting odds comparison site. We list only licensed, regulated sportsbooks and earn a commission on qualifying sign-ups.',
+      sameAs: [],
+    },
+  ],
+};
 
 const bookmakers = [
   {
@@ -9,6 +48,15 @@ const bookmakers = [
     features: ['Live Streaming', 'Cash Out', 'In-Play Betting'],
     url: 'https://bet365.com',
     country: ['US', 'UK', 'CA', 'AU'],
+  },
+  {
+    name: '1xBet',
+    logo: '🏆',
+    rating: 4.7,
+    bonus: '100% on first deposit up to €100',
+    features: ['130+ Sports', 'Live Streaming', 'Early Cashout'],
+    url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97',
+    country: ['UK', 'DE', 'BR', 'MX', 'NG'],
   },
   {
     name: 'Betway',
@@ -93,6 +141,11 @@ const whyUs = [
 export default function HomePage() {
   return (
     <div style={{ background: 'var(--background)', minHeight: '100vh', color: 'var(--foreground)' }}>
+      <Script
+        id="homepage-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       {/* BETSSON PROMO BANNER */}
       <div style={{
@@ -125,6 +178,7 @@ export default function HomePage() {
         position: 'relative',
         overflow: 'hidden',
       }}>
+        <WorldCupBg />
         <div style={{
           position: 'absolute', inset: 0, opacity: 0.03,
           backgroundImage: 'radial-gradient(circle at 25% 50%, #00d084 0%, transparent 50%), radial-gradient(circle at 75% 50%, #00d084 0%, transparent 50%)',
@@ -140,7 +194,7 @@ export default function HomePage() {
             LIVE — FIFA World Cup 2026 · Jun 11 – Jul 19, USA/CA/MX
           </div>
           <h1 style={{
-            fontSize: 'clamp(28px, 5vw, 52px)', fontWeight: 800,
+            fontSize: 'clamp(32px, 6vw, 72px)', fontWeight: 800,
             lineHeight: 1.15, marginBottom: '20px',
             background: 'linear-gradient(135deg, #ffffff 60%, #00d084)',
             WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
@@ -153,6 +207,7 @@ export default function HomePage() {
           }}>
             Compare live odds from 32+ top bookmakers. Find the best value bets, claim exclusive bonuses, and follow every match of the 2026 World Cup.
           </p>
+        <CountdownTimer />
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="#odds" style={{
               background: 'var(--accent)', color: '#000', padding: '14px 32px',
