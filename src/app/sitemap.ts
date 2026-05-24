@@ -39,9 +39,10 @@ function entry(
 }
 
 const blogPosts = [
+  "/blog/golden-boot-odds-2026",
   "/blog/best-world-cup-2026-betting-odds",
-  "/blog/group-stage-preview",
   "/blog/top-favorites-to-win",
+  "/blog/group-stage-preview",
   "/blog/best-value-bets",
   "/blog/how-to-bet-world-cup",
 ];
@@ -56,12 +57,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...entry("/blog",     { priority: 0.8, changeFrequency: "daily" }),
 
     // Review pages
+    ...entry("/bet365-review",  { priority: 0.85, changeFrequency: "weekly" }),
     ...entry("/betsson-review", { priority: 0.85, changeFrequency: "weekly" }),
     ...entry("/1xbet-review",   { priority: 0.85, changeFrequency: "weekly" }),
 
     // Blog posts
     ...blogPosts.flatMap((slug) =>
-      entry(slug, { priority: 0.75, changeFrequency: "monthly" })
+      entry(slug, { priority: 0.80, changeFrequency: "weekly" })
     ),
 
     // Legal / info pages
