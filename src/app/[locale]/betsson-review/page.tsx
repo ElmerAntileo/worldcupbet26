@@ -1,10 +1,52 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Betsson World Cup 2026 Review — Bonus, Odds & Betting Guide",
-  description: "Full Betsson review for World Cup 2026. Claim your 100% welcome bonus up to €100, compare live odds and get expert tips for every match.",
+type Props = { params: { locale: string } };
+
+const localeMeta: Record<string, { title: string; description: string }> = {
+  en: {
+    title: "Betsson World Cup 2026 Review — Bonus, Odds & Betting Guide",
+    description: "Full Betsson review for World Cup 2026. Claim your 100% welcome bonus up to €100, compare live odds and get expert tips for every match.",
+  },
+  de: {
+    title: "Betsson WM 2026 Bewertung — Bonus, Quoten & Wettguide",
+    description: "⚠️ Betsson möglicherweise in Deutschland nicht verfügbar. Vollständige Bewertung mit Alternativen für deutsche Nutzer.",
+  },
+  es: {
+    title: "Betsson Reseña Mundial 2026 — Bono, Cuotas y Guía",
+    description: "Reseña completa de Betsson para el Mundial 2026. Reclama tu bono de bienvenida del 100% hasta €100.",
+  },
+  pt: {
+    title: "Betsson Avaliação Copa 2026 — Bônus, Odds e Guia",
+    description: "Avaliação completa do Betsson para a Copa 2026. Bônus de boas-vindas de 100% até €100.",
+  },
+  fr: {
+    title: "Betsson Avis Coupe du Monde 2026 — Bonus, Cotes & Guide",
+    description: "Avis complet sur Betsson pour la Coupe du Monde 2026. Bonus de bienvenue 100% jusqu'à €100.",
+  },
+  it: {
+    title: "Betsson Recensione Mondiali 2026 — Bonus, Quote e Guida",
+    description: "Recensione completa di Betsson per i Mondiali 2026. Bonus di benvenuto 100% fino a €100.",
+  },
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const locale = params.locale;
+  const meta = localeMeta[locale] ?? localeMeta.en;
+  const locales = ["en", "es", "pt", "de", "fr", "it"];
+  const base = "https://www.worldcupbet26.com";
+  function reviewUrl(l: string) {
+    return l === "en" ? `${base}/betsson-review` : `${base}/${l}/betsson-review`;
+  }
+  return {
+    title: meta.title,
+    description: meta.description,
+    alternates: {
+      canonical: reviewUrl(locale),
+      languages: Object.fromEntries(locales.map((l) => [l, reviewUrl(l)])),
+    },
+  };
+}
 
 const BETSSON = "https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/";
 
@@ -30,8 +72,6 @@ const markets = [
   { name: "Tournament Winner", rating: 5, note: "Early odds on all 48 nations" },
   { name: "Top Goalscorer", rating: 4, note: "Ante-post markets open now" },
 ];
-
-type Props = { params: { locale: string } };
 
 export default function BetssonReviewPage({ params }: Props) {
   const isDE = params.locale === 'de';

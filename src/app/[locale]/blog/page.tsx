@@ -1,6 +1,7 @@
 import { Link } from "@/i18n/navigation";
 
 const articles = [
+  { slug: "best-world-cup-2026-betting-odds", title: "Best World Cup 2026 Betting Odds: How to Find Maximum Value", description: "Compare odds across 30+ bookmakers, find the best prices by market type, and claim the highest welcome bonuses for the 2026 World Cup.", tag: "Odds Guide" },
   { slug: "group-stage-preview", title: "World Cup 2026 Group Stage Preview", description: "Complete guide to the 2026 FIFA World Cup group stage with betting odds and tips.", tag: "Preview" },
   { slug: "top-favorites-to-win", title: "World Cup 2026 Top Favorites to Win", description: "Brazil, France, England and Argentina lead the betting odds.", tag: "Analysis" },
   { slug: "best-value-bets", title: "Best Value Bets and Dark Horses", description: "Find the best value bets. Dark horse teams with strong odds.", tag: "Value Bets" },
