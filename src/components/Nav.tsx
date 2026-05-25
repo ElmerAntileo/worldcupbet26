@@ -77,6 +77,7 @@ export function Nav() {
           <nav style={{ display: "flex", gap: "4px" }}>
             {[
               { href: "/matches", label: "Matches" },
+              { href: "/world-cup-2026-groups", label: "Groups" },
               { href: "/blog", label: "Blog" },
             ].map(({ href, label }) => (
               <Link

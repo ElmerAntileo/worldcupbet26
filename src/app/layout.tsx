@@ -17,8 +17,16 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.worldcupbet26.com"),
-  title: 'WorldCupBet26 | Best World Cup 2026 Betting Odds',
-  description: 'Compare live World Cup 2026 betting odds from 30+ top bookmakers. Best bonuses, match previews and expert tips for FIFA World Cup USA, Canada, Mexico 2026.',
+  title: {
+    default: 'World Cup 2026 Betting Odds — Compare Bookmakers Live | WorldCupBet26',
+    template: '%s | WorldCupBet26',
+  },
+  description: 'Compare World Cup 2026 betting odds from Betsson, 1xBet, Bet365 & more. Best bonuses, live match odds, value bets & expert tips. FIFA World Cup Jun 11–Jul 19.',
+  keywords: ['World Cup 2026 odds', 'FIFA 2026 betting', 'World Cup betting', '2026 World Cup bookmakers', 'best World Cup odds'],
+  openGraph: {
+    siteName: 'WorldCupBet26',
+    type: 'website',
+  },
 };
 
 export default async function RootLayout({
