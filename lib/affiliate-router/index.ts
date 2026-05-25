@@ -1,110 +1,42 @@
-import type { GeoRegion } from "../types";
-
-const ALL_BOOKMAKERS = [
-  "bet365",
-  "draftkings",
-  "fanduel",
-  "betway",
-  "unibet",
-  "bwin",
-  "888sport",
-] as const;
-
-type BookmakerSlug = (typeof ALL_BOOKMAKERS)[number];
-
-function placeholderUrl(slug: string, region: GeoRegion): string {
-  return `https://affiliate-placeholder.example/${region}/${slug}`;
-}
-
-/** Affiliate landing URLs per bookmaker and region (replace with real tracked links). */
-const AFFILIATE_BY_BOOKMAKER: Record<
-  BookmakerSlug,
-  Record<GeoRegion, string>
-> = {
-  bet365: {
-    us: placeholderUrl("bet365", "us"),
-    uk: placeholderUrl("bet365", "uk"),
-    ca: placeholderUrl("bet365", "ca"),
-    de: placeholderUrl("bet365", "de"),
-    row: placeholderUrl("bet365", "row"),
-  },
-  draftkings: {
-    us: placeholderUrl("draftkings", "us"),
-    uk: placeholderUrl("draftkings", "uk"),
-    ca: placeholderUrl("draftkings", "ca"),
-    de: placeholderUrl("draftkings", "de"),
-    row: placeholderUrl("draftkings", "row"),
-  },
-  fanduel: {
-    us: placeholderUrl("fanduel", "us"),
-    uk: placeholderUrl("fanduel", "uk"),
-    ca: placeholderUrl("fanduel", "ca"),
-    de: placeholderUrl("fanduel", "de"),
-    row: placeholderUrl("fanduel", "row"),
-  },
-  betway: {
-    us: placeholderUrl("betway", "us"),
-    uk: placeholderUrl("betway", "uk"),
-    ca: placeholderUrl("betway", "ca"),
-    de: placeholderUrl("betway", "de"),
-    row: placeholderUrl("betway", "row"),
-  },
-  unibet: {
-    us: placeholderUrl("unibet", "us"),
-    uk: placeholderUrl("unibet", "uk"),
-    ca: placeholderUrl("unibet", "ca"),
-    de: placeholderUrl("unibet", "de"),
-    row: placeholderUrl("unibet", "row"),
-  },
-  bwin: {
-    us: placeholderUrl("bwin", "us"),
-    uk: placeholderUrl("bwin", "uk"),
-    ca: placeholderUrl("bwin", "ca"),
-    de: placeholderUrl("bwin", "de"),
-    row: placeholderUrl("bwin", "row"),
-  },
-  "888sport": {
-    us: placeholderUrl("888sport", "us"),
-    uk: placeholderUrl("888sport", "uk"),
-    ca: placeholderUrl("888sport", "ca"),
-    de: placeholderUrl("888sport", "de"),
-    row: placeholderUrl("888sport", "row"),
-  },
+// Affiliate tracking links
+export const AFFILIATE_LINKS: Record<string, string> = {
+  betsson:  'https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/',
+  onexbet:  'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97',
+  '1xbet':  'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97',
+  bet365:   'https://bet365.com',
+  betway:   'https://betway.com',
+  sport888: 'https://888sport.com',
+  williamhill: 'https://williamhill.com',
+  draftkings: 'https://draftkings.com',
+  fanduel:  'https://fanduel.com',
+  unibet:   'https://unibet.com',
+  pinnacle: 'https://pinnacle.com',
 };
 
-const RANK_BY_REGION: Record<GeoRegion, BookmakerSlug[]> = {
-  us: ["draftkings", "fanduel", "bet365", "betway", "unibet", "bwin", "888sport"],
-  uk: ["bet365", "unibet", "betway", "bwin", "888sport", "draftkings", "fanduel"],
-  ca: ["betway", "draftkings", "fanduel", "bet365", "unibet", "bwin", "888sport"],
-  de: ["bwin", "unibet", "bet365", "betway", "888sport", "draftkings", "fanduel"],
-  row: ["bet365", "888sport", "unibet", "betway", "bwin", "draftkings", "fanduel"],
-};
-
-function normalizeGeo(geo: string): GeoRegion {
-  const g = geo.toLowerCase();
-  if (g === "us" || g === "uk" || g === "ca" || g === "de" || g === "row") {
-    return g;
-  }
-  return "row";
+// Returns the affiliate tracking URL for a bookmaker.
+// geo is accepted for future geo-targeted links but currently unused.
+export function getAffiliateLink(bookmaker: string, geo?: string): string {
+  void geo; // reserved for future geo-targeted affiliate links
+  const key = bookmaker.toLowerCase().replace(/[^a-z0-9]/g, '');
+  return AFFILIATE_LINKS[key] ?? AFFILIATE_LINKS.betsson;
 }
 
-function normalizeSlug(bookmaker: string): BookmakerSlug | null {
-  const s = bookmaker.trim().toLowerCase() as BookmakerSlug;
-  return (ALL_BOOKMAKERS as readonly string[]).includes(s)
-    ? (s as BookmakerSlug)
-    : null;
-}
-
-export function getAffiliateLink(bookmaker: string, geo: string): string {
-  const slug = normalizeSlug(bookmaker);
-  const region = normalizeGeo(geo);
-  if (!slug) {
-    return placeholderUrl(bookmaker.trim().toLowerCase() || "unknown", region);
-  }
-  return AFFILIATE_BY_BOOKMAKER[slug][region];
-}
-
+// Returns bookmaker keys in priority order for a given geo/country code.
+// Approved partners (Betsson, 1xBet) always appear first.
 export function rankBookmakers(geo: string): string[] {
-  const region = normalizeGeo(geo);
-  return [...RANK_BY_REGION[region]];
+  const base = ['betsson', 'onexbet', 'bet365', 'betway', 'draftkings',
+    'fanduel', 'unibet', 'pinnacle', 'sport888', 'williamhill'];
+
+  const geoBoosts: Record<string, string[]> = {
+    US: ['draftkings', 'fanduel', 'betsson', 'onexbet', 'unibet'],
+    UK: ['betsson', 'betway', 'williamhill', 'onexbet', 'bet365'],
+    DE: ['betsson', 'onexbet', 'bet365', 'unibet', 'betway'],
+    CA: ['betsson', 'onexbet', 'betway', 'bet365', 'unibet'],
+    BR: ['betsson', 'onexbet', 'bet365', 'betway', 'sport888'],
+    MX: ['betsson', 'onexbet', 'bet365', 'betway', 'sport888'],
+  };
+
+  const boosted = geoBoosts[geo.toUpperCase()] ?? [];
+  const rest = base.filter((k) => !boosted.includes(k));
+  return [...boosted, ...rest];
 }

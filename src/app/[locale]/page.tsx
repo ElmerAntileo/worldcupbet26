@@ -42,6 +42,24 @@ const jsonLd = {
 
 const bookmakers = [
   {
+    name: 'Betsson',
+    logo: '🏆',
+    rating: 4.8,
+    bonus: '100% Welcome Bonus up to €100',
+    features: ['World Cup Specials', 'Live Streaming', 'Cash Out'],
+    url: 'https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/',
+    country: ['EU', 'NO', 'SE', 'FI', 'CA'],
+  },
+  {
+    name: '1xBet',
+    logo: '🎯',
+    rating: 4.7,
+    bonus: '100% on first deposit up to €100',
+    features: ['130+ Sports', 'Live Streaming', 'Early Cashout'],
+    url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97',
+    country: ['UK', 'DE', 'BR', 'MX', 'NG'],
+  },
+  {
     name: 'Bet365',
     logo: '⚽',
     rating: 4.9,
@@ -51,31 +69,13 @@ const bookmakers = [
     country: ['US', 'UK', 'CA', 'AU'],
   },
   {
-    name: '1xBet',
-    logo: '🏆',
-    rating: 4.7,
-    bonus: '100% on first deposit up to €100',
-    features: ['130+ Sports', 'Live Streaming', 'Early Cashout'],
-    url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97',
-    country: ['UK', 'DE', 'BR', 'MX', 'NG'],
-  },
-  {
     name: 'Betway',
-    logo: '🏆',
-    rating: 4.7,
+    logo: '⚡',
+    rating: 4.6,
     bonus: '100% up to €100',
     features: ['World Cup Specials', 'Early Payout', 'Acca Insurance'],
     url: 'https://betway.com',
     country: ['UK', 'DE', 'CA', 'ZA'],
-  },
-  {
-    name: '888Sport',
-    logo: '🎯',
-    rating: 4.6,
-    bonus: 'Bet $10 Get $30',
-    features: ['Price Boost', 'Live Stats', 'Edit Bet'],
-    url: 'https://888sport.com',
-    country: ['US', 'UK', 'ES', 'IT'],
   },
 ];
 
