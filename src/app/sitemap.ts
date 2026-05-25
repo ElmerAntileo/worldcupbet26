@@ -1,13 +1,7 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 
-function getSiteBase(): string {
-  const raw = process.env.NEXT_PUBLIC_SITE_URL?.trim();
-  if (!raw) return "http://localhost:3000";
-  return raw.replace(/\/$/, "");
-}
-
-const base = getSiteBase();
+const base = "https://www.worldcupbet26.com";
 const locales = [...routing.locales];
 const defaultLocale = routing.defaultLocale;
 
