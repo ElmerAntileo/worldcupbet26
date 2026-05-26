@@ -91,6 +91,7 @@ export default function StickyOddsBar() {
               href={bk.url}
               target="_blank"
               rel={`noopener noreferrer nofollow${bk.isAffiliate ? " sponsored" : ""}`}
+              data-affiliate={bk.isAffiliate ? bk.name : undefined}
               style={{
                 background: "linear-gradient(135deg, #00d084, #00b870)",
                 color: "#040c18",

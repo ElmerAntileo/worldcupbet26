@@ -103,10 +103,10 @@ export default function GoldenBootPage({ params }: Props) {
             Kylian Mbappé enters the 2026 FIFA World Cup as the defending Golden Boot holder and clear favourite to retain it. But Harry Kane, Lamine Yamal and Erling Haaland are all in contention. We compare the best top scorer prices from leading bookmakers so you can find maximum value.
           </p>
           <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-            <a href={BETSSON_URL} target="_blank" rel="noopener noreferrer nofollow sponsored" className="btn-primary" style={{ fontSize: "14px" }}>
+            <a href={BETSSON_URL} target="_blank" rel="noopener noreferrer nofollow sponsored" className="btn-primary" style={{ fontSize: "14px" }} data-affiliate="Betsson">
               Bet at Betsson — 100% Bonus →
             </a>
-            <a href={ONEXBET_URL} target="_blank" rel="noopener noreferrer nofollow sponsored" style={{ background: "transparent", border: "1px solid var(--border-bright)", color: "var(--foreground)", padding: "12px 24px", borderRadius: "8px", fontWeight: 600, fontSize: "14px", textDecoration: "none" }}>
+            <a href={ONEXBET_URL} target="_blank" rel="noopener noreferrer nofollow sponsored" style={{ background: "transparent", border: "1px solid var(--border-bright)", color: "var(--foreground)", padding: "12px 24px", borderRadius: "8px", fontWeight: 600, fontSize: "14px", textDecoration: "none" }} data-affiliate="1xBet">
               Compare at 1xBet →
             </a>
           </div>
@@ -214,7 +214,7 @@ export default function GoldenBootPage({ params }: Props) {
             <div style={{ fontSize: "13px", color: "var(--muted)", marginBottom: "8px" }}>Our recommended bookmaker for Golden Boot betting</div>
             <div style={{ fontSize: "20px", fontWeight: 800, marginBottom: "8px" }}>🏆 Betsson — 100% Welcome Bonus up to €100</div>
             <div style={{ fontSize: "13px", color: "var(--muted)", marginBottom: "20px" }}>Live streaming · Cash out · Full Golden Boot market</div>
-            <a href={BETSSON_URL} target="_blank" rel="noopener noreferrer nofollow sponsored" className="btn-primary">
+            <a href={BETSSON_URL} target="_blank" rel="noopener noreferrer nofollow sponsored" className="btn-primary" data-affiliate="Betsson">
               Claim Betsson Bonus →
             </a>
             <div style={{ fontSize: "11px", color: "var(--muted)", marginTop: "12px" }}>18+ · New customers · T&Cs apply · Bet responsibly</div>

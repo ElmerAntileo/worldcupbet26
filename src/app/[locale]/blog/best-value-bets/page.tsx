@@ -100,10 +100,10 @@ export default function ValueBetsPage({ params }: Props) {
             The 2026 World Cup is the biggest betting event in US history, with $3.1 billion in projected legal handle. The outright markets for Spain and France are correctly priced — but deeper in the market, significant value exists for smart bettors. Here are our best bets by category.
           </p>
           <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-            <a href={ONEXBET_URL} target="_blank" rel="noopener noreferrer nofollow sponsored" className="btn-primary" style={{ fontSize: "14px" }}>
+            <a href={ONEXBET_URL} target="_blank" rel="noopener noreferrer nofollow sponsored" className="btn-primary" style={{ fontSize: "14px" }} data-affiliate="1xBet">
               Bet at 1xBet — 100% up to €100 →
             </a>
-            <a href={BETSSON_URL} target="_blank" rel="noopener noreferrer nofollow sponsored" style={{ background: "transparent", border: "1px solid var(--border-bright)", color: "var(--foreground)", padding: "12px 24px", borderRadius: "8px", fontWeight: 600, fontSize: "14px", textDecoration: "none" }}>
+            <a href={BETSSON_URL} target="_blank" rel="noopener noreferrer nofollow sponsored" style={{ background: "transparent", border: "1px solid var(--border-bright)", color: "var(--foreground)", padding: "12px 24px", borderRadius: "8px", fontWeight: 600, fontSize: "14px", textDecoration: "none" }} data-affiliate="Betsson">
               Compare at Betsson →
             </a>
           </div>
@@ -201,7 +201,7 @@ export default function ValueBetsPage({ params }: Props) {
           <div style={{ background: "linear-gradient(135deg, #071525, #0a1e12)", border: "1px solid rgba(0,208,132,0.3)", borderRadius: "12px", padding: "28px 32px", marginBottom: "40px", textAlign: "center" }}>
             <div style={{ fontSize: "20px", fontWeight: 800, marginBottom: "8px" }}>💰 Betsson — Best World Cup Value Markets</div>
             <div style={{ fontSize: "13px", color: "var(--muted)", marginBottom: "20px" }}>Boosted odds · Acca insurance · Early cashout on all World Cup bets</div>
-            <a href={BETSSON_URL} target="_blank" rel="noopener noreferrer nofollow sponsored" className="btn-primary">
+            <a href={BETSSON_URL} target="_blank" rel="noopener noreferrer nofollow sponsored" className="btn-primary" data-affiliate="Betsson">
               Claim 100% Bonus at Betsson →
             </a>
             <div style={{ fontSize: "11px", color: "var(--muted)", marginTop: "12px" }}>18+ · T&Cs apply · Bet responsibly</div>

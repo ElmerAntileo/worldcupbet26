@@ -641,6 +641,7 @@ export default function MatchesPage() {
                             href={bk.url}
                             target="_blank"
                             rel="noopener noreferrer nofollow"
+                            data-affiliate={bk.name.replace(' ★', '')}
                             style={{
                               background: 'var(--accent)', color: '#000',
                               padding: '7px 16px', borderRadius: '6px',

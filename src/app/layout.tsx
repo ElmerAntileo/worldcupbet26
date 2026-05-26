@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Script from "next/script";
 import { getLocale } from "next-intl/server";
+import AffiliateTracker from "@/components/AffiliateTracker";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -67,6 +68,7 @@ export default async function RootLayout({
             gtag('config', 'G-PHCT4V7XB8');
           `}
         </Script>
+        <AffiliateTracker />
         {children}
       </body>
     </html>

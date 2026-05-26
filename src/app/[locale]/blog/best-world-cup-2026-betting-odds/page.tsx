@@ -246,7 +246,7 @@ export default function BestOddsPost({ params }: Props) {
               View All Match Odds →
             </Link>
             <a href={ONEXBET_URL} target="_blank" rel="noopener noreferrer nofollow sponsored"
-              style={{ background: "transparent", color: "var(--foreground)", border: "1px solid var(--card-border)", padding: "14px 32px", borderRadius: "8px", fontWeight: 600, fontSize: "14px", textDecoration: "none" }}>
+              style={{ background: "transparent", color: "var(--foreground)", border: "1px solid var(--card-border)", padding: "14px 32px", borderRadius: "8px", fontWeight: 600, fontSize: "14px", textDecoration: "none" }} data-affiliate="1xBet">
               Claim 1xBet Bonus
             </a>
           </div>

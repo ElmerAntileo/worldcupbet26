@@ -99,7 +99,7 @@ export default function FavoritesPage({ params }: Props) {
           <p style={{ color: "var(--muted-light)", fontSize: "16px", lineHeight: 1.7, marginBottom: "24px" }}>
             Spain and France enter the 2026 FIFA World Cup as co-favourites. With 48 teams, 104 matches and three host nations, this is the most open World Cup in history. We break down the outright winner odds, compare prices across top bookmakers and identify the best value bets.
           </p>
-          <a href={BETSSON_URL} target="_blank" rel="noopener noreferrer nofollow sponsored" className="btn-primary" style={{ fontSize: "14px" }}>
+          <a href={BETSSON_URL} target="_blank" rel="noopener noreferrer nofollow sponsored" className="btn-primary" style={{ fontSize: "14px" }} data-affiliate="Betsson">
             Bet Outright at Betsson — 100% Bonus →
           </a>
         </div>
@@ -200,7 +200,7 @@ export default function FavoritesPage({ params }: Props) {
           <div style={{ background: "linear-gradient(135deg, #071525, #0a1e12)", border: "1px solid rgba(0,208,132,0.3)", borderRadius: "12px", padding: "28px 32px", marginBottom: "40px", textAlign: "center" }}>
             <div style={{ fontSize: "20px", fontWeight: 800, marginBottom: "8px" }}>🏆 Betsson — Best Outright Markets for World Cup 2026</div>
             <div style={{ fontSize: "13px", color: "var(--muted)", marginBottom: "20px" }}>100% welcome bonus up to €100 · All 48 nations covered · Early odds available now</div>
-            <a href={BETSSON_URL} target="_blank" rel="noopener noreferrer nofollow sponsored" className="btn-primary">
+            <a href={BETSSON_URL} target="_blank" rel="noopener noreferrer nofollow sponsored" className="btn-primary" data-affiliate="Betsson">
               Claim Betsson Bonus →
             </a>
             <div style={{ fontSize: "11px", color: "var(--muted)", marginTop: "12px" }}>18+ · New customers only · T&Cs apply · Gamble responsibly</div>

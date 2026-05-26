@@ -149,7 +149,7 @@ export default function GroupStagePreviewPage({ params }: Props) {
           <p style={{ color: "var(--muted-light)", fontSize: "16px", lineHeight: 1.7, marginBottom: "24px" }}>
             The expanded 48-team World Cup introduces 12 groups, 36 group stage matches and a wider path to the knockout rounds. Spain are dominant Group H favourites at 79% probability, the USA benefit from home advantage in Group D, and Argentina face Germany in what could be the group stage match of the tournament. Here&apos;s our full group-by-group analysis.
           </p>
-          <a href={BETSSON_URL} target="_blank" rel="noopener noreferrer nofollow sponsored" className="btn-primary" style={{ fontSize: "14px" }}>
+          <a href={BETSSON_URL} target="_blank" rel="noopener noreferrer nofollow sponsored" className="btn-primary" style={{ fontSize: "14px" }} data-affiliate="Betsson">
             Bet Group Stage at Betsson →
           </a>
         </div>
@@ -217,7 +217,7 @@ export default function GroupStagePreviewPage({ params }: Props) {
           <div style={{ background: "linear-gradient(135deg, #071525, #0a1e12)", border: "1px solid rgba(0,208,132,0.3)", borderRadius: "12px", padding: "28px 32px", marginBottom: "40px", textAlign: "center" }}>
             <div style={{ fontSize: "20px", fontWeight: 800, marginBottom: "8px" }}>🏆 Bet Group Stage Markets at Betsson</div>
             <div style={{ fontSize: "13px", color: "var(--muted)", marginBottom: "20px" }}>Group winner · Team to qualify · Over/Under · Match Result — all 36 group games covered</div>
-            <a href={BETSSON_URL} target="_blank" rel="noopener noreferrer nofollow sponsored" className="btn-primary">
+            <a href={BETSSON_URL} target="_blank" rel="noopener noreferrer nofollow sponsored" className="btn-primary" data-affiliate="Betsson">
               Claim 100% Welcome Bonus →
             </a>
             <div style={{ fontSize: "11px", color: "var(--muted)", marginTop: "12px" }}>18+ · New customers only · T&Cs apply · Gamble responsibly</div>

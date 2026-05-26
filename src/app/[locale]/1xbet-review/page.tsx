@@ -146,7 +146,7 @@ export default function OnexBetReviewPage({ params }: Props) {
           </div>
 
           <a href={ONEXBET_URL} target="_blank" rel="noopener noreferrer nofollow sponsored"
-            style={{ display: "inline-block", background: "var(--accent)", color: "#000", padding: "16px 40px", borderRadius: "8px", fontWeight: 800, fontSize: "16px", textDecoration: "none" }}>
+            style={{ display: "inline-block", background: "var(--accent)", color: "#000", padding: "16px 40px", borderRadius: "8px", fontWeight: 800, fontSize: "16px", textDecoration: "none" }} data-affiliate="1xBet">
             Claim 1xBet Bonus — 100% up to €100
           </a>
           <div style={{ color: "var(--muted)", fontSize: "11px", marginTop: "8px" }}>
@@ -218,7 +218,7 @@ export default function OnexBetReviewPage({ params }: Props) {
             ))}
           </div>
           <a href={ONEXBET_URL} target="_blank" rel="noopener noreferrer nofollow sponsored"
-            style={{ display: "inline-block", background: "var(--accent)", color: "#000", padding: "16px 40px", borderRadius: "8px", fontWeight: 800, fontSize: "15px", textDecoration: "none" }}>
+            style={{ display: "inline-block", background: "var(--accent)", color: "#000", padding: "16px 40px", borderRadius: "8px", fontWeight: 800, fontSize: "15px", textDecoration: "none" }} data-affiliate="1xBet">
             Get 1xBet Bonus Now →
           </a>
         </div>
@@ -257,7 +257,7 @@ export default function OnexBetReviewPage({ params }: Props) {
           </p>
           <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
             <a href={ONEXBET_URL} target="_blank" rel="noopener noreferrer nofollow sponsored"
-              style={{ display: "inline-block", background: "var(--accent)", color: "#000", padding: "14px 32px", borderRadius: "8px", fontWeight: 800, fontSize: "14px", textDecoration: "none" }}>
+              style={{ display: "inline-block", background: "var(--accent)", color: "#000", padding: "14px 32px", borderRadius: "8px", fontWeight: 800, fontSize: "14px", textDecoration: "none" }} data-affiliate="1xBet">
               Visit 1xBet
             </a>
             <Link href="/matches" style={{ display: "inline-block", background: "transparent", color: "var(--foreground)", border: "1px solid var(--card-border)", padding: "14px 32px", borderRadius: "8px", fontWeight: 600, fontSize: "14px", textDecoration: "none" }}>

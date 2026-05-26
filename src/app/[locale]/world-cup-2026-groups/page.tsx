@@ -395,7 +395,7 @@ export default function GroupsPage() {
                     fontWeight: 800, fontSize: "15px", textDecoration: "none",
                     display: "inline-block",
                   }}
-                >
+                 data-affiliate="Betsson">
                   🏆 Bet at Betsson — Up to €100 Bonus
                 </a>
                 <a
@@ -410,7 +410,7 @@ export default function GroupsPage() {
                     fontWeight: 800, fontSize: "15px", textDecoration: "none",
                     display: "inline-block",
                   }}
-                >
+                 data-affiliate="1xBet">
                   🎯 Bet at 1xBet — 100% First Deposit
                 </a>
               </div>

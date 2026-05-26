@@ -131,7 +131,7 @@ export default function Bet365ReviewPage({ params }: Props) {
             {isDE && (
               <div style={{ marginTop: "16px", padding: "10px", background: "rgba(239,68,68,0.06)", border: "1px solid rgba(239,68,68,0.2)", borderRadius: "6px", fontSize: "12px", color: "#f87171" }}>
                 ⚠️ Deutsche Nutzer: Bitte prüfe die Verfügbarkeit in deiner Region. Alternative:{" "}
-                <a href={ONEXBET_URL} target="_blank" rel="noopener noreferrer nofollow sponsored" style={{ color: "var(--accent)", fontWeight: 700 }}>1xBet</a>
+                <a href={ONEXBET_URL} target="_blank" rel="noopener noreferrer nofollow sponsored" style={{ color: "var(--accent)", fontWeight: 700 }} data-affiliate="1xBet">1xBet</a>
               </div>
             )}
           </div>

@@ -102,7 +102,7 @@ export default function BetssonReviewPage({ params }: Props) {
                 target="_blank"
                 rel="noopener noreferrer nofollow sponsored"
                 style={{ color: "var(--accent)", fontWeight: 700, fontSize: "13px" }}
-              >
+               data-affiliate="1xBet">
                 1xBet
               </a>
               {" · "}
@@ -149,7 +149,7 @@ export default function BetssonReviewPage({ params }: Props) {
             display: "inline-block", background: "var(--accent)", color: "#000",
             padding: "16px 40px", borderRadius: "8px", fontWeight: 800,
             fontSize: "16px", textDecoration: "none",
-          }}>
+          }} data-affiliate="Betsson">
             Claim Betsson Bonus — 100% up to €100
           </a>
           <div style={{ color: "var(--muted)", fontSize: "11px", marginTop: "8px" }}>18+ · New customers only · T&Cs apply · Bet responsibly</div>
@@ -219,7 +219,7 @@ export default function BetssonReviewPage({ params }: Props) {
             display: "inline-block", background: "var(--accent)", color: "#000",
             padding: "16px 40px", borderRadius: "8px", fontWeight: 800,
             fontSize: "15px", textDecoration: "none",
-          }}>
+          }} data-affiliate="Betsson">
             Get Betsson Bonus Now →
           </a>
         </div>
@@ -233,7 +233,7 @@ export default function BetssonReviewPage({ params }: Props) {
             Betsson is one of Europe&apos;s most trusted sportsbooks with over 60 years of history. For the 2026 World Cup, their market depth, live streaming, and competitive odds make them our top recommended bookmaker. The 100% welcome bonus gives new bettors a strong start. Highly recommended.
           </p>
           <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-            <a href={BETSSON} target="_blank" rel="noopener noreferrer nofollow" style={{ display: "inline-block", background: "var(--accent)", color: "#000", padding: "14px 32px", borderRadius: "8px", fontWeight: 800, fontSize: "14px", textDecoration: "none" }}>
+            <a href={BETSSON} target="_blank" rel="noopener noreferrer nofollow" style={{ display: "inline-block", background: "var(--accent)", color: "#000", padding: "14px 32px", borderRadius: "8px", fontWeight: 800, fontSize: "14px", textDecoration: "none" }} data-affiliate="Betsson">
               Visit Betsson
             </a>
             <Link href="/matches" style={{ display: "inline-block", background: "transparent", color: "var(--foreground)", border: "1px solid var(--card-border)", padding: "14px 32px", borderRadius: "8px", fontWeight: 600, fontSize: "14px", textDecoration: "none" }}>

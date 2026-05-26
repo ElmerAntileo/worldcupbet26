@@ -247,7 +247,7 @@ export default function HowToBetPage({ params }: Props) {
           <div style={{ background: "linear-gradient(135deg, #071525, #0a1e12)", border: "1px solid rgba(0,208,132,0.3)", borderRadius: "12px", padding: "28px 32px", marginBottom: "40px", textAlign: "center" }}>
             <div style={{ fontSize: "20px", fontWeight: 800, marginBottom: "8px" }}>🏆 Ready to bet? Start with Betsson</div>
             <div style={{ fontSize: "13px", color: "var(--muted)", marginBottom: "20px" }}>100% welcome bonus up to €100 · Licensed & regulated · Full World Cup coverage</div>
-            <a href={BETSSON_URL} target="_blank" rel="noopener noreferrer nofollow sponsored" className="btn-primary">
+            <a href={BETSSON_URL} target="_blank" rel="noopener noreferrer nofollow sponsored" className="btn-primary" data-affiliate="Betsson">
               Claim Betsson Bonus →
             </a>
             <div style={{ fontSize: "11px", color: "var(--muted)", marginTop: "12px" }}>18+ · New customers only · Wagering requirements apply · T&Cs apply</div>
