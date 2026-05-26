@@ -1,3 +1,4 @@
+import { OG_IMAGE } from "@/lib/og";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import Script from "next/script";
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
     description:
       "All 12 World Cup 2026 groups with teams, schedule and group winner betting odds. Updated odds from top bookmakers.",
     type: "website",
+      images: [OG_IMAGE],
   },
 };
 

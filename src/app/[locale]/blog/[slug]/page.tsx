@@ -1,3 +1,4 @@
+import { OG_IMAGE } from "@/lib/og";
 import { notFound } from "next/navigation";
 import { Link } from "@/i18n/navigation";
 import type { Metadata } from "next";
@@ -57,7 +58,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: a.title,
       description: a.description,
       type: "article",
-    },
+        images: [OG_IMAGE],
+  },
   };
 }
 

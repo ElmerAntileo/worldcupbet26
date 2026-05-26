@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGE, TWITTER_IMAGE } from "@/lib/og";
 
 const locales = ["en", "es", "pt", "de", "fr", "it"];
 const base = "https://www.worldcupbet26.com";
@@ -27,12 +28,14 @@ export const metadata: Metadata = {
       "Compare live 1X2 betting odds for every 2026 FIFA World Cup match. Best odds highlighted. Updated daily.",
     type: "website",
     url: url("en"),
+    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     title: "World Cup 2026 Match Odds Comparison",
     description:
       "Compare odds for all 48 World Cup 2026 matches. Betsson, 1xBet, Bet365 & Betway — best odds highlighted instantly.",
+    images: [TWITTER_IMAGE],
   },
 };
 
