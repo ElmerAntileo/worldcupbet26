@@ -26,6 +26,19 @@ export const metadata: Metadata = {
   openGraph: {
     siteName: 'WorldCupBet26',
     type: 'website',
+    images: [
+      {
+        url: 'https://www.worldcupbet26.com/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'WorldCupBet26 — Compare World Cup 2026 Betting Odds',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@worldcupbet26',
+    images: ['https://www.worldcupbet26.com/opengraph-image'],
   },
 };
 
