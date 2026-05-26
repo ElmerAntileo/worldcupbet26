@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://www.worldcupbet26.com/opengraph-image',
+        url: 'https://www.worldcupbet26.com/api/og',
         width: 1200,
         height: 630,
         alt: 'WorldCupBet26 — Compare World Cup 2026 Betting Odds',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@worldcupbet26',
-    images: ['https://www.worldcupbet26.com/opengraph-image'],
+    images: ['https://www.worldcupbet26.com/api/og'],
   },
 };
 
