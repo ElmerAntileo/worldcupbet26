@@ -168,12 +168,33 @@ const jsonLd = {
   name: "FIFA World Cup 2026",
   startDate: "2026-06-11",
   endDate: "2026-07-19",
-  location: [
-    { "@type": "Place", name: "USA, Canada, Mexico" },
-  ],
+  eventStatus: "https://schema.org/EventScheduled",
+  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+  image: "https://upload.wikimedia.org/wikipedia/en/thumb/4/44/2026_FIFA_World_Cup.svg/800px-2026_FIFA_World_Cup.svg.png",
   description:
     "The 2026 FIFA World Cup hosted across the United States, Canada and Mexico. 48 teams, 12 groups, 104 matches.",
-  organizer: { "@type": "Organization", name: "FIFA" },
+  location: {
+    "@type": "Place",
+    name: "USA, Canada & Mexico",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "New York, Los Angeles, Dallas, Miami, and 12 other host cities",
+      addressCountry: "US",
+    },
+  },
+  organizer: {
+    "@type": "Organization",
+    name: "FIFA",
+    url: "https://www.fifa.com",
+  },
+  offers: {
+    "@type": "Offer",
+    name: "World Cup 2026 Betting Odds Comparison",
+    url: "https://www.worldcupbet26.com/matches",
+    price: "0",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+  },
   url: "https://www.worldcupbet26.com/world-cup-2026-groups",
 };
 
