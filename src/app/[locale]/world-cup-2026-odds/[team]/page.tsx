@@ -166,6 +166,8 @@ export default async function TeamOddsPage({
   const team = teams[teamSlug];
   if (!team) return notFound();
 
+  const ogImg = TEAM_OG[teamSlug] ?? 'https://www.worldcupbet26.com/og.png';
+
   const bookmakers = [
     { name: "Betsson", odds: team.betssonOdds, url: BETSSON_URL, affiliate: true, badge: "⭐ Best odds" },
     { name: "1xBet", odds: team.onexbetOdds, url: ONEXBET_URL, affiliate: true, badge: "⭐ Top bonus" },
@@ -193,7 +195,7 @@ export default async function TeamOddsPage({
     eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     organizer: { "@type": "Organization", name: "FIFA", url: "https://www.fifa.com" },
-    image: OG_IMAGE.url,
+    image: ogImg,
     offers: {
       "@type": "Offer",
       url: BETSSON_URL,
