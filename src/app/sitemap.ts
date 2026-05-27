@@ -32,6 +32,17 @@ function entry(
   }));
 }
 
+const teamPages = [
+  "/world-cup-2026-odds/argentina",
+  "/world-cup-2026-odds/brazil",
+  "/world-cup-2026-odds/france",
+  "/world-cup-2026-odds/england",
+  "/world-cup-2026-odds/spain",
+  "/world-cup-2026-odds/germany",
+  "/world-cup-2026-odds/portugal",
+  "/world-cup-2026-odds/usa",
+];
+
 const blogPosts = [
   "/blog/golden-boot-odds-2026",
   "/blog/best-world-cup-2026-betting-odds",
@@ -50,6 +61,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...entry("/matches",               { priority: 0.9, changeFrequency: "daily" }),
     ...entry("/blog",                  { priority: 0.8, changeFrequency: "daily" }),
     ...entry("/world-cup-2026-groups", { priority: 0.9, changeFrequency: "daily" }),
+
+    // Team odds pages — high-traffic keywords
+    ...teamPages.flatMap((slug) =>
+      entry(slug, { priority: 0.90, changeFrequency: "daily" })
+    ),
 
     // Review pages
     ...entry("/bet365-review",  { priority: 0.85, changeFrequency: "weekly" }),

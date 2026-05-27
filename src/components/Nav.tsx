@@ -78,6 +78,7 @@ export function Nav() {
             {[
               { href: "/matches", label: "Matches" },
               { href: "/world-cup-2026-groups", label: "Groups" },
+              { href: "/world-cup-2026-odds/brazil", label: "Team Odds" },
               { href: "/blog", label: "Blog" },
             ].map(({ href, label }) => (
               <Link
