@@ -2,7 +2,17 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Link } from "@/i18n/navigation";
 import Script from "next/script";
-import { OG_IMAGE } from "@/lib/og";
+// Team pages use their own static PNG; fallback to shared OG
+const TEAM_OG: Record<string, string> = {
+  argentina: 'https://www.worldcupbet26.com/og-argentina.png',
+  brazil:    'https://www.worldcupbet26.com/og-brazil.png',
+  france:    'https://www.worldcupbet26.com/og-france.png',
+  england:   'https://www.worldcupbet26.com/og-england.png',
+  spain:     'https://www.worldcupbet26.com/og-spain.png',
+  germany:   'https://www.worldcupbet26.com/og-germany.png',
+  portugal:  'https://www.worldcupbet26.com/og-portugal.png',
+  usa:       'https://www.worldcupbet26.com/og-usa.png',
+};
 
 const BETSSON_URL = "https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/";
 const ONEXBET_URL = "https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97";
@@ -115,6 +125,8 @@ export async function generateMetadata({
   const team = teams[teamSlug];
   if (!team) return {};
 
+  const ogImg = TEAM_OG[teamSlug] ?? 'https://www.worldcupbet26.com/og.png';
+
   return {
     title: `${team.name} World Cup 2026 Odds — Best Betting Prices`,
     description: `Compare ${team.name} World Cup 2026 betting odds from Betsson, 1xBet, Bet365 & Betway. Current price: ${team.betssonOdds} to win the tournament. Best odds highlighted.`,
@@ -134,13 +146,13 @@ export async function generateMetadata({
       description: `Current ${team.name} odds to win World Cup 2026: ${team.betssonOdds}. Compare all bookmakers side-by-side.`,
       type: "website",
       url: pageUrl(teamSlug, locale),
-      images: [OG_IMAGE],
+      images: [{ url: ogImg, width: 1200, height: 630, alt: `${team.name} World Cup 2026 Odds — WorldCupBet26` }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${team.name} World Cup 2026 Odds`,
       description: `Compare ${team.name} odds from Betsson, 1xBet, Bet365 & Betway. Best price: ${team.betssonOdds}.`,
-      images: [OG_IMAGE.url],
+      images: [ogImg],
     },
   };
 }
