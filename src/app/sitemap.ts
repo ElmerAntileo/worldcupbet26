@@ -46,6 +46,15 @@ const teamPages = [
   "/world-cup-2026-odds/mexico",
   "/world-cup-2026-odds/belgium",
   "/world-cup-2026-odds/croatia",
+  "/world-cup-2026-odds/canada",
+  "/world-cup-2026-odds/uruguay",
+  "/world-cup-2026-odds/morocco",
+  "/world-cup-2026-odds/japan",
+  "/world-cup-2026-odds/colombia",
+  "/world-cup-2026-odds/senegal",
+  "/world-cup-2026-odds/ecuador",
+  "/world-cup-2026-odds/australia",
+  "/world-cup-2026-odds/switzerland",
 ];
 
 const blogPosts = [

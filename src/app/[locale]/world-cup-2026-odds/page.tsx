@@ -12,7 +12,7 @@ function pageUrl(l: string) {
 export const metadata: Metadata = {
   title: "World Cup 2026 Odds — All Teams Betting Odds Compared",
   description:
-    "World Cup 2026 betting odds for all 48 teams. Compare Argentina, Brazil, France, England, Spain, Germany odds across Betsson, 1xBet, Bet365 and Betway. Updated daily.",
+    "World Cup 2026 betting odds for 22 top teams. Compare Argentina, Brazil, France, England, Spain, Germany odds across Betsson, 1xBet, Bet365 and Betway. Updated daily.",
   alternates: {
     canonical: pageUrl("en"),
     languages: Object.fromEntries(locales.map((l) => [l, pageUrl(l)])),
@@ -29,19 +29,28 @@ export const metadata: Metadata = {
 const BETSSON_URL = "https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/";
 
 const teams = [
-  { slug: "argentina",   name: "Argentina",   flag: "🇦🇷", odds: "5.00",  bookmaker: "1xBet",   tier: 1, group: "D" },
-  { slug: "brazil",      name: "Brazil",      flag: "🇧🇷", odds: "4.00",  bookmaker: "Betsson", tier: 1, group: "E" },
-  { slug: "france",      name: "France",      flag: "🇫🇷", odds: "6.00",  bookmaker: "Betsson", tier: 1, group: "C" },
-  { slug: "england",     name: "England",     flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", odds: "7.50",  bookmaker: "Betsson", tier: 1, group: "B" },
-  { slug: "spain",       name: "Spain",       flag: "🇪🇸", odds: "8.00",  bookmaker: "Bet365", tier: 1, group: "F" },
-  { slug: "germany",     name: "Germany",     flag: "🇩🇪", odds: "10.00", bookmaker: "Betsson", tier: 2, group: "A" },
-  { slug: "portugal",    name: "Portugal",    flag: "🇵🇹", odds: "12.00", bookmaker: "Betsson", tier: 2, group: "G" },
-  { slug: "usa",         name: "USA",         flag: "🇺🇸", odds: "15.00", bookmaker: "Betsson", tier: 2, group: "B" },
-  { slug: "netherlands", name: "Netherlands", flag: "🇳🇱", odds: "18.00", bookmaker: "Betsson", tier: 2, group: "H" },
-  { slug: "mexico",      name: "Mexico",      flag: "🇲🇽", odds: "20.00", bookmaker: "Betsson", tier: 3, group: "A" },
-  { slug: "belgium",     name: "Belgium",     flag: "🇧🇪", odds: "25.00", bookmaker: "Betsson", tier: 3, group: "F" },
-  { slug: "croatia",     name: "Croatia",     flag: "🇭🇷", odds: "30.00", bookmaker: "Betsson", tier: 3, group: "F" },
-  { slug: "italy",       name: "Italy",       flag: "🇮🇹", odds: "35.00", bookmaker: "Betsson", tier: 3, group: "C" },
+  { slug: "argentina",   name: "Argentina",   flag: "🇦🇷", odds: "5.00",   bookmaker: "1xBet",   tier: 1, group: "D" },
+  { slug: "brazil",      name: "Brazil",      flag: "🇧🇷", odds: "4.00",   bookmaker: "Betsson", tier: 1, group: "E" },
+  { slug: "france",      name: "France",      flag: "🇫🇷", odds: "6.00",   bookmaker: "Betsson", tier: 1, group: "C" },
+  { slug: "england",     name: "England",     flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", odds: "7.50",   bookmaker: "Betsson", tier: 1, group: "B" },
+  { slug: "spain",       name: "Spain",       flag: "🇪🇸", odds: "8.00",   bookmaker: "Bet365", tier: 1, group: "F" },
+  { slug: "germany",     name: "Germany",     flag: "🇩🇪", odds: "10.00",  bookmaker: "Betsson", tier: 2, group: "A" },
+  { slug: "portugal",    name: "Portugal",    flag: "🇵🇹", odds: "12.00",  bookmaker: "Betsson", tier: 2, group: "G" },
+  { slug: "usa",         name: "USA",         flag: "🇺🇸", odds: "15.00",  bookmaker: "Betsson", tier: 2, group: "A" },
+  { slug: "netherlands", name: "Netherlands", flag: "🇳🇱", odds: "18.00",  bookmaker: "Betsson", tier: 2, group: "G" },
+  { slug: "mexico",      name: "Mexico",      flag: "🇲🇽", odds: "40.00",  bookmaker: "Betsson", tier: 3, group: "A" },
+  { slug: "belgium",     name: "Belgium",     flag: "🇧🇪", odds: "25.00",  bookmaker: "Betsson", tier: 3, group: "E" },
+  { slug: "croatia",     name: "Croatia",     flag: "🇭🇷", odds: "50.00",  bookmaker: "Betsson", tier: 3, group: "B" },
+  { slug: "italy",       name: "Italy",       flag: "🇮🇹", odds: "20.00",  bookmaker: "Betsson", tier: 2, group: "H" },
+  { slug: "morocco",     name: "Morocco",     flag: "🇲🇦", odds: "45.00",  bookmaker: "Betsson", tier: 3, group: "C" },
+  { slug: "colombia",    name: "Colombia",    flag: "🇨🇴", odds: "60.00",  bookmaker: "Betsson", tier: 3, group: "G" },
+  { slug: "uruguay",     name: "Uruguay",     flag: "🇺🇾", odds: "55.00",  bookmaker: "Betsson", tier: 3, group: "C" },
+  { slug: "japan",       name: "Japan",       flag: "🇯🇵", odds: "65.00",  bookmaker: "Betsson", tier: 4, group: "F" },
+  { slug: "canada",      name: "Canada",      flag: "🇨🇦", odds: "80.00",  bookmaker: "Betsson", tier: 4, group: "A" },
+  { slug: "switzerland", name: "Switzerland", flag: "🇨🇭", odds: "85.00",  bookmaker: "Betsson", tier: 4, group: "D" },
+  { slug: "senegal",     name: "Senegal",     flag: "🇸🇳", odds: "90.00",  bookmaker: "Betsson", tier: 4, group: "G" },
+  { slug: "ecuador",     name: "Ecuador",     flag: "🇪🇨", odds: "120.00", bookmaker: "Betsson", tier: 4, group: "G" },
+  { slug: "australia",   name: "Australia",   flag: "🇦🇺", odds: "150.00", bookmaker: "Betsson", tier: 4, group: "H" },
 ];
 
 const jsonLd = {
@@ -60,9 +69,10 @@ const jsonLd = {
 };
 
 const tierLabel: Record<number, { label: string; color: string; bg: string }> = {
-  1: { label: "Top Favourite",  color: "#ffd700", bg: "rgba(255,215,0,0.12)" },
+  1: { label: "Top Favourite",    color: "#ffd700", bg: "rgba(255,215,0,0.12)" },
   2: { label: "Strong Contender", color: "var(--accent)", bg: "rgba(0,208,132,0.10)" },
-  3: { label: "Dark Horse",     color: "#a78bfa", bg: "rgba(167,139,250,0.10)" },
+  3: { label: "Dark Horse",       color: "#a78bfa", bg: "rgba(167,139,250,0.10)" },
+  4: { label: "Outsider",         color: "#f97316", bg: "rgba(249,115,22,0.10)" },
 };
 
 const cardStyle: React.CSSProperties = {
@@ -115,7 +125,7 @@ export default function WorldCupOddsHub() {
             </p>
             <div style={{ display: "flex", gap: "24px", flexWrap: "wrap" }}>
               {[
-                { val: "13", label: "Teams" },
+                { val: "22", label: "Teams" },
                 { val: "4",  label: "Bookmakers" },
                 { val: "48h", label: "Odds refresh" },
                 { val: "Jun 11", label: "Kick-off" },
@@ -133,7 +143,7 @@ export default function WorldCupOddsHub() {
         <section style={{ padding: "40px 20px 60px" }}>
           <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
 
-            {[1, 2, 3].map(tier => (
+            {[1, 2, 3, 4].map(tier => (
               <div key={tier} style={{ marginBottom: "40px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
                   <span style={{
