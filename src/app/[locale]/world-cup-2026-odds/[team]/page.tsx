@@ -181,6 +181,7 @@ export default async function TeamOddsPage({
     "@context": "https://schema.org",
     "@type": "SportsEvent",
     name: "FIFA World Cup 2026",
+    description: `Betting odds for ${team.name} at the 2026 FIFA World Cup. Compare prices from Betsson, 1xBet, Bet365 and Betway. Best current odds: ${team.betssonOdds}.`,
     startDate: "2026-06-11",
     endDate: "2026-07-19",
     location: {
@@ -202,6 +203,7 @@ export default async function TeamOddsPage({
       price: team.betssonOdds,
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
+      validFrom: "2026-01-01",
     },
   };
 

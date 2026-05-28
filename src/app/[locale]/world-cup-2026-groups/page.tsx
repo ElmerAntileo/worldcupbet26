@@ -196,6 +196,7 @@ const jsonLd = {
     price: "0",
     priceCurrency: "USD",
     availability: "https://schema.org/InStock",
+    validFrom: "2026-01-01",
   },
   url: "https://www.worldcupbet26.com/world-cup-2026-groups",
 };
