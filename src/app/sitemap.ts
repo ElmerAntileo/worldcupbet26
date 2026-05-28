@@ -63,9 +63,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...entry("/", { priority: 1.0, changeFrequency: "daily" }),
 
     // Core pages
-    ...entry("/matches",               { priority: 0.9, changeFrequency: "daily" }),
-    ...entry("/blog",                  { priority: 0.8, changeFrequency: "daily" }),
-    ...entry("/world-cup-2026-groups", { priority: 0.9, changeFrequency: "daily" }),
+    ...entry("/matches",               { priority: 0.9,  changeFrequency: "daily" }),
+    ...entry("/blog",                  { priority: 0.8,  changeFrequency: "daily" }),
+    ...entry("/world-cup-2026-groups", { priority: 0.9,  changeFrequency: "daily" }),
+    ...entry("/world-cup-2026-odds",   { priority: 0.95, changeFrequency: "daily" }),
 
     // Team odds pages — high-traffic keywords
     ...teamPages.flatMap((slug) =>
