@@ -151,7 +151,7 @@ export default function WorldCupOddsHub() {
                   gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
                   gap: "12px",
                 }}>
-                  {teams.filter(t => t.tier === tier).map((team, rank) => (
+                  {teams.filter(t => t.tier === tier).map((team) => (
                     <Link
                       key={team.slug}
                       href={`/world-cup-2026-odds/${team.slug}`}
