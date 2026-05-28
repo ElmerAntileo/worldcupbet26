@@ -14,7 +14,20 @@ export default function Footer() {
               <div style={{color: "var(--foreground)", fontWeight: 700, marginBottom: "0.75rem", fontSize: "0.9rem"}}>Navigation</div>
               <div style={{display: "flex", flexDirection: "column", gap: "0.5rem"}}>
                 <Link href="/matches" style={{color: "var(--muted)", fontSize: "0.85rem"}}>Matches</Link>
+                <Link href="/world-cup-2026-groups" style={{color: "var(--muted)", fontSize: "0.85rem"}}>Groups</Link>
+                <Link href="/world-cup-2026-odds/brazil" style={{color: "var(--muted)", fontSize: "0.85rem"}}>Team Odds</Link>
                 <Link href="/blog" style={{color: "var(--muted)", fontSize: "0.85rem"}}>Blog</Link>
+              </div>
+            </div>
+            <div>
+              <div style={{color: "var(--foreground)", fontWeight: 700, marginBottom: "0.75rem", fontSize: "0.9rem"}}>Follow Us</div>
+              <div style={{display: "flex", flexDirection: "column", gap: "0.5rem"}}>
+                <a href="https://t.me/WC2026Odds" target="_blank" rel="noopener noreferrer" style={{color: "var(--accent)", fontSize: "0.85rem", fontWeight: 700, display: "flex", alignItems: "center", gap: "6px"}}>
+                  ✈️ Telegram — Daily Odds
+                </a>
+                <a href="https://twitter.com/worldcupbet26" target="_blank" rel="noopener noreferrer" style={{color: "var(--muted)", fontSize: "0.85rem"}}>
+                  𝕏 Twitter / X
+                </a>
               </div>
             </div>
             <div>
