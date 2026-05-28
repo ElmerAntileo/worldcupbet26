@@ -9,11 +9,18 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "world-cup-2026-predictions",
+    title: "World Cup 2026 Predictions: Winner, Golden Boot & Dark Horses",
+    description: "Expert World Cup 2026 predictions — France our tip to win at 6.00, Morocco dark horse at 45.00, Mbappé for Golden Boot. Full group stage & knockout bracket.",
+    tag: "Predictions",
+    hot: true,
+  },
+  {
     slug: "golden-boot-odds-2026",
     title: "World Cup 2026 Golden Boot Odds: Mbappé, Kane & Top Scorer Picks",
     description: "Mbappé (+600) leads the Golden Boot market. Compare top scorer odds for Kane, Yamal, Haaland and more across Bet365, 1xBet and Betway.",
     tag: "Golden Boot",
-    hot: true,
+    hot: false,
   },
   {
     slug: "best-world-cup-2026-betting-odds",
