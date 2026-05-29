@@ -1,4 +1,10 @@
-export const metadata = { title: "Responsible Gambling | WorldCupBet26", description: "WorldCupBet26 is committed to responsible gambling. 18+ only." };
+export const metadata = {
+  title: "Responsible Gambling | WorldCupBet26",
+  description: "WorldCupBet26 is committed to responsible gambling. 18+ only.",
+  alternates: {
+    canonical: "https://www.worldcupbet26.com/responsible-gambling",
+  },
+};
 
 export default function ResponsibleGamblingPage() {
   return (

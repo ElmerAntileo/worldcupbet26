@@ -27,7 +27,10 @@ function entry(
     changeFrequency,
     priority,
     alternates: {
-      languages: Object.fromEntries(locales.map((l) => [l, pageUrl(path, l)])),
+      languages: {
+        ...Object.fromEntries(locales.map((l) => [l, pageUrl(path, l)])),
+        "x-default": pageUrl(path, defaultLocale),
+      },
     },
   }));
 }

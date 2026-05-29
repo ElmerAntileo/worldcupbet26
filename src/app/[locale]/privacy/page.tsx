@@ -1,3 +1,11 @@
+export const metadata = {
+  title: "Privacy Policy | WorldCupBet26",
+  description: "WorldCupBet26 privacy policy. Learn how we collect and use your data.",
+  alternates: {
+    canonical: "https://www.worldcupbet26.com/privacy",
+  },
+};
+
 export default function PrivacyPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">

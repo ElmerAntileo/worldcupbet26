@@ -3,6 +3,25 @@ import CountdownTimer from '@/components/CountdownTimer';
 import Link from 'next/link';
 import Script from 'next/script';
 import { getLocale } from 'next-intl/server';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "World Cup 2026 Betting Odds — Compare Bookmakers Live | WorldCupBet26",
+  description:
+    "Compare World Cup 2026 betting odds from Betsson, 1xBet, Bet365 & more. Best bonuses, live match odds, value bets & expert tips. FIFA World Cup Jun 11–Jul 19.",
+  alternates: {
+    canonical: "https://www.worldcupbet26.com/",
+    languages: {
+      en: "https://www.worldcupbet26.com/",
+      es: "https://www.worldcupbet26.com/es/",
+      pt: "https://www.worldcupbet26.com/pt/",
+      de: "https://www.worldcupbet26.com/de/",
+      fr: "https://www.worldcupbet26.com/fr/",
+      it: "https://www.worldcupbet26.com/it/",
+      "x-default": "https://www.worldcupbet26.com/",
+    },
+  },
+};
 
 const jsonLd = {
   '@context': 'https://schema.org',
