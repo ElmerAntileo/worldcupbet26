@@ -21,6 +21,20 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "world-cup-2026-accumulator-tips",
+    title: "World Cup 2026 Accumulator Tips — 5 Best Accas with Odds",
+    description: "Five expertly built World Cup 2026 accumulator bets — pre-tournament outrights, Group of Death BTTS accas, Round of 32 favourites and a dark horse double. Odds up to 250x.",
+    tag: "Accumulator Tips",
+    hot: true,
+  },
+  {
+    slug: "world-cup-2026-group-of-death",
+    title: "World Cup 2026 Group of Death — Groups C & D Full Betting Preview",
+    description: "Brazil vs Argentina in Group C and Germany vs France in Group D. Full team analysis, match odds, best bets and predictions for every fixture in the two toughest groups.",
+    tag: "Group Preview",
+    hot: true,
+  },
+  {
     slug: "world-cup-2026-betting-tips",
     title: "World Cup 2026 Betting Tips: 10 Expert Picks with Odds",
     description: "France at 6.00, Germany at 10.00 and Mbappé for Golden Boot — our 10 data-backed World Cup 2026 betting tips covering winner, goals and dark horses.",
@@ -32,7 +46,7 @@ const articles = [
     title: "World Cup 2026 Schedule: Group Stage to Final — Betting Guide",
     description: "Complete World Cup 2026 fixture schedule with dates, venues and betting tips for every stage. Group stage June 11 to Final July 19, 2026.",
     tag: "Schedule",
-    hot: true,
+    hot: false,
   },
   {
     slug: "world-cup-2026-predictions",

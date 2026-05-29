@@ -61,6 +61,8 @@ const teamPages = [
 ];
 
 const blogPosts = [
+  "/blog/world-cup-2026-accumulator-tips",
+  "/blog/world-cup-2026-group-of-death",
   "/blog/world-cup-2026-betting-tips",
   "/blog/world-cup-2026-schedule",
   "/blog/world-cup-2026-predictions",
@@ -70,6 +72,22 @@ const blogPosts = [
   "/blog/group-stage-preview",
   "/blog/best-value-bets",
   "/blog/how-to-bet-world-cup",
+];
+
+const matchPages = [
+  "/world-cup-2026-matches",
+  "/world-cup-2026-matches/mexico-vs-poland",
+  "/world-cup-2026-matches/usa-vs-panama",
+  "/world-cup-2026-matches/argentina-vs-ecuador",
+  "/world-cup-2026-matches/germany-vs-japan",
+  "/world-cup-2026-matches/england-vs-serbia",
+  "/world-cup-2026-matches/spain-vs-croatia",
+  "/world-cup-2026-matches/portugal-vs-morocco",
+  "/world-cup-2026-matches/netherlands-vs-senegal",
+  "/world-cup-2026-matches/mexico-vs-saudi-arabia",
+  "/world-cup-2026-matches/usa-vs-mexico",
+  "/world-cup-2026-matches/germany-vs-france",
+  "/world-cup-2026-matches/brazil-vs-argentina",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -92,6 +110,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...entry("/bet365-review",  { priority: 0.85, changeFrequency: "weekly" }),
     ...entry("/betsson-review", { priority: 0.85, changeFrequency: "weekly" }),
     ...entry("/1xbet-review",   { priority: 0.85, changeFrequency: "weekly" }),
+    ...entry("/betway-review",  { priority: 0.85, changeFrequency: "weekly" }),
+
+    // Knockout bracket
+    ...entry("/world-cup-2026-bracket", { priority: 0.90, changeFrequency: "daily" }),
+
+    // Match preview pages
+    ...matchPages.flatMap((slug) =>
+      entry(slug, { priority: 0.88, changeFrequency: "daily" })
+    ),
 
     // Blog posts
     ...blogPosts.flatMap((slug) =>
