@@ -128,6 +128,58 @@ const featuredOdds = [
   },
 ];
 
+const homeFaqs = [
+  {
+    q: "Who is the favourite to win the 2026 World Cup?",
+    a: "Brazil is the current market favourite at odds of 4.00 with Betsson. Argentina (5.00), France (6.00), England (7.50) and Spain (8.00) follow closely. Brazil have the strongest attacking depth, but France have the experience of back-to-back World Cup Finals (won 2018, runners-up 2022) and Argentina are the reigning champions.",
+  },
+  {
+    q: "When does the 2026 FIFA World Cup start?",
+    a: "The 2026 FIFA World Cup runs from June 11 to July 19, 2026. The opening match kicks off on June 11, and the Final is scheduled for July 19, 2026 at MetLife Stadium in East Rutherford, New Jersey, USA.",
+  },
+  {
+    q: "Where is the 2026 World Cup being held?",
+    a: "The 2026 FIFA World Cup is co-hosted by the USA, Canada and Mexico across 16 stadiums. The USA hosts in New York/NJ (MetLife), Los Angeles (SoFi), Dallas (AT&T Stadium), Miami, Chicago, Philadelphia, San Francisco, Seattle, Kansas City, Houston and Boston. Canada hosts at BMO Field (Toronto) and BC Place (Vancouver). Mexico hosts at Estadio Azteca (Mexico City), Estadio Akron (Guadalajara) and Estadio BBVA (Monterrey).",
+  },
+  {
+    q: "How many teams are in the 2026 World Cup?",
+    a: "The 2026 FIFA World Cup features 48 teams — expanded from 32 at previous tournaments. Teams play in 12 groups of four, with the top two from each group plus the eight best third-placed teams (32 total) advancing to a new Round of 32 knockout stage.",
+  },
+  {
+    q: "Which bookmaker has the best World Cup 2026 odds?",
+    a: "Betsson and 1xBet consistently offer the highest World Cup 2026 winner odds in our daily comparison. Betsson prices Brazil at 4.00, Argentina at 5.00 and France at 6.00. Always compare across multiple bookmakers — even a 0.25 price difference on a £50 bet adds meaningful value over a tournament.",
+  },
+  {
+    q: "What types of bets can I place on the World Cup?",
+    a: "Major World Cup betting markets include: Tournament Winner (outright), Group Winner, Golden Boot (top scorer), Match Result (1X2), Both Teams to Score (BTTS), Over/Under Goals, Asian Handicap, Correct Score, First Goal Scorer and live in-play betting. The tournament winner and Golden Boot are the most popular long-term markets throughout the competition.",
+  },
+  {
+    q: "What is the best value bet for World Cup 2026?",
+    a: "Our analysts rate France (6.00) as the best value tournament winner — Mbappé at peak, the deepest squad in the tournament and the experience of two consecutive Finals. For dark horse value, Germany (10.00) and Morocco (45.00) stand out. Morocco reached the 2022 semi-finals as huge outsiders and have retained much of that squad.",
+  },
+  {
+    q: "Can I get a welcome bonus for World Cup betting?",
+    a: "Yes — most licensed bookmakers offer welcome bonuses for new customers. Betsson offers 100% up to €100, 1xBet offers 100% up to €100, and Bet365 offers up to $500 for qualifying US customers. Always read the wagering requirements before claiming any bonus. WorldCupBet26 only lists regulated, licensed sportsbooks.",
+  },
+  {
+    q: "Does extra time count for World Cup match result bets?",
+    a: "For standard Match Result (1X2) bets, most bookmakers settle on 90 minutes plus stoppage time — extra time and penalties do not count. For 'To Qualify' or 'To Win the Tournament' markets, extra time and penalties do count toward the result. Always verify the specific rules of the bookmaker and market before placing your bet.",
+  },
+  {
+    q: "Is betting on the World Cup legal?",
+    a: "Legal status varies by country. Online sports betting is legal in the UK, most of Europe, Australia and many US states including New York, New Jersey, Colorado and Illinois. WorldCupBet26 only lists bookmakers licensed by recognised regulators such as the MGA, UKGC and Gibraltar Regulatory Authority. Always check local laws before placing a bet.",
+  },
+];
+
+const homeFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: homeFaqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
 
 export default async function HomePage() {
   const locale = await getLocale();
@@ -477,6 +529,34 @@ export default async function HomePage() {
                   <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '13px' }}>Read more →</span>
                 </div>
               </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section style={{
+        padding: '56px 20px 48px',
+        background: 'linear-gradient(180deg, var(--bg-elevated), var(--bg-surface))',
+        borderTop: '1px solid var(--border)',
+      }}>
+        <Script id="homepage-faq-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqSchema) }} />
+        <div style={{ maxWidth: '960px', margin: '0 auto' }}>
+          <h2 className="section-title">World Cup 2026 Betting — Frequently Asked Questions</h2>
+          <p style={{ color: 'var(--muted)', fontSize: '14px', margin: '8px 0 24px' }}>
+            Everything you need to know about betting on the 2026 FIFA World Cup.
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            {homeFaqs.map((faq, i) => (
+              <details key={i} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border)', borderRadius: '10px', overflow: 'hidden' }}>
+                <summary style={{ padding: '15px 20px', cursor: 'pointer', fontWeight: 600, fontSize: '14px', color: 'var(--foreground)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '12px' }}>
+                  <span>{faq.q}</span>
+                  <span style={{ color: 'var(--accent)', flexShrink: 0, fontWeight: 800, fontSize: '18px', lineHeight: 1 }}>+</span>
+                </summary>
+                <div style={{ padding: '0 20px 16px', color: 'var(--muted)', fontSize: '13px', lineHeight: 1.75, borderTop: '1px solid var(--border)' }}>
+                  {faq.a}
+                </div>
+              </details>
             ))}
           </div>
         </div>

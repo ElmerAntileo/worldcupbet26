@@ -331,6 +331,51 @@ export default async function TeamOddsPage({
 
   const bestOdds = Math.max(...bookmakers.map((b) => parseFloat(b.odds)));
 
+  const teamFaqs = [
+    {
+      q: `What are ${team.name}'s current odds to win the 2026 World Cup?`,
+      a: `${team.name}'s best current odds to win the 2026 World Cup are ${team.betssonOdds} at Betsson. 1xBet offers ${team.onexbetOdds}, Bet365 has ${team.bet365Odds}, and Betway quotes ${team.betwayOdds}. We update these odds daily — always verify on the bookmaker's site before betting.`,
+    },
+    {
+      q: `Which bookmaker has the best odds for ${team.name} to win the World Cup?`,
+      a: `Betsson offers the best current odds for ${team.name} at ${team.betssonOdds}. Our comparison updates daily across Betsson, 1xBet, Bet365 and Betway. Betsson and 1xBet consistently offer the most competitive tournament winner prices and both have welcome bonuses available for new customers.`,
+    },
+    {
+      q: `What group is ${team.name} in at the 2026 World Cup?`,
+      a: `${team.name} are in Group ${team.group} at the 2026 FIFA World Cup. Their group stage opponents are: ${team.groupTeams.filter(t => t !== team.name).join(", ")}. ${team.name} are priced at ${team.groupOdds} to top Group ${team.group}.`,
+    },
+    {
+      q: `Has ${team.name} ever won the FIFA World Cup?`,
+      a: team.titles > 0
+        ? `Yes — ${team.name} have won the FIFA World Cup ${team.titles} time${team.titles > 1 ? "s" : ""}, most recently in ${team.lastTitle}.`
+        : `${team.name} have never won the FIFA World Cup. In 2026 they are aiming to claim their first title at odds of ${team.betssonOdds}.`,
+    },
+    {
+      q: `Is ${team.name} worth betting on in World Cup 2026?`,
+      a: `${team.description} At odds of ${team.betssonOdds} with Betsson, ${team.name} ${parseFloat(team.betssonOdds) <= 10 ? "are a genuine contender at a price that reflects their chances" : parseFloat(team.betssonOdds) <= 30 ? "represent an interesting each-way play in a wide-open market" : "are a speculative dark horse bet — high risk but high reward potential at these long odds"}.`,
+    },
+  ];
+
+  const teamFaqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: teamFaqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: base },
+      { "@type": "ListItem", position: 2, name: "World Cup 2026 Odds", item: `${base}/world-cup-2026-odds` },
+      { "@type": "ListItem", position: 3, name: `${team.name} World Cup 2026 Odds`, item: `${base}/world-cup-2026-odds/${teamSlug}` },
+    ],
+  };
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
@@ -363,11 +408,9 @@ export default async function TeamOddsPage({
 
   return (
     <>
-      <Script
-        id="team-jsonld"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <Script id="team-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <Script id="team-faq-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(teamFaqSchema) }} />
+      <Script id="team-breadcrumb-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <div style={{ minHeight: "100vh", background: "var(--bg)", color: "var(--text)" }}>
         {/* Hero */}
@@ -509,6 +552,27 @@ export default async function TeamOddsPage({
                 style={{ background: "rgba(0,208,132,0.15)", color: "var(--accent)", border: "2px solid var(--accent)", padding: "14px 32px", borderRadius: 10, fontWeight: 800, fontSize: 16, textDecoration: "none" }}>
                 Bet at 1xBet — {team.onexbetOdds} →
               </a>
+            </div>
+          </section>
+
+          {/* FAQ */}
+          <section style={{ marginBottom: 48 }}>
+            <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 8, color: "var(--accent)" }}>
+              {team.name} World Cup 2026 — FAQ
+            </h2>
+            <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 14, marginBottom: 20 }}>Frequently asked questions about {team.name} at the 2026 World Cup.</p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+              {teamFaqs.map((faq, i) => (
+                <details key={i} style={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: 10, overflow: "hidden" }}>
+                  <summary style={{ padding: "14px 18px", cursor: "pointer", fontWeight: 600, fontSize: 14, color: "var(--text)", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12 }}>
+                    <span>{faq.q}</span>
+                    <span style={{ color: "var(--accent)", flexShrink: 0, fontWeight: 800, fontSize: 18, lineHeight: 1 }}>+</span>
+                  </summary>
+                  <div style={{ padding: "0 18px 14px", color: "rgba(255,255,255,0.6)", fontSize: 13, lineHeight: 1.75, borderTop: "1px solid var(--border)" }}>
+                    {faq.a}
+                  </div>
+                </details>
+              ))}
             </div>
           </section>
 

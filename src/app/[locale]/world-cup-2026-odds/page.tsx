@@ -75,6 +75,43 @@ const tierLabel: Record<number, { label: string; color: string; bg: string }> = 
   4: { label: "Outsider",         color: "#f97316", bg: "rgba(249,115,22,0.10)" },
 };
 
+const oddsFaqs = [
+  {
+    q: "Which team is the favourite to win World Cup 2026?",
+    a: "Brazil is the market favourite at 4.00 with Betsson. Argentina (5.00) are second, followed by France (6.00), England (7.50) and Spain (8.00). Brazil have not won since 2002 and the squad is built around a world-class core, making them the bookmakers' top pick.",
+  },
+  {
+    q: "What do the decimal odds mean for World Cup betting?",
+    a: "Decimal odds show your total return per £/€/$ staked. A team at 5.00 means a £10 bet returns £50 (£40 profit + £10 stake) if they win. At 4.00, a £10 bet returns £40. Odds below 2.00 mean the team is favoured; odds above 10.00 indicate a long-shot. All odds listed here are in decimal (European) format.",
+  },
+  {
+    q: "Which bookmaker offers the best World Cup 2026 winner odds?",
+    a: "Based on our daily comparison, Betsson and 1xBet consistently offer the highest tournament winner odds. Betsson prices Brazil at 4.00, Argentina at 5.00, France at 6.00. 1xBet often matches or marginally undercuts Betsson. We recommend checking both before placing any long-term bet.",
+  },
+  {
+    q: "Who are the dark horses for World Cup 2026?",
+    a: "Germany (10.00) and Morocco (45.00) are our top dark horse picks. Germany have a young, exciting squad with Wirtz and Musiala ready to break out on the biggest stage. Morocco shocked the world by reaching the 2022 semi-finals and return with a largely intact squad and growing confidence.",
+  },
+  {
+    q: "How often are these World Cup odds updated?",
+    a: "We update World Cup winner odds daily from Betsson, 1xBet, Bet365 and Betway. Odds fluctuate based on team news, injury updates and betting market activity. Odds tend to shorten for favourites as the tournament approaches and market confidence builds.",
+  },
+  {
+    q: "How do I place a bet on a World Cup tournament winner?",
+    a: "Register at a licensed bookmaker (Betsson or 1xBet are our top picks), navigate to Football → International → FIFA World Cup → Outright/Tournament Winner, select your team and enter your stake. Outright winner bets are settled after the Final on July 19, 2026. Ensure you review terms for each-way and each-group options.",
+  },
+];
+
+const oddsFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: oddsFaqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 const cardStyle: React.CSSProperties = {
   background: "var(--card-bg)",
   border: "1px solid var(--card-border)",
@@ -293,6 +330,26 @@ export default function WorldCupOddsHub() {
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section style={{ padding: "48px 0 32px" }}>
+          <Script id="odds-faq-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(oddsFaqSchema) }} />
+          <h2 style={{ fontSize: "22px", fontWeight: 800, marginBottom: "8px" }}>World Cup 2026 Odds — FAQs</h2>
+          <p style={{ color: "var(--muted)", fontSize: "14px", marginBottom: "24px" }}>Common questions about World Cup 2026 betting odds.</p>
+          <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+            {oddsFaqs.map((faq, i) => (
+              <details key={i} style={{ background: "var(--card-bg)", border: "1px solid var(--card-border)", borderRadius: "10px", overflow: "hidden" }}>
+                <summary style={{ padding: "14px 18px", cursor: "pointer", fontWeight: 600, fontSize: "14px", color: "var(--foreground)", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "12px" }}>
+                  <span>{faq.q}</span>
+                  <span style={{ color: "var(--accent)", flexShrink: 0, fontWeight: 800, fontSize: "18px", lineHeight: 1 }}>+</span>
+                </summary>
+                <div style={{ padding: "0 18px 14px", color: "var(--muted)", fontSize: "13px", lineHeight: 1.75, borderTop: "1px solid var(--card-border)" }}>
+                  {faq.a}
+                </div>
+              </details>
+            ))}
           </div>
         </section>
 

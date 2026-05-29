@@ -61,6 +61,8 @@ const teamPages = [
 ];
 
 const blogPosts = [
+  "/blog/world-cup-2026-betting-tips",
+  "/blog/world-cup-2026-schedule",
   "/blog/world-cup-2026-predictions",
   "/blog/golden-boot-odds-2026",
   "/blog/best-world-cup-2026-betting-odds",

@@ -21,11 +21,25 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "world-cup-2026-betting-tips",
+    title: "World Cup 2026 Betting Tips: 10 Expert Picks with Odds",
+    description: "France at 6.00, Germany at 10.00 and Mbappé for Golden Boot — our 10 data-backed World Cup 2026 betting tips covering winner, goals and dark horses.",
+    tag: "Betting Tips",
+    hot: true,
+  },
+  {
+    slug: "world-cup-2026-schedule",
+    title: "World Cup 2026 Schedule: Group Stage to Final — Betting Guide",
+    description: "Complete World Cup 2026 fixture schedule with dates, venues and betting tips for every stage. Group stage June 11 to Final July 19, 2026.",
+    tag: "Schedule",
+    hot: true,
+  },
+  {
     slug: "world-cup-2026-predictions",
     title: "World Cup 2026 Predictions: Winner, Golden Boot & Dark Horses",
     description: "Expert World Cup 2026 predictions — France our tip to win at 6.00, Morocco dark horse at 45.00, Mbappé for Golden Boot. Full group stage & knockout bracket.",
     tag: "Predictions",
-    hot: true,
+    hot: false,
   },
   {
     slug: "golden-boot-odds-2026",
