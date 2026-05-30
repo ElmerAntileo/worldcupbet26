@@ -573,7 +573,7 @@ export default async function HomePage() {
             Best bets, odds alerts & expert picks for every World Cup match. Drop your email — no spam, unsubscribe any time.
           </p>
           <form
-            action="https://formspree.io/f/xzzbnkpn"
+            action="https://formspree.io/f/xeedwgoz"
             method="POST"
             style={{ display: 'flex', gap: '10px', maxWidth: '460px', margin: '0 auto', flexWrap: 'wrap' }}
           >
