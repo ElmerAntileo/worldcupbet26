@@ -7,7 +7,7 @@ type Props = { params: { locale: string } };
 const BETSSON_URL = "https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/";
 const ONEXBET_URL = "https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97";
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   const locales = ["en", "es", "pt", "de", "fr", "it"];
   const base = "https://www.worldcupbet26.com";
   function postUrl(l: string) {
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description:
       "Find the best World Cup 2026 betting odds across 30+ bookmakers. We compare Bet365, 1xBet, Betway and more so you always get maximum value on every match.",
     alternates: {
-      canonical: postUrl(params.locale),
+      canonical: postUrl("en"),
       languages: Object.fromEntries(locales.map((l) => [l, postUrl(l)])),
     },
     openGraph: {

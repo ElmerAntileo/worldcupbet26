@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: meta.title,
     description: meta.description,
     alternates: {
-      canonical: reviewUrl(locale),
+      canonical: reviewUrl("en"),
       languages: Object.fromEntries(locales.map((l) => [l, reviewUrl(l)])),
     },
   };

@@ -13,13 +13,13 @@ function postUrl(l: string) {
   return l === "en" ? `${base}/blog/${slug}` : `${base}/${l}/blog/${slug}`;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "World Cup 2026 Group Stage Preview — Predictions, Odds & Tips | WorldCupBet26",
     description:
       "Full World Cup 2026 group stage preview with betting predictions for all 12 groups. Who qualifies from Group A, B, C? Compare group winner odds from Bet365, 1xBet & Betway.",
     alternates: {
-      canonical: postUrl(params.locale),
+      canonical: postUrl("en"),
       languages: Object.fromEntries(locales.map((l) => [l, postUrl(l)])),
     },
     openGraph: {

@@ -14,13 +14,13 @@ function postUrl(l: string) {
   return l === "en" ? `${base}/blog/${slug}` : `${base}/${l}/blog/${slug}`;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "How to Bet on the World Cup 2026 — Complete Beginner Guide | WorldCupBet26",
     description:
       "Learn how to bet on World Cup 2026 with this complete guide. Understand betting markets, odds formats, how to claim bonuses and which bookmakers to use. Step-by-step for beginners.",
     alternates: {
-      canonical: postUrl(params.locale),
+      canonical: postUrl("en"),
       languages: Object.fromEntries(locales.map((l) => [l, postUrl(l)])),
     },
     openGraph: {
