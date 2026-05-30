@@ -54,6 +54,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: reviewUrl("en"),
       languages: Object.fromEntries(locales.map((l) => [l, reviewUrl(l)])),
     },
+    openGraph: {
+      title: "Betway World Cup 2026 Review — Odds, Bonus & Betting Markets",
+      description: "Full Betway review for World Cup 2026. Claim your 100% matched bonus up to $50, explore live odds on all 48 nations.",
+      url: reviewUrl("en"),
+      siteName: "WorldCupBet26",
+      type: "article",
+      images: [{ url: "https://www.worldcupbet26.com/og-betway.jpg", width: 1200, height: 630, alt: "Betway World Cup 2026 Review" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Betway World Cup 2026 Review — Odds, Bonus & Betting Markets",
+      description: "Full Betway review for World Cup 2026. 100% matched bonus up to $50.",
+      images: ["https://www.worldcupbet26.com/og-betway.jpg"],
+    },
   };
 }
 

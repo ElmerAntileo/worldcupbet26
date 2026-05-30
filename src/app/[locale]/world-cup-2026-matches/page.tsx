@@ -16,6 +16,20 @@ export const metadata: Metadata = {
     canonical: pageUrl("en"),
     languages: Object.fromEntries(locales.map((l) => [l, pageUrl(l)])),
   },
+  openGraph: {
+    title: "World Cup 2026 Match Odds & Previews — All Key Fixtures",
+    description: "World Cup 2026 match betting odds and expert previews. Brazil vs Argentina, Germany vs France, USA vs Mexico and more — compare odds from top bookmakers.",
+    url: pageUrl("en"),
+    siteName: "WorldCupBet26",
+    type: "website",
+    images: [{ url: "https://www.worldcupbet26.com/og-matches.jpg", width: 1200, height: 630, alt: "World Cup 2026 Match Previews & Odds" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "World Cup 2026 Match Odds & Previews",
+    description: "Expert previews and live odds for all key World Cup 2026 fixtures. Brazil vs Argentina, Germany vs France & more.",
+    images: ["https://www.worldcupbet26.com/og-matches.jpg"],
+  },
 };
 
 const featuredMatches = [

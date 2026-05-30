@@ -21,6 +21,21 @@ export const metadata: Metadata = {
       "x-default": "https://www.worldcupbet26.com/",
     },
   },
+  openGraph: {
+    title: "World Cup 2026 Betting Odds — Compare Bookmakers Live",
+    description: "Compare World Cup 2026 betting odds from Betsson, 1xBet, Bet365 & more. Best bonuses, live match odds, value bets & expert tips.",
+    url: "https://www.worldcupbet26.com/",
+    siteName: "WorldCupBet26",
+    type: "website",
+    locale: "en_US",
+    images: [{ url: "https://www.worldcupbet26.com/og-home.jpg", width: 1200, height: 630, alt: "World Cup 2026 Betting Odds Comparison" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "World Cup 2026 Betting Odds — Compare Bookmakers Live",
+    description: "Compare World Cup 2026 betting odds from Betsson, 1xBet, Bet365 & more. Best bonuses, live match odds & expert tips.",
+    images: ["https://www.worldcupbet26.com/og-home.jpg"],
+  },
 };
 
 const jsonLd = {
@@ -298,7 +313,7 @@ export default async function HomePage() {
             <a href="#odds" className="btn-primary" style={{ padding: '15px 36px', fontSize: '15px', borderRadius: '9px' }}>
               ⚡ View Live Odds
             </a>
-            <Link href="/matches" className="btn-outline" style={{ padding: '15px 36px', fontSize: '15px', borderRadius: '9px' }}>
+            <Link href="/world-cup-2026-matches" className="btn-outline" style={{ padding: '15px 36px', fontSize: '15px', borderRadius: '9px' }}>
               All Matches →
             </Link>
           </div>
@@ -340,7 +355,7 @@ export default async function HomePage() {
         <div style={{ maxWidth: '960px', margin: '0 auto' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '28px' }}>
             <h2 className="section-title" style={{ marginBottom: 0 }}>Featured Match Odds</h2>
-            <Link href="/matches" style={{ color: 'var(--accent)', fontSize: '13px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '4px' }}>
+            <Link href="/world-cup-2026-matches" style={{ color: 'var(--accent)', fontSize: '13px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '4px' }}>
               All 24 Matches →
             </Link>
           </div>
@@ -531,6 +546,75 @@ export default async function HomePage() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── EMAIL CAPTURE ── */}
+      <section style={{
+        padding: '48px 20px',
+        background: 'linear-gradient(135deg, #071525 0%, #0a1e12 50%, #071525 100%)',
+        borderTop: '1px solid rgba(0,208,132,0.15)',
+        borderBottom: '1px solid rgba(0,208,132,0.15)',
+      }}>
+        <div style={{ maxWidth: '620px', margin: '0 auto', textAlign: 'center' }}>
+          <div style={{ fontSize: '32px', marginBottom: '12px' }}>⚽</div>
+          <h2 style={{
+            fontSize: 'clamp(20px, 4vw, 28px)',
+            fontWeight: 900,
+            marginBottom: '10px',
+            background: 'linear-gradient(135deg, #ffffff, #00d084)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+          }}>
+            Get Daily Betting Tips — Free
+          </h2>
+          <p style={{ color: 'var(--muted-light)', fontSize: '14px', marginBottom: '24px', lineHeight: 1.6 }}>
+            Best bets, odds alerts & expert picks for every World Cup match. Drop your email — no spam, unsubscribe any time.
+          </p>
+          <form
+            action="https://formspree.io/f/xzzbnkpn"
+            method="POST"
+            style={{ display: 'flex', gap: '10px', maxWidth: '460px', margin: '0 auto', flexWrap: 'wrap' }}
+          >
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="your@email.com"
+              style={{
+                flex: 1,
+                minWidth: '200px',
+                padding: '13px 18px',
+                borderRadius: '9px',
+                border: '1px solid rgba(0,208,132,0.3)',
+                background: 'rgba(255,255,255,0.05)',
+                color: 'var(--foreground)',
+                fontSize: '14px',
+                outline: 'none',
+              }}
+            />
+            <button
+              type="submit"
+              style={{
+                background: 'linear-gradient(135deg,#00d084,#00b870)',
+                color: '#040c18',
+                padding: '13px 28px',
+                borderRadius: '9px',
+                border: 'none',
+                fontWeight: 800,
+                fontSize: '14px',
+                cursor: 'pointer',
+                whiteSpace: 'nowrap',
+                boxShadow: '0 4px 14px rgba(0,208,132,0.3)',
+              }}
+            >
+              Get Tips 🎯
+            </button>
+          </form>
+          <p style={{ color: 'var(--muted)', fontSize: '11px', marginTop: '12px' }}>
+            18+ · Free service · No payment required
+          </p>
         </div>
       </section>
 

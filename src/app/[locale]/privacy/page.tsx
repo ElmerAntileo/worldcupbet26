@@ -1,8 +1,20 @@
 export const metadata = {
   title: "Privacy Policy | WorldCupBet26",
-  description: "WorldCupBet26 privacy policy. Learn how we collect and use your data.",
+  description: "WorldCupBet26 privacy policy. Learn how we collect and use your data, our use of affiliate links, and third-party services.",
   alternates: {
     canonical: "https://www.worldcupbet26.com/privacy",
+  },
+  openGraph: {
+    title: "Privacy Policy | WorldCupBet26",
+    description: "WorldCupBet26 privacy policy — how we collect and use your data.",
+    url: "https://www.worldcupbet26.com/privacy",
+    siteName: "WorldCupBet26",
+    type: "website" as const,
+  },
+  twitter: {
+    card: "summary" as const,
+    title: "Privacy Policy | WorldCupBet26",
+    description: "WorldCupBet26 privacy policy — how we collect and use your data.",
   },
 };
 

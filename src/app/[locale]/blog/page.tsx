@@ -17,6 +17,20 @@ export const metadata: Metadata = {
       "x-default": "https://www.worldcupbet26.com/blog",
     },
   },
+  openGraph: {
+    title: "World Cup 2026 Betting Tips, Odds Guides & Predictions",
+    description: "Expert World Cup 2026 betting guides: Golden Boot odds, group stage predictions, tournament winner tips, value bets and how-to guides. Updated daily.",
+    url: "https://www.worldcupbet26.com/blog",
+    siteName: "WorldCupBet26",
+    type: "website",
+    images: [{ url: "https://www.worldcupbet26.com/og-blog.jpg", width: 1200, height: 630, alt: "World Cup 2026 Betting Tips & Guides" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "World Cup 2026 Betting Tips, Odds Guides & Predictions",
+    description: "Expert World Cup 2026 betting guides, tips and predictions. Updated daily.",
+    images: ["https://www.worldcupbet26.com/og-blog.jpg"],
+  },
 };
 
 const articles = [

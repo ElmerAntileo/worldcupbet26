@@ -45,6 +45,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: reviewUrl("en"),
       languages: Object.fromEntries(locales.map((l) => [l, reviewUrl(l)])),
     },
+    openGraph: {
+      title: "Betsson World Cup 2026 Review — Bonus, Odds & Betting Guide",
+      description: "Full Betsson review for World Cup 2026. Claim your 100% welcome bonus up to €100, compare live odds and get expert tips for every match.",
+      url: reviewUrl("en"),
+      siteName: "WorldCupBet26",
+      type: "article",
+      images: [{ url: "https://www.worldcupbet26.com/og-betsson.jpg", width: 1200, height: 630, alt: "Betsson World Cup 2026 Review" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Betsson World Cup 2026 Review — Bonus, Odds & Betting Guide",
+      description: "Full Betsson review for World Cup 2026. 100% welcome bonus up to €100.",
+      images: ["https://www.worldcupbet26.com/og-betsson.jpg"],
+    },
   };
 }
 
