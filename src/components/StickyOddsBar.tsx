@@ -1,9 +1,8 @@
 "use client";
 
 const TOP_BOOKMAKERS = [
-  { name: "Bet365",  logo: "⚽", home: "2.10", draw: "3.40", away: "3.20", url: "https://bet365.com",                                                              isAffiliate: false },
-  { name: "1xBet",   logo: "🏆", home: "2.15", draw: "3.35", away: "3.25", url: "https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97",                      isAffiliate: true  },
-  { name: "Betway",  logo: "🏆", home: "2.05", draw: "3.45", away: "3.10", url: "https://betway.com",                                                               isAffiliate: false },
+  { name: "Betsson", logo: "🏆", home: "2.12", draw: "3.38", away: "3.22", url: "https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/", isAffiliate: true },
+  { name: "1xBet",   logo: "🎯", home: "2.15", draw: "3.35", away: "3.25", url: "https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97",      isAffiliate: true },
 ];
 
 export default function StickyOddsBar() {
