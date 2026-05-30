@@ -216,7 +216,7 @@ export default async function HomePage() {
               )}
             </div>
           </div>
-          <a href="https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow"
+          <a href="https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow sponsored"
             style={{ background: 'linear-gradient(135deg,#00d084,#00b870)', color: '#040c18', padding: '8px 20px', borderRadius: '7px', fontWeight: 800, fontSize: '12px', textDecoration: 'none', whiteSpace: 'nowrap', boxShadow: '0 3px 10px rgba(0,208,132,0.3)' }} data-affiliate="Betsson">
             Claim Bonus →
           </a>
@@ -446,7 +446,7 @@ export default async function HomePage() {
                   </div>
                   {/* CTA col */}
                   <div style={{ textAlign: 'right' }}>
-                    <a href={bk.url} target="_blank" rel="noopener noreferrer nofollow"
+                    <a href={bk.url} target="_blank" rel="noopener noreferrer nofollow sponsored"
                       style={{
                         display: 'inline-block',
                         background: i === 0 ? 'linear-gradient(135deg,#FFD756,#FFB800)' : 'linear-gradient(135deg,#00d084,#00b870)',
@@ -568,6 +568,22 @@ export default async function HomePage() {
         background: 'linear-gradient(90deg, #07101e, #0a1628, #07101e)',
         borderTop: '1px solid rgba(255,255,255,0.05)',
       }}>
+        {/* Quick nav to key pages */}
+        <div style={{ maxWidth: '960px', margin: '0 auto', display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '16px' }}>
+          {[
+            { href: '/world-cup-2026-matches', label: '⚽ Match Previews' },
+            { href: '/world-cup-2026-bracket', label: '🔱 Bracket & Odds' },
+            { href: '/world-cup-2026-groups', label: '📋 Group Stage' },
+            { href: '/blog/world-cup-2026-accumulator-tips', label: '🎯 Accumulator Tips' },
+            { href: '/blog/world-cup-2026-group-of-death', label: '💀 Group of Death' },
+            { href: '/betsson-review', label: '⭐ Betsson Review' },
+            { href: '/betway-review', label: '⭐ Betway Review' },
+          ].map((l) => (
+            <Link key={l.href} href={l.href} style={{ background: 'rgba(0,208,132,0.08)', border: '1px solid rgba(0,208,132,0.2)', color: 'var(--accent)', padding: '6px 12px', borderRadius: '6px', fontSize: '12px', fontWeight: 600, textDecoration: 'none' }}>
+              {l.label}
+            </Link>
+          ))}
+        </div>
         <div style={{ maxWidth: '960px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
           <div style={{ background: 'var(--hot)', color: '#fff', borderRadius: '6px', padding: '5px 11px', fontWeight: 900, fontSize: '13px', whiteSpace: 'nowrap', letterSpacing: '0.02em' }}>
             18+
