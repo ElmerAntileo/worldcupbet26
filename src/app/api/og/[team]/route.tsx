@@ -7,14 +7,15 @@ const teams: Record<string, {
   name: string; flag: string; odds: string;
   bg1: string; bg2: string; accent: string; textColor: string;
 }> = {
-  argentina: { name: 'Argentina', flag: '🇦🇷', odds: '5.00', bg1: '#4a90d9', bg2: '#1a5fa8', accent: '#ffffff', textColor: '#ffffff' },
-  brazil:    { name: 'Brazil',    flag: '🇧🇷', odds: '4.00', bg1: '#009c3b', bg2: '#005a22', accent: '#FFDF00', textColor: '#ffffff' },
-  france:    { name: 'France',    flag: '🇫🇷', odds: '6.00', bg1: '#002395', bg2: '#001270', accent: '#ED2939', textColor: '#ffffff' },
-  england:   { name: 'England',   flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', odds: '7.50', bg1: '#CC0000', bg2: '#880000', accent: '#ffffff', textColor: '#ffffff' },
-  spain:     { name: 'Spain',     flag: '🇪🇸', odds: '8.00', bg1: '#AA151B', bg2: '#7a0f13', accent: '#F1BF00', textColor: '#ffffff' },
-  germany:   { name: 'Germany',   flag: '🇩🇪', odds: '10.00', bg1: '#222222', bg2: '#111111', accent: '#FFCE00', textColor: '#ffffff' },
-  portugal:  { name: 'Portugal',  flag: '🇵🇹', odds: '12.00', bg1: '#006600', bg2: '#004400', accent: '#FF0000', textColor: '#ffffff' },
-  usa:       { name: 'USA',       flag: '🇺🇸', odds: '15.00', bg1: '#3C3B6E', bg2: '#1e1d47', accent: '#B22234', textColor: '#ffffff' },
+  spain:       { name: 'Spain',       flag: '🇪🇸', odds: '5.75',  bg1: '#AA151B', bg2: '#7a0f13', accent: '#F1BF00', textColor: '#ffffff' },
+  france:      { name: 'France',      flag: '🇫🇷', odds: '6.00',  bg1: '#002395', bg2: '#001270', accent: '#ED2939', textColor: '#ffffff' },
+  england:     { name: 'England',     flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', odds: '7.50',  bg1: '#CC0000', bg2: '#880000', accent: '#ffffff', textColor: '#ffffff' },
+  brazil:      { name: 'Brazil',      flag: '🇧🇷', odds: '9.50',  bg1: '#009c3b', bg2: '#005a22', accent: '#FFDF00', textColor: '#ffffff' },
+  argentina:   { name: 'Argentina',   flag: '🇦🇷', odds: '10.00', bg1: '#4a90d9', bg2: '#1a5fa8', accent: '#ffffff', textColor: '#ffffff' },
+  germany:     { name: 'Germany',     flag: '🇩🇪', odds: '11.00', bg1: '#222222', bg2: '#111111', accent: '#FFCE00', textColor: '#ffffff' },
+  portugal:    { name: 'Portugal',    flag: '🇵🇹', odds: '13.00', bg1: '#006600', bg2: '#004400', accent: '#FF0000', textColor: '#ffffff' },
+  netherlands: { name: 'Netherlands', flag: '🇳🇱', odds: '17.00', bg1: '#FF6600', bg2: '#cc4400', accent: '#ffffff', textColor: '#ffffff' },
+  usa:         { name: 'USA',         flag: '🇺🇸', odds: '20.00', bg1: '#3C3B6E', bg2: '#1e1d47', accent: '#B22234', textColor: '#ffffff' },
 };
 
 export async function GET(

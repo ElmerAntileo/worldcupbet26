@@ -81,6 +81,7 @@ export function Nav() {
               { href: "/world-cup-2026-odds", label: "Odds" },
               { href: "/world-cup-2026-bracket", label: "Bracket" },
               { href: "/blog", label: "Blog" },
+              { href: "/share", label: "📱 Share" },
             ].map(({ href, label }) => (
               <Link
                 key={href}
