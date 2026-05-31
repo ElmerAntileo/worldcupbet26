@@ -35,6 +35,27 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "world-cup-2026-opening-day-tips",
+    title: "World Cup 2026 Opening Day Betting Tips — June 11, 2026",
+    description: "5 expert bets for World Cup 2026 opening day: Mexico @ 1.65, Canada @ 1.80, USA @ 1.75, Argentina -1.5 @ 2.15, and a co-host accumulator paying 5.20. Full analysis inside.",
+    tag: "Opening Day Tips",
+    hot: true,
+  },
+  {
+    slug: "mexico-vs-south-africa-world-cup-2026",
+    title: "Mexico vs South Africa World Cup 2026 Odds, Tips & Prediction",
+    description: "Mexico open the 2026 World Cup at Estadio Azteca on June 11. Full odds comparison (Betsson, 1xBet, Bet365), expert tip: Mexico to Win @ 1.65. Group A preview.",
+    tag: "Match Preview",
+    hot: true,
+  },
+  {
+    slug: "usa-vs-paraguay-world-cup-2026",
+    title: "USA vs Paraguay World Cup 2026 Odds, Tips & Prediction",
+    description: "USA face Paraguay at MetLife Stadium on June 12 in Group D. Expert tip: USA to Win @ 1.75. Full odds comparison across Betsson, 1xBet, Bet365 and Betway.",
+    tag: "Match Preview",
+    hot: true,
+  },
+  {
     slug: "world-cup-2026-accumulator-tips",
     title: "World Cup 2026 Accumulator Tips — 5 Best Accas with Odds",
     description: "Five expertly built World Cup 2026 accumulator bets — pre-tournament outrights, Group of Death BTTS accas, Round of 32 favourites and a dark horse double. Odds up to 250x.",
