@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
       : `${base}/${l}/blog/best-world-cup-2026-betting-odds`;
   }
   return {
-    title: "Best World Cup 2026 Betting Odds — Compare Top Bookmakers | WorldCupBet26",
+    title: "Best World Cup 2026 Betting Odds — Compare Top Bookmakers",
     description:
       "Find the best World Cup 2026 betting odds across 30+ bookmakers. We compare Bet365, 1xBet, Betway and more so you always get maximum value on every match.",
     alternates: {

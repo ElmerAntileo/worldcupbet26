@@ -6,7 +6,7 @@ import { getLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "World Cup 2026 Betting Odds — Compare Bookmakers Live | WorldCupBet26",
+  title: "World Cup 2026 Betting Odds — Compare Bookmakers Live",
   description:
     "Compare World Cup 2026 betting odds from Betsson, 1xBet, Bet365 & more. Best bonuses, live match odds, value bets & expert tips. FIFA World Cup Jun 11–Jul 19.",
   alternates: {

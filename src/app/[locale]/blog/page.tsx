@@ -2,7 +2,7 @@ import { Link } from "@/i18n/navigation";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "World Cup 2026 Betting Tips, Odds Guides & Predictions | WorldCupBet26",
+  title: "World Cup 2026 Betting Tips, Odds Guides & Predictions",
   description:
     "Expert World Cup 2026 betting guides: Golden Boot odds, group stage predictions, tournament winner tips, value bets and how-to guides. Updated daily.",
   alternates: {

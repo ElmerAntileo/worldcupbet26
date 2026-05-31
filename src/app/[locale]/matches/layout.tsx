@@ -8,7 +8,7 @@ function url(l: string) {
 }
 
 export const metadata: Metadata = {
-  title: "World Cup 2026 Match Odds — Compare All 48 Games | WorldCupBet26",
+  title: "World Cup 2026 Match Odds — Compare All 48 Games",
   description:
     "Live 1X2 odds for every World Cup 2026 match. Compare Betsson, 1xBet, Bet365 & Betway side-by-side. Spot the best odds instantly — updated daily. Jun 11–Jul 19.",
   keywords: [

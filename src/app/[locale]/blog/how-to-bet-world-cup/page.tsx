@@ -16,7 +16,7 @@ function postUrl(l: string) {
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "How to Bet on the World Cup 2026 — Complete Beginner Guide | WorldCupBet26",
+    title: "How to Bet on the World Cup 2026 — Complete Beginner Guide",
     description:
       "Learn how to bet on World Cup 2026 with this complete guide. Understand betting markets, odds formats, how to claim bonuses and which bookmakers to use. Step-by-step for beginners.",
     alternates: {

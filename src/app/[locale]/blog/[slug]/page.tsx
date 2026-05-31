@@ -46,9 +46,9 @@ const articles: Record<string, { title: string; description: string; content: st
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const a = articles[params.slug];
-  if (!a) return { title: "Article Not Found | WorldCupBet26" };
+  if (!a) return { title: "Article Not Found" };
   return {
-    title: `${a.title} | WorldCupBet26`,
+    title: a.title,
     description: a.description,
     alternates: {
       canonical: postUrl(params.slug, params.locale),

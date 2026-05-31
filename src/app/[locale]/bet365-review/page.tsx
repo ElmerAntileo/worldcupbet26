@@ -14,7 +14,7 @@ function reviewUrl(l: string) {
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Bet365 World Cup 2026 Review — Odds, Live Streaming & Bonus Guide | WorldCupBet26",
+    title: "Bet365 World Cup 2026 Review — Odds, Live Streaming & Bonus Guide",
     description:
       "Full Bet365 review for World Cup 2026. Up to $500 welcome bonus, live streaming of all matches, 100+ markets per game. Is Bet365 the best bookmaker for the World Cup?",
     alternates: {

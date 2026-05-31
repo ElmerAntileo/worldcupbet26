@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import Script from "next/script";
 import { getLocale } from "next-intl/server";
-import AffiliateTracker from "@/components/AffiliateTracker";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -55,20 +53,6 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* Google Analytics 4 */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-PHCT4V7XB8"
-          strategy="afterInteractive"
-        />
-        <Script id="ga4-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-PHCT4V7XB8');
-          `}
-        </Script>
-        <AffiliateTracker />
         {children}
       </body>
     </html>

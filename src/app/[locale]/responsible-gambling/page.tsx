@@ -1,11 +1,11 @@
 export const metadata = {
-  title: "Responsible Gambling | WorldCupBet26",
+  title: "Responsible Gambling",
   description: "WorldCupBet26 is committed to responsible gambling. Set budgets, know the risks, and access support resources. 18+ only.",
   alternates: {
     canonical: "https://www.worldcupbet26.com/responsible-gambling",
   },
   openGraph: {
-    title: "Responsible Gambling | WorldCupBet26",
+    title: "Responsible Gambling",
     description: "Bet safely with WorldCupBet26. Tips for responsible gambling, budget setting, and support resources. 18+ only.",
     url: "https://www.worldcupbet26.com/responsible-gambling",
     siteName: "WorldCupBet26",
@@ -13,7 +13,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary" as const,
-    title: "Responsible Gambling | WorldCupBet26",
+    title: "Responsible Gambling",
     description: "Bet safely. Tips for responsible gambling and support resources. 18+ only.",
   },
 };

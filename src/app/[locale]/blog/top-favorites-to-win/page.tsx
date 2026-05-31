@@ -15,7 +15,7 @@ function postUrl(l: string) {
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "World Cup 2026 Favorites to Win — Outright Odds & Best Bets | WorldCupBet26",
+    title: "World Cup 2026 Favorites to Win — Outright Odds & Best Bets",
     description:
       "Spain (+450) and France (+500) lead the 2026 World Cup winner odds. Compare outright prices for England, Brazil, Argentina and all 48 teams. Find the best value bets.",
     alternates: {

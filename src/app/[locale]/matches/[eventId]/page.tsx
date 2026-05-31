@@ -46,7 +46,7 @@ export async function generateMetadata({
   params: { locale: string; eventId: string };
 }): Promise<Metadata> {
   const event = await resolveEvent(params.eventId);
-  const title = `${event.home_team} vs ${event.away_team} | WorldCupBet26`;
+  const title = `${event.home_team} vs ${event.away_team}`;
   const description = `Compare the best odds for ${event.home_team} vs ${event.away_team} at WorldCupBet26 — h2h, spreads, and totals from leading bookmakers.`;
   return { title, description };
 }

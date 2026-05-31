@@ -16,7 +16,7 @@ function postUrl(l: string) {
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Best Value Bets World Cup 2026 — Dark Horses & Over/Under Tips | WorldCupBet26",
+    title: "Best Value Bets World Cup 2026 — Dark Horses & Over/Under Tips",
     description:
       "Find the best value bets for the 2026 FIFA World Cup. Dark horses, BTTS tips, Over/Under picks and accumulator ideas with odds compared across Bet365, 1xBet and Betway.",
     alternates: {
