@@ -115,38 +115,38 @@ const bookmakers = [
 
 const featuredOdds = [
   {
-    match: 'USA vs Mexico',
-    date: 'Jun 22, 2026',
-    time: '20:00 ET',
-    home: { team: 'USA', odds: '2.10', flag: '🇺🇸' },
-    draw: { odds: '3.40' },
-    away: { team: 'Mexico', odds: '3.20', flag: '🇲🇽' },
-    group: 'Group B',
+    match: 'Mexico vs South Africa',
+    date: 'Jun 11, 2026',
+    time: '15:00 ET',
+    home: { team: 'Mexico', odds: '1.65', flag: '🇲🇽' },
+    draw: { odds: '3.70' },
+    away: { team: 'South Africa', odds: '5.50', flag: '🇿🇦' },
+    group: 'Group A — Opening Match',
   },
   {
-    match: 'Brazil vs Argentina',
-    date: 'Jun 26, 2026',
+    match: 'USA vs Paraguay',
+    date: 'Jun 12, 2026',
     time: '21:00 ET',
-    home: { team: 'Brazil', odds: '2.30', flag: '🇧🇷' },
-    draw: { odds: '3.10' },
-    away: { team: 'Argentina', odds: '3.00', flag: '🇦🇷' },
-    group: 'Group F',
+    home: { team: 'USA', odds: '1.75', flag: '🇺🇸' },
+    draw: { odds: '3.60' },
+    away: { team: 'Paraguay', odds: '5.00', flag: '🇵🇾' },
+    group: 'Group D',
   },
   {
-    match: 'Germany vs France',
-    date: 'Jun 24, 2026',
-    time: '18:00 CET',
-    home: { team: 'Germany', odds: '2.70', flag: '🇩🇪' },
-    draw: { odds: '3.20' },
-    away: { team: 'France', odds: '2.60', flag: '🇫🇷' },
-    group: 'Group D',
+    match: 'Spain vs Cape Verde',
+    date: 'Jun 15, 2026',
+    time: '18:00 ET',
+    home: { team: 'Spain', odds: '1.18', flag: '🇪🇸' },
+    draw: { odds: '7.00' },
+    away: { team: 'Cape Verde', odds: '16.00', flag: '🇨🇻' },
+    group: 'Group H',
   },
 ];
 
 const homeFaqs = [
   {
     q: "Who is the favourite to win the 2026 World Cup?",
-    a: "Brazil is the current market favourite at odds of 4.00 with Betsson. Argentina (5.00), France (6.00), England (7.50) and Spain (8.00) follow closely. Brazil have the strongest attacking depth, but France have the experience of back-to-back World Cup Finals (won 2018, runners-up 2022) and Argentina are the reigning champions.",
+    a: "Spain are the current market favourite at 5.75 with Betsson, boosted by back-to-back Euro 2024 and Nations League titles. France (6.00) are second, followed by England (7.50), Brazil (9.50) and Argentina (10.00). Spain's draw into Group H is the softest among the heavyweights, which may see their odds shorten further before June 11.",
   },
   {
     q: "When does the 2026 FIFA World Cup start?",
@@ -162,7 +162,7 @@ const homeFaqs = [
   },
   {
     q: "Which bookmaker has the best World Cup 2026 odds?",
-    a: "Betsson and 1xBet consistently offer the highest World Cup 2026 winner odds in our daily comparison. Betsson prices Brazil at 4.00, Argentina at 5.00 and France at 6.00. Always compare across multiple bookmakers — even a 0.25 price difference on a £50 bet adds meaningful value over a tournament.",
+    a: "Betsson and 1xBet consistently offer the highest World Cup 2026 winner odds in our daily comparison. Betsson prices Spain at 5.75, France at 6.00 and England at 7.50. Always compare across multiple bookmakers — even a 0.25 price difference on a £50 bet adds meaningful value over a tournament.",
   },
   {
     q: "What types of bets can I place on the World Cup?",

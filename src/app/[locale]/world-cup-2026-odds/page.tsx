@@ -29,28 +29,28 @@ export const metadata: Metadata = {
 const BETSSON_URL = "https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/";
 
 const teams = [
-  { slug: "argentina",   name: "Argentina",   flag: "🇦🇷", odds: "5.00",   bookmaker: "1xBet",   tier: 1, group: "D" },
-  { slug: "brazil",      name: "Brazil",      flag: "🇧🇷", odds: "4.00",   bookmaker: "Betsson", tier: 1, group: "E" },
-  { slug: "france",      name: "France",      flag: "🇫🇷", odds: "6.00",   bookmaker: "Betsson", tier: 1, group: "C" },
-  { slug: "england",     name: "England",     flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", odds: "7.50",   bookmaker: "Betsson", tier: 1, group: "B" },
-  { slug: "spain",       name: "Spain",       flag: "🇪🇸", odds: "8.00",   bookmaker: "Bet365", tier: 1, group: "F" },
-  { slug: "germany",     name: "Germany",     flag: "🇩🇪", odds: "10.00",  bookmaker: "Betsson", tier: 2, group: "A" },
-  { slug: "portugal",    name: "Portugal",    flag: "🇵🇹", odds: "12.00",  bookmaker: "Betsson", tier: 2, group: "G" },
-  { slug: "usa",         name: "USA",         flag: "🇺🇸", odds: "15.00",  bookmaker: "Betsson", tier: 2, group: "A" },
-  { slug: "netherlands", name: "Netherlands", flag: "🇳🇱", odds: "18.00",  bookmaker: "Betsson", tier: 2, group: "G" },
-  { slug: "mexico",      name: "Mexico",      flag: "🇲🇽", odds: "40.00",  bookmaker: "Betsson", tier: 3, group: "A" },
-  { slug: "belgium",     name: "Belgium",     flag: "🇧🇪", odds: "25.00",  bookmaker: "Betsson", tier: 3, group: "E" },
-  { slug: "croatia",     name: "Croatia",     flag: "🇭🇷", odds: "50.00",  bookmaker: "Betsson", tier: 3, group: "B" },
-  { slug: "italy",       name: "Italy",       flag: "🇮🇹", odds: "20.00",  bookmaker: "Betsson", tier: 2, group: "H" },
+  { slug: "spain",       name: "Spain",       flag: "🇪🇸", odds: "5.75",   bookmaker: "Betsson", tier: 1, group: "H" },
+  { slug: "france",      name: "France",      flag: "🇫🇷", odds: "6.00",   bookmaker: "Betsson", tier: 1, group: "I" },
+  { slug: "england",     name: "England",     flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", odds: "7.50",   bookmaker: "Betsson", tier: 1, group: "L" },
+  { slug: "brazil",      name: "Brazil",      flag: "🇧🇷", odds: "9.50",   bookmaker: "Betsson", tier: 1, group: "C" },
+  { slug: "argentina",   name: "Argentina",   flag: "🇦🇷", odds: "10.00",  bookmaker: "1xBet",   tier: 1, group: "J" },
+  { slug: "germany",     name: "Germany",     flag: "🇩🇪", odds: "11.00",  bookmaker: "Betsson", tier: 2, group: "E" },
+  { slug: "portugal",    name: "Portugal",    flag: "🇵🇹", odds: "13.00",  bookmaker: "Betsson", tier: 2, group: "K" },
+  { slug: "netherlands", name: "Netherlands", flag: "🇳🇱", odds: "17.00",  bookmaker: "Betsson", tier: 2, group: "F" },
+  { slug: "usa",         name: "USA",         flag: "🇺🇸", odds: "20.00",  bookmaker: "Betsson", tier: 2, group: "D" },
+  { slug: "belgium",     name: "Belgium",     flag: "🇧🇪", odds: "25.00",  bookmaker: "Betsson", tier: 3, group: "G" },
+  { slug: "colombia",    name: "Colombia",    flag: "🇨🇴", odds: "30.00",  bookmaker: "Betsson", tier: 3, group: "K" },
+  { slug: "uruguay",     name: "Uruguay",     flag: "🇺🇾", odds: "40.00",  bookmaker: "Betsson", tier: 3, group: "H" },
   { slug: "morocco",     name: "Morocco",     flag: "🇲🇦", odds: "45.00",  bookmaker: "Betsson", tier: 3, group: "C" },
-  { slug: "colombia",    name: "Colombia",    flag: "🇨🇴", odds: "60.00",  bookmaker: "Betsson", tier: 3, group: "G" },
-  { slug: "uruguay",     name: "Uruguay",     flag: "🇺🇾", odds: "55.00",  bookmaker: "Betsson", tier: 3, group: "C" },
+  { slug: "croatia",     name: "Croatia",     flag: "🇭🇷", odds: "55.00",  bookmaker: "Betsson", tier: 3, group: "L" },
+  { slug: "mexico",      name: "Mexico",      flag: "🇲🇽", odds: "60.00",  bookmaker: "Betsson", tier: 3, group: "A" },
   { slug: "japan",       name: "Japan",       flag: "🇯🇵", odds: "65.00",  bookmaker: "Betsson", tier: 4, group: "F" },
-  { slug: "canada",      name: "Canada",      flag: "🇨🇦", odds: "80.00",  bookmaker: "Betsson", tier: 4, group: "A" },
-  { slug: "switzerland", name: "Switzerland", flag: "🇨🇭", odds: "85.00",  bookmaker: "Betsson", tier: 4, group: "D" },
-  { slug: "senegal",     name: "Senegal",     flag: "🇸🇳", odds: "90.00",  bookmaker: "Betsson", tier: 4, group: "G" },
-  { slug: "ecuador",     name: "Ecuador",     flag: "🇪🇨", odds: "120.00", bookmaker: "Betsson", tier: 4, group: "G" },
-  { slug: "australia",   name: "Australia",   flag: "🇦🇺", odds: "150.00", bookmaker: "Betsson", tier: 4, group: "H" },
+  { slug: "canada",      name: "Canada",      flag: "🇨🇦", odds: "70.00",  bookmaker: "Betsson", tier: 4, group: "B" },
+  { slug: "senegal",     name: "Senegal",     flag: "🇸🇳", odds: "80.00",  bookmaker: "Betsson", tier: 4, group: "I" },
+  { slug: "switzerland", name: "Switzerland", flag: "🇨🇭", odds: "90.00",  bookmaker: "Betsson", tier: 4, group: "B" },
+  { slug: "ecuador",     name: "Ecuador",     flag: "🇪🇨", odds: "100.00", bookmaker: "Betsson", tier: 4, group: "E" },
+  { slug: "australia",   name: "Australia",   flag: "🇦🇺", odds: "150.00", bookmaker: "Betsson", tier: 4, group: "D" },
+  { slug: "türkiye",     name: "Türkiye",     flag: "🇹🇷", odds: "120.00", bookmaker: "Betsson", tier: 4, group: "D" },
 ];
 
 const jsonLd = {
@@ -78,7 +78,7 @@ const tierLabel: Record<number, { label: string; color: string; bg: string }> = 
 const oddsFaqs = [
   {
     q: "Which team is the favourite to win World Cup 2026?",
-    a: "Brazil is the market favourite at 4.00 with Betsson. Argentina (5.00) are second, followed by France (6.00), England (7.50) and Spain (8.00). Brazil have not won since 2002 and the squad is built around a world-class core, making them the bookmakers' top pick.",
+    a: "Spain are the current market favourite at 5.75 with Betsson — boosted by back-to-back UEFA Nations League and Euro 2024 wins. France (6.00) are second, followed by England (7.50), Brazil (9.50) and Argentina (10.00). Spain's young core of Yamal, Pedri and Morata make them bookmakers' top pick heading into the tournament.",
   },
   {
     q: "What do the decimal odds mean for World Cup betting?",
@@ -86,7 +86,7 @@ const oddsFaqs = [
   },
   {
     q: "Which bookmaker offers the best World Cup 2026 winner odds?",
-    a: "Based on our daily comparison, Betsson and 1xBet consistently offer the highest tournament winner odds. Betsson prices Brazil at 4.00, Argentina at 5.00, France at 6.00. 1xBet often matches or marginally undercuts Betsson. We recommend checking both before placing any long-term bet.",
+    a: "Based on our daily comparison, Betsson and 1xBet consistently offer the highest tournament winner odds. Betsson prices Spain at 5.75, France at 6.00, England at 7.50. 1xBet often matches or marginally undercuts Betsson for outright markets. We recommend checking both before placing any long-term bet.",
   },
   {
     q: "Who are the dark horses for World Cup 2026?",
@@ -162,7 +162,7 @@ export default function WorldCupOddsHub() {
             </p>
             <div style={{ display: "flex", gap: "24px", flexWrap: "wrap" }}>
               {[
-                { val: "22", label: "Teams" },
+                { val: "22+", label: "Teams" },
                 { val: "4",  label: "Bookmakers" },
                 { val: "48h", label: "Odds refresh" },
                 { val: "Jun 11", label: "Kick-off" },
@@ -298,8 +298,8 @@ export default function WorldCupOddsHub() {
                 A team at <strong style={{ color: "var(--accent)" }}>5.00</strong> means a €10 bet returns €50 (€40 profit + €10 stake) if that team wins the tournament.
               </p>
               <p style={{ color: "var(--muted)", fontSize: "14px", lineHeight: 1.7, marginBottom: "12px" }}>
-                <strong style={{ color: "var(--foreground)" }}>Brazil at 4.00</strong> are the current market favourite —
-                the tightest odds reflect the market&apos;s confidence. As the tournament approaches and group draw results come in,
+                <strong style={{ color: "var(--foreground)" }}>Spain at 5.75</strong> are the current market favourite —
+                the tightest odds reflect back-to-back Euro 2024 and Nations League wins. As the group stage unfolds,
                 these odds will shift significantly. Locking in value early can be smart.
               </p>
               <p style={{ color: "var(--muted)", fontSize: "14px", lineHeight: 1.7 }}>

@@ -11,14 +11,14 @@ function pageUrl(l: string) {
 export const metadata: Metadata = {
   title: "World Cup 2026 Match Odds & Previews — All Key Fixtures",
   description:
-    "World Cup 2026 match betting odds and expert previews for the biggest fixtures. Brazil vs Argentina, Germany vs France, USA vs Mexico and more — compare odds from top bookmakers.",
+    "World Cup 2026 match betting odds and expert previews for the biggest fixtures. Mexico vs South Africa, USA vs Paraguay, Brazil vs Morocco, France vs Senegal and more — compare odds from top bookmakers.",
   alternates: {
     canonical: pageUrl("en"),
     languages: Object.fromEntries(locales.map((l) => [l, pageUrl(l)])),
   },
   openGraph: {
     title: "World Cup 2026 Match Odds & Previews — All Key Fixtures",
-    description: "World Cup 2026 match betting odds and expert previews. Brazil vs Argentina, Germany vs France, USA vs Mexico and more — compare odds from top bookmakers.",
+    description: "World Cup 2026 match betting odds and expert previews. Mexico vs South Africa, USA vs Paraguay, Brazil vs Morocco, France vs Senegal and more — compare odds from top bookmakers.",
     url: pageUrl("en"),
     siteName: "WorldCupBet26",
     type: "website",
@@ -27,24 +27,24 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "World Cup 2026 Match Odds & Previews",
-    description: "Expert previews and live odds for all key World Cup 2026 fixtures. Brazil vs Argentina, Germany vs France & more.",
+    description: "Expert previews and live odds for all key World Cup 2026 fixtures. Mexico vs South Africa, USA vs Paraguay, Brazil vs Morocco & more.",
     images: ["https://www.worldcupbet26.com/og-matches.jpg"],
   },
 };
 
 const featuredMatches = [
-  { slug: "brazil-vs-argentina", home: "Brazil", homeFlag: "🇧🇷", away: "Argentina", awayFlag: "🇦🇷", date: "Jun 26", group: "C", homeOdds: "2.35", awayOdds: "3.05", hot: true, label: "Group Decider" },
-  { slug: "germany-vs-france", home: "Germany", homeFlag: "🇩🇪", away: "France", awayFlag: "🇫🇷", date: "Jun 24", group: "D", homeOdds: "2.75", awayOdds: "2.65", hot: true, label: "Group Decider" },
-  { slug: "usa-vs-mexico", home: "USA", homeFlag: "🇺🇸", away: "Mexico", awayFlag: "🇲🇽", date: "Jun 22", group: "B", homeOdds: "2.35", awayOdds: "3.05", hot: true, label: "CONCACAF Derby" },
-  { slug: "portugal-vs-morocco", home: "Portugal", homeFlag: "🇵🇹", away: "Morocco", awayFlag: "🇲🇦", date: "Jun 17", group: "G", homeOdds: "1.98", awayOdds: "4.20", hot: false, label: "2022 QF Rematch" },
-  { slug: "germany-vs-japan", home: "Germany", homeFlag: "🇩🇪", away: "Japan", awayFlag: "🇯🇵", date: "Jun 14", group: "D", homeOdds: "1.78", awayOdds: "5.10", hot: false, label: "2022 Rematch" },
-  { slug: "england-vs-serbia", home: "England", homeFlag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", away: "Serbia", awayFlag: "🇷🇸", date: "Jun 15", group: "E", homeOdds: "1.53", awayOdds: "7.25", hot: false, label: "Group E Opener" },
-  { slug: "spain-vs-croatia", home: "Spain", homeFlag: "🇪🇸", away: "Croatia", awayFlag: "🇭🇷", date: "Jun 16", group: "F", homeOdds: "1.88", awayOdds: "4.70", hot: false, label: "Euro Rivals" },
-  { slug: "mexico-vs-poland", home: "Mexico", homeFlag: "🇲🇽", away: "Poland", awayFlag: "🇵🇱", date: "Jun 11", group: "A", homeOdds: "2.15", awayOdds: "3.65", hot: false, label: "Tournament Opener" },
-  { slug: "netherlands-vs-senegal", home: "Netherlands", homeFlag: "🇳🇱", away: "Senegal", awayFlag: "🇸🇳", date: "Jun 18", group: "H", homeOdds: "1.73", awayOdds: "5.30", hot: false, label: "Group H Opener" },
-  { slug: "argentina-vs-ecuador", home: "Argentina", homeFlag: "🇦🇷", away: "Ecuador", awayFlag: "🇪🇨", date: "Jun 13", group: "C", homeOdds: "1.48", awayOdds: "7.80", hot: false, label: "Argentina Opener" },
-  { slug: "usa-vs-panama", home: "USA", homeFlag: "🇺🇸", away: "Panama", awayFlag: "🇵🇦", date: "Jun 12", group: "B", homeOdds: "1.58", awayOdds: "6.75", hot: false, label: "USA Opener" },
-  { slug: "mexico-vs-saudi-arabia", home: "Mexico", homeFlag: "🇲🇽", away: "Saudi Arabia", awayFlag: "🇸🇦", date: "Jun 19", group: "A", homeOdds: "1.93", awayOdds: "4.30", hot: false, label: "Group A Decider" },
+  { slug: "mexico-vs-south-africa",        home: "Mexico",      homeFlag: "🇲🇽", away: "South Africa",        awayFlag: "🇿🇦", date: "Jun 11", group: "A", homeOdds: "1.65", awayOdds: "5.50", hot: true,  label: "Opening Match 🏆" },
+  { slug: "usa-vs-paraguay",               home: "USA",         homeFlag: "🇺🇸", away: "Paraguay",            awayFlag: "🇵🇾", date: "Jun 12", group: "D", homeOdds: "1.75", awayOdds: "4.80", hot: true,  label: "USA Home Opener" },
+  { slug: "brazil-vs-morocco",             home: "Brazil",      homeFlag: "🇧🇷", away: "Morocco",             awayFlag: "🇲🇦", date: "Jun 14", group: "C", homeOdds: "1.62", awayOdds: "6.00", hot: true,  label: "2022 QF Rematch" },
+  { slug: "france-vs-senegal",             home: "France",      homeFlag: "🇫🇷", away: "Senegal",             awayFlag: "🇸🇳", date: "Jun 15", group: "I", homeOdds: "1.70", awayOdds: "5.50", hot: false, label: "Group I Opener" },
+  { slug: "argentina-vs-austria",          home: "Argentina",   homeFlag: "🇦🇷", away: "Austria",             awayFlag: "🇦🇹", date: "Jun 13", group: "J", homeOdds: "1.50", awayOdds: "6.50", hot: false, label: "Argentina Opener" },
+  { slug: "spain-vs-uruguay",              home: "Spain",       homeFlag: "🇪🇸", away: "Uruguay",             awayFlag: "🇺🇾", date: "Jun 16", group: "H", homeOdds: "1.88", awayOdds: "4.40", hot: false, label: "Group H Opener" },
+  { slug: "england-vs-croatia",            home: "England",     homeFlag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", away: "Croatia",             awayFlag: "🇭🇷", date: "Jun 16", group: "L", homeOdds: "1.55", awayOdds: "6.50", hot: false, label: "Euro Rivals" },
+  { slug: "germany-vs-ecuador",            home: "Germany",     homeFlag: "🇩🇪", away: "Ecuador",             awayFlag: "🇪🇨", date: "Jun 15", group: "E", homeOdds: "1.50", awayOdds: "7.50", hot: false, label: "Germany Opener" },
+  { slug: "portugal-vs-colombia",          home: "Portugal",    homeFlag: "🇵🇹", away: "Colombia",            awayFlag: "🇨🇴", date: "Jun 17", group: "K", homeOdds: "1.85", awayOdds: "4.50", hot: false, label: "Group K Opener" },
+  { slug: "netherlands-vs-japan",          home: "Netherlands", homeFlag: "🇳🇱", away: "Japan",               awayFlag: "🇯🇵", date: "Jun 14", group: "F", homeOdds: "1.75", awayOdds: "5.00", hot: false, label: "Group F Opener" },
+  { slug: "canada-vs-bosnia-herzegovina", home: "Canada",      homeFlag: "🇨🇦", away: "Bosnia & Herzeg.",    awayFlag: "🇧🇦", date: "Jun 12", group: "B", homeOdds: "1.80", awayOdds: "4.80", hot: false, label: "Canada Home Opener" },
+  { slug: "belgium-vs-egypt",              home: "Belgium",     homeFlag: "🇧🇪", away: "Egypt",               awayFlag: "🇪🇬", date: "Jun 17", group: "G", homeOdds: "1.78", awayOdds: "5.00", hot: false, label: "Group G Opener" },
 ];
 
 const breadcrumbSchema = {

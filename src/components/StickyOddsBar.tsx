@@ -1,8 +1,8 @@
 "use client";
 
 const TOP_BOOKMAKERS = [
-  { name: "Betsson", logo: "🏆", home: "2.12", draw: "3.38", away: "3.22", url: "https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/", isAffiliate: true },
-  { name: "1xBet",   logo: "🎯", home: "2.15", draw: "3.35", away: "3.25", url: "https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97",      isAffiliate: true },
+  { name: "Betsson", logo: "🏆", home: "1.65", draw: "3.70", away: "5.50", url: "https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/", isAffiliate: true },
+  { name: "1xBet",   logo: "🎯", home: "1.67", draw: "3.65", away: "5.40", url: "https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97",      isAffiliate: true },
 ];
 
 export default function StickyOddsBar() {
@@ -45,9 +45,9 @@ export default function StickyOddsBar() {
           }} />
           <span style={{ fontSize: "11px", fontWeight: 700, color: "var(--hot)", letterSpacing: "0.08em" }}>LIVE</span>
           <span style={{ fontSize: "11px", fontWeight: 600, color: "var(--muted-light)", whiteSpace: "nowrap" }}>
-            🇺🇸 USA vs Mexico 🇲🇽
+            🇲🇽 Mexico vs South Africa 🇿🇦
           </span>
-          <span style={{ fontSize: "10px", color: "var(--muted)", whiteSpace: "nowrap" }}>· Jun 22</span>
+          <span style={{ fontSize: "10px", color: "var(--muted)", whiteSpace: "nowrap" }}>· Jun 11</span>
         </div>
 
         {/* Bookmaker odds */}
