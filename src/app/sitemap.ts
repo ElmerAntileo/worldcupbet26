@@ -45,7 +45,6 @@ const teamPages = [
   "/world-cup-2026-odds/portugal",
   "/world-cup-2026-odds/usa",
   "/world-cup-2026-odds/netherlands",
-  "/world-cup-2026-odds/italy",
   "/world-cup-2026-odds/mexico",
   "/world-cup-2026-odds/belgium",
   "/world-cup-2026-odds/croatia",
@@ -61,6 +60,15 @@ const teamPages = [
 ];
 
 const blogPosts = [
+  // Match previews — high priority, tournament countdown
+  "/blog/world-cup-2026-opening-day-tips",
+  "/blog/mexico-vs-south-africa-world-cup-2026",
+  "/blog/usa-vs-paraguay-world-cup-2026",
+  "/blog/brazil-vs-morocco-world-cup-2026",
+  "/blog/france-vs-senegal-world-cup-2026",
+  "/blog/argentina-vs-austria-world-cup-2026",
+  "/blog/england-vs-croatia-world-cup-2026",
+  // Evergreen guides
   "/blog/world-cup-2026-accumulator-tips",
   "/blog/world-cup-2026-group-of-death",
   "/blog/world-cup-2026-betting-tips",
@@ -76,18 +84,18 @@ const blogPosts = [
 
 const matchPages = [
   "/world-cup-2026-matches",
-  "/world-cup-2026-matches/mexico-vs-poland",
-  "/world-cup-2026-matches/usa-vs-panama",
-  "/world-cup-2026-matches/argentina-vs-ecuador",
-  "/world-cup-2026-matches/germany-vs-japan",
-  "/world-cup-2026-matches/england-vs-serbia",
-  "/world-cup-2026-matches/spain-vs-croatia",
-  "/world-cup-2026-matches/portugal-vs-morocco",
-  "/world-cup-2026-matches/netherlands-vs-senegal",
-  "/world-cup-2026-matches/mexico-vs-saudi-arabia",
-  "/world-cup-2026-matches/usa-vs-mexico",
-  "/world-cup-2026-matches/germany-vs-france",
-  "/world-cup-2026-matches/brazil-vs-argentina",
+  "/world-cup-2026-matches/mexico-vs-south-africa",
+  "/world-cup-2026-matches/canada-vs-bosnia-herzegovina",
+  "/world-cup-2026-matches/usa-vs-paraguay",
+  "/world-cup-2026-matches/argentina-vs-austria",
+  "/world-cup-2026-matches/netherlands-vs-japan",
+  "/world-cup-2026-matches/brazil-vs-morocco",
+  "/world-cup-2026-matches/germany-vs-ecuador",
+  "/world-cup-2026-matches/france-vs-senegal",
+  "/world-cup-2026-matches/spain-vs-uruguay",
+  "/world-cup-2026-matches/england-vs-croatia",
+  "/world-cup-2026-matches/portugal-vs-colombia",
+  "/world-cup-2026-matches/belgium-vs-egypt",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
