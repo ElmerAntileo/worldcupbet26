@@ -51,8 +51,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: a.title,
     description: a.description,
     alternates: {
-      canonical: postUrl(params.slug, params.locale),
-      languages: Object.fromEntries(locales.map((l) => [l, postUrl(params.slug, l)])),
+      canonical: postUrl(params.slug, "en"),
+      languages: { ...Object.fromEntries(locales.map((l) => [l, postUrl(params.slug, l)])), "x-default": postUrl(params.slug, "en") },
     },
     openGraph: {
       title: a.title,

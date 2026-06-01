@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "World Cup 2026 match betting odds and expert previews for the biggest fixtures. Mexico vs South Africa, USA vs Paraguay, Brazil vs Morocco, France vs Senegal and more — compare odds from top bookmakers.",
   alternates: {
     canonical: pageUrl("en"),
-    languages: Object.fromEntries(locales.map((l) => [l, pageUrl(l)])),
+    languages: { ...Object.fromEntries(locales.map((l) => [l, pageUrl(l)])), "x-default": pageUrl("en") },
   },
   openGraph: {
     title: "World Cup 2026 Match Odds & Previews — All Key Fixtures",

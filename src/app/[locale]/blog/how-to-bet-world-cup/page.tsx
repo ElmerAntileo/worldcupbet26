@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
       "Learn how to bet on World Cup 2026 with this complete guide. Understand betting markets, odds formats, how to claim bonuses and which bookmakers to use. Step-by-step for beginners.",
     alternates: {
       canonical: postUrl("en"),
-      languages: Object.fromEntries(locales.map((l) => [l, postUrl(l)])),
+      languages: { ...Object.fromEntries(locales.map((l) => [l, postUrl(l)])), "x-default": postUrl("en") },
     },
     openGraph: {
       title: "How to Bet on World Cup 2026 — Step-by-Step Guide for Beginners",

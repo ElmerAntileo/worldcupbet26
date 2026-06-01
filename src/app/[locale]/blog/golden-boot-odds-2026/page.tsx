@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
       "Compare 2026 World Cup Golden Boot odds for Mbappé (+600), Kane (+650), Haaland (+1300) and more. Find the best top scorer prices across Bet365, 1xBet and Betway.",
     alternates: {
       canonical: postUrl("en"),
-      languages: Object.fromEntries(locales.map((l) => [l, postUrl(l)])),
+      languages: { ...Object.fromEntries(locales.map((l) => [l, postUrl(l)])), "x-default": postUrl("en") },
     },
     openGraph: {
       title: "World Cup 2026 Golden Boot Odds — Top Scorer Picks & Best Prices",

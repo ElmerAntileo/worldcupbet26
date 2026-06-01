@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "10 expert World Cup 2026 betting tips: France tournament winner at 6.00, Germany value bet at 10.00, Mbappé Golden Boot, Over 2.5 goals strategy and more. Backed by data.",
     alternates: {
       canonical: postUrl("en"),
-      languages: Object.fromEntries(locales.map((l) => [l, postUrl(l)])),
+      languages: { ...Object.fromEntries(locales.map((l) => [l, postUrl(l)])), "x-default": postUrl("en") },
     },
     openGraph: {
       title: "World Cup 2026 Betting Tips — 10 Expert Picks",

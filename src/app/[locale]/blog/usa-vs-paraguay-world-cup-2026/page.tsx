@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "USA vs Paraguay kicks off Group D at the 2026 World Cup on June 12 at MetLife Stadium. Best odds, expert betting tip and match preview. USA favoured at 1.75.",
   alternates: {
     canonical: postUrl("en"),
-    languages: Object.fromEntries(locales.map((l) => [l, postUrl(l)])),
+    languages: { ...Object.fromEntries(locales.map((l) => [l, postUrl(l)])), "x-default": postUrl("en") },
   },
   openGraph: {
     title: "USA vs Paraguay World Cup 2026 Odds & Preview",

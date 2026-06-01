@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
       "Find the best World Cup 2026 betting odds across 30+ bookmakers. We compare Bet365, 1xBet, Betway and more so you always get maximum value on every match.",
     alternates: {
       canonical: postUrl("en"),
-      languages: Object.fromEntries(locales.map((l) => [l, postUrl(l)])),
+      languages: { ...Object.fromEntries(locales.map((l) => [l, postUrl(l)])), "x-default": postUrl("en") },
     },
     openGraph: {
       title: "Best World Cup 2026 Betting Odds — Compare Top Bookmakers",

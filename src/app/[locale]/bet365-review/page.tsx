@@ -19,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
       "Full Bet365 review for World Cup 2026. Up to $500 welcome bonus, live streaming of all matches, 100+ markets per game. Is Bet365 the best bookmaker for the World Cup?",
     alternates: {
       canonical: reviewUrl("en"),
-      languages: Object.fromEntries(locales.map((l) => [l, reviewUrl(l)])),
+      languages: { ...Object.fromEntries(locales.map((l) => [l, reviewUrl(l)])), "x-default": reviewUrl("en") },
     },
     openGraph: {
       title: "Bet365 World Cup 2026 Review — Odds, Live Streaming & Bonus Guide",

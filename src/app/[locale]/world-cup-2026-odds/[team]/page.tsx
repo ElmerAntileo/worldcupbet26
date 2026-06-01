@@ -293,7 +293,7 @@ export async function generateMetadata({
     ],
     alternates: {
       canonical: pageUrl(teamSlug, "en"),
-      languages: Object.fromEntries(locales.map((l) => [l, pageUrl(teamSlug, l)])),
+      languages: { ...Object.fromEntries(locales.map((l) => [l, pageUrl(teamSlug, l)])), "x-default": pageUrl(teamSlug, "en") },
     },
     openGraph: {
       title: `${team.name} World Cup 2026 Odds — Compare Best Prices`,

@@ -176,7 +176,7 @@ export async function generateMetadata({
     ],
     alternates: {
       canonical: pageUrl(slug, "en"),
-      languages: Object.fromEntries(locales.map((l) => [l, pageUrl(slug, l)])),
+      languages: { ...Object.fromEntries(locales.map((l) => [l, pageUrl(slug, l)])), "x-default": pageUrl(slug, "en") },
     },
     openGraph: {
       title,

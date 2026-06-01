@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: meta.description,
     alternates: {
       canonical: reviewUrl("en"),
-      languages: Object.fromEntries(locales.map((l) => [l, reviewUrl(l)])),
+      languages: { ...Object.fromEntries(locales.map((l) => [l, reviewUrl(l)])), "x-default": reviewUrl("en") },
     },
     openGraph: {
       title: "1xBet World Cup 2026 Review — Bonus, Odds & Betting Guide",

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "Complete World Cup 2026 group stage draw. All 12 groups, 48 teams, match schedule and group winner betting odds. USA, Canada & Mexico host Jun 11–Jul 19, 2026.",
   alternates: {
     canonical: pageUrl("en"),
-    languages: Object.fromEntries(locales.map((l) => [l, pageUrl(l)])),
+    languages: { ...Object.fromEntries(locales.map((l) => [l, pageUrl(l)])), "x-default": pageUrl("en") },
   },
   openGraph: {
     title: "World Cup 2026 Groups — All 12 Groups, Teams & Odds",

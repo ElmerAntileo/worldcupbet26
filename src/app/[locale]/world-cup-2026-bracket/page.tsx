@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "World Cup 2026 knockout bracket with betting odds for every round. See projected paths for France, Brazil, England and all 48 teams from Round of 32 to the Final on July 19.",
   alternates: {
     canonical: pageUrl("en"),
-    languages: Object.fromEntries(locales.map((l) => [l, pageUrl(l)])),
+    languages: { ...Object.fromEntries(locales.map((l) => [l, pageUrl(l)])), "x-default": pageUrl("en") },
   },
   openGraph: {
     title: "World Cup 2026 Bracket & Knockout Odds — Full Tournament Path",

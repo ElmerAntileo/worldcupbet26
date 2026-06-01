@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
       "Find the best value bets for the 2026 FIFA World Cup. Dark horses, BTTS tips, Over/Under picks and accumulator ideas with odds compared across Bet365, 1xBet and Betway.",
     alternates: {
       canonical: postUrl("en"),
-      languages: Object.fromEntries(locales.map((l) => [l, postUrl(l)])),
+      languages: { ...Object.fromEntries(locales.map((l) => [l, postUrl(l)])), "x-default": postUrl("en") },
     },
     openGraph: {
       title: "Best World Cup 2026 Value Bets — Dark Horses & Betting Tips",

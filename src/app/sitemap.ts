@@ -11,7 +11,16 @@ function pageUrl(path: string, locale: string): string {
   return `${base}${prefix}${path}`;
 }
 
-/** Build a sitemap entry with full hreflang alternates for every locale. */
+/**
+ * Build a sitemap entry for a canonical (English) URL with full hreflang alternates.
+ *
+ * Only the default-locale (English) URL is submitted as the primary sitemap entry.
+ * Non-English locale variants are intentionally omitted as primary entries because
+ * every locale page carries canonical → English, which means submitting them causes
+ * "Alternative page with proper canonical tag" and
+ * "Duplicate, Google chose different canonical than user" warnings in Search Console.
+ * Google discovers locale variants through the hreflang `languages` object below.
+ */
 function entry(
   path: string,
   options: {
@@ -21,8 +30,8 @@ function entry(
   } = {}
 ): MetadataRoute.Sitemap[0][] {
   const { priority = 0.7, changeFrequency = "weekly", lastModified = new Date() } = options;
-  return locales.map((locale) => ({
-    url: pageUrl(path, locale),
+  return [{
+    url: pageUrl(path, defaultLocale),
     lastModified,
     changeFrequency,
     priority,
@@ -32,7 +41,7 @@ function entry(
         "x-default": pageUrl(path, defaultLocale),
       },
     },
-  }));
+  }];
 }
 
 const teamPages = [
