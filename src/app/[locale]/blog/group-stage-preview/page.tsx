@@ -81,9 +81,9 @@ const jsonLd = {
 
 const groups = [
   {
-    id: "A", teams: ["Mexico 🇲🇽", "Poland 🇵🇱", "Saudi Arabia 🇸🇦", "Bolivia 🇧🇴"],
+    id: "A", teams: ["Mexico 🇲🇽", "South Africa 🇿🇦", "Saudi Arabia 🇸🇦", "Bolivia 🇧🇴"],
     favorite: "Mexico", favOdds: "+140",
-    analysis: "Mexico are comfortable group favourites at +140 with an 80% qualification rate. Home advantage across North American venues is significant for El Tri, whose passionate fanbase will fill stadiums. Poland with Robert Lewandowski are firm second favourites to advance.",
+    analysis: "Mexico are clear group favourites at +140 with an 80%+ qualification rate. The co-hosts open the entire 2026 World Cup at Estadio Azteca vs South Africa on June 11 — 87,000 passionate fans will give El Tri a massive home advantage. South Africa are underdogs but represent AFCON quality. Saudi Arabia and Bolivia are the outsiders.",
     tip: "Mexico to win Group A", tipOdds: "+140",
   },
   {
@@ -117,16 +117,16 @@ const groups = [
     tip: "Both France and Netherlands to qualify", tipOdds: "-120",
   },
   {
-    id: "G", teams: ["Argentina 🇦🇷", "Germany 🇩🇪", "South Africa 🇿🇦", "Zambia 🇿🇲"],
-    favorite: "Argentina", favOdds: "+125",
-    analysis: "A potential Group of Death — Argentina vs Germany could be the most anticipated group stage fixture of the tournament. Both teams project to qualify but neither is guaranteed to top the group. Argentina have +125 for group win, Germany +140. Excellent group stage betting value throughout.",
-    tip: "Argentina vs Germany Over 2.5 goals", tipOdds: "-110",
+    id: "G", teams: ["Belgium 🇧🇪", "Egypt 🇪🇬", "New Zealand 🇳🇿", "El Salvador 🇸🇻"],
+    favorite: "Belgium", favOdds: "+105",
+    analysis: "Belgium's golden generation gets one last chance at World Cup glory in Group G. Kevin De Bruyne, Romelu Lukaku's successors and a squad with Europa League quality throughout should top the group. Egypt with Mohamed Salah make this opener on June 17 at SoFi Stadium a marquee event — Salah at 34 is still capable of disrupting any team on his day.",
+    tip: "Belgium to win Group G", tipOdds: "+105",
   },
   {
-    id: "H", teams: ["Spain 🇪🇸", "Japan 🇯🇵", "Belgium 🇧🇪", "Azerbaijan 🇦🇿"],
+    id: "H", teams: ["Spain 🇪🇸", "Uruguay 🇺🇾", "Côte d'Ivoire 🇨🇮", "Georgia 🇬🇪"],
     favorite: "Spain", favOdds: "-180",
-    analysis: "Spain have the highest group win probability in the entire tournament at 79% — making them prohibitive favourites at -180. The interesting market here is Group 2nd place between Japan and Belgium, with Japan offering outstanding value at +200 to qualify behind Spain.",
-    tip: "Japan to qualify from Group H", tipOdds: "+200",
+    analysis: "Spain are overwhelming Group H favourites at -180 — Euro 2024 and Nations League champions, with Lamine Yamal, Pedri and Rodri in their prime. Uruguay bring South American grit with Darwin Núñez leading the attack, but La Roja's tiki-taka quality is a level above the group competition. Spain should top Group H with ease.",
+    tip: "Spain to win Group H", tipOdds: "-180",
   },
 ];
 
