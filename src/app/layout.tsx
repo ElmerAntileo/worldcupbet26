@@ -17,11 +17,11 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.worldcupbet26.com"),
   title: {
-    default: 'World Cup 2026 Betting Odds — Compare Bookmakers Live | WorldCupBet26',
+    default: 'World Cup Betting Odds 2026 — Live Odds Comparison | Betsson, 1xBet, Bet365',
     template: '%s | WorldCupBet26',
   },
-  description: 'Compare World Cup 2026 betting odds from Betsson, 1xBet, Bet365 & more. Best bonuses, live match odds, value bets & expert tips. FIFA World Cup Jun 11–Jul 19.',
-  keywords: ['World Cup 2026 odds', 'FIFA 2026 betting', 'World Cup betting', '2026 World Cup bookmakers', 'best World Cup odds'],
+  description: 'World Cup betting odds 2026 live from 32+ bookmakers. Compare Betsson vs 1xBet vs Bet365. Best bonuses, match predictions & expert World Cup betting tips.',
+  keywords: ['world cup betting', 'world cup betting odds', 'world cup 2026 odds', 'betting odds 2026', 'FIFA World Cup betting', '2026 World Cup odds'],
   openGraph: {
     siteName: 'WorldCupBet26',
     type: 'website',
