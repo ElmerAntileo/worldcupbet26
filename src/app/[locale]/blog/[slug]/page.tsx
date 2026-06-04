@@ -42,6 +42,27 @@ const articles: Record<string, { title: string; description: string; content: st
     content:
       "Betting on the World Cup starts with choosing a licensed bookmaker. The most popular markets are Match Result, Over/Under Goals, Both Teams to Score and the Tournament Winner. Always compare odds across at least two bookmakers before placing.",
   },
+  "best-world-cup-betting-sites": {
+    title: "Best World Cup 2026 Betting Sites — Safe & Regulated Sportsbooks",
+    description:
+      "Top-rated World Cup 2026 betting sites with best bonuses and odds. Compare Betsson, 1xBet, Bet365, Betway & more. Live odds, expert tips & secure betting.",
+    content:
+      "Finding the right sportsbook for World Cup 2026 betting is crucial. You want a licensed, regulated platform that offers competitive odds, reliable payouts, and exclusive World Cup bonuses. Betsson offers 100% up to €100 with World Cup specials. 1xBet provides 130+ betting markets per match. Bet365 features the fastest live odds updates and best mobile app. Betway runs constant promotions throughout the tournament. All require ID verification (24-48 hours) so sign up NOW before June 11.",
+  },
+  "world-cup-betting-guide": {
+    title: "World Cup 2026 Betting Guide — Complete Overview for Beginners",
+    description:
+      "Complete World Cup 2026 betting guide for beginners. Learn betting markets, odds types, strategy tips, and how to find the best sportsbooks. June 11-July 19.",
+    content:
+      "The 2026 FIFA World Cup runs June 11 to July 19 with 80 matches across 48 teams. Betting markets include Match Result (1X2), Over/Under Goals, Both Teams to Score, Asian Handicap, Correct Score, Tournament Winner, and Player Props. Key strategy: set a bankroll (e.g., €1,000), bet no more than 2-5% per match, find value bets where odds underestimate probability, and compare odds across multiple sportsbooks. Group stage bets offer best value. Use WorldCupBet26's odds comparison to always bet at the highest available odds.",
+  },
+  "world-cup-odds-explained": {
+    title: "World Cup 2026 Odds Explained — How to Read & Understand Betting Odds",
+    description:
+      "Learn how World Cup 2026 betting odds work. Understand decimal, fractional, moneyline odds formats. Learn to calculate profits and find value.",
+    content:
+      "Betting odds represent probability expressed as numbers. Decimal odds (1.65, 2.50) are most common in World Cup betting. Calculate returns: Stake × Odds = Total Return. €10 at 1.65 = €16.50 total (€6.50 profit). Implied probability: 100 ÷ Odds = Percentage. 1.65 odds = 60.6% probability. Fractional odds (3/5, 7/2) show profit only. Moneyline odds (-165, +370) are used in USA. Always compare odds across sportsbooks — a 0.05 difference per bet adds up across dozens of matches. Smart bettors find value when true probability exceeds implied probability.",
+  },
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -76,7 +97,10 @@ export default function ArticlePage({ params }: Props) {
       <p style={{ color: "var(--muted-light)", fontSize: "15px", lineHeight: 1.7, marginBottom: "32px" }}>{a.content}</p>
       <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
         {[
-          { href: "/blog/best-world-cup-2026-betting-odds", label: "Best Odds Guide" },
+          { href: "/blog/best-world-cup-betting-sites", label: "Best Betting Sites" },
+          { href: "/blog/world-cup-betting-guide", label: "Betting Guide" },
+          { href: "/blog/world-cup-odds-explained", label: "Odds Explained" },
+          { href: "/blog/best-world-cup-2026-betting-odds", label: "Best Odds" },
           { href: "/blog/golden-boot-odds-2026", label: "Golden Boot Odds" },
           { href: "/blog/top-favorites-to-win", label: "Tournament Favorites" },
           { href: "/blog/best-value-bets", label: "Value Bets" },
