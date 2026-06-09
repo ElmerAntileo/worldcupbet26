@@ -12,6 +12,7 @@ import { useEffect } from "react";
 const AFFILIATE_DOMAINS: Record<string, string> = {
   "record.betsson.com": "Betsson",
   "reffpa.com": "1xBet",
+  "bet365.com": "Bet365",
 };
 
 export default function AffiliateTracker() {
