@@ -232,7 +232,7 @@ export default async function HomePage() {
             </div>
           </div>
           <a href="https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            style={{ background: 'linear-gradient(135deg,#00d084,#00b870)', color: '#040c18', padding: '8px 20px', borderRadius: '7px', fontWeight: 800, fontSize: '12px', textDecoration: 'none', whiteSpace: 'nowrap', boxShadow: '0 3px 10px rgba(0,208,132,0.3)' }} data-affiliate="Betsson">
+            style={{ background: 'linear-gradient(135deg,#ef4444,#dc2626)', color: 'white', padding: '8px 20px', borderRadius: '7px', fontWeight: 800, fontSize: '12px', textDecoration: 'none', whiteSpace: 'nowrap', boxShadow: '0 3px 10px rgba(239,68,68,0.3)' }} data-affiliate="Betsson">
             Claim Bonus →
           </a>
         </div>
@@ -310,8 +310,8 @@ export default async function HomePage() {
           <CountdownTimer />
 
           <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap', marginTop: '32px' }}>
-            <a href="#odds" className="btn-primary" style={{ padding: '15px 36px', fontSize: '15px', borderRadius: '9px' }}>
-              ⚡ View Live Odds
+            <a href="https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow sponsored" style={{ background: 'linear-gradient(135deg, #ef4444, #dc2626)', color: 'white', padding: '15px 36px', fontSize: '15px', borderRadius: '9px', fontWeight: 800, textDecoration: 'none', boxShadow: '0 4px 12px rgba(239,68,68,0.3)' }}>
+              🎁 Claim €100 Bonus
             </a>
             <Link href="/world-cup-2026-matches" className="btn-outline" style={{ padding: '15px 36px', fontSize: '15px', borderRadius: '9px' }}>
               All Matches →
@@ -464,11 +464,11 @@ export default async function HomePage() {
                     <a href={bk.url} target="_blank" rel="noopener noreferrer nofollow sponsored"
                       style={{
                         display: 'inline-block',
-                        background: i === 0 ? 'linear-gradient(135deg,#FFD756,#FFB800)' : 'linear-gradient(135deg,#00d084,#00b870)',
-                        color: '#040c18',
+                        background: i === 0 ? 'linear-gradient(135deg,#ef4444,#dc2626)' : 'linear-gradient(135deg,#ef4444,#dc2626)',
+                        color: 'white',
                         padding: '11px 22px', borderRadius: '8px', fontWeight: 800,
                         fontSize: '13px', textDecoration: 'none', whiteSpace: 'nowrap',
-                        boxShadow: i === 0 ? '0 4px 14px rgba(255,184,0,0.3)' : '0 4px 14px rgba(0,208,132,0.25)',
+                        boxShadow: '0 4px 14px rgba(239,68,68,0.3)',
                       }}>
                       Claim Bonus
                     </a>
