@@ -7,10 +7,11 @@ import { NextRequest, NextResponse } from 'next/server';
  */
 
 // Multiple free CORS proxy services (fallback chain)
+// Using only reliable services that work consistently
 const FREE_PROXY_SERVICES = [
   (url: string) => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
-  (url: string) => `https://thingproxy.freeboard.io/fetch/${url}`,
-  (url: string) => `https://corsanywhere.herokuapp.com/${url}`,
+  (url: string) => `https://thingproxy.freeboard.io/fetch/${encodeURIComponent(url)}`,
+  (url: string) => `https://corsproxy.io/?${encodeURIComponent(url)}`,
 ];
 
 // Rotating user agents to avoid detection
@@ -58,7 +59,6 @@ async function fetchWithProxy(url: string, attempt: number = 0): Promise<Respons
         'Accept-Encoding': 'gzip, deflate, br',
         'DNT': '1',
       },
-      timeout: 10000,
       redirect: 'follow',
     });
 

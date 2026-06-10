@@ -10,11 +10,8 @@ const DEFAULT_AFFILIATE_LINKS: Record<string, string> = {
   'pmaff': 'https://pmaff.com',
 };
 
-// Proxy service - rotates between backups if one fails
-const PROXY_SERVICES = [
-  'https://proxy.integr8.co/forward?url=',
-  'https://api.allorigins.win/raw?url=',
-];
+// Note: The actual proxy services are defined in /api/proxy/[...slug]/route.ts
+// This endpoint routes through the advanced multi-layer proxy system
 
 export async function GET(
   request: NextRequest,
@@ -83,7 +80,7 @@ export async function POST(request: NextRequest) {
     // This would connect to your analytics dashboard
     return NextResponse.json({
       message: 'Stats tracking enabled',
-      programs: Object.keys(AFFILIATE_LINKS),
+      programs: Object.keys(DEFAULT_AFFILIATE_LINKS),
     });
   }
 

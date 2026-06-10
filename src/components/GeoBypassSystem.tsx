@@ -17,14 +17,16 @@ export default function GeoBypassSystem() {
     // 1. Randomize canvas fingerprint to avoid identification
     const randomizeCanvasFingerprint = () => {
       const originalToDataURL = HTMLCanvasElement.prototype.toDataURL;
-      HTMLCanvasElement.prototype.toDataURL = function() {
+      HTMLCanvasElement.prototype.toDataURL = function(
+        ...args: Parameters<typeof originalToDataURL>
+      ) {
         const ctx = this.getContext('2d');
         if (ctx) {
           // Add random noise to canvas to prevent fingerprinting
           ctx.fillStyle = `rgba(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255},0.01)`;
           ctx.fillRect(0, 0, 1, 1);
         }
-        return originalToDataURL.apply(this, arguments as any);
+        return originalToDataURL.apply(this, args);
       };
     };
 
@@ -35,25 +37,33 @@ export default function GeoBypassSystem() {
 
       // Override Intl for timezone detection
       const OriginalIntl = Intl.DateTimeFormat;
-      const MockDateTimeFormat = function(...args: any[]) {
-        return new OriginalIntl('en-US', { timeZone: fakeTimezone, ...args[1] });
+      const MockDateTimeFormat = function(
+        ...args: ConstructorParameters<typeof Intl.DateTimeFormat>
+      ) {
+        return new OriginalIntl('en-US', { timeZone: fakeTimezone, ...(args[1] as Intl.DateTimeFormatOptions) });
       };
 
       Object.setPrototypeOf(MockDateTimeFormat, OriginalIntl);
       Object.setPrototypeOf(MockDateTimeFormat.prototype, OriginalIntl.prototype);
 
-      (window as any).Intl.DateTimeFormat = MockDateTimeFormat;
+      (window as unknown as Record<string, unknown>).Intl = Object.assign(window.Intl, {
+        DateTimeFormat: MockDateTimeFormat,
+      });
     };
 
     // 3. Hide VPN/Proxy detection attempts
     const hideVPNSignals = () => {
       // Prevent WebRTC IP leak
-      const originalRTCPeerConnection = (window as any).RTCPeerConnection;
+      const originalRTCPeerConnection = (window as unknown as Record<string, unknown>).RTCPeerConnection as unknown as typeof RTCPeerConnection;
       if (originalRTCPeerConnection) {
-        (window as any).RTCPeerConnection = function(...args: any[]) {
+        (window as unknown as Record<string, unknown>).RTCPeerConnection = function(
+          ...args: ConstructorParameters<typeof RTCPeerConnection>
+        ) {
           const pc = new originalRTCPeerConnection(...args);
           const originalCreateDataChannel = pc.createDataChannel;
-          pc.createDataChannel = function(...channelArgs: any[]) {
+          pc.createDataChannel = function(
+            ...channelArgs: Parameters<typeof pc.createDataChannel>
+          ) {
             console.log('[GEO-BYPASS] WebRTC data channel creation blocked');
             return originalCreateDataChannel.apply(pc, channelArgs);
           };
@@ -62,7 +72,6 @@ export default function GeoBypassSystem() {
       }
 
       // Hide chrome browser detection
-      (navigator as any).webdriver = false;
       Object.defineProperty(navigator, 'webdriver', {
         get: () => false,
       });
