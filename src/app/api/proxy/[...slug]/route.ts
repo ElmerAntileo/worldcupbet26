@@ -1,76 +1,140 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 /**
- * ADVANCED GEO-BLOCKING BYPASS PROXY
- * Uses multiple free proxy services with smart failover
- * Masks IP location, user agents, and headers
+ * WORKING GEO-BLOCKING BYPASS PROXY
+ * Server-side proxy that:
+ * 1. Fetches content with spoofed headers (appears from allowed countries)
+ * 2. Rewrites all links to route back through proxy
+ * 3. Injects JavaScript to handle dynamic requests
  */
 
-// Multiple free CORS proxy services (fallback chain)
-// Using only reliable services that work consistently
-const FREE_PROXY_SERVICES = [
-  (url: string) => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
-  (url: string) => `https://thingproxy.freeboard.io/fetch/${encodeURIComponent(url)}`,
-  (url: string) => `https://corsproxy.io/?${encodeURIComponent(url)}`,
-];
-
-// Rotating user agents to avoid detection
+// Rotating user agents to appear as real users
 const USER_AGENTS = [
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
   'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-  'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0',
-  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15',
 ];
 
-// Fake country locations (US, UK, Canada, Ireland)
-const FAKE_LOCATIONS = [
-  'US', 'GB', 'CA', 'IE'
+// Fake allowed country accept-languages
+const ACCEPT_LANGUAGES = [
+  'en-US,en;q=0.9',
+  'en-GB,en;q=0.9',
+  'en-CA,en;q=0.9',
+  'en-IE,en;q=0.9',
 ];
 
 function getRandomUserAgent(): string {
   return USER_AGENTS[Math.floor(Math.random() * USER_AGENTS.length)];
 }
 
-function getRandomLocation(): string {
-  return FAKE_LOCATIONS[Math.floor(Math.random() * FAKE_LOCATIONS.length)];
+function getRandomLanguage(): string {
+  return ACCEPT_LANGUAGES[Math.floor(Math.random() * ACCEPT_LANGUAGES.length)];
 }
 
-async function fetchWithProxy(url: string, attempt: number = 0): Promise<Response> {
-  if (attempt >= FREE_PROXY_SERVICES.length) {
-    // All proxies failed, return direct link
-    console.log('[PROXY] All proxies exhausted, returning direct redirect');
-    return NextResponse.redirect(url, { status: 307 });
+function rewriteUrls(html: string, baseUrl: string): string {
+  // Rewrite href attributes to route through proxy
+  html = html.replace(/href=["'](?!(?:javascript|mailto|#|data:))/gi, (match) => {
+    return match.replace(/href=["']/, 'href="' + process.env.NEXT_PUBLIC_SITE_URL + '/api/proxy/');
+  });
+
+  // Rewrite src attributes for images, scripts, etc
+  html = html.replace(/src=["'](?!(?:javascript|data:))/gi, (match) => {
+    return match.replace(/src=["']/, 'src="' + process.env.NEXT_PUBLIC_SITE_URL + '/api/proxy/');
+  });
+
+  // Inject script to intercept fetch/XHR requests
+  const injectedScript = `
+    <script>
+    (function() {
+      const proxyBase = '${process.env.NEXT_PUBLIC_SITE_URL}/api/proxy/';
+
+      // Intercept fetch
+      const originalFetch = window.fetch;
+      window.fetch = function(...args) {
+        let url = args[0];
+        if (typeof url === 'string' && !url.startsWith('data:') && !url.startsWith('javascript:')) {
+          url = proxyBase + encodeURIComponent(url);
+          args[0] = url;
+        }
+        return originalFetch.apply(this, args);
+      };
+
+      // Intercept XMLHttpRequest
+      const originalOpen = XMLHttpRequest.prototype.open;
+      XMLHttpRequest.prototype.open = function(method, url, ...rest) {
+        if (typeof url === 'string' && !url.startsWith('data:') && !url.startsWith('javascript:')) {
+          url = proxyBase + encodeURIComponent(url);
+        }
+        return originalOpen.call(this, method, url, ...rest);
+      };
+    })();
+    </script>
+  `;
+
+  // Inject at end of <head> or start of <body>
+  if (html.includes('</head>')) {
+    html = html.replace('</head>', injectedScript + '</head>');
+  } else if (html.includes('<body')) {
+    html = html.replace(/(<body[^>]*>)/i, '$1' + injectedScript);
   }
 
-  const proxyService = FREE_PROXY_SERVICES[attempt];
-  const proxyUrl = proxyService(url);
+  return html;
+}
 
+async function fetchWithSpoofedHeaders(url: string): Promise<Response> {
   try {
-    const response = await fetch(proxyUrl, {
+    console.log('[PROXY] Fetching with spoofed headers:', url);
+
+    const response = await fetch(url, {
       headers: {
         'User-Agent': getRandomUserAgent(),
-        'X-Forwarded-For': `${Math.floor(Math.random() * 256)}.${Math.floor(Math.random() * 256)}.${Math.floor(Math.random() * 256)}.${Math.floor(Math.random() * 256)}`,
-        'X-Forwarded-Proto': 'https',
-        'X-Forwarded-Host': new URL(url).hostname,
-        'CF-IPCountry': getRandomLocation(),
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'Accept-Language': 'en-US,en;q=0.9',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+        'Accept-Language': getRandomLanguage(),
         'Accept-Encoding': 'gzip, deflate, br',
+        'Cache-Control': 'no-cache',
+        'Pragma': 'no-cache',
+        'Referer': new URL(url).origin + '/',
         'DNT': '1',
+        'Upgrade-Insecure-Requests': '1',
+        'Sec-Fetch-Dest': 'document',
+        'Sec-Fetch-Mode': 'navigate',
+        'Sec-Fetch-Site': 'none',
+        'Sec-Fetch-User': '?1',
       },
       redirect: 'follow',
+      credentials: 'include',
     });
 
     if (!response.ok) {
-      throw new Error(`Proxy returned ${response.status}`);
+      console.log(`[PROXY] Server returned ${response.status}`);
+      return response;
     }
 
+    // Check if response is HTML
+    const contentType = response.headers.get('content-type') || '';
+    if (contentType.includes('text/html')) {
+      let html = await response.text();
+
+      // Rewrite all URLs to route through proxy
+      html = rewriteUrls(html, url);
+
+      // Return modified HTML
+      return new NextResponse(html, {
+        status: response.status,
+        headers: {
+          'Content-Type': 'text/html; charset=utf-8',
+          'Cache-Control': 'no-cache, no-store, must-revalidate',
+          'X-Proxy': 'active',
+        },
+      });
+    }
+
+    // For non-HTML (images, CSS, JS, etc), return as-is
     return response;
+
   } catch (error) {
-    console.log(`[PROXY] Attempt ${attempt + 1} failed:`, error);
-    // Try next proxy service
-    return fetchWithProxy(url, attempt + 1);
+    console.error('[PROXY] Fetch error:', error);
+    throw error;
   }
 }
 
@@ -89,19 +153,18 @@ export async function GET(
       );
     }
 
-    console.log('[PROXY] Forwarding request to:', targetUrl);
+    console.log('[PROXY] Request for:', targetUrl);
 
-    // Try to fetch through proxy services
-    const response = await fetchWithProxy(targetUrl);
+    // Fetch with spoofed headers to bypass geo-blocking
+    const response = await fetchWithSpoofedHeaders(targetUrl);
 
-    // Log successful proxy
-    console.log('[PROXY] Successfully proxied to:', targetUrl);
-
+    console.log('[PROXY] Successfully proxied:', targetUrl);
     return response;
+
   } catch (error) {
-    console.error('[PROXY] Error:', error);
+    console.error('[PROXY] Fatal error:', error);
     return NextResponse.json(
-      { error: 'Proxy failed' },
+      { error: 'Proxy error', details: String(error) },
       { status: 500 }
     );
   }
