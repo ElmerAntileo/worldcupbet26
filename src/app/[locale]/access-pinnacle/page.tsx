@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
-import AccessGuide from '@/components/AccessGuide';
-
 const affiliateLink = 'https://www.pinnacle.com';
 
 export default function AccessPinnacle() {
