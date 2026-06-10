@@ -4,8 +4,13 @@
 import AccessGuide from '@/components/AccessGuide';
 
 const affiliateLink = 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97';
+const proxyLink = `/api/proxy/${encodeURIComponent(affiliateLink)}`;
 
 export default function Access1xBet() {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    window.open(proxyLink, '_blank');
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
@@ -93,7 +98,8 @@ export default function Access1xBet() {
           <h3 className="text-2xl font-bold mb-4">Ready to Start Betting?</h3>
           <p className="mb-6 text-lg">Follow the guide above and get access to 1xBet in under 5 minutes</p>
           <a
-            href={affiliateLink}
+            href={proxyLink}
+            onClick={handleClick}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-white text-blue-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg text-lg"
