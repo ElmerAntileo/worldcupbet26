@@ -43,10 +43,8 @@ export async function GET(
           },
         });
       }
-    } catch (e) {
-      console.log('[GEO-BYPASS] AllOrigins failed, trying next...');
     } catch {
-      // Continue to next strategy
+      console.log('[GEO-BYPASS] AllOrigins failed, trying next...');
     }
 
     // Strategy 2: Try direct fetch with aggressive header spoofing for multiple regions
