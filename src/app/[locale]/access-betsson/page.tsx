@@ -96,14 +96,6 @@ export default function AccessBetsson() {
             href={affiliateLink}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => {
-              if (typeof window !== 'undefined' && (window as any).gtag) {
-                (window as any).gtag('event', 'cta_click', {
-                  event_category: 'CTA',
-                  event_label: 'betsson_main',
-                });
-              }
-            }}
             className="inline-block bg-white text-orange-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg text-lg"
           >
             Sign Up at Betsson →

@@ -96,14 +96,6 @@ export default function Access1xBet() {
             href={affiliateLink}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => {
-              if (typeof window !== 'undefined' && (window as any).gtag) {
-                (window as any).gtag('event', 'cta_click', {
-                  event_category: 'CTA',
-                  event_label: '1xbet_main',
-                });
-              }
-            }}
             className="inline-block bg-white text-blue-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg text-lg"
           >
             Sign Up at 1xBet →
