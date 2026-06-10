@@ -108,6 +108,7 @@ export default function AccessGuide({ program, affiliateLink }: AccessGuideProps
           {step === 1 && (
             <div>
               <p className="text-gray-700 mb-3">Install Tor Browser and click &quot;Connect&quot;</p>
+              <p className="text-gray-700 mb-3 text-sm"><strong>IMPORTANT:</strong> After Tor connects, click the Settings icon (⚙️) → Connection → Bridge Settings. Select an exit node from: USA, UK, Canada, or Ireland</p>
               <button
                 onClick={() => handleStepComplete(1)}
                 className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
@@ -118,20 +119,22 @@ export default function AccessGuide({ program, affiliateLink }: AccessGuideProps
           )}
         </div>
 
-        {/* Step 3: Wait for Connection */}
+        {/* Step 3: Verify Location */}
         <div className={`p-4 rounded-lg ${step >= 2 ? 'bg-white border-2 border-amber-400' : 'bg-gray-100'}`}>
           <div className="flex items-center justify-between mb-3">
-            <h4 className="font-bold text-lg">Step 3: Wait for Connection</h4>
+            <h4 className="font-bold text-lg">Step 3: Verify Correct Exit Node</h4>
             {step > 2 && <span className="text-green-600 text-xl">✓</span>}
           </div>
           {step === 2 && (
             <div>
-              <p className="text-gray-700 mb-3">Wait for the green onion icon (takes 10-30 seconds)</p>
+              <p className="text-gray-700 mb-3"><strong>CRITICAL:</strong> Open a new tab and go to <code className="bg-gray-200 px-2 py-1 rounded">whatismyipaddress.com</code></p>
+              <p className="text-gray-700 mb-3">Your country must show: 🇺🇸 USA, 🇬🇧 UK, 🇨🇦 Canada, or 🇮🇪 Ireland</p>
+              <p className="text-gray-700 mb-3 text-sm text-red-600">❌ If you see Germany or another blocked country, go back and reconnect Tor to a different exit node</p>
               <button
                 onClick={() => handleStepComplete(2)}
                 className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               >
-                Connected! ✓
+                Verified Correct Location! ✓
               </button>
             </div>
           )}
