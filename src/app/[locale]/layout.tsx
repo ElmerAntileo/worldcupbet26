@@ -5,7 +5,8 @@ import { Nav } from "@/components/Nav";
 import { routing } from "@/i18n/routing";
 import Footer from "@/components/Footer";
 import StickyOddsBar from "@/components/StickyOddsBar";
-import AffiliateTracker from "@/components/AffiliateTracker";
+import AffiliateRedirectTracker from "@/components/AffiliateRedirectTracker";
+import AffiliateConversionDashboard from "@/components/AffiliateConversionDashboard";
 import CookieConsent from "@/components/CookieConsent";
 import Script from "next/script";
 
@@ -55,7 +56,8 @@ export default async function LocaleLayout({ children, params }: Props) {
       <main className="min-h-dvh bg-zinc-50 dark:bg-zinc-950">{children}</main>
       <Footer />
       <CookieConsent />
-      <AffiliateTracker />
+      <AffiliateRedirectTracker />
+      <AffiliateConversionDashboard />
     </NextIntlClientProvider>
   );
 }
