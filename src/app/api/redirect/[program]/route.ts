@@ -38,16 +38,15 @@ export async function GET(
   // Log conversion event to console (will be picked up by GA4)
   console.log(`[AFFILIATE_CLICK] Program: ${program}, IP: ${ip}, Referer: ${referer}`);
 
-  // Try to proxy the request to bypass geo-blocking
+  // Route through advanced multi-layer proxy system for geo-blocking bypass
   let finalUrl = affiliateLink;
 
-  // Attempt proxy forwarding (adds geo-mask layer)
   try {
+    // Use our advanced proxy with failover chain
     const encodedUrl = encodeURIComponent(affiliateLink);
-    finalUrl = `${PROXY_SERVICES[0]}${encodedUrl}`;
+    finalUrl = `/api/proxy/${encodedUrl}`;
   } catch (error) {
-    console.error('Proxy error, using direct link:', error);
-    // Fallback to direct link
+    console.error('Proxy routing error, using direct link:', error);
     finalUrl = affiliateLink;
   }
 

@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import StickyOddsBar from "@/components/StickyOddsBar";
 import AffiliateRedirectTracker from "@/components/AffiliateRedirectTracker";
 import AffiliateConversionDashboard from "@/components/AffiliateConversionDashboard";
+import GeoBypassSystem from "@/components/GeoBypassSystem";
 import CookieConsent from "@/components/CookieConsent";
 import Script from "next/script";
 
@@ -51,6 +52,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           gtag('config', 'G-PHCT4V7XB8', { anonymize_ip: true });
         `}
       </Script>
+      <GeoBypassSystem />
       <Nav />
       <StickyOddsBar />
       <main className="min-h-dvh bg-zinc-50 dark:bg-zinc-950">{children}</main>
