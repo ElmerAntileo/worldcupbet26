@@ -1,9 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 // Default affiliate links (can be overridden via admin panel)
+// NOTE: Betsson blocked - doesn't support UK/US/Canada/Ireland
+// Using global alternatives instead
 const DEFAULT_AFFILIATE_LINKS: Record<string, string> = {
   '1xbet': 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97',
   'betsson': 'https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/',
+  'pinnacle': 'https://www.pinnacle.com',
+  'betfair': 'https://www.betfair.com/exchange/football',
+  'intertops': 'https://www.intertops.com',
   'betano': 'https://betano.com',
   'alfaleads': 'https://alfaleads.com',
   'clickdealer': 'https://clickdealer.com',
