@@ -1,12 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-// Affiliate links - EASILY UPDATEABLE
-const AFFILIATE_LINKS: Record<string, string> = {
+// Default affiliate links (can be overridden via admin panel)
+const DEFAULT_AFFILIATE_LINKS: Record<string, string> = {
   '1xbet': 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97',
   'betsson': 'https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/',
-  'betano': 'https://betano.com/?affiliateid=your_id', // Update when approved
-  'alfaleads': 'https://alfaleads.com/?aff=your_id', // Update when approved
-  'clickdealer': 'https://clickdealer.com/?aff=your_id', // Update when approved
+  'betano': 'https://betano.com',
+  'alfaleads': 'https://alfaleads.com',
+  'clickdealer': 'https://clickdealer.com',
+  'pmaff': 'https://pmaff.com',
 };
 
 // Proxy service - rotates between backups if one fails
@@ -20,7 +21,8 @@ export async function GET(
   { params }: { params: { program: string } }
 ) {
   const program = params.program.toLowerCase();
-  const affiliateLink = AFFILIATE_LINKS[program];
+  // Use default link (can be overridden on client-side via localStorage)
+  const affiliateLink = DEFAULT_AFFILIATE_LINKS[program];
 
   if (!affiliateLink) {
     return NextResponse.json(
