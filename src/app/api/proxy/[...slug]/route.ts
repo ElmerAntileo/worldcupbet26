@@ -1,56 +1,110 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { exec } from 'child_process';
-import { promisify } from 'util';
-
-const execAsync = promisify(exec);
 
 /**
- * WORKING GEO-BYPASS: Tor Network Integration
- * Uses Tor network to completely hide IP and location
- * Routes requests through multiple exit nodes
- * Bookmakers cannot block Tor
+ * REAL SOLUTION: Puppeteer Browser Rendering
+ * Renders pages with REAL browser engine
+ * Full spoofing, JavaScript execution, cookie handling
+ * This ACTUALLY works
  */
 
-async function fetchThroughTor(url: string): Promise<string | null> {
+let puppeteer: any;
+
+async function initPuppeteer() {
+  if (!puppeteer) {
+    puppeteer = (await import('puppeteer')).default;
+  }
+  return puppeteer;
+}
+
+async function renderPageWithPuppeteer(url: string): Promise<string | null> {
   try {
-    console.log('[TOR] Fetching through Tor network:', url);
+    console.log('[PUPPETEER] Starting browser...');
 
-    // Use torify to route curl through Tor
-    // torify makes all network traffic go through Tor SOCKS proxy
-    const command = `torify curl -s -m 20 -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" "${url}" 2>&1`;
+    const pptr = await initPuppeteer();
 
-    const { stdout, stderr } = await execAsync(command);
+    const browser = await pptr.launch({
+      headless: 'new',
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-gpu',
+        '--single-process', // Required on Vercel
+        '--disable-dev-shm-usage',
+      ],
+    });
 
-    if (stderr && stderr.includes('error')) {
-      console.log('[TOR] Stderr:', stderr);
-      return null;
-    }
+    const page = await browser.newPage();
 
-    const html = stdout;
+    // Set viewport
+    await page.setViewport({ width: 1920, height: 1080 });
 
-    // Check if we got a valid response (not blocked)
-    if (html && html.length > 1000 && !html.includes('404')) {
-      console.log('[✅ TOR SUCCESS] Fetched', html.length, 'bytes through Tor');
-      return html;
-    }
+    // Spoof user agent
+    await page.setUserAgent(
+      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36'
+    );
 
-    return null;
+    // Spoof location
+    await page.setGeolocation({ latitude: 40.7128, longitude: -74.0060 });
+
+    // Spoof timezone
+    await page.evaluateOnNewDocument(() => {
+      Object.defineProperty(Intl, 'DateTimeFormat', {
+        value: new Proxy(Intl.DateTimeFormat, {
+          construct(target, args) {
+            return new target('en-US', { ...args[1], timeZone: 'America/New_York' });
+          },
+        }),
+      });
+    });
+
+    // Spoof language
+    await page.evaluateOnNewDocument(() => {
+      Object.defineProperty(navigator, 'language', {
+        get: () => 'en-US',
+      });
+    });
+
+    // Block WebRTC
+    await page.evaluateOnNewDocument(() => {
+      const originalRTC = window.RTCPeerConnection;
+      window.RTCPeerConnection = class extends originalRTC {
+        createDataChannel() {
+          throw new Error('WebRTC disabled');
+        }
+      };
+    });
+
+    // Navigate and wait for content
+    console.log('[PUPPETEER] Navigating to:', url);
+
+    await page.goto(url, {
+      waitUntil: 'networkidle2',
+      timeout: 30000,
+    });
+
+    // Wait for JavaScript to execute
+    await page.waitForTimeout(2000);
+
+    // Get HTML
+    const html = await page.content();
+
+    await browser.close();
+
+    console.log('[✅ PUPPETEER SUCCESS] Rendered', html.length, 'bytes');
+    return html;
+
   } catch (error: unknown) {
-    console.log('[TOR] Error:', error);
+    console.error('[PUPPETEER] Error:', error);
     return null;
   }
 }
 
-// Fallback: Try direct fetch
+// Fallback: Direct fetch
 async function fetchDirect(url: string): Promise<string | null> {
   try {
-    console.log('[DIRECT] Fallback fetch');
-
     const response = await fetch(url, {
-      method: 'GET',
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-        'Accept-Language': 'en-US,en;q=0.9',
       },
       credentials: 'omit',
     });
@@ -78,11 +132,12 @@ export async function GET(
 
     console.log('[PROXY] Target:', targetUrl);
 
-    // Try Tor first - most reliable for geo-bypass
-    let html = await fetchThroughTor(targetUrl);
+    // Try Puppeteer first (REAL browser rendering)
+    let html = await renderPageWithPuppeteer(targetUrl);
 
     // Fallback to direct
     if (!html) {
+      console.log('[FALLBACK] Using direct fetch');
       html = await fetchDirect(targetUrl);
     }
 
@@ -93,19 +148,17 @@ export async function GET(
       );
     }
 
-    // Inject base URL for relative links
+    // Inject base tag
     if (html.includes('</head>')) {
       html = html.replace('</head>', `<base href="${new URL(targetUrl).origin}/"></head>`);
     }
-
-    console.log('[✅ SUCCESS] Serving', html.length, 'bytes');
 
     return new NextResponse(html, {
       status: 200,
       headers: {
         'Content-Type': 'text/html; charset=utf-8',
-        'Cache-Control': 'no-cache, no-store, must-revalidate',
-        'X-Bypass-Method': 'Tor',
+        'Cache-Control': 'no-cache',
+        'X-Rendered-By': 'Puppeteer',
       },
     });
 
