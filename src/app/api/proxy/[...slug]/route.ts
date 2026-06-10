@@ -38,15 +38,21 @@ const US_HEADERS = {
 };
 
 async function fetchWithSpoofing(url: string, followRedirects = true): Promise<Response> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 8000); // 8 second timeout
+
   try {
     const response = await fetch(url, {
       method: 'GET',
       headers: US_HEADERS,
       redirect: followRedirects ? 'follow' : 'manual',
+      signal: controller.signal,
       // Simulate real browser behavior
     });
+    clearTimeout(timeout);
     return response;
   } catch (error) {
+    clearTimeout(timeout);
     console.error('[PROXY] Fetch error:', error);
     throw error;
   }
@@ -145,60 +151,28 @@ export async function GET(
             },
           });
         }
-      } catch (e) {
+      } catch {
         console.log('[PROXY] IP', ip, 'failed');
       }
     }
 
-    // STRATEGY 3: Ultra-aggressive client-side redirect
-    console.log('[PROXY] ▶️ STRATEGY 3: Ultra-aggressive client-side redirect');
-    const aggressiveRedirect = `
-      <!DOCTYPE html>
-      <html>
-      <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="refresh" content="0;URL='${targetUrl}'">
-        <title>Connecting...</title>
-      </head>
-      <body style="margin:0;padding:0;background:#fff;">
-        <script>
-          // Multiple redirect methods - execute them all
-          (function() {
-            const url = '${targetUrl}';
-
-            // Method 1: Immediate location change
-            window.location.href = url;
-
-            // Method 2: Location replace
-            setTimeout(() => window.location.replace(url), 50);
-
-            // Method 3: Top window redirect
-            setTimeout(() => { if (window.top !== window.self) { window.top.location.href = url; } }, 100);
-
-            // Method 4: Parent redirect
-            setTimeout(() => { if (window.parent !== window) { window.parent.location.href = url; } }, 150);
-
-            // Method 5: Open in current window
-            setTimeout(() => { window.open(url, '_self'); }, 200);
-
-            // Method 6: Create anchor and click
-            setTimeout(() => {
-              const a = document.createElement('a');
-              a.href = url;
-              a.target = '_self';
-              document.body.appendChild(a);
-              a.click();
-            }, 250);
-
-            // Fallback: Show link after 2 seconds
-            setTimeout(() => {
-              document.body.innerHTML = '<div style="text-align:center;margin-top:50px;"><h2>Connecting...</h2><p><a href="' + url + '" style="font-size:18px;color:blue;text-decoration:underline;">Click here if page does not load</a></p></div>';
-            }, 2000);
-          })();
-        </script>
-      </body>
-      </html>
-    `;
+    // STRATEGY 3: Simple meta refresh redirect (most reliable)
+    console.log('[PROXY] ▶️ STRATEGY 3: Simple meta refresh + js redirect');
+    const safeUrl = targetUrl.replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
+    const aggressiveRedirect = `<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="0;url=${safeUrl}">
+<title>Redirecting...</title>
+</head>
+<body style="margin:0;padding:0;">
+<script>
+window.location.replace("${safeUrl}");
+</script>
+<p>Redirecting to 1xBet...</p>
+</body>
+</html>`;
     console.log('[PROXY] ✅ STRATEGY 3: Returning ultra-aggressive redirect');
     return new NextResponse(aggressiveRedirect, {
       status: 200,
@@ -211,14 +185,23 @@ export async function GET(
 
   } catch (error: unknown) {
     console.error('[PROXY] FATAL ERROR:', error);
-    // Return fallback redirect even on error
-    const fallbackUrl = decodeURIComponent(params.slug.join('/'));
-    return new NextResponse(
-      `<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; url='${fallbackUrl}'"><script>window.location='${fallbackUrl}';</script></head><body>Redirecting...</body></html>`,
-      {
-        status: 200,
-        headers: { 'Content-Type': 'text/html; charset=utf-8' },
-      }
-    );
+    // Return safe fallback redirect even on error
+    try {
+      const fallbackUrl = decodeURIComponent(params.slug.join('/'));
+      const safeUrl = fallbackUrl.replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
+      return new NextResponse(
+        `<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=${safeUrl}"><script>window.location.replace("${safeUrl}");</script></head><body>Redirecting...</body></html>`,
+        {
+          status: 200,
+          headers: { 'Content-Type': 'text/html; charset=utf-8' },
+        }
+      );
+    } catch (fallbackError) {
+      console.error('[PROXY] FALLBACK FAILED:', fallbackError);
+      return NextResponse.json(
+        { error: 'Proxy service unavailable' },
+        { status: 503 }
+      );
+    }
   }
 }

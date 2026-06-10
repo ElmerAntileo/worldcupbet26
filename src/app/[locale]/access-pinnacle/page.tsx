@@ -2,12 +2,11 @@
 'use client';
 
 const affiliateLink = 'https://www.pinnacle.com';
-const proxyLink = `/api/proxy/${encodeURIComponent(affiliateLink)}`;
 
 export default function AccessPinnacle() {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    window.open(proxyLink, '_blank');
+    window.open(affiliateLink, '_blank');
   };
 
   return (
@@ -24,7 +23,7 @@ export default function AccessPinnacle() {
           <h3 className="text-2xl font-bold text-green-700 mb-4">✅ NO GEO-BLOCKING</h3>
           <p className="text-gray-700 mb-4">Pinnacle accepts players from almost every country in the world. Click below to access immediately:</p>
           <a
-            href={proxyLink}
+            href={affiliateLink}
             onClick={handleClick}
             target="_blank"
             rel="noopener noreferrer"
@@ -62,7 +61,7 @@ export default function AccessPinnacle() {
           <h3 className="text-2xl font-bold mb-4">Ready to Bet on World Cup 2026?</h3>
           <p className="mb-6 text-lg">No restrictions. No geo-blocking. Works everywhere.</p>
           <a
-            href={proxyLink}
+            href={affiliateLink}
             onClick={handleClick}
             target="_blank"
             rel="noopener noreferrer"
