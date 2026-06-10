@@ -2,18 +2,19 @@
 'use client';
 
 const affiliateLink1xBet = 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97';
+const bypassLink1xBet = `/api/geo-bypass/${encodeURIComponent(affiliateLink1xBet)}`;
 const affiliateLinkPinnacle = 'https://www.pinnacle.com';
 
 export default function Access1xBet() {
   const handleClick1xBet = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    // Direct access - opens in new tab
-    window.open(affiliateLink1xBet, '_blank');
+    // Use geo-bypass proxy to bypass geo-blocking
+    window.open(bypassLink1xBet, '_blank');
   };
 
   const handleClickPinnacle = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    // Direct access - opens in new tab
+    // Direct access - Pinnacle works globally
     window.open(affiliateLinkPinnacle, '_blank');
   };
 
@@ -80,7 +81,7 @@ export default function Access1xBet() {
               <div className="text-3xl mb-2">✅</div>
               <h4 className="font-bold mb-2">Step 4</h4>
               <p className="text-sm">
-                <a href={affiliateLink1xBet} target="_blank" rel="noopener noreferrer" className="text-blue-600 font-bold underline">
+                <a href={bypassLink1xBet} target="_blank" rel="noopener noreferrer" className="text-blue-600 font-bold underline">
                   Sign up at 1xBet
                 </a>
               </p>
