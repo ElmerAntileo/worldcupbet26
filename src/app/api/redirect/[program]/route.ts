@@ -42,7 +42,9 @@ export async function GET(
     try {
       // Use our advanced proxy with failover chain
       const encodedUrl = encodeURIComponent(affiliateLink);
-      finalUrl = `/api/proxy/${encodedUrl}`;
+      // NextResponse.redirect() requires absolute URLs
+      const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.worldcupbet26.com';
+      finalUrl = `${baseUrl}/api/proxy/${encodedUrl}`;
     } catch (error) {
       console.error('Proxy routing error, using direct link:', error);
       finalUrl = affiliateLink;
