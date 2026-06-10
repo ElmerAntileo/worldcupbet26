@@ -45,6 +45,8 @@ export async function GET(
       }
     } catch (e) {
       console.log('[GEO-BYPASS] AllOrigins failed, trying next...');
+    } catch {
+      // Continue to next strategy
     }
 
     // Strategy 2: Try direct fetch with aggressive header spoofing for multiple regions
@@ -87,7 +89,7 @@ export async function GET(
             },
           });
         }
-      } catch (e) {
+      } catch {
         console.log(`[GEO-BYPASS] Region ${region.country} failed`);
       }
     }

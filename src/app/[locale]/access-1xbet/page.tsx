@@ -45,7 +45,7 @@ export default function Access1xBet() {
 
         {/* BACKUP: Pinnacle */}
         <div className="bg-green-50 border-4 border-green-600 rounded-lg p-8 my-8 text-center">
-          <h2 className="text-3xl font-bold text-green-700 mb-4">🌍 CAN'T ACCESS 1xBet?</h2>
+          <h2 className="text-3xl font-bold text-green-700 mb-4">🌍 CAN&apos;T ACCESS 1xBet?</h2>
           <p className="text-gray-700 text-lg mb-6">Use <strong>Pinnacle</strong> - Works in 180+ countries, NO VPN needed</p>
           <a
             href={affiliateLinkPinnacle}
