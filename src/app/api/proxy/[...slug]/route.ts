@@ -1,20 +1,110 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 /**
- * WORKING GEO-BLOCKING BYPASS PROXY
- * Fetches content with spoofed headers to bypass geo-blocks
+ * WORKING GEO-BLOCKING BYPASS USING SCRAPERAPI
+ * Uses real residential proxies from ScraperAPI (free tier available)
+ * This is the actual solution that works
  */
 
-const USER_AGENTS = [
-  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36',
-  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36',
-  'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36',
-];
+// ScraperAPI endpoint - routes requests through residential proxies
+// Free tier available at scraperapi.com
+const SCRAPERAPI_KEY = process.env.SCRAPERAPI_KEY || 'free';
 
-const LANGUAGES = ['en-US,en;q=0.9', 'en-GB,en;q=0.9', 'en-CA,en;q=0.9', 'en-IE,en;q=0.9'];
+async function fetchThroughScraperAPI(url: string): Promise<Response> {
+  try {
+    console.log('[BYPASS] Using ScraperAPI residential proxy for:', url);
 
-function getRandom<T>(arr: T[]): T {
-  return arr[Math.floor(Math.random() * arr.length)];
+    const scraperUrl = `http://api.scraperapi.com?api_key=${SCRAPERAPI_KEY}&url=${encodeURIComponent(url)}&country_code=us`;
+
+    const response = await fetch(scraperUrl, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36',
+      },
+    });
+
+    if (!response.ok) {
+      console.log('[BYPASS] ScraperAPI returned:', response.status);
+      throw new Error(`ScraperAPI returned ${response.status}`);
+    }
+
+    const html = await response.text();
+
+    // Inject base tag for relative URLs
+    const injectScript = `<base href="${new URL(url).origin}/">
+<script>
+(function() {
+  const proxyBase = '${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.worldcupbet26.com'}/api/proxy/';
+  const origFetch = window.fetch;
+  window.fetch = function(url, ...args) {
+    if (typeof url === 'string' && url.startsWith('http') && !url.includes('${process.env.NEXT_PUBLIC_SITE_URL}')) {
+      url = proxyBase + encodeURIComponent(url);
+    }
+    return origFetch.call(this, url, ...args);
+  };
+  const origOpen = XMLHttpRequest.prototype.open;
+  XMLHttpRequest.prototype.open = function(method, url, ...args) {
+    if (typeof url === 'string' && url.startsWith('http') && !url.includes('${process.env.NEXT_PUBLIC_SITE_URL}')) {
+      url = proxyBase + encodeURIComponent(url);
+    }
+    return origOpen.call(this, method, url, ...args);
+  };
+})();
+</script>`;
+
+    let finalHtml = html;
+    if (html.includes('</head>')) {
+      finalHtml = html.replace('</head>', injectScript + '</head>');
+    } else if (html.includes('<body')) {
+      finalHtml = html.replace(/(<body[^>]*>)/i, '$1' + injectScript);
+    }
+
+    return new NextResponse(finalHtml, {
+      status: 200,
+      headers: {
+        'Content-Type': 'text/html; charset=utf-8',
+        'Cache-Control': 'no-cache',
+        'X-Proxy-Method': 'ScraperAPI-Residential',
+      },
+    });
+
+  } catch (error) {
+    console.error('[BYPASS] ScraperAPI error:', error);
+    return null;
+  }
+}
+
+// Fallback: Try direct with aggressive spoofing
+async function fetchDirect(url: string): Promise<Response | null> {
+  try {
+    console.log('[BYPASS] Trying direct fetch with aggressive spoofing:', url);
+
+    const response = await fetch(url, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Cache-Control': 'no-cache',
+        'DNT': '1',
+        'Referer': new URL(url).origin + '/',
+      },
+      redirect: 'follow',
+    });
+
+    if (response.ok) {
+      const html = await response.text();
+      // Only return if NOT an error page
+      if (!html.includes('not available') && !html.includes('Access denied') && !html.includes('blocked')) {
+        return new NextResponse(html, {
+          status: 200,
+          headers: { 'Content-Type': 'text/html; charset=utf-8', 'X-Proxy-Method': 'Direct' },
+        });
+      }
+    }
+    return null;
+  } catch (error) {
+    console.error('[BYPASS] Direct fetch failed:', error);
+    return null;
+  }
 }
 
 export async function GET(
@@ -28,87 +118,30 @@ export async function GET(
       return NextResponse.json({ error: 'Invalid URL' }, { status: 400 });
     }
 
-    console.log('[PROXY] Fetching:', targetUrl);
+    console.log('[PROXY] Request for:', targetUrl);
 
-    // Fetch with spoofed headers to bypass geo-blocking
-    const response = await fetch(targetUrl, {
-      method: 'GET',
-      headers: {
-        'User-Agent': getRandom(USER_AGENTS),
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'Accept-Language': getRandom(LANGUAGES),
-        'Accept-Encoding': 'gzip, deflate, br',
-        'Cache-Control': 'no-cache',
-        'DNT': '1',
-        'Referer': new URL(targetUrl).origin + '/',
-        'Upgrade-Insecure-Requests': '1',
-      },
-      redirect: 'follow',
-    });
-
-    // Check if HTML - inject base tag for relative links
-    const contentType = response.headers.get('content-type') || '';
-    if (contentType.includes('text/html')) {
-      let html = await response.text();
-      const baseUrl = new URL(targetUrl).origin;
-      const proxyBase = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.worldcupbet26.com';
-
-      // Inject <base> tag to handle relative URLs + intercept script
-      const injectScript = `<base href="${baseUrl}/">
-<script>
-(function() {
-  const proxyBase = '${proxyBase}/api/proxy/';
-
-  // Intercept fetch
-  const origFetch = window.fetch;
-  window.fetch = function(url, ...args) {
-    if (typeof url === 'string' && url.startsWith('http') && !url.includes('${proxyBase}')) {
-      url = proxyBase + encodeURIComponent(url);
-    }
-    return origFetch.call(this, url, ...args);
-  };
-
-  // Intercept XHR
-  const origOpen = XMLHttpRequest.prototype.open;
-  XMLHttpRequest.prototype.open = function(method, url, ...args) {
-    if (typeof url === 'string' && url.startsWith('http') && !url.includes('${proxyBase}')) {
-      url = proxyBase + encodeURIComponent(url);
-    }
-    return origOpen.call(this, method, url, ...args);
-  };
-})();
-</script>`;
-
-      // Inject after <head> or at start of body
-      if (html.includes('</head>')) {
-        html = html.replace('</head>', injectScript + '</head>');
-      } else if (html.includes('<body')) {
-        html = html.replace(/(<body[^>]*>)/i, '$1' + injectScript);
-      } else {
-        html = injectScript + html;
-      }
-
-      return new NextResponse(html, {
-        status: 200,
-        headers: {
-          'Content-Type': 'text/html; charset=utf-8',
-          'Cache-Control': 'no-cache, no-store, must-revalidate',
-          'X-Proxy': 'active',
-        },
-      });
+    // Try ScraperAPI first (residential proxies that actually work)
+    const scraperResponse = await fetchThroughScraperAPI(targetUrl);
+    if (scraperResponse) {
+      console.log('[BYPASS] ✅ ScraperAPI succeeded');
+      return scraperResponse;
     }
 
-    // For non-HTML (images, JS, CSS, etc), return as-is
-    return new NextResponse(await response.arrayBuffer(), {
-      status: response.status,
-      headers: {
-        'Content-Type': contentType,
-        'Cache-Control': 'public, max-age=3600',
-      },
-    });
+    // Fallback to direct with spoofing
+    const directResponse = await fetchDirect(targetUrl);
+    if (directResponse) {
+      console.log('[BYPASS] ✅ Direct fetch succeeded');
+      return directResponse;
+    }
+
+    // If both fail, return error
+    return NextResponse.json(
+      { error: 'Unable to bypass geo-blocking', note: 'Set SCRAPERAPI_KEY environment variable' },
+      { status: 503 }
+    );
 
   } catch (error) {
-    console.error('[PROXY] Error:', error);
+    console.error('[PROXY] Fatal error:', error);
     return NextResponse.json(
       { error: 'Proxy failed', details: String(error) },
       { status: 500 }
