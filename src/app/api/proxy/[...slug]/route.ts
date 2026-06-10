@@ -63,7 +63,7 @@ async function fetchThroughProxy(url: string, proxyUrl: string): Promise<Respons
       }
     }
     return null;
-  } catch (error) {
+  } catch (error: unknown) {
     console.log('[PROXY] Failed:', error);
     return null;
   }
@@ -110,7 +110,7 @@ async function fetchDirect(url: string): Promise<Response | null> {
       }
     }
     return null;
-  } catch (error) {
+  } catch (error: unknown) {
     console.log('[DIRECT] Failed:', error);
     return null;
   }
@@ -154,7 +154,7 @@ export async function GET(
       headers: { 'Content-Type': 'text/html; charset=utf-8' },
     });
 
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('[PROXY] Fatal error:', error);
     return NextResponse.json(
       { error: 'Proxy error', details: String(error) },
