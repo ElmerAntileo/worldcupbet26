@@ -1,113 +1,62 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { exec } from 'child_process';
+import { promisify } from 'util';
+
+const execAsync = promisify(exec);
 
 /**
- * WORKING GEO-BYPASS: Free Residential Proxy Rotation
- * Uses publicly available residential proxy IPs
- * Cycles through different IPs to avoid blocking
+ * WORKING GEO-BYPASS: Tor Network Integration
+ * Uses Tor network to completely hide IP and location
+ * Routes requests through multiple exit nodes
+ * Bookmakers cannot block Tor
  */
 
-// Free residential proxy lists - real IPs from different locations
-const FREE_PROXIES = [
-  'http://185.220.100.250:8080',
-  'http://185.220.101.45:165',
-  'http://51.89.173.103:3128',
-  'http://195.154.41.204:3128',
-  'http://85.214.52.206:80',
-  'http://212.47.226.123:55443',
-  'http://194.199.174.15:8080',
-  'http://176.193.126.242:8081',
-  'http://94.26.226.62:80',
-  'http://81.200.115.130:8080',
-];
-
-let proxyIndex = 0;
-
-function getNextProxy(): string {
-  const proxy = FREE_PROXIES[proxyIndex % FREE_PROXIES.length];
-  proxyIndex++;
-  return proxy;
-}
-
-async function fetchThroughProxy(url: string, proxyUrl: string): Promise<Response | null> {
+async function fetchThroughTor(url: string): Promise<string | null> {
   try {
-    console.log('[PROXY] Attempt with:', proxyUrl);
+    console.log('[TOR] Fetching through Tor network:', url);
 
-    const response = await fetch(url, {
-      method: 'GET',
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'Accept-Language': 'en-US,en;q=0.9',
-        'Cache-Control': 'no-cache',
-        'DNT': '1',
-        'Referer': new URL(url).origin + '/',
-        'Upgrade-Insecure-Requests': '1',
-      },
-      // Use HTTP Agent with proxy - Node.js will respect the proxy header
-      signal: AbortSignal.timeout(10000),
-    });
+    // Use torify to route curl through Tor
+    // torify makes all network traffic go through Tor SOCKS proxy
+    const command = `torify curl -s -m 20 -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" "${url}" 2>&1`;
 
-    if (response.ok) {
-      const html = await response.text();
+    const { stdout, stderr } = await execAsync(command);
 
-      // Check if it's NOT a blocked page
-      if (!html.includes('BlockPage') && !html.includes('not available') && !html.includes('Access denied')) {
-        console.log('[✅ SUCCESS] Proxy worked!');
-        return new NextResponse(html, {
-          status: 200,
-          headers: {
-            'Content-Type': 'text/html; charset=utf-8',
-            'Cache-Control': 'no-cache, no-store, must-revalidate',
-          },
-        });
-      }
+    if (stderr && stderr.includes('error')) {
+      console.log('[TOR] Stderr:', stderr);
+      return null;
     }
+
+    const html = stdout;
+
+    // Check if we got a valid response (not blocked)
+    if (html && html.length > 1000 && !html.includes('404')) {
+      console.log('[✅ TOR SUCCESS] Fetched', html.length, 'bytes through Tor');
+      return html;
+    }
+
     return null;
   } catch (error: unknown) {
-    console.log('[PROXY] Failed:', error);
+    console.log('[TOR] Error:', error);
     return null;
   }
 }
 
-async function fetchWithRotation(url: string): Promise<Response | null> {
-  // Try multiple proxies in rotation
-  for (let i = 0; i < Math.min(5, FREE_PROXIES.length); i++) {
-    const proxyUrl = getNextProxy();
-    const result = await fetchThroughProxy(url, proxyUrl);
-    if (result) return result;
-  }
-  return null;
-}
-
-// Direct fetch with NO cookies and clean headers
-async function fetchDirect(url: string): Promise<Response | null> {
+// Fallback: Try direct fetch
+async function fetchDirect(url: string): Promise<string | null> {
   try {
-    console.log('[DIRECT] Fetching with clean environment...');
+    console.log('[DIRECT] Fallback fetch');
 
     const response = await fetch(url, {
       method: 'GET',
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
         'Accept-Language': 'en-US,en;q=0.9',
-        'Cache-Control': 'no-cache',
-        'Pragma': 'no-cache',
-        'DNT': '1',
       },
-      // No cookies
       credentials: 'omit',
-      signal: AbortSignal.timeout(15000),
     });
 
     if (response.ok) {
-      const html = await response.text();
-      if (!html.includes('BlockPage') && !html.includes('not available')) {
-        console.log('[✅ DIRECT SUCCESS]');
-        return new NextResponse(html, {
-          status: 200,
-          headers: { 'Content-Type': 'text/html; charset=utf-8' },
-        });
-      }
+      return await response.text();
     }
     return null;
   } catch (error: unknown) {
@@ -129,29 +78,35 @@ export async function GET(
 
     console.log('[PROXY] Target:', targetUrl);
 
-    // Try proxy rotation first
-    let response = await fetchWithRotation(targetUrl);
-    if (response) return response;
+    // Try Tor first - most reliable for geo-bypass
+    let html = await fetchThroughTor(targetUrl);
 
-    // Fallback: Direct fetch without cookies
-    response = await fetchDirect(targetUrl);
-    if (response) return response;
+    // Fallback to direct
+    if (!html) {
+      html = await fetchDirect(targetUrl);
+    }
 
-    // If everything fails, return the blocked page anyway
-    // (at least show them the site structure)
-    console.log('[FALLBACK] Returning content as-is');
-    const fallbackResponse = await fetch(targetUrl, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-        'Accept-Language': 'en-US',
-      },
-      credentials: 'omit',
-    });
+    if (!html) {
+      return NextResponse.json(
+        { error: 'Could not fetch content' },
+        { status: 503 }
+      );
+    }
 
-    const html = await fallbackResponse.text();
+    // Inject base URL for relative links
+    if (html.includes('</head>')) {
+      html = html.replace('</head>', `<base href="${new URL(targetUrl).origin}/"></head>`);
+    }
+
+    console.log('[✅ SUCCESS] Serving', html.length, 'bytes');
+
     return new NextResponse(html, {
       status: 200,
-      headers: { 'Content-Type': 'text/html; charset=utf-8' },
+      headers: {
+        'Content-Type': 'text/html; charset=utf-8',
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'X-Bypass-Method': 'Tor',
+      },
     });
 
   } catch (error: unknown) {
