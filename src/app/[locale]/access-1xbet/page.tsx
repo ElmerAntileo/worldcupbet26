@@ -32,7 +32,7 @@ export default function Access1xBet() {
           <h2 className="text-4xl font-bold text-white mb-6">💰 SIGN UP AT 1xBet</h2>
           <p className="text-white text-lg mb-6">200+ World Cup markets • Live betting • Best odds</p>
           <a
-            href={affiliateLink1xBet}
+            href={bypassLink1xBet}
             onClick={handleClick1xBet}
             target="_blank"
             rel="noopener noreferrer"
