@@ -113,7 +113,7 @@ export default function GeoBypassSystem() {
           ctx.fillStyle = `rgba(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255},0.01)`;
           ctx.fillRect(0, 0, 1, 1);
         }
-        return origCanvas.apply(this, args);
+        return origCanvas.call(this);
       };
     };
 
