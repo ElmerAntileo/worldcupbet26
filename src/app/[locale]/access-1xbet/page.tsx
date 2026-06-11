@@ -100,14 +100,31 @@ export default function Access1xBet() {
             🎯 BEST ODDS & 200+ MARKETS
           </div>
 
-          <h2 style={{
-            fontSize: '42px',
-            fontWeight: 900,
-            marginBottom: '16px',
-            color: '#60a5fa',
+          <div style={{
+            fontSize: '80px',
+            marginBottom: '20px',
+            lineHeight: 1,
           }}>
-            1xBet World Cup Betting
+            🎯
+          </div>
+
+          <h2 style={{
+            fontSize: '48px',
+            fontWeight: 900,
+            marginBottom: '8px',
+            color: '#60a5fa',
+            letterSpacing: '-0.02em',
+          }}>
+            1xBet
           </h2>
+
+          <p style={{
+            fontSize: '16px',
+            color: '#aaa',
+            marginBottom: '20px',
+          }}>
+            World Cup Betting
+          </p>
 
           <p style={{
             fontSize: '18px',
@@ -118,18 +135,41 @@ export default function Access1xBet() {
             The #1 choice for serious bettors • Live betting • Instant payouts • 24/7 support
           </p>
 
-          {/* URGENCY BOX */}
+          {/* BONUS BOX - HUGE & ATTRACTIVE */}
           <div style={{
-            background: 'rgba(255,107,107,0.1)',
-            border: '1px solid rgba(255,107,107,0.3)',
-            borderRadius: '8px',
-            padding: '12px 16px',
-            marginBottom: '24px',
-            fontSize: '13px',
-            color: '#ff8787',
-            fontWeight: 600,
+            background: 'linear-gradient(135deg, rgba(255,107,107,0.2) 0%, rgba(255,193,7,0.15) 100%)',
+            border: '3px solid rgba(255,107,107,0.5)',
+            borderRadius: '12px',
+            padding: '24px 20px',
+            marginBottom: '28px',
+            textAlign: 'center',
           }}>
-            ⚡ Sign up today to claim your welcome bonus before World Cup starts
+            <div style={{
+              fontSize: '14px',
+              color: '#ffb74d',
+              fontWeight: 700,
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              marginBottom: '8px',
+            }}>
+              💰 WELCOME BONUS 💰
+            </div>
+            <div style={{
+              fontSize: '32px',
+              fontWeight: 900,
+              color: '#ff8787',
+              marginBottom: '8px',
+              letterSpacing: '-0.02em',
+            }}>
+              100% UP TO €100
+            </div>
+            <div style={{
+              fontSize: '15px',
+              color: '#ffb74d',
+              fontWeight: 600,
+            }}>
+              ⚡ Claim it before World Cup starts!
+            </div>
           </div>
 
           {/* MAIN BUTTON */}
