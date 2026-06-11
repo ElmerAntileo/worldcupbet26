@@ -55,7 +55,7 @@ export default function StickyOddsBar() {
         </div>
 
         {/* Comparison bookmaker (Betsson) - odds only, no CTA */}
-        {COMPARISON_BOOKMAKERS.map((bk, i) => (
+        {COMPARISON_BOOKMAKERS.map((bk) => (
           <div key={bk.name} style={{
             display: "flex",
             alignItems: "center",
