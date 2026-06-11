@@ -87,9 +87,9 @@ export default function ChooseBetting() {
         {/* OPTION 2: 1xBet with VPN Instructions */}
         <div className="bg-blue-50 border-4 border-blue-600 rounded-lg p-8 my-8 text-center">
           <div className="inline-block bg-blue-600 text-white px-4 py-1 rounded-full mb-4 font-bold">
-            💰 BETTER ODDS (Requires VPN*)
+            💰 BETTER ODDS (VPN Required*)
           </div>
-          <h2 className="text-3xl font-bold text-blue-700 mb-4">1xBet</h2>
+          <h2 className="text-3xl font-bold text-blue-700 mb-4">1xBet*</h2>
           <p className="text-gray-700 text-lg mb-6">
             <strong>200+ markets & best odds</strong> | Higher limits | Live betting
           </p>
@@ -184,6 +184,11 @@ export default function ChooseBetting() {
             <div className="text-4xl font-bold text-purple-700 mb-2">2 min</div>
             <p className="text-gray-700">Time to Sign Up</p>
           </div>
+        </div>
+
+        {/* FOOTNOTE */}
+        <div className="mt-8 text-center text-sm text-gray-600">
+          <p>* VPN required for: Germany, UK, France, Netherlands, Spain, Sweden, Finland, Iceland, and other restricted regions</p>
         </div>
       </div>
     </div>

@@ -15,8 +15,9 @@ export default function Access1xBet() {
       <div className="max-w-4xl mx-auto px-4 py-12">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">⚡ INSTANT ACCESS TO 1xBet & Betting</h1>
+          <h1 className="text-5xl font-bold text-gray-900 mb-4">⚡ 1xBet World Cup Betting</h1>
           <p className="text-2xl text-red-600 font-bold">🎯 WORLD CUP 2026 - START BETTING NOW!</p>
+          <p className="text-lg text-gray-600 font-bold mt-4">⚠️ VPN REQUIRED FOR: Germany, UK, France, Netherlands, Spain, Sweden, Finland, Iceland</p>
         </div>
 
         {/* PRIMARY CTA: 1xBet */}
