@@ -53,44 +53,56 @@ export default function ChooseBetting() {
       background: 'linear-gradient(160deg, #040c18 0%, #071a30 45%, #050e1c 100%)',
       minHeight: '100vh',
       color: '#fff',
-      padding: '60px 20px',
+      padding: '40px 20px',
     }}>
       <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
 
-        {/* HERO SECTION */}
-        <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+        {/* URGENT HERO SECTION */}
+        <div style={{ textAlign: 'center', marginBottom: '50px' }}>
           <div style={{
-            fontSize: '14px',
-            fontWeight: 700,
-            color: '#00d084',
-            letterSpacing: '0.08em',
-            marginBottom: '16px',
+            fontSize: '16px',
+            fontWeight: 800,
+            color: '#ff8787',
+            letterSpacing: '0.1em',
+            marginBottom: '12px',
             textTransform: 'uppercase',
+            animation: 'pulse 2s infinite',
           }}>
-            🎯 World Cup 2026 Betting
+            ⚡ WORLD CUP STARTS TODAY - CLAIM YOUR BONUS NOW
           </div>
 
           <h1 style={{
-            fontSize: 'clamp(32px, 6vw, 56px)',
+            fontSize: 'clamp(40px, 8vw, 64px)',
             fontWeight: 900,
-            marginBottom: '16px',
+            marginBottom: '12px',
             letterSpacing: '-0.02em',
-            background: 'linear-gradient(135deg, #ffffff 55%, #00d084 100%)',
+            background: 'linear-gradient(135deg, #60a5fa 0%, #fbbf24 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
           }}>
-            Choose Your Betting Option
+            Choose Your Sportsbook
           </h1>
 
           <p style={{
-            fontSize: '16px',
+            fontSize: '18px',
+            color: '#fbbf24',
+            maxWidth: '600px',
+            margin: '0 auto 8px',
+            lineHeight: 1.5,
+            fontWeight: 600,
+          }}>
+            🎯 Located in: <strong>{country}</strong>
+          </p>
+
+          <p style={{
+            fontSize: '14px',
             color: '#aaa',
-            maxWidth: '500px',
-            margin: '0 auto 24px',
+            maxWidth: '600px',
+            margin: '0 auto 20px',
             lineHeight: 1.6,
           }}>
-            Detected location: <strong>{country}</strong> — Select the best option for your region
+            Pick your option and start betting NOW - offers available for TODAY only
           </p>
         </div>
 
@@ -179,25 +191,29 @@ export default function ChooseBetting() {
                 display: 'inline-block',
                 background: 'linear-gradient(135deg, #00d084, #00b870)',
                 color: '#040c18',
-                padding: '14px 32px',
-                borderRadius: '8px',
-                fontWeight: 800,
-                fontSize: '14px',
+                padding: 'clamp(16px, 4vw, 24px) clamp(28px, 8vw, 56px)',
+                borderRadius: '12px',
+                fontWeight: 900,
+                fontSize: 'clamp(16px, 4vw, 22px)',
                 textDecoration: 'none',
-                boxShadow: '0 4px 16px rgba(0,208,132,0.2)',
+                boxShadow: '0 8px 24px rgba(0,208,132,0.3)',
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
+                border: '3px solid rgba(0,255,136,0.5)',
+                width: '100%',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = '0 6px 24px rgba(0,208,132,0.35)';
-                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 12px 40px rgba(0,208,132,0.5)';
+                e.currentTarget.style.transform = 'translateY(-3px)';
+                e.currentTarget.style.borderColor = 'rgba(0,255,136,0.8)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,208,132,0.2)';
+                e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,208,132,0.3)';
                 e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.borderColor = 'rgba(0,255,136,0.5)';
               }}
             >
-              Start Betting with Pinnacle →
+              ✅ INSTANT ACCESS - SIGN UP NOW
             </a>
 
             <p style={{
@@ -293,36 +309,41 @@ export default function ChooseBetting() {
               rel="noopener noreferrer"
               style={{
                 display: 'inline-block',
-                background: 'linear-gradient(135deg, #3b82f6, #2563eb)',
+                background: 'linear-gradient(135deg, #ff8787, #ff6b6b)',
                 color: '#fff',
-                padding: '14px 32px',
-                borderRadius: '8px',
-                fontWeight: 800,
-                fontSize: '14px',
+                padding: 'clamp(16px, 4vw, 24px) clamp(28px, 8vw, 56px)',
+                borderRadius: '12px',
+                fontWeight: 900,
+                fontSize: 'clamp(16px, 4vw, 22px)',
                 textDecoration: 'none',
-                boxShadow: '0 4px 16px rgba(59,130,246,0.2)',
+                boxShadow: '0 8px 24px rgba(255,107,107,0.4)',
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
+                border: '3px solid rgba(255,136,136,0.6)',
+                width: '100%',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = '0 6px 24px rgba(59,130,246,0.35)';
-                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 12px 40px rgba(255,107,107,0.6)';
+                e.currentTarget.style.transform = 'translateY(-3px)';
+                e.currentTarget.style.borderColor = 'rgba(255,155,155,0.8)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = '0 4px 16px rgba(59,130,246,0.2)';
+                e.currentTarget.style.boxShadow = '0 8px 24px rgba(255,107,107,0.4)';
                 e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.borderColor = 'rgba(255,136,136,0.6)';
               }}
             >
-              Access 1xBet with VPN →
+              🚀 GET 100% BONUS - START NOW
             </a>
 
             <p style={{
-              fontSize: '12px',
-              color: '#60a5fa',
-              fontWeight: 600,
+              fontSize: '13px',
+              color: '#fbbf24',
+              fontWeight: 700,
               marginTop: '16px',
+              animation: 'pulse 2s infinite',
             }}>
-              🚀 See VPN instructions below
+              ⏰ BONUS EXPIRES AFTER WORLD CUP - ACT NOW
             </p>
           </div>
         </div>
