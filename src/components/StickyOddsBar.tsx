@@ -1,11 +1,8 @@
 "use client";
 
-// Focus: 1xBet only (13x higher affiliate performance)
-const COMPARISON_BOOKMAKERS = [
-  { name: "Betsson", logo: "🏆", home: "1.65", draw: "3.70", away: "5.50" },
-];
-
+// Both sportsbooks require VPN for restricted regions
 const AFFILIATE_BOOKMAKERS = [
+  { name: "Betsson", logo: "🏆", home: "1.65", draw: "3.70", away: "5.50", url: "/choose-betting", isAffiliate: true },
   { name: "1xBet",   logo: "🎯", home: "1.67", draw: "3.65", away: "5.40", url: "/choose-betting", isAffiliate: true },
 ];
 
@@ -54,52 +51,14 @@ export default function StickyOddsBar() {
           <span style={{ fontSize: "10px", color: "var(--muted)", whiteSpace: "nowrap" }}>· Jun 11</span>
         </div>
 
-        {/* Comparison bookmaker (Betsson) - odds only, no CTA */}
-        {COMPARISON_BOOKMAKERS.map((bk) => (
+        {/* Affiliate bookmakers (both with CTA buttons) */}
+        {AFFILIATE_BOOKMAKERS.map((bk, i) => (
           <div key={bk.name} style={{
             display: "flex",
             alignItems: "center",
             gap: "10px",
             padding: "0 16px",
-            borderRight: "1px solid rgba(255,255,255,0.06)",
-            flexShrink: 0,
-          }}>
-            <span style={{ fontSize: "12px", fontWeight: 700, color: "var(--foreground)", whiteSpace: "nowrap" }}>
-              {bk.logo} {bk.name}
-            </span>
-            {[
-              { label: "1", val: bk.home },
-              { label: "X", val: bk.draw },
-              { label: "2", val: bk.away },
-            ].map((o) => (
-              <div key={o.label} style={{ textAlign: "center" }}>
-                <div style={{ fontSize: "9px", color: "var(--muted)", fontWeight: 700, lineHeight: 1, letterSpacing: "0.05em" }}>{o.label}</div>
-                <div style={{
-                  background: "rgba(13,31,56,0.8)",
-                  border: "1px solid rgba(0,208,132,0.2)",
-                  borderRadius: "5px",
-                  padding: "2px 8px",
-                  fontSize: "12px",
-                  fontWeight: 800,
-                  color: "var(--accent)",
-                  minWidth: "40px",
-                  textAlign: "center",
-                  fontVariantNumeric: "tabular-nums",
-                }}>
-                  {o.val}
-                </div>
-              </div>
-            ))}
-          </div>
-        ))}
-
-        {/* Affiliate bookmaker (1xBet) - with CTA button */}
-        {AFFILIATE_BOOKMAKERS.map((bk) => (
-          <div key={bk.name} style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "10px",
-            padding: "0 16px",
+            borderRight: i < AFFILIATE_BOOKMAKERS.length - 1 ? "1px solid rgba(255,255,255,0.06)" : "none",
             flexShrink: 0,
           }}>
             <span style={{ fontSize: "12px", fontWeight: 700, color: "var(--foreground)", whiteSpace: "nowrap" }}>
@@ -163,9 +122,9 @@ export default function StickyOddsBar() {
         color: "var(--muted-light)",
         textAlign: "center",
       }}>
-        * 1xBet requires VPN for access from: Germany, UK, France, Netherlands, Spain, Sweden, Finland, Iceland & other restricted regions.{" "}
+        * Betsson & 1xBet require VPN for access from: Germany, UK, France, Netherlands, Spain, Sweden, Finland, Iceland & other restricted regions.{" "}
         <a href="/choose-betting" style={{ color: "#ff6b6b", textDecoration: "underline" }}>
-          View alternatives
+          View options
         </a>
       </div>
     </div>
