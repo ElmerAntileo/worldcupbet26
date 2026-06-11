@@ -1,5 +1,6 @@
 "use client";
 
+// Focus: 1xBet only (13x higher affiliate performance)
 const COMPARISON_BOOKMAKERS = [
   { name: "Betsson", logo: "🏆", home: "1.65", draw: "3.70", away: "5.50" },
 ];
