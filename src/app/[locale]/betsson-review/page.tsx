@@ -62,7 +62,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const BETSSON = "https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/";
+const BETSSON = "/choose-betting";
 
 const pros = [
   "100% welcome bonus up to €100 for new players",

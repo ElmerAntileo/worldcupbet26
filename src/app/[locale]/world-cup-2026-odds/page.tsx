@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
 };
 
-const BETSSON_URL = "https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/";
+const BETSSON_URL = "/choose-betting";
 
 const teams = [
   { slug: "spain",       name: "Spain",       flag: "🇪🇸", odds: "5.75",   bookmaker: "Betsson", tier: 1, group: "H" },

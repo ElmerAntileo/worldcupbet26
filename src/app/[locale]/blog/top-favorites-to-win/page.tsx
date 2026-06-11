@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 type Props = { params: { locale: string } };
 
-const BETSSON_URL = "https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/";
+const BETSSON_URL = "/choose-betting";
 
 const locales = ["en", "es", "pt", "de", "fr", "it"];
 const base = "https://www.worldcupbet26.com";

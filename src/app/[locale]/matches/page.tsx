@@ -5,7 +5,7 @@ import { useLocale } from 'next-intl';
 
 const groups = ['All', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 
-const BETSSON_URL = 'https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/';
+const BETSSON_URL = '/choose-betting';
 const ONEXBET_URL = 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97';
 
 const matches = [
