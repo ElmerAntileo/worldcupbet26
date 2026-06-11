@@ -1,17 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
-const affiliateLink1xBet = 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97';
-const bypassLink1xBet = `/api/geo-bypass/${encodeURIComponent(affiliateLink1xBet)}`;
 const affiliateLinkPinnacle = 'https://www.pinnacle.com';
 
 export default function Access1xBet() {
-  const handleClick1xBet = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    // Use geo-bypass proxy to bypass geo-blocking
-    window.open(bypassLink1xBet, '_blank');
-  };
-
   const handleClickPinnacle = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     // Direct access - Pinnacle works globally
@@ -30,17 +22,18 @@ export default function Access1xBet() {
         {/* PRIMARY CTA: 1xBet */}
         <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg p-8 my-8 text-center shadow-2xl">
           <h2 className="text-4xl font-bold text-white mb-6">💰 SIGN UP AT 1xBet</h2>
-          <p className="text-white text-lg mb-6">200+ World Cup markets • Live betting • Best odds</p>
+          <p className="text-white text-lg mb-2">200+ World Cup markets • Live betting • Best odds</p>
+          <p className="text-yellow-200 text-sm font-bold mb-6">⚠️ Restricted regions may need VPN (see below)</p>
           <a
-            href={bypassLink1xBet}
-            onClick={handleClick1xBet}
+            href={affiliateLinkPinnacle}
+            onClick={handleClickPinnacle}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-white text-blue-700 font-bold py-4 px-12 rounded-lg text-2xl hover:bg-gray-100 shadow-lg"
           >
             ➜ CLICK HERE TO SIGN UP ←
           </a>
-          <p className="text-white text-sm mt-4">Takes 2 minutes • Instant access</p>
+          <p className="text-white text-sm mt-4">Takes 2 minutes • Check VPN requirements for your region</p>
         </div>
 
         {/* BACKUP: Pinnacle */}
@@ -58,36 +51,39 @@ export default function Access1xBet() {
           </a>
         </div>
 
-        {/* TOR OPTION */}
+        {/* VPN REQUIREMENT */}
         <div className="bg-yellow-50 border-4 border-yellow-600 rounded-lg p-8 my-8">
-          <h2 className="text-3xl font-bold text-yellow-700 mb-6 text-center">🔓 WANT 1xBet? Use Free Tor Browser</h2>
+          <h2 className="text-3xl font-bold text-yellow-700 mb-2 text-center">🔓 Using VPN to Access 1xBet</h2>
+          <p className="text-center text-gray-600 mb-6 font-bold">If 1xBet is blocked in your region, use a VPN to connect through an allowed country</p>
+
           <div className="grid md:grid-cols-4 gap-4">
             <div className="bg-white p-4 rounded border-2 border-yellow-400">
               <div className="text-3xl mb-2">📥</div>
               <h4 className="font-bold mb-2">Step 1</h4>
-              <p className="text-sm">Download Tor Browser from torproject.org</p>
+              <p className="text-sm"><strong>Get a free VPN:</strong></p>
+              <p className="text-xs mt-1">• Tor Browser (torproject.org)</p>
+              <p className="text-xs">• ProtonVPN (free)</p>
             </div>
             <div className="bg-white p-4 rounded border-2 border-yellow-400">
               <div className="text-3xl mb-2">⚙️</div>
               <h4 className="font-bold mb-2">Step 2</h4>
-              <p className="text-sm">Install & launch Tor Browser</p>
+              <p className="text-sm">Install &amp; launch your VPN app</p>
             </div>
             <div className="bg-white p-4 rounded border-2 border-yellow-400">
               <div className="text-3xl mb-2">🌍</div>
               <h4 className="font-bold mb-2">Step 3</h4>
-              <p className="text-sm">Select US/UK/Canada/Ireland exit node</p>
+              <p className="text-sm">Select exit location: Canada, US, or other allowed country</p>
             </div>
             <div className="bg-white p-4 rounded border-2 border-yellow-400">
               <div className="text-3xl mb-2">✅</div>
               <h4 className="font-bold mb-2">Step 4</h4>
-              <p className="text-sm">
-                <a href={bypassLink1xBet} target="_blank" rel="noopener noreferrer" className="text-blue-600 font-bold underline">
-                  Sign up at 1xBet
-                </a>
-              </p>
+              <p className="text-sm">Visit 1xBet (keep VPN active while betting)</p>
             </div>
           </div>
-          <p className="text-center text-gray-700 mt-6 text-sm">Free, safe, legal. Used by millions worldwide.</p>
+
+          <div className="mt-6 bg-green-100 border-2 border-green-600 rounded p-4">
+            <p className="text-green-800 text-center font-bold">💚 Prefer no VPN needed? <a href={affiliateLinkPinnacle} onClick={handleClickPinnacle} className="underline">Use Pinnacle instead</a></p>
+          </div>
         </div>
 
         {/* Quick Stats */}
