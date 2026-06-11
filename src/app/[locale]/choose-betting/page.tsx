@@ -329,72 +329,89 @@ export default function ChooseBetting() {
 
         {/* VPN INSTRUCTIONS */}
         <div style={{
-          background: 'linear-gradient(135deg, rgba(217,119,6,0.08) 0%, rgba(180,83,9,0.04) 100%)',
-          border: '1px solid rgba(217,119,6,0.2)',
+          background: 'linear-gradient(135deg, rgba(59,130,246,0.06) 0%, rgba(37,99,235,0.03) 100%)',
+          border: '2px solid rgba(59,130,246,0.25)',
           borderRadius: '12px',
-          padding: '32px 24px',
+          padding: '40px 28px',
           marginBottom: '40px',
         }}>
           <h3 style={{
-            fontSize: '20px',
+            fontSize: '22px',
             fontWeight: 800,
-            marginBottom: '12px',
+            marginBottom: '16px',
             textAlign: 'center',
-            color: '#fbbf24',
+            color: '#60a5fa',
+            letterSpacing: '-0.01em',
           }}>
-            🔓 How to Access 1xBet from Restricted Regions
+            🔓 Need VPN? Here&apos;s How to Access 1xBet
           </h3>
 
           <p style={{
             fontSize: '14px',
-            color: '#aaa',
+            color: '#bbb',
             textAlign: 'center',
-            marginBottom: '24px',
-            lineHeight: 1.6,
+            marginBottom: '32px',
+            lineHeight: 1.7,
+            maxWidth: '600px',
+            margin: '0 auto 32px',
           }}>
-            1xBet requires a VPN for access from: Germany, UK, France, Netherlands, Spain, Sweden, Finland, Iceland, and other restricted regions
+            1xBet requires a VPN from: Germany, UK, France, Netherlands, Spain, Sweden, Finland, Iceland & other restricted regions
           </p>
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
-            gap: '16px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
+            gap: '14px',
+            marginBottom: '28px',
           }}>
             {[
-              { step: 1, icon: '📥', title: 'Get a VPN', desc: 'Download free Tor Browser or ProtonVPN' },
-              { step: 2, icon: '⚙️', title: 'Connect', desc: 'Select Canada, US, or allowed country' },
-              { step: 3, icon: '🌐', title: 'Open 1xBet', desc: 'Visit 1xBet while VPN is active' },
-              { step: 4, icon: '✅', title: 'Sign Up', desc: 'Create account and start betting' },
+              { step: 1, icon: '📥', title: 'Get VPN', desc: 'Download Tor Browser (free & safe)' },
+              { step: 2, icon: '⚙️', title: 'Connect', desc: 'Choose Canada, US or allowed country' },
+              { step: 3, icon: '🌐', title: 'Open 1xBet', desc: 'Keep VPN active while betting' },
+              { step: 4, icon: '✅', title: 'Sign Up', desc: 'Create account & start betting' },
             ].map((item) => (
               <div key={item.step} style={{
-                background: 'rgba(255,255,255,0.03)',
-                border: '1px solid rgba(217,119,6,0.2)',
-                borderRadius: '8px',
-                padding: '16px',
+                background: 'linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(37,99,235,0.04) 100%)',
+                border: '1px solid rgba(59,130,246,0.2)',
+                borderRadius: '9px',
+                padding: '18px 14px',
                 textAlign: 'center',
+                transition: 'all 0.3s ease',
+                cursor: 'default',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(59,130,246,0.4)';
+                e.currentTarget.style.background = 'linear-gradient(135deg, rgba(59,130,246,0.12) 0%, rgba(37,99,235,0.08) 100%)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(59,130,246,0.2)';
+                e.currentTarget.style.background = 'linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(37,99,235,0.04) 100%)';
               }}>
-                <div style={{ fontSize: '24px', marginBottom: '8px' }}>{item.icon}</div>
-                <div style={{ fontSize: '12px', fontWeight: 700, color: '#fbbf24', marginBottom: '4px' }}>
+                <div style={{ fontSize: '28px', marginBottom: '10px', lineHeight: 1 }}>{item.icon}</div>
+                <div style={{ fontSize: '11px', fontWeight: 700, color: '#60a5fa', marginBottom: '6px', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
                   Step {item.step}
                 </div>
-                <div style={{ fontSize: '12px', fontWeight: 600, color: '#fff', marginBottom: '6px' }}>
+                <div style={{ fontSize: '13px', fontWeight: 700, color: '#e0e0e0', marginBottom: '6px' }}>
                   {item.title}
                 </div>
-                <div style={{ fontSize: '11px', color: '#999', lineHeight: 1.4 }}>
+                <div style={{ fontSize: '11px', color: '#999', lineHeight: 1.5 }}>
                   {item.desc}
                 </div>
               </div>
             ))}
           </div>
 
-          <p style={{
+          <div style={{
+            background: 'rgba(0,208,132,0.08)',
+            border: '1px solid rgba(0,208,132,0.2)',
+            borderRadius: '8px',
+            padding: '14px 16px',
+            textAlign: 'center',
             fontSize: '12px',
             color: '#aaa',
-            textAlign: 'center',
-            marginTop: '20px',
           }}>
-            💚 <strong>Recommended free option:</strong> Tor Browser is completely free and safe. Download from torproject.org
-          </p>
+            💡 <strong style={{ color: '#00d084' }}>Recommended:</strong> Tor Browser is free, safe &amp; easy. Download from <a href="https://torproject.org" target="_blank" rel="noopener noreferrer" style={{ color: '#00d084', textDecoration: 'none', fontWeight: 700 }}>torproject.org</a>
+          </div>
         </div>
 
         {/* COMPARISON */}
