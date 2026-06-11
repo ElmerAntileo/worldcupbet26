@@ -62,6 +62,7 @@ export default function StickyOddsBar() {
           }}>
             <span style={{ fontSize: "12px", fontWeight: 700, color: "var(--foreground)", whiteSpace: "nowrap" }}>
               {bk.logo} {bk.name}
+              {bk.name === "1xBet" && <span style={{ color: "#ff6b6b", marginLeft: "2px" }}>*</span>}
             </span>
             {[
               { label: "1", val: bk.home },
@@ -111,6 +112,21 @@ export default function StickyOddsBar() {
         <span style={{ fontSize: "10px", color: "var(--muted)", whiteSpace: "nowrap", marginLeft: "auto", paddingLeft: "16px", flexShrink: 0 }}>
           18+ · T&amp;Cs apply
         </span>
+      </div>
+
+      {/* VPN Disclaimer */}
+      <div style={{
+        background: "rgba(255,107,107,0.08)",
+        borderTop: "1px solid rgba(255,107,107,0.2)",
+        padding: "8px 20px",
+        fontSize: "10px",
+        color: "var(--muted-light)",
+        textAlign: "center",
+      }}>
+        * 1xBet requires VPN for access from: Germany, UK, France, Netherlands, Spain, Sweden, Finland, Iceland & other restricted regions.{" "}
+        <a href="/choose-betting" style={{ color: "#ff6b6b", textDecoration: "underline" }}>
+          View alternatives
+        </a>
       </div>
     </div>
   );
