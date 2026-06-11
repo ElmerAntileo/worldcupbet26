@@ -12,7 +12,6 @@ export default function ChooseBetting() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Detect user's country
     fetch('/api/detect-country')
       .then((res) => res.json())
       .then((data) => {
@@ -37,158 +36,450 @@ export default function ChooseBetting() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white flex items-center justify-center">
-        <p className="text-xl text-gray-600">Detecting your location...</p>
+      <div style={{
+        minHeight: '100vh',
+        background: 'linear-gradient(160deg, #040c18 0%, #071a30 45%, #050e1c 100%)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
+        <p style={{ fontSize: '18px', color: '#888' }}>Detecting your location...</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      <div className="max-w-4xl mx-auto px-4 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">⚡ World Cup 2026 Betting</h1>
-          <p className="text-2xl text-gray-600 mb-4">Choose Your Betting Option</p>
-          <p className="text-lg text-gray-500">Detected location: <strong>{country}</strong></p>
-        </div>
+    <div style={{
+      background: 'linear-gradient(160deg, #040c18 0%, #071a30 45%, #050e1c 100%)',
+      minHeight: '100vh',
+      color: '#fff',
+      padding: '60px 20px',
+    }}>
+      <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
 
-        {/* OPTION 1: Pinnacle - Works Everywhere */}
-        <div className="bg-green-50 border-4 border-green-600 rounded-lg p-8 my-8 text-center">
-          <div className="inline-block bg-green-600 text-white px-4 py-1 rounded-full mb-4 font-bold">
-            ✅ INSTANT ACCESS - WORKS EVERYWHERE
+        {/* HERO SECTION */}
+        <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+          <div style={{
+            fontSize: '14px',
+            fontWeight: 700,
+            color: '#00d084',
+            letterSpacing: '0.08em',
+            marginBottom: '16px',
+            textTransform: 'uppercase',
+          }}>
+            🎯 World Cup 2026 Betting
           </div>
-          <h2 className="text-3xl font-bold text-green-700 mb-4">🌍 Pinnacle</h2>
-          <p className="text-gray-700 text-lg mb-6">
-            <strong>Works in 180+ countries</strong> | No VPN/Proxy needed | Instant access
+
+          <h1 style={{
+            fontSize: 'clamp(32px, 6vw, 56px)',
+            fontWeight: 900,
+            marginBottom: '16px',
+            letterSpacing: '-0.02em',
+            background: 'linear-gradient(135deg, #ffffff 55%, #00d084 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+          }}>
+            Choose Your Betting Option
+          </h1>
+
+          <p style={{
+            fontSize: '16px',
+            color: '#aaa',
+            maxWidth: '500px',
+            margin: '0 auto 24px',
+            lineHeight: 1.6,
+          }}>
+            Detected location: <strong>{country}</strong> — Select the best option for your region
           </p>
-          <ul className="text-gray-700 mb-6 space-y-2 max-w-md mx-auto">
-            <li>✅ Available worldwide (no geo-restrictions)</li>
-            <li>✅ Great World Cup odds</li>
-            <li>✅ Fast payouts</li>
-            <li>✅ Works on any device immediately</li>
-          </ul>
-          <a
-            href={affiliateLinkPinnacle}
-            onClick={handlePinnacle}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-12 rounded-lg text-xl shadow-lg"
-          >
-            ➜ START BETTING WITH PINNACLE NOW ←
-          </a>
-          <p className="text-green-600 font-bold mt-4">✨ EASIEST OPTION - NO SETUP NEEDED</p>
         </div>
 
-        {/* DIVIDER */}
-        <div className="text-center my-8">
-          <p className="text-gray-400 font-bold">OR</p>
-        </div>
+        {/* OPTIONS GRID */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px', marginBottom: '60px' }}>
 
-        {/* OPTION 2: 1xBet with VPN Instructions */}
-        <div className="bg-blue-50 border-4 border-blue-600 rounded-lg p-8 my-8 text-center">
-          <div className="inline-block bg-blue-600 text-white px-4 py-1 rounded-full mb-4 font-bold">
-            💰 BETTER ODDS (VPN Required*)
+          {/* OPTION 1: PINNACLE */}
+          <div style={{
+            background: 'linear-gradient(135deg, rgba(0,208,132,0.08) 0%, rgba(0,176,112,0.04) 100%)',
+            border: '1px solid rgba(0,208,132,0.2)',
+            borderRadius: '12px',
+            padding: '32px 24px',
+            textAlign: 'center',
+            transition: 'all 0.3s ease',
+            cursor: 'pointer',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.borderColor = 'rgba(0,208,132,0.4)';
+            e.currentTarget.style.background = 'linear-gradient(135deg, rgba(0,208,132,0.12) 0%, rgba(0,176,112,0.08) 100%)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.borderColor = 'rgba(0,208,132,0.2)';
+            e.currentTarget.style.background = 'linear-gradient(135deg, rgba(0,208,132,0.08) 0%, rgba(0,176,112,0.04) 100%)';
+          }}>
+            <div style={{
+              background: 'rgba(0,208,132,0.15)',
+              border: '1px solid rgba(0,208,132,0.3)',
+              color: '#00d084',
+              padding: '8px 16px',
+              borderRadius: '999px',
+              display: 'inline-block',
+              marginBottom: '16px',
+              fontSize: '11px',
+              fontWeight: 700,
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
+            }}>
+              ✅ Instant Access
+            </div>
+
+            <h2 style={{
+              fontSize: '32px',
+              fontWeight: 900,
+              marginBottom: '12px',
+              color: '#00d084',
+            }}>
+              🌍 Pinnacle
+            </h2>
+
+            <p style={{
+              fontSize: '14px',
+              color: '#aaa',
+              marginBottom: '20px',
+              lineHeight: 1.6,
+            }}>
+              Works in 180+ countries<br />No VPN/Proxy needed<br />Instant access
+            </p>
+
+            <ul style={{
+              textAlign: 'left',
+              marginBottom: '24px',
+              fontSize: '13px',
+              color: '#bbb',
+              listStyle: 'none',
+              padding: 0,
+            }}>
+              {[
+                'Available worldwide (no geo-restrictions)',
+                'Great World Cup odds',
+                'Fast payouts',
+                'Works on any device immediately',
+              ].map((item, i) => (
+                <li key={i} style={{ marginBottom: '10px' }}>
+                  <span style={{ color: '#00d084', marginRight: '8px' }}>✓</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href={affiliateLinkPinnacle}
+              onClick={handlePinnacle}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-block',
+                background: 'linear-gradient(135deg, #00d084, #00b870)',
+                color: '#040c18',
+                padding: '14px 32px',
+                borderRadius: '8px',
+                fontWeight: 800,
+                fontSize: '14px',
+                textDecoration: 'none',
+                boxShadow: '0 4px 16px rgba(0,208,132,0.2)',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = '0 6px 24px rgba(0,208,132,0.35)';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,208,132,0.2)';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}
+            >
+              Start Betting with Pinnacle →
+            </a>
+
+            <p style={{
+              fontSize: '12px',
+              color: '#00d084',
+              fontWeight: 600,
+              marginTop: '16px',
+            }}>
+              ✨ EASIEST OPTION - NO SETUP NEEDED
+            </p>
           </div>
-          <h2 className="text-3xl font-bold text-blue-700 mb-4">1xBet*</h2>
-          <p className="text-gray-700 text-lg mb-6">
-            <strong>200+ markets & best odds</strong> | Higher limits | Live betting
-          </p>
-          <ul className="text-gray-700 mb-6 space-y-2 max-w-md mx-auto">
-            <li>✅ 200+ World Cup markets</li>
-            <li>✅ Live in-play betting</li>
-            <li>✅ Best odds on the market</li>
-            <li>✅ Highest payout limits</li>
-            <li>⚠️ Requires VPN for your region*</li>
-          </ul>
-          <a
-            href={bypassLink1xBet}
-            onClick={handleGeoBypass}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-12 rounded-lg text-xl shadow-lg"
-          >
-            ➜ SIGN UP AT 1xBET ←
-          </a>
-          <p className="text-blue-700 font-bold mt-4 text-sm">* See VPN instructions below</p>
+
+          {/* OPTION 2: 1xBET */}
+          <div style={{
+            background: 'linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(37,99,235,0.04) 100%)',
+            border: '1px solid rgba(59,130,246,0.2)',
+            borderRadius: '12px',
+            padding: '32px 24px',
+            textAlign: 'center',
+            transition: 'all 0.3s ease',
+            cursor: 'pointer',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.borderColor = 'rgba(59,130,246,0.4)';
+            e.currentTarget.style.background = 'linear-gradient(135deg, rgba(59,130,246,0.12) 0%, rgba(37,99,235,0.08) 100%)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.borderColor = 'rgba(59,130,246,0.2)';
+            e.currentTarget.style.background = 'linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(37,99,235,0.04) 100%)';
+          }}>
+            <div style={{
+              background: 'rgba(59,130,246,0.15)',
+              border: '1px solid rgba(59,130,246,0.3)',
+              color: '#60a5fa',
+              padding: '8px 16px',
+              borderRadius: '999px',
+              display: 'inline-block',
+              marginBottom: '16px',
+              fontSize: '11px',
+              fontWeight: 700,
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
+            }}>
+              💰 Better Odds (VPN Required*)
+            </div>
+
+            <h2 style={{
+              fontSize: '32px',
+              fontWeight: 900,
+              marginBottom: '12px',
+              color: '#60a5fa',
+            }}>
+              1xBet*
+            </h2>
+
+            <p style={{
+              fontSize: '14px',
+              color: '#aaa',
+              marginBottom: '20px',
+              lineHeight: 1.6,
+            }}>
+              200+ markets & best odds<br />Higher limits<br />Live betting
+            </p>
+
+            <ul style={{
+              textAlign: 'left',
+              marginBottom: '24px',
+              fontSize: '13px',
+              color: '#bbb',
+              listStyle: 'none',
+              padding: 0,
+            }}>
+              {[
+                '200+ World Cup markets',
+                'Live in-play betting',
+                'Best odds on the market',
+                'Highest payout limits',
+                '⚠️ Requires VPN for your region*',
+              ].map((item, i) => (
+                <li key={i} style={{ marginBottom: '10px' }}>
+                  <span style={{ color: item.includes('⚠️') ? '#ff6b6b' : '#60a5fa', marginRight: '8px' }}>
+                    {item.includes('⚠️') ? '⚠️' : '✓'}
+                  </span>
+                  {item.replace('⚠️ ', '')}
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href={bypassLink1xBet}
+              onClick={handleGeoBypass}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-block',
+                background: 'linear-gradient(135deg, #3b82f6, #2563eb)',
+                color: '#fff',
+                padding: '14px 32px',
+                borderRadius: '8px',
+                fontWeight: 800,
+                fontSize: '14px',
+                textDecoration: 'none',
+                boxShadow: '0 4px 16px rgba(59,130,246,0.2)',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = '0 6px 24px rgba(59,130,246,0.35)';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = '0 4px 16px rgba(59,130,246,0.2)';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}
+            >
+              Access 1xBet with VPN →
+            </a>
+
+            <p style={{
+              fontSize: '12px',
+              color: '#60a5fa',
+              fontWeight: 600,
+              marginTop: '16px',
+            }}>
+              🚀 See VPN instructions below
+            </p>
+          </div>
         </div>
 
         {/* VPN INSTRUCTIONS */}
-        <div className="bg-yellow-50 border-4 border-yellow-600 rounded-lg p-8 mt-12">
-          <h3 className="text-2xl font-bold text-yellow-700 mb-6 text-center">🔓 Using 1xBet? Here&apos;s How to Access It</h3>
-          <p className="text-gray-700 text-center mb-6 font-bold">1xBet requires a VPN for access from restricted regions (Germany, UK, USA, Canada, Ireland, etc.)</p>
+        <div style={{
+          background: 'linear-gradient(135deg, rgba(217,119,6,0.08) 0%, rgba(180,83,9,0.04) 100%)',
+          border: '1px solid rgba(217,119,6,0.2)',
+          borderRadius: '12px',
+          padding: '32px 24px',
+          marginBottom: '40px',
+        }}>
+          <h3 style={{
+            fontSize: '20px',
+            fontWeight: 800,
+            marginBottom: '12px',
+            textAlign: 'center',
+            color: '#fbbf24',
+          }}>
+            🔓 How to Access 1xBet from Restricted Regions
+          </h3>
 
-          <div className="grid md:grid-cols-4 gap-4">
-            <div className="bg-white p-4 rounded border-2 border-yellow-400">
-              <div className="text-3xl mb-2">📥</div>
-              <h4 className="font-bold mb-2">Step 1: Get a VPN</h4>
-              <p className="text-sm">Download free Tor Browser or ProtonVPN from your app store</p>
-            </div>
-            <div className="bg-white p-4 rounded border-2 border-yellow-400">
-              <div className="text-3xl mb-2">⚙️</div>
-              <h4 className="font-bold mb-2">Step 2: Connect</h4>
-              <p className="text-sm">Launch VPN and select a country where 1xBet operates (Canada, US, etc.)</p>
-            </div>
-            <div className="bg-white p-4 rounded border-2 border-yellow-400">
-              <div className="text-3xl mb-2">🌐</div>
-              <h4 className="font-bold mb-2">Step 3: Open 1xBet</h4>
-              <p className="text-sm">Visit 1xBet link while connected to your VPN</p>
-            </div>
-            <div className="bg-white p-4 rounded border-2 border-yellow-400">
-              <div className="text-3xl mb-2">✅</div>
-              <h4 className="font-bold mb-2">Step 4: Sign Up</h4>
-              <p className="text-sm">Create account and start betting on World Cup</p>
-            </div>
+          <p style={{
+            fontSize: '14px',
+            color: '#aaa',
+            textAlign: 'center',
+            marginBottom: '24px',
+            lineHeight: 1.6,
+          }}>
+            1xBet requires a VPN for access from: Germany, UK, France, Netherlands, Spain, Sweden, Finland, Iceland, and other restricted regions
+          </p>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
+            gap: '16px',
+          }}>
+            {[
+              { step: 1, icon: '📥', title: 'Get a VPN', desc: 'Download free Tor Browser or ProtonVPN' },
+              { step: 2, icon: '⚙️', title: 'Connect', desc: 'Select Canada, US, or allowed country' },
+              { step: 3, icon: '🌐', title: 'Open 1xBet', desc: 'Visit 1xBet while VPN is active' },
+              { step: 4, icon: '✅', title: 'Sign Up', desc: 'Create account and start betting' },
+            ].map((item) => (
+              <div key={item.step} style={{
+                background: 'rgba(255,255,255,0.03)',
+                border: '1px solid rgba(217,119,6,0.2)',
+                borderRadius: '8px',
+                padding: '16px',
+                textAlign: 'center',
+              }}>
+                <div style={{ fontSize: '24px', marginBottom: '8px' }}>{item.icon}</div>
+                <div style={{ fontSize: '12px', fontWeight: 700, color: '#fbbf24', marginBottom: '4px' }}>
+                  Step {item.step}
+                </div>
+                <div style={{ fontSize: '12px', fontWeight: 600, color: '#fff', marginBottom: '6px' }}>
+                  {item.title}
+                </div>
+                <div style={{ fontSize: '11px', color: '#999', lineHeight: 1.4 }}>
+                  {item.desc}
+                </div>
+              </div>
+            ))}
           </div>
 
-          <p className="text-center text-gray-600 mt-6 text-sm">
-            <strong>Recommended free option:</strong> Tor Browser is completely free and safe. Download from torproject.org
+          <p style={{
+            fontSize: '12px',
+            color: '#aaa',
+            textAlign: 'center',
+            marginTop: '20px',
+          }}>
+            💚 <strong>Recommended free option:</strong> Tor Browser is completely free and safe. Download from torproject.org
           </p>
         </div>
 
         {/* COMPARISON */}
-        <div className="bg-gray-100 border-2 border-gray-300 rounded-lg p-6 mt-12">
-          <h3 className="text-xl font-bold mb-4 text-center">Pinnacle vs 1xBet</h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <h4 className="font-bold text-green-700 mb-3">Pinnacle ✅</h4>
-              <ul className="text-gray-700 space-y-1 text-sm">
-                <li>✅ Works immediately - no VPN needed</li>
-                <li>✅ Available in 180+ countries</li>
-                <li>✅ Great World Cup odds</li>
-                <li>✅ Perfect for most users</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold text-blue-700 mb-3">1xBet 🎯</h4>
-              <ul className="text-gray-700 space-y-1 text-sm">
-                <li>⚠️ Requires VPN for restricted regions</li>
-                <li>✅ More betting markets (200+)</li>
-                <li>✅ Better odds on some matches</li>
-                <li>✅ Higher betting limits</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <div style={{
+          background: 'rgba(255,255,255,0.03)',
+          border: '1px solid rgba(255,255,255,0.1)',
+          borderRadius: '12px',
+          padding: '32px 24px',
+        }}>
+          <h3 style={{
+            fontSize: '18px',
+            fontWeight: 800,
+            marginBottom: '24px',
+            textAlign: 'center',
+          }}>
+            Quick Comparison
+          </h3>
 
-        {/* STATS */}
-        <div className="mt-12 grid md:grid-cols-3 gap-4 text-center">
-          <div className="bg-blue-100 p-6 rounded-lg">
-            <div className="text-4xl font-bold text-blue-700 mb-2">200+</div>
-            <p className="text-gray-700">World Cup Markets</p>
-          </div>
-          <div className="bg-green-100 p-6 rounded-lg">
-            <div className="text-4xl font-bold text-green-700 mb-2">180+</div>
-            <p className="text-gray-700">Countries Supported</p>
-          </div>
-          <div className="bg-purple-100 p-6 rounded-lg">
-            <div className="text-4xl font-bold text-purple-700 mb-2">2 min</div>
-            <p className="text-gray-700">Time to Sign Up</p>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '32px',
+          }}>
+            <div>
+              <h4 style={{ fontSize: '16px', fontWeight: 800, color: '#00d084', marginBottom: '12px' }}>
+                ✅ Pinnacle
+              </h4>
+              <ul style={{
+                fontSize: '13px',
+                color: '#aaa',
+                listStyle: 'none',
+                padding: 0,
+                lineHeight: 1.8,
+              }}>
+                {[
+                  'Works immediately - no VPN needed',
+                  'Available in 180+ countries',
+                  'Great World Cup odds',
+                  'Perfect for most users',
+                ].map((item, i) => (
+                  <li key={i}>
+                    <span style={{ color: '#00d084', marginRight: '8px' }}>✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 style={{ fontSize: '16px', fontWeight: 800, color: '#60a5fa', marginBottom: '12px' }}>
+                🎯 1xBet
+              </h4>
+              <ul style={{
+                fontSize: '13px',
+                color: '#aaa',
+                listStyle: 'none',
+                padding: 0,
+                lineHeight: 1.8,
+              }}>
+                {[
+                  'Requires VPN for restricted regions',
+                  'More betting markets (200+)',
+                  'Better odds on some matches',
+                  'Higher betting limits',
+                ].map((item, i) => (
+                  <li key={i}>
+                    <span style={{ color: item.includes('Requires') ? '#ff6b6b' : '#60a5fa', marginRight: '8px' }}>
+                      {item.includes('Requires') ? '⚠️' : '✓'}
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
         {/* FOOTNOTE */}
-        <div className="mt-8 text-center text-sm text-gray-600">
-          <p>* VPN required for: Germany, UK, France, Netherlands, Spain, Sweden, Finland, Iceland, and other restricted regions</p>
+        <div style={{
+          textAlign: 'center',
+          marginTop: '40px',
+          fontSize: '12px',
+          color: '#666',
+        }}>
+          * VPN required for: Germany, UK, France, Netherlands, Spain, Sweden, Finland, Iceland, and other restricted regions.
         </div>
       </div>
     </div>
