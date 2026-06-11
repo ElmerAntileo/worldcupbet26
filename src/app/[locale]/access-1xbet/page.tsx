@@ -1,106 +1,332 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
+import { useEffect, useState } from 'react';
+
+const affiliateLink1xBet = 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97';
 const affiliateLinkPinnacle = 'https://www.pinnacle.com';
 
 export default function Access1xBet() {
-  const handleClickPinnacle = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const [daysLeft, setDaysLeft] = useState<number>(0);
+
+  useEffect(() => {
+    // Calculate days until World Cup 2026 (June 11, 2026)
+    const worldCupDate = new Date('2026-06-11').getTime();
+    const today = new Date().getTime();
+    const days = Math.ceil((worldCupDate - today) / (1000 * 60 * 60 * 24));
+    setDaysLeft(Math.max(0, days));
+  }, []);
+
+  const handle1xBet = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    // Direct access - Pinnacle works globally
+    window.open(affiliateLink1xBet, '_blank');
+  };
+
+  const handlePinnacle = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
     window.open(affiliateLinkPinnacle, '_blank');
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      <div className="max-w-4xl mx-auto px-4 py-12">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">⚡ 1xBet World Cup Betting</h1>
-          <p className="text-2xl text-red-600 font-bold">🎯 WORLD CUP 2026 - START BETTING NOW!</p>
-          <p className="text-lg text-gray-600 font-bold mt-4">⚠️ VPN REQUIRED FOR: Germany, UK, France, Netherlands, Spain, Sweden, Finland, Iceland</p>
+    <div style={{
+      background: 'linear-gradient(160deg, #040c18 0%, #071a30 45%, #050e1c 100%)',
+      minHeight: '100vh',
+      color: '#fff',
+      padding: '40px 20px 60px',
+    }}>
+      <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+
+        {/* COUNTDOWN HERO */}
+        <div style={{
+          textAlign: 'center',
+          marginBottom: '50px',
+        }}>
+          <div style={{
+            fontSize: '14px',
+            fontWeight: 700,
+            color: '#00d084',
+            letterSpacing: '0.08em',
+            marginBottom: '16px',
+            textTransform: 'uppercase',
+          }}>
+            ⚽ WORLD CUP 2026 COUNTDOWN
+          </div>
+
+          <h1 style={{
+            fontSize: 'clamp(36px, 6vw, 52px)',
+            fontWeight: 900,
+            marginBottom: '12px',
+            letterSpacing: '-0.02em',
+            background: 'linear-gradient(135deg, #ff6b6b 55%, #ff8787 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+          }}>
+            {daysLeft} DAYS LEFT TO PREPARE
+          </h1>
+
+          <p style={{
+            fontSize: '16px',
+            color: '#aaa',
+            marginBottom: '32px',
+            lineHeight: 1.6,
+          }}>
+            FIFA World Cup 2026 starts June 11 • Get your 1xBet account ready NOW
+          </p>
         </div>
 
-        {/* PRIMARY CTA: 1xBet */}
-        <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg p-8 my-8 text-center shadow-2xl">
-          <h2 className="text-4xl font-bold text-white mb-6">💰 SIGN UP AT 1xBet</h2>
-          <p className="text-white text-lg mb-2">200+ World Cup markets • Live betting • Best odds</p>
-          <p className="text-yellow-200 text-sm font-bold mb-6">⚠️ Restricted regions may need VPN (see below)</p>
+        {/* MAIN CTA SECTION */}
+        <div style={{
+          background: 'linear-gradient(135deg, rgba(59,130,246,0.1) 0%, rgba(37,99,235,0.05) 100%)',
+          border: '2px solid rgba(59,130,246,0.3)',
+          borderRadius: '14px',
+          padding: '40px 32px',
+          marginBottom: '40px',
+          textAlign: 'center',
+        }}>
+          <div style={{
+            background: 'rgba(59,130,246,0.2)',
+            border: '1px solid rgba(59,130,246,0.4)',
+            color: '#60a5fa',
+            padding: '10px 20px',
+            borderRadius: '999px',
+            display: 'inline-block',
+            marginBottom: '20px',
+            fontSize: '12px',
+            fontWeight: 700,
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+          }}>
+            🎯 BEST ODDS & 200+ MARKETS
+          </div>
+
+          <h2 style={{
+            fontSize: '42px',
+            fontWeight: 900,
+            marginBottom: '16px',
+            color: '#60a5fa',
+          }}>
+            1xBet World Cup Betting
+          </h2>
+
+          <p style={{
+            fontSize: '18px',
+            color: '#bbb',
+            marginBottom: '12px',
+            lineHeight: 1.6,
+          }}>
+            The #1 choice for serious bettors • Live betting • Instant payouts • 24/7 support
+          </p>
+
+          {/* URGENCY BOX */}
+          <div style={{
+            background: 'rgba(255,107,107,0.1)',
+            border: '1px solid rgba(255,107,107,0.3)',
+            borderRadius: '8px',
+            padding: '12px 16px',
+            marginBottom: '24px',
+            fontSize: '13px',
+            color: '#ff8787',
+            fontWeight: 600,
+          }}>
+            ⚡ Sign up today to claim your welcome bonus before World Cup starts
+          </div>
+
+          {/* MAIN BUTTON */}
           <a
-            href={affiliateLinkPinnacle}
-            onClick={handleClickPinnacle}
+            href={affiliateLink1xBet}
+            onClick={handle1xBet}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-white text-blue-700 font-bold py-4 px-12 rounded-lg text-2xl hover:bg-gray-100 shadow-lg"
+            style={{
+              display: 'inline-block',
+              background: 'linear-gradient(135deg, #3b82f6, #2563eb)',
+              color: '#fff',
+              padding: '18px 48px',
+              borderRadius: '10px',
+              fontWeight: 800,
+              fontSize: '18px',
+              textDecoration: 'none',
+              boxShadow: '0 6px 20px rgba(59,130,246,0.3)',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              marginBottom: '16px',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-3px)';
+              e.currentTarget.style.boxShadow = '0 8px 28px rgba(59,130,246,0.4)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 6px 20px rgba(59,130,246,0.3)';
+            }}
           >
-            ➜ CLICK HERE TO SIGN UP ←
+            🚀 SIGN UP AT 1xBET NOW → GET BONUS
           </a>
-          <p className="text-white text-sm mt-4">Takes 2 minutes • Check VPN requirements for your region</p>
+
+          <p style={{
+            fontSize: '12px',
+            color: '#999',
+            marginTop: '12px',
+          }}>
+            2 minutes signup • No credit card required • Instant access
+          </p>
         </div>
 
-        {/* BACKUP: Pinnacle */}
-        <div className="bg-green-50 border-4 border-green-600 rounded-lg p-8 my-8 text-center">
-          <h2 className="text-3xl font-bold text-green-700 mb-4">🌍 CAN&apos;T ACCESS 1xBet?</h2>
-          <p className="text-gray-700 text-lg mb-6">Use <strong>Pinnacle</strong> - Works in 180+ countries, NO VPN needed</p>
+        {/* VPN REQUIREMENT SECTION */}
+        <div style={{
+          background: 'linear-gradient(135deg, rgba(255,193,7,0.08) 0%, rgba(245,127,23,0.04) 100%)',
+          border: '2px solid rgba(255,193,7,0.2)',
+          borderRadius: '12px',
+          padding: '32px 28px',
+          marginBottom: '40px',
+        }}>
+          <h3 style={{
+            fontSize: '20px',
+            fontWeight: 800,
+            marginBottom: '16px',
+            textAlign: 'center',
+            color: '#fbbf24',
+          }}>
+            ⚠️ Restricted in Your Country? Use VPN
+          </h3>
+
+          <p style={{
+            fontSize: '14px',
+            color: '#bbb',
+            textAlign: 'center',
+            marginBottom: '24px',
+            lineHeight: 1.6,
+          }}>
+            If you&rsquo;re in Germany, UK, France, Netherlands, Spain, Sweden, Finland, or Iceland, follow these 4 steps:
+          </p>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
+            gap: '14px',
+            marginBottom: '24px',
+          }}>
+            {[
+              { num: '1', icon: '📥', text: 'Download Tor Browser (free)' },
+              { num: '2', icon: '⚙️', text: 'Select US/Canada exit' },
+              { num: '3', icon: '🌐', text: 'Keep VPN active' },
+              { num: '4', icon: '✅', text: 'Sign up to 1xBet' },
+            ].map((step) => (
+              <div key={step.num} style={{
+                background: 'linear-gradient(135deg, rgba(255,193,7,0.1) 0%, rgba(245,127,23,0.05) 100%)',
+                border: '1px solid rgba(255,193,7,0.2)',
+                borderRadius: '8px',
+                padding: '16px 12px',
+                textAlign: 'center',
+              }}>
+                <div style={{ fontSize: '24px', marginBottom: '8px' }}>{step.icon}</div>
+                <div style={{ fontSize: '11px', fontWeight: 700, color: '#fbbf24', marginBottom: '4px' }}>
+                  STEP {step.num}
+                </div>
+                <div style={{ fontSize: '12px', color: '#ccc', lineHeight: 1.4 }}>
+                  {step.text}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{
+            background: 'rgba(0,208,132,0.1)',
+            border: '1px solid rgba(0,208,132,0.3)',
+            borderRadius: '8px',
+            padding: '12px 14px',
+            textAlign: 'center',
+            fontSize: '12px',
+            color: '#999',
+          }}>
+            💡 <strong style={{ color: '#00d084' }}>Pro tip:</strong> Tor Browser is 100% free & safe. Download from torproject.org
+          </div>
+        </div>
+
+        {/* BENEFITS SECTION */}
+        <div style={{
+          background: 'rgba(255,255,255,0.03)',
+          border: '1px solid rgba(255,255,255,0.1)',
+          borderRadius: '12px',
+          padding: '32px 28px',
+          marginBottom: '40px',
+        }}>
+          <h3 style={{
+            fontSize: '20px',
+            fontWeight: 800,
+            marginBottom: '24px',
+            textAlign: 'center',
+          }}>
+            Why Choose 1xBet?
+          </h3>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '20px',
+          }}>
+            {[
+              { icon: '🎯', title: '200+ Markets', desc: 'Every possible World Cup bet' },
+              { icon: '⚡', title: 'Live Betting', desc: 'In-play odds during matches' },
+              { icon: '💰', title: 'Best Odds', desc: 'Highest payouts in the industry' },
+              { icon: '🏧', title: 'Fast Payouts', desc: 'Withdraw instantly' },
+              { icon: '🛡️', title: 'Secure', desc: 'Licensed & regulated' },
+              { icon: '💬', title: '24/7 Support', desc: 'Help anytime you need it' },
+            ].map((benefit) => (
+              <div key={benefit.title} style={{
+                textAlign: 'center',
+                padding: '16px',
+              }}>
+                <div style={{ fontSize: '32px', marginBottom: '8px' }}>{benefit.icon}</div>
+                <div style={{ fontSize: '14px', fontWeight: 700, color: '#e0e0e0', marginBottom: '4px' }}>
+                  {benefit.title}
+                </div>
+                <div style={{ fontSize: '12px', color: '#999' }}>
+                  {benefit.desc}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* BACKUP OPTION */}
+        <div style={{
+          textAlign: 'center',
+          padding: '24px',
+          borderTop: '1px solid rgba(255,255,255,0.1)',
+        }}>
+          <p style={{ fontSize: '14px', color: '#999', marginBottom: '12px' }}>
+            Can&apos;t access 1xBet? No problem.
+          </p>
           <a
             href={affiliateLinkPinnacle}
-            onClick={handleClickPinnacle}
+            onClick={handlePinnacle}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-green-600 text-white font-bold py-4 px-12 rounded-lg text-xl hover:bg-green-700 shadow-lg"
+            style={{
+              display: 'inline-block',
+              color: '#00d084',
+              textDecoration: 'none',
+              fontWeight: 700,
+              fontSize: '14px',
+              padding: '10px 20px',
+              border: '1px solid rgba(0,208,132,0.3)',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = 'rgba(0,208,132,0.6)';
+              e.currentTarget.style.color = '#00f084';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = 'rgba(0,208,132,0.3)';
+              e.currentTarget.style.color = '#00d084';
+            }}
           >
-            ➜ CLICK HERE TO ACCESS PINNACLE ←
+            Try Pinnacle (works everywhere) →
           </a>
-        </div>
-
-        {/* VPN REQUIREMENT */}
-        <div className="bg-yellow-50 border-4 border-yellow-600 rounded-lg p-8 my-8">
-          <h2 className="text-3xl font-bold text-yellow-700 mb-2 text-center">🔓 Using VPN to Access 1xBet</h2>
-          <p className="text-center text-gray-600 mb-6 font-bold">If 1xBet is blocked in your region, use a VPN to connect through an allowed country</p>
-
-          <div className="grid md:grid-cols-4 gap-4">
-            <div className="bg-white p-4 rounded border-2 border-yellow-400">
-              <div className="text-3xl mb-2">📥</div>
-              <h4 className="font-bold mb-2">Step 1</h4>
-              <p className="text-sm"><strong>Get a free VPN:</strong></p>
-              <p className="text-xs mt-1">• Tor Browser (torproject.org)</p>
-              <p className="text-xs">• ProtonVPN (free)</p>
-            </div>
-            <div className="bg-white p-4 rounded border-2 border-yellow-400">
-              <div className="text-3xl mb-2">⚙️</div>
-              <h4 className="font-bold mb-2">Step 2</h4>
-              <p className="text-sm">Install &amp; launch your VPN app</p>
-            </div>
-            <div className="bg-white p-4 rounded border-2 border-yellow-400">
-              <div className="text-3xl mb-2">🌍</div>
-              <h4 className="font-bold mb-2">Step 3</h4>
-              <p className="text-sm">Select exit location: Canada, US, or other allowed country</p>
-            </div>
-            <div className="bg-white p-4 rounded border-2 border-yellow-400">
-              <div className="text-3xl mb-2">✅</div>
-              <h4 className="font-bold mb-2">Step 4</h4>
-              <p className="text-sm">Visit 1xBet (keep VPN active while betting)</p>
-            </div>
-          </div>
-
-          <div className="mt-6 bg-green-100 border-2 border-green-600 rounded p-4">
-            <p className="text-green-800 text-center font-bold">💚 Prefer no VPN needed? <a href={affiliateLinkPinnacle} onClick={handleClickPinnacle} className="underline">Use Pinnacle instead</a></p>
-          </div>
-        </div>
-
-        {/* Quick Stats */}
-        <div className="mt-12 grid md:grid-cols-3 gap-4 text-center">
-          <div className="bg-blue-100 p-6 rounded-lg">
-            <div className="text-4xl font-bold text-blue-700 mb-2">200+</div>
-            <p className="text-gray-700">World Cup Markets</p>
-          </div>
-          <div className="bg-green-100 p-6 rounded-lg">
-            <div className="text-4xl font-bold text-green-700 mb-2">180+</div>
-            <p className="text-gray-700">Countries Supported</p>
-          </div>
-          <div className="bg-purple-100 p-6 rounded-lg">
-            <div className="text-4xl font-bold text-purple-700 mb-2">2 min</div>
-            <p className="text-gray-700">Time to Sign Up</p>
-          </div>
         </div>
       </div>
     </div>
