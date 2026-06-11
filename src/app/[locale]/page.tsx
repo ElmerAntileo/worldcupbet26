@@ -81,7 +81,7 @@ const bookmakers = [
     rating: 4.8,
     bonus: '100% Welcome Bonus up to €100',
     features: ['World Cup Specials', 'Live Streaming', 'Cash Out'],
-    url: 'https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/',
+    url: '/choose-betting',
     country: ['EU', 'NO', 'SE', 'FI', 'CA'],
   },
   {
@@ -90,7 +90,7 @@ const bookmakers = [
     rating: 4.7,
     bonus: '100% on first deposit up to €100',
     features: ['130+ Sports', 'Live Streaming', 'Early Cashout'],
-    url: 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97',
+    url: '/choose-betting',
     country: ['UK', 'DE', 'BR', 'MX', 'NG'],
   },
   {
