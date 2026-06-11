@@ -1,8 +1,8 @@
 "use client";
 
 const TOP_BOOKMAKERS = [
-  { name: "Betsson", logo: "🏆", home: "1.65", draw: "3.70", away: "5.50", url: "https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/", isAffiliate: true },
-  { name: "1xBet",   logo: "🎯", home: "1.67", draw: "3.65", away: "5.40", url: "https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97",      isAffiliate: true },
+  { name: "Betsson", logo: "🏆", home: "1.65", draw: "3.70", away: "5.50", url: "/choose-betting", isAffiliate: true },
+  { name: "1xBet",   logo: "🎯", home: "1.67", draw: "3.65", away: "5.40", url: "/choose-betting", isAffiliate: true },
 ];
 
 export default function StickyOddsBar() {
@@ -89,8 +89,7 @@ export default function StickyOddsBar() {
             ))}
             <a
               href={bk.url}
-              target="_blank"
-              rel={`noopener noreferrer nofollow${bk.isAffiliate ? " sponsored" : ""}`}
+              rel={bk.isAffiliate ? "sponsored" : ""}
               data-affiliate={bk.isAffiliate ? bk.name : undefined}
               style={{
                 background: "linear-gradient(135deg, #00d084, #00b870)",
