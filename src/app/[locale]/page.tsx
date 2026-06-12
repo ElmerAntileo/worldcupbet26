@@ -6,9 +6,9 @@ import { getLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "World Cup 2026 Betting Odds — Compare Bookmakers Live",
+  title: "World Cup 2026 Betting Sites — Best Odds, Bonuses & Tips ⚽",
   description:
-    "Compare World Cup 2026 betting odds from Betsson, 1xBet, Bet365 & more. Best bonuses, live match odds, value bets & expert tips. FIFA World Cup Jun 11–Jul 19.",
+    "FIFA World Cup 2026 is LIVE. Compare odds from 30+ bookmakers, claim 100% bonuses up to €100 & get expert predictions for all 48 matches. Spain 5.75 · France 6.00 · England 7.50. Updated daily.",
   alternates: {
     canonical: "https://www.worldcupbet26.com/",
     languages: {
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "World Cup 2026 Betting Odds — Compare Bookmakers Live",
-    description: "Compare World Cup 2026 betting odds from Betsson, 1xBet, Bet365 & more. Best bonuses, live match odds, value bets & expert tips.",
+    title: "World Cup 2026 Betting Sites — Best Odds, Bonuses & Tips ⚽",
+    description: "FIFA World Cup 2026 is LIVE. Compare odds from 30+ bookmakers, claim bonuses up to €100 & get expert tips for all 48 matches.",
     url: "https://www.worldcupbet26.com/",
     siteName: "WorldCupBet26",
     type: "website",
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "World Cup 2026 Betting Odds — Compare Bookmakers Live",
-    description: "Compare World Cup 2026 betting odds from Betsson, 1xBet, Bet365 & more. Best bonuses, live match odds & expert tips.",
+    title: "World Cup 2026 Betting Sites — Best Odds, Bonuses & Tips ⚽",
+    description: "FIFA World Cup 2026 is LIVE. Compare odds from 30+ bookmakers, claim bonuses up to €100 & expert tips for all 48 matches.",
     images: ["https://www.worldcupbet26.com/og-home.jpg"],
   },
 };
@@ -183,6 +183,26 @@ const homeFaqs = [
   {
     q: "Is betting on the World Cup legal?",
     a: "Legal status varies by country. Online sports betting is legal in the UK, most of Europe, Australia and many US states including New York, New Jersey, Colorado and Illinois. WorldCupBet26 only lists bookmakers licensed by recognised regulators such as the MGA, UKGC and Gibraltar Regulatory Authority. Always check local laws before placing a bet.",
+  },
+  {
+    q: "What are the best betting sites for World Cup 2026?",
+    a: "The best World Cup 2026 betting sites based on odds, bonuses and reliability are: (1) Betsson — best overall odds, 100% bonus up to €100, MGA licensed; (2) 1xBet — widest market range, 200+ betting markets per match, 100% bonus up to €100; (3) Pinnacle — best for high-volume bettors, highest limits, lowest margins; (4) Bet365 — best for live streaming and in-play betting. WorldCupBet26 compares all four daily.",
+  },
+  {
+    q: "Who will win the World Cup 2026?",
+    a: "According to current betting odds, Spain are favourites to win the 2026 FIFA World Cup at 5.75 (implied probability ~17%). France are second at 6.00, England third at 7.50, Brazil fourth at 9.50 and Argentina fifth at 10.00. Spain are boosted by back-to-back Euro 2024 and Nations League 2025 titles. France are considered best value by our analysts at 6.00 given Mbappé's form and squad depth.",
+  },
+  {
+    q: "What is the World Cup 2026 schedule?",
+    a: "The FIFA World Cup 2026 runs from June 11 to July 19, 2026. The tournament features 48 teams across 12 groups, with 104 matches total — the most in World Cup history. The opening match is Mexico vs South Africa on June 11 at Estadio Azteca, Mexico City. The Round of 32 runs June 27 – July 3, Round of 16 July 4–7, Quarter-finals July 9–10, Semi-finals July 14–15, and the Final on July 19 at MetLife Stadium, New Jersey.",
+  },
+  {
+    q: "What bonus can I get for betting on World Cup 2026?",
+    a: "Top World Cup 2026 betting bonuses available right now: Betsson offers 100% matched deposit bonus up to €100 for new customers. 1xBet offers 100% up to €100 with a wide range of qualifying markets. Bet365 offers up to $500 for US customers. All bonuses have wagering requirements — typically 5x–10x rollover. WorldCupBet26 lists only verified, licensed sportsbooks with current bonus terms.",
+  },
+  {
+    q: "How many matches are in the World Cup 2026?",
+    a: "The 2026 FIFA World Cup features 104 matches in total — significantly more than the 64 matches at previous 32-team tournaments. The expanded format includes 48 teams playing in 12 groups of four in the group stage (72 matches), followed by a new Round of 32 (32 teams), Round of 16 (16 teams), Quarter-finals (8 teams), Semi-finals (4 teams), Third-place play-off, and the Final.",
   },
 ];
 

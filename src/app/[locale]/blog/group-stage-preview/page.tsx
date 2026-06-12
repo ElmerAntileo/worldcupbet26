@@ -15,9 +15,9 @@ function postUrl(l: string) {
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "World Cup 2026 Group Stage Preview — Predictions, Odds & Tips",
+    title: "World Cup 2026 Group Stage Predictions — All 12 Groups, Odds & Free Tips",
     description:
-      "Full World Cup 2026 group stage preview with betting predictions for all 12 groups. Who qualifies from Group A, B, C? Compare group winner odds from Bet365, 1xBet & Betway.",
+      "Spain top Group H (79%). USA lead Group D. Brazil dominate Group C. Full predictions, qualifying odds & value bets for all 12 World Cup 2026 groups. Free expert tips updated daily.",
     alternates: {
       canonical: postUrl("en"),
       languages: { ...Object.fromEntries(locales.map((l) => [l, postUrl(l)])), "x-default": postUrl("en") },
