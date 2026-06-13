@@ -492,7 +492,7 @@ export default async function HomePage() {
                           fontSize: '13px', textDecoration: 'none', whiteSpace: 'nowrap',
                           boxShadow: '0 4px 14px rgba(59,130,246,0.35)',
                         }}>
-                        Claim Bonus →
+                        Get 100% Bonus — Best In-Play Odds →
                       </Link>
                     ) : (
                       <a href={bk.url} target="_blank" rel="noopener noreferrer nofollow sponsored"

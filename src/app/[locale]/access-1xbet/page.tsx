@@ -148,7 +148,7 @@ export default function Access1xBet() {
             e.currentTarget.style.boxShadow = '0 8px 30px rgba(59,130,246,0.4)';
           }}
         >
-          🚀 SIGN UP AT 1xBET - GET BONUS
+          🎯 Claim 100% Bonus + 200 Markets Per Match →
         </a>
 
         {/* QUICK FACTS */}

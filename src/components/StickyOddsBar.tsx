@@ -107,7 +107,7 @@ export default function StickyOddsBar() {
                 boxShadow: "0 2px 8px rgba(0,208,132,0.25)",
               }}
             >
-              Bet →
+              {bk.name === '1xBet' ? 'Bet with 1xBet →' : 'Bet →'}
             </a>
           </div>
         ))}
