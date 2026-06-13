@@ -40,10 +40,7 @@ export default function AffiliateRedirectTracker() {
 
       if (!program) return;
 
-      // Prevent default and redirect through our proxy system
-      e.preventDefault();
-
-      // Track the click in GA4
+      // Track in GA4 — do NOT preventDefault so target="_blank" works natively
       if (typeof window !== 'undefined' && typeof (window as unknown as Record<string, unknown>).gtag !== 'undefined') {
         const gtag = (window as unknown as Record<string, (arg1: string, arg2: string, arg3: Record<string, string>) => void>).gtag;
         gtag("event", "affiliate_click", {
@@ -54,17 +51,6 @@ export default function AffiliateRedirectTracker() {
           page_path: window.location.pathname,
         });
       }
-
-      // Log to console for debugging
-      console.log(`[AFFILIATE] Clicking ${program} link:`, href);
-
-      // Redirect through our proxy API
-      const redirectUrl = `/api/redirect/${program}?original=${encodeURIComponent(href)}`;
-
-      // Use a small delay to ensure GA4 event is recorded
-      setTimeout(() => {
-        window.location.href = redirectUrl;
-      }, 100);
     }
 
     document.addEventListener("click", handleClick, true);
