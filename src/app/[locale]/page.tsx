@@ -481,17 +481,33 @@ export default async function HomePage() {
                   </div>
                   {/* CTA col */}
                   <div style={{ textAlign: 'right' }}>
-                    <a href={bk.url} target="_blank" rel="noopener noreferrer nofollow sponsored"
-                      style={{
-                        display: 'inline-block',
-                        background: i === 0 ? 'linear-gradient(135deg,#ef4444,#dc2626)' : 'linear-gradient(135deg,#ef4444,#dc2626)',
-                        color: 'white',
-                        padding: '11px 22px', borderRadius: '8px', fontWeight: 800,
-                        fontSize: '13px', textDecoration: 'none', whiteSpace: 'nowrap',
-                        boxShadow: '0 4px 14px rgba(239,68,68,0.3)',
-                      }}>
-                      Claim Bonus
-                    </a>
+                    {/* 1xBet routes to /1xbet-bonus pre-sell page; others go directly to affiliate */}
+                    {bk.name === '1xBet' ? (
+                      <Link href="/1xbet-bonus"
+                        style={{
+                          display: 'inline-block',
+                          background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)',
+                          color: 'white',
+                          padding: '11px 22px', borderRadius: '8px', fontWeight: 800,
+                          fontSize: '13px', textDecoration: 'none', whiteSpace: 'nowrap',
+                          boxShadow: '0 4px 14px rgba(59,130,246,0.35)',
+                        }}>
+                        Claim Bonus →
+                      </Link>
+                    ) : (
+                      <a href={bk.url} target="_blank" rel="noopener noreferrer nofollow sponsored"
+                        data-affiliate={bk.name}
+                        style={{
+                          display: 'inline-block',
+                          background: 'linear-gradient(135deg,#ef4444,#dc2626)',
+                          color: 'white',
+                          padding: '11px 22px', borderRadius: '8px', fontWeight: 800,
+                          fontSize: '13px', textDecoration: 'none', whiteSpace: 'nowrap',
+                          boxShadow: '0 4px 14px rgba(239,68,68,0.3)',
+                        }}>
+                        Claim Bonus
+                      </a>
+                    )}
                     <div style={{ color: 'var(--muted)', fontSize: '10px', marginTop: '6px' }}>T&Cs apply · 18+</div>
                   </div>
                 </div>

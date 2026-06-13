@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { useGeo } from '@/hooks/useGeo';
 
 const BETSSON_URL = 'https://record.betsson.com/C.ashx?btag=a_45907b_3&affid=25535&siteid=45907&adid=3&pid=3';
@@ -358,6 +359,14 @@ export default function ChooseBetting() {
                   </div>
                 )}
                 <div style={{ fontSize: '11px', color: '#555', textAlign: 'center' }}>18+ | T&Cs apply | Gamble responsibly</div>
+                {/* 1xBet bonus review link */}
+                {bk.id === 'onexbet' && (
+                  <div style={{ textAlign: 'center', marginTop: '4px' }}>
+                    <Link href="/1xbet-bonus" style={{ fontSize: '12px', color: '#60a5fa', textDecoration: 'underline' }}>
+                      Full bonus review &amp; FAQ →
+                    </Link>
+                  </div>
+                )}
               </div>
             </div>
           ))}

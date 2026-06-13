@@ -31,6 +31,14 @@ export default function Footer() {
               </div>
             </div>
             <div>
+              <div style={{color: "var(--foreground)", fontWeight: 700, marginBottom: "0.75rem", fontSize: "0.9rem"}}>Bookmakers</div>
+              <div style={{display: "flex", flexDirection: "column", gap: "0.5rem"}}>
+                <Link href="/1xbet-bonus" style={{color: "var(--muted)", fontSize: "0.85rem"}}>1xBet Bonus</Link>
+                <Link href="/betsson-review" style={{color: "var(--muted)", fontSize: "0.85rem"}}>Betsson Review</Link>
+                <Link href="/choose-betting" style={{color: "var(--muted)", fontSize: "0.85rem"}}>Compare All</Link>
+              </div>
+            </div>
+            <div>
               <div style={{color: "var(--foreground)", fontWeight: 700, marginBottom: "0.75rem", fontSize: "0.9rem"}}>Legal</div>
               <div style={{display: "flex", flexDirection: "column", gap: "0.5rem"}}>
                 <Link href="/responsible-gambling" style={{color: "var(--muted)", fontSize: "0.85rem"}}>Responsible Gambling</Link>
