@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
 };
 
-const BETSSON_URL = "/choose-betting";
+const BETSSON_URL = "https://record.betsson.com/C.ashx?btag=a_45907b_3&affid=25535&siteid=45907&adid=3&pid=3";
 
 // Tournament Winner Odds — used across bracket
 const contenders = [

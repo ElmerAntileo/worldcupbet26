@@ -2,8 +2,8 @@
 
 // Both sportsbooks require VPN for restricted regions
 const AFFILIATE_BOOKMAKERS = [
-  { name: "Betsson", logo: "🏆", home: "1.65", draw: "3.70", away: "5.50", url: "/choose-betting", isAffiliate: true },
-  { name: "1xBet",   logo: "🎯", home: "1.67", draw: "3.65", away: "5.40", url: "/choose-betting", isAffiliate: true },
+  { name: "Betsson", logo: "🏆", home: "1.65", draw: "3.70", away: "5.50", url: "https://record.betsson.com/C.ashx?btag=a_45907b_3&affid=25535&siteid=45907&adid=3&pid=3", isAffiliate: true },
+  { name: "1xBet",   logo: "🎯", home: "1.67", draw: "3.65", away: "5.40", url: "https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97", isAffiliate: true },
 ];
 
 export default function StickyOddsBar() {
@@ -89,8 +89,9 @@ export default function StickyOddsBar() {
             ))}
             <a
               href={bk.url}
-              rel="sponsored"
-              data-affiliate="1xBet"
+              target="_blank"
+              rel="noopener noreferrer nofollow sponsored"
+              data-affiliate={bk.name}
               style={{
                 background: "linear-gradient(135deg, #00d084, #00b870)",
                 color: "#040c18",
