@@ -9,6 +9,7 @@ import AffiliateRedirectTracker from "@/components/AffiliateRedirectTracker";
 import AffiliateConversionDashboard from "@/components/AffiliateConversionDashboard";
 import GeoBypassSystem from "@/components/GeoBypassSystem";
 import CookieConsent from "@/components/CookieConsent";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
 import Script from "next/script";
 
 type Props = {
@@ -58,6 +59,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <main className="min-h-dvh bg-zinc-50 dark:bg-zinc-950">{children}</main>
       <Footer />
       <CookieConsent />
+      <ExitIntentPopup />
       <AffiliateRedirectTracker />
       <AffiliateConversionDashboard />
     </NextIntlClientProvider>

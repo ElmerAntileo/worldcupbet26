@@ -1,523 +1,392 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import { useEffect, useState } from 'react';
 
-const affiliateLink1xBet = 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97';
-const bypassLink1xBet = `/api/geo-bypass/${encodeURIComponent(affiliateLink1xBet)}`;
-const affiliateLinkPinnacle = 'https://www.pinnacle.com';
+const BETSSON_URL = 'https://record.betsson.com/C.ashx?btag=a_45907b_3&affid=25535&siteid=45907&adid=3&pid=3';
+const ONEXBET_URL = 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97';
+const PINNACLE_URL = 'https://www.pinnacle.com';
+
+// World Cup final: July 19, 2026
+const FINAL_DATE = new Date('2026-07-19T20:00:00Z');
+
+function useCountdown() {
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  useEffect(() => {
+    const tick = () => {
+      const diff = FINAL_DATE.getTime() - Date.now();
+      if (diff <= 0) return;
+      setTimeLeft({
+        days: Math.floor(diff / 86400000),
+        hours: Math.floor((diff % 86400000) / 3600000),
+        minutes: Math.floor((diff % 3600000) / 60000),
+        seconds: Math.floor((diff % 60000) / 1000),
+      });
+    };
+    tick();
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
+  }, []);
+  return timeLeft;
+}
+
+const steps = [
+  { n: 1, icon: '🖱️', title: 'Click the button below', desc: 'Opens Betsson in a new tab' },
+  { n: 2, icon: '📝', title: 'Fill in your details', desc: 'Name, email, date of birth — takes 60 seconds' },
+  { n: 3, icon: '💳', title: 'Make your first deposit', desc: 'Minimum €10 to activate the bonus' },
+  { n: 4, icon: '🎁', title: 'Bonus credited instantly', desc: '100% matched up to €100 — ready to bet' },
+];
+
+const bookmakers = [
+  {
+    id: 'betsson',
+    name: 'Betsson',
+    flag: '🟢',
+    badge: '⭐ BEST CHOICE',
+    badgeColor: '#00d084',
+    badgeBg: 'rgba(0,208,132,0.15)',
+    color: '#00d084',
+    border: 'rgba(0,208,132,0.4)',
+    bg: 'rgba(0,208,132,0.06)',
+    bonus: '100% up to €100',
+    bonusDetail: 'First deposit bonus — wagering 5x',
+    url: BETSSON_URL,
+    pros: ['No VPN needed — works worldwide', 'MGA licensed & regulated', 'Fast payouts (24–48h)', 'Live streaming included', '100+ World Cup markets'],
+    cta: '🎁 CLAIM 100% BONUS NOW',
+    ctaBg: 'linear-gradient(135deg, #00d084, #00b870)',
+    ctaColor: '#040c18',
+    ctaShadow: 'rgba(0,208,132,0.5)',
+    note: '✅ No VPN required — instant access',
+    highlighted: true,
+  },
+  {
+    id: 'onexbet',
+    name: '1xBet',
+    flag: '🔵',
+    badge: '💰 BEST ODDS',
+    badgeColor: '#60a5fa',
+    badgeBg: 'rgba(59,130,246,0.15)',
+    color: '#60a5fa',
+    border: 'rgba(59,130,246,0.3)',
+    bg: 'rgba(59,130,246,0.05)',
+    bonus: '100% up to €100',
+    bonusDetail: 'First deposit bonus — 200+ markets',
+    url: ONEXBET_URL,
+    pros: ['200+ markets per match', 'Best in-play odds', 'Huge live betting selection', 'Fast mobile app', '⚠️ VPN may be needed in some regions'],
+    cta: '🚀 GET 100% BONUS',
+    ctaBg: 'linear-gradient(135deg, #3b82f6, #1d4ed8)',
+    ctaColor: '#fff',
+    ctaShadow: 'rgba(59,130,246,0.4)',
+    note: '⚠️ VPN may be required in your region',
+    highlighted: false,
+  },
+  {
+    id: 'pinnacle',
+    name: 'Pinnacle',
+    flag: '🌍',
+    badge: '🏆 HIGH LIMITS',
+    badgeColor: '#fbbf24',
+    badgeBg: 'rgba(251,191,36,0.15)',
+    color: '#fbbf24',
+    border: 'rgba(251,191,36,0.3)',
+    bg: 'rgba(251,191,36,0.04)',
+    bonus: 'Best odds guarantee',
+    bonusDetail: 'No bonus — lowest margin instead',
+    url: PINNACLE_URL,
+    pros: ['Works in 180+ countries', 'Highest betting limits', 'Lowest margin in industry', 'Great for sharp bettors', 'No withdrawal limits'],
+    cta: '📊 ACCESS PINNACLE',
+    ctaBg: 'linear-gradient(135deg, #fbbf24, #f59e0b)',
+    ctaColor: '#040c18',
+    ctaShadow: 'rgba(251,191,36,0.4)',
+    note: '✅ Global access — no VPN needed',
+    highlighted: false,
+  },
+];
 
 export default function ChooseBetting() {
-  const [country, setCountry] = useState<string>('');
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch('/api/detect-country')
-      .then((res) => res.json())
-      .then((data) => {
-        setCountry(data.country);
-        setLoading(false);
-      })
-      .catch(() => {
-        setCountry('UNKNOWN');
-        setLoading(false);
-      });
-  }, []);
-
-  const handleGeoBypass = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    window.open(bypassLink1xBet, '_blank');
-  };
-
-  const handlePinnacle = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    window.open(affiliateLinkPinnacle, '_blank');
-  };
-
-  if (loading) {
-    return (
-      <div style={{
-        minHeight: '100vh',
-        background: 'linear-gradient(160deg, #040c18 0%, #071a30 45%, #050e1c 100%)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}>
-        <p style={{ fontSize: '18px', color: '#888' }}>Detecting your location...</p>
-      </div>
-    );
-  }
+  const countdown = useCountdown();
+  const [active, setActive] = useState<string | null>(null);
 
   return (
     <div style={{
-      background: 'linear-gradient(160deg, #040c18 0%, #071a30 45%, #050e1c 100%)',
+      background: 'linear-gradient(160deg, #040c18 0%, #071a30 50%, #040c18 100%)',
       minHeight: '100vh',
       color: '#fff',
-      padding: '40px 20px',
+      padding: '0 0 60px',
     }}>
-      <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
 
-        {/* URGENT HERO SECTION */}
-        <div style={{ textAlign: 'center', marginBottom: '50px' }}>
+      {/* URGENT TOP BAR */}
+      <div style={{
+        background: 'linear-gradient(90deg, #00d084, #00b870)',
+        padding: '10px 20px',
+        textAlign: 'center',
+        fontSize: '14px',
+        fontWeight: 800,
+        color: '#040c18',
+        letterSpacing: '0.05em',
+      }}>
+        ⚽ WORLD CUP 2026 IS LIVE — CLAIM YOUR WELCOME BONUS BEFORE IT ENDS
+      </div>
+
+      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '40px 20px 0' }}>
+
+        {/* HERO */}
+        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           <div style={{
-            fontSize: '16px',
+            fontSize: '13px',
             fontWeight: 800,
-            color: '#ff8787',
-            letterSpacing: '0.1em',
-            marginBottom: '12px',
+            color: '#ff6b6b',
+            letterSpacing: '0.12em',
             textTransform: 'uppercase',
-            animation: 'pulse 2s infinite',
+            marginBottom: '14px',
           }}>
-            ⚡ WORLD CUP STARTS TODAY - CLAIM YOUR BONUS NOW
+            🎯 EXCLUSIVE WELCOME BONUSES — NEW CUSTOMERS ONLY
           </div>
-
           <h1 style={{
-            fontSize: 'clamp(40px, 8vw, 64px)',
+            fontSize: 'clamp(32px, 7vw, 58px)',
             fontWeight: 900,
-            marginBottom: '12px',
-            letterSpacing: '-0.02em',
-            background: 'linear-gradient(135deg, #60a5fa 0%, #fbbf24 100%)',
+            lineHeight: 1.1,
+            marginBottom: '16px',
+            background: 'linear-gradient(135deg, #fff 0%, #fbbf24 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
           }}>
-            Choose Your Sportsbook
+            Claim Your Betting Bonus<br />Before the World Cup Ends
           </h1>
-
-          <p style={{
-            fontSize: '18px',
-            color: '#fbbf24',
-            maxWidth: '600px',
-            margin: '0 auto 8px',
-            lineHeight: 1.5,
-            fontWeight: 600,
-          }}>
-            🎯 Located in: <strong>{country}</strong>
+          <p style={{ fontSize: '17px', color: '#aaa', maxWidth: '560px', margin: '0 auto 28px', lineHeight: 1.6 }}>
+            Register today and get <strong style={{ color: '#fff' }}>100% matched up to €100</strong> on your first deposit.
+            Takes 60 seconds. No promo code needed.
           </p>
 
-          <p style={{
-            fontSize: '14px',
-            color: '#aaa',
-            maxWidth: '600px',
-            margin: '0 auto 20px',
-            lineHeight: 1.6,
-          }}>
-            Pick your option and start betting NOW - offers available for TODAY only
-          </p>
-        </div>
-
-        {/* OPTIONS GRID */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px', marginBottom: '60px' }}>
-
-          {/* OPTION 1: PINNACLE */}
+          {/* COUNTDOWN */}
           <div style={{
-            background: 'linear-gradient(135deg, rgba(0,208,132,0.08) 0%, rgba(0,176,112,0.04) 100%)',
-            border: '1px solid rgba(0,208,132,0.2)',
-            borderRadius: '12px',
-            padding: '32px 24px',
-            textAlign: 'center',
-            transition: 'all 0.3s ease',
-            cursor: 'pointer',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = 'rgba(0,208,132,0.4)';
-            e.currentTarget.style.background = 'linear-gradient(135deg, rgba(0,208,132,0.12) 0%, rgba(0,176,112,0.08) 100%)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.borderColor = 'rgba(0,208,132,0.2)';
-            e.currentTarget.style.background = 'linear-gradient(135deg, rgba(0,208,132,0.08) 0%, rgba(0,176,112,0.04) 100%)';
-          }}>
-            <div style={{
-              background: 'rgba(0,208,132,0.15)',
-              border: '1px solid rgba(0,208,132,0.3)',
-              color: '#00d084',
-              padding: '8px 16px',
-              borderRadius: '999px',
-              display: 'inline-block',
-              marginBottom: '16px',
-              fontSize: '11px',
-              fontWeight: 700,
-              letterSpacing: '0.08em',
-              textTransform: 'uppercase',
-            }}>
-              ✅ Instant Access
-            </div>
-
-            <h2 style={{
-              fontSize: '32px',
-              fontWeight: 900,
-              marginBottom: '12px',
-              color: '#00d084',
-            }}>
-              🌍 Pinnacle
-            </h2>
-
-            <p style={{
-              fontSize: '14px',
-              color: '#aaa',
-              marginBottom: '20px',
-              lineHeight: 1.6,
-            }}>
-              Works in 180+ countries<br />No VPN/Proxy needed<br />Instant access
-            </p>
-
-            <ul style={{
-              textAlign: 'left',
-              marginBottom: '24px',
-              fontSize: '13px',
-              color: '#bbb',
-              listStyle: 'none',
-              padding: 0,
-            }}>
-              {[
-                'Available worldwide (no geo-restrictions)',
-                'Great World Cup odds',
-                'Fast payouts',
-                'Works on any device immediately',
-              ].map((item, i) => (
-                <li key={i} style={{ marginBottom: '10px' }}>
-                  <span style={{ color: '#00d084', marginRight: '8px' }}>✓</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-
-            <a
-              href={affiliateLinkPinnacle}
-              onClick={handlePinnacle}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: 'inline-block',
-                background: 'linear-gradient(135deg, #00d084, #00b870)',
-                color: '#040c18',
-                padding: 'clamp(16px, 4vw, 24px) clamp(28px, 8vw, 56px)',
-                borderRadius: '12px',
-                fontWeight: 900,
-                fontSize: 'clamp(16px, 4vw, 22px)',
-                textDecoration: 'none',
-                boxShadow: '0 8px 24px rgba(0,208,132,0.3)',
-                cursor: 'pointer',
-                transition: 'all 0.3s ease',
-                border: '3px solid rgba(0,255,136,0.5)',
-                width: '100%',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = '0 12px 40px rgba(0,208,132,0.5)';
-                e.currentTarget.style.transform = 'translateY(-3px)';
-                e.currentTarget.style.borderColor = 'rgba(0,255,136,0.8)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,208,132,0.3)';
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.borderColor = 'rgba(0,255,136,0.5)';
-              }}
-            >
-              ✅ INSTANT ACCESS - SIGN UP NOW
-            </a>
-
-            <p style={{
-              fontSize: '12px',
-              color: '#00d084',
-              fontWeight: 600,
-              marginTop: '16px',
-            }}>
-              ✨ EASIEST OPTION - NO SETUP NEEDED
-            </p>
-          </div>
-
-          {/* OPTION 2: 1xBET */}
-          <div style={{
-            background: 'linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(37,99,235,0.04) 100%)',
-            border: '1px solid rgba(59,130,246,0.2)',
-            borderRadius: '12px',
-            padding: '32px 24px',
-            textAlign: 'center',
-            transition: 'all 0.3s ease',
-            cursor: 'pointer',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = 'rgba(59,130,246,0.4)';
-            e.currentTarget.style.background = 'linear-gradient(135deg, rgba(59,130,246,0.12) 0%, rgba(37,99,235,0.08) 100%)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.borderColor = 'rgba(59,130,246,0.2)';
-            e.currentTarget.style.background = 'linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(37,99,235,0.04) 100%)';
-          }}>
-            <div style={{
-              background: 'rgba(59,130,246,0.15)',
-              border: '1px solid rgba(59,130,246,0.3)',
-              color: '#60a5fa',
-              padding: '8px 16px',
-              borderRadius: '999px',
-              display: 'inline-block',
-              marginBottom: '16px',
-              fontSize: '11px',
-              fontWeight: 700,
-              letterSpacing: '0.08em',
-              textTransform: 'uppercase',
-            }}>
-              💰 Better Odds (VPN Required*)
-            </div>
-
-            <h2 style={{
-              fontSize: '32px',
-              fontWeight: 900,
-              marginBottom: '12px',
-              color: '#60a5fa',
-            }}>
-              1xBet*
-            </h2>
-
-            <p style={{
-              fontSize: '14px',
-              color: '#aaa',
-              marginBottom: '20px',
-              lineHeight: 1.6,
-            }}>
-              200+ markets & best odds<br />Higher limits<br />Live betting
-            </p>
-
-            <ul style={{
-              textAlign: 'left',
-              marginBottom: '24px',
-              fontSize: '13px',
-              color: '#bbb',
-              listStyle: 'none',
-              padding: 0,
-            }}>
-              {[
-                '200+ World Cup markets',
-                'Live in-play betting',
-                'Best odds on the market',
-                'Highest payout limits',
-                '⚠️ Requires VPN for your region*',
-              ].map((item, i) => (
-                <li key={i} style={{ marginBottom: '10px' }}>
-                  <span style={{ color: item.includes('⚠️') ? '#ff6b6b' : '#60a5fa', marginRight: '8px' }}>
-                    {item.includes('⚠️') ? '⚠️' : '✓'}
-                  </span>
-                  {item.replace('⚠️ ', '')}
-                </li>
-              ))}
-            </ul>
-
-            <a
-              href={bypassLink1xBet}
-              onClick={handleGeoBypass}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: 'inline-block',
-                background: 'linear-gradient(135deg, #ff8787, #ff6b6b)',
-                color: '#fff',
-                padding: 'clamp(16px, 4vw, 24px) clamp(28px, 8vw, 56px)',
-                borderRadius: '12px',
-                fontWeight: 900,
-                fontSize: 'clamp(16px, 4vw, 22px)',
-                textDecoration: 'none',
-                boxShadow: '0 8px 24px rgba(255,107,107,0.4)',
-                cursor: 'pointer',
-                transition: 'all 0.3s ease',
-                border: '3px solid rgba(255,136,136,0.6)',
-                width: '100%',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = '0 12px 40px rgba(255,107,107,0.6)';
-                e.currentTarget.style.transform = 'translateY(-3px)';
-                e.currentTarget.style.borderColor = 'rgba(255,155,155,0.8)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = '0 8px 24px rgba(255,107,107,0.4)';
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.borderColor = 'rgba(255,136,136,0.6)';
-              }}
-            >
-              🚀 GET 100% BONUS - START NOW
-            </a>
-
-            <p style={{
-              fontSize: '13px',
-              color: '#fbbf24',
-              fontWeight: 700,
-              marginTop: '16px',
-              animation: 'pulse 2s infinite',
-            }}>
-              ⏰ BONUS EXPIRES AFTER WORLD CUP - ACT NOW
-            </p>
-          </div>
-        </div>
-
-        {/* VPN INSTRUCTIONS */}
-        <div style={{
-          background: 'linear-gradient(135deg, rgba(59,130,246,0.06) 0%, rgba(37,99,235,0.03) 100%)',
-          border: '2px solid rgba(59,130,246,0.25)',
-          borderRadius: '12px',
-          padding: '40px 28px',
-          marginBottom: '40px',
-        }}>
-          <h3 style={{
-            fontSize: '22px',
-            fontWeight: 800,
-            marginBottom: '16px',
-            textAlign: 'center',
-            color: '#60a5fa',
-            letterSpacing: '-0.01em',
-          }}>
-            🔓 Need VPN? Here&apos;s How to Access 1xBet
-          </h3>
-
-          <p style={{
-            fontSize: '14px',
-            color: '#bbb',
-            textAlign: 'center',
-            marginBottom: '32px',
-            lineHeight: 1.7,
-            maxWidth: '600px',
-            margin: '0 auto 32px',
-          }}>
-            1xBet requires a VPN from: Germany, UK, France, Netherlands, Spain, Sweden, Finland, Iceland & other restricted regions
-          </p>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-            gap: '14px',
-            marginBottom: '28px',
+            background: 'rgba(255,255,255,0.04)',
+            border: '1px solid rgba(255,255,255,0.12)',
+            borderRadius: '14px',
+            padding: '20px 28px',
+            display: 'inline-flex',
+            gap: '28px',
+            marginBottom: '8px',
           }}>
             {[
-              { step: 1, icon: '📥', title: 'Get VPN', desc: 'Download Tor Browser (free & safe)' },
-              { step: 2, icon: '⚙️', title: 'Connect', desc: 'Choose Canada, US or allowed country' },
-              { step: 3, icon: '🌐', title: 'Open 1xBet', desc: 'Keep VPN active while betting' },
-              { step: 4, icon: '✅', title: 'Sign Up', desc: 'Create account & start betting' },
-            ].map((item) => (
-              <div key={item.step} style={{
-                background: 'linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(37,99,235,0.04) 100%)',
-                border: '1px solid rgba(59,130,246,0.2)',
-                borderRadius: '9px',
-                padding: '18px 14px',
-                textAlign: 'center',
-                transition: 'all 0.3s ease',
-                cursor: 'default',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(59,130,246,0.4)';
-                e.currentTarget.style.background = 'linear-gradient(135deg, rgba(59,130,246,0.12) 0%, rgba(37,99,235,0.08) 100%)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(59,130,246,0.2)';
-                e.currentTarget.style.background = 'linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(37,99,235,0.04) 100%)';
-              }}>
-                <div style={{ fontSize: '28px', marginBottom: '10px', lineHeight: 1 }}>{item.icon}</div>
-                <div style={{ fontSize: '11px', fontWeight: 700, color: '#60a5fa', marginBottom: '6px', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-                  Step {item.step}
+              { v: countdown.days, l: 'Days' },
+              { v: countdown.hours, l: 'Hours' },
+              { v: countdown.minutes, l: 'Min' },
+              { v: countdown.seconds, l: 'Sec' },
+            ].map(({ v, l }) => (
+              <div key={l} style={{ textAlign: 'center' }}>
+                <div style={{ fontSize: 'clamp(28px, 5vw, 42px)', fontWeight: 900, color: '#00d084', lineHeight: 1, minWidth: '48px' }}>
+                  {String(v).padStart(2, '0')}
                 </div>
-                <div style={{ fontSize: '13px', fontWeight: 700, color: '#e0e0e0', marginBottom: '6px' }}>
-                  {item.title}
-                </div>
-                <div style={{ fontSize: '11px', color: '#999', lineHeight: 1.5 }}>
-                  {item.desc}
-                </div>
+                <div style={{ fontSize: '11px', color: '#888', fontWeight: 600, letterSpacing: '0.08em', marginTop: '4px' }}>{l}</div>
               </div>
             ))}
           </div>
-
-          <div style={{
-            background: 'rgba(0,208,132,0.08)',
-            border: '1px solid rgba(0,208,132,0.2)',
-            borderRadius: '8px',
-            padding: '14px 16px',
-            textAlign: 'center',
-            fontSize: '12px',
-            color: '#aaa',
-          }}>
-            💡 <strong style={{ color: '#00d084' }}>Recommended:</strong> Tor Browser is free, safe &amp; easy. Download from <a href="https://torproject.org" target="_blank" rel="noopener noreferrer" style={{ color: '#00d084', textDecoration: 'none', fontWeight: 700 }}>torproject.org</a>
-          </div>
+          <div style={{ fontSize: '12px', color: '#666', marginTop: '6px' }}>until World Cup Final — Jul 19</div>
         </div>
 
-        {/* COMPARISON */}
+        {/* BOOKMAKER CARDS */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginBottom: '50px' }}>
+          {bookmakers.map((bk) => (
+            <div key={bk.id}
+              style={{
+                background: bk.highlighted
+                  ? 'linear-gradient(135deg, rgba(0,208,132,0.10) 0%, rgba(0,180,110,0.04) 100%)'
+                  : bk.bg,
+                border: `2px solid ${bk.highlighted ? bk.border : 'rgba(255,255,255,0.08)'}`,
+                borderRadius: '16px',
+                padding: '28px 28px',
+                position: 'relative',
+                transition: 'border-color 0.2s',
+                boxShadow: bk.highlighted ? '0 4px 40px rgba(0,208,132,0.12)' : 'none',
+              }}
+            >
+              {/* Highlight ring on hover */}
+              {bk.highlighted && (
+                <div style={{
+                  position: 'absolute',
+                  top: '-2px', left: '-2px', right: '-2px', bottom: '-2px',
+                  borderRadius: '18px',
+                  border: '2px solid rgba(0,208,132,0.6)',
+                  pointerEvents: 'none',
+                }} />
+              )}
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', alignItems: 'flex-start' }}>
+
+                {/* Left: Logo + badge */}
+                <div style={{ minWidth: '160px', flex: '0 0 auto', textAlign: 'center' }}>
+                  {bk.highlighted && (
+                    <div style={{
+                      background: 'linear-gradient(135deg, #00d084, #00b870)',
+                      color: '#040c18',
+                      fontSize: '11px',
+                      fontWeight: 900,
+                      letterSpacing: '0.08em',
+                      padding: '4px 14px',
+                      borderRadius: '999px',
+                      display: 'inline-block',
+                      marginBottom: '10px',
+                    }}>
+                      #1 RECOMMENDED
+                    </div>
+                  )}
+                  <div style={{
+                    background: bk.badgeBg,
+                    border: `1px solid ${bk.border}`,
+                    borderRadius: '10px',
+                    padding: '16px',
+                    marginBottom: '10px',
+                  }}>
+                    <div style={{ fontSize: '32px', fontWeight: 900, color: bk.color }}>{bk.name}</div>
+                    <div style={{ fontSize: '11px', color: bk.color, fontWeight: 700, letterSpacing: '0.05em', marginTop: '4px' }}>{bk.badge}</div>
+                  </div>
+                  <div style={{
+                    background: 'rgba(255,255,255,0.06)',
+                    borderRadius: '8px',
+                    padding: '10px',
+                    fontSize: '13px',
+                  }}>
+                    <div style={{ color: bk.color, fontWeight: 900, fontSize: '18px' }}>{bk.bonus}</div>
+                    <div style={{ color: '#888', fontSize: '11px', marginTop: '3px' }}>{bk.bonusDetail}</div>
+                  </div>
+                </div>
+
+                {/* Middle: Pros + steps */}
+                <div style={{ flex: '1 1 200px' }}>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 16px', fontSize: '13px', lineHeight: 1.7 }}>
+                    {bk.pros.map((p, i) => (
+                      <li key={i} style={{ color: p.includes('⚠️') ? '#ff8c00' : '#ccc' }}>
+                        <span style={{ marginRight: '8px', color: p.includes('⚠️') ? '#ff8c00' : bk.color }}>
+                          {p.includes('⚠️') ? '⚠️' : '✓'}
+                        </span>
+                        {p.replace('⚠️ ', '')}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {bk.id === 'betsson' && (
+                    <div style={{
+                      background: 'rgba(0,208,132,0.08)',
+                      border: '1px solid rgba(0,208,132,0.2)',
+                      borderRadius: '10px',
+                      padding: '14px 16px',
+                    }}>
+                      <div style={{ fontSize: '12px', fontWeight: 700, color: '#00d084', marginBottom: '10px', letterSpacing: '0.05em' }}>
+                        HOW TO CLAIM YOUR BONUS — 4 STEPS
+                      </div>
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px' }}>
+                        {steps.map((s) => (
+                          <div key={s.n} style={{
+                            background: 'rgba(0,0,0,0.2)',
+                            borderRadius: '8px',
+                            padding: '10px 12px',
+                            fontSize: '12px',
+                          }}>
+                            <span style={{ fontSize: '16px' }}>{s.icon}</span>
+                            <span style={{ color: '#00d084', fontWeight: 700, marginLeft: '6px' }}>Step {s.n}</span>
+                            <div style={{ color: '#ddd', marginTop: '4px', fontWeight: 600 }}>{s.title}</div>
+                            <div style={{ color: '#888', marginTop: '2px' }}>{s.desc}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Right: CTA */}
+                <div style={{ flex: '0 0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', minWidth: '200px' }}>
+                  <a
+                    href={bk.url}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow sponsored"
+                    onMouseEnter={() => setActive(bk.id)}
+                    onMouseLeave={() => setActive(null)}
+                    style={{
+                      display: 'block',
+                      background: bk.ctaBg,
+                      color: bk.ctaColor,
+                      padding: '18px 24px',
+                      borderRadius: '12px',
+                      fontWeight: 900,
+                      fontSize: '15px',
+                      textDecoration: 'none',
+                      textAlign: 'center',
+                      width: '100%',
+                      boxShadow: active === bk.id
+                        ? `0 12px 36px ${bk.ctaShadow}`
+                        : `0 6px 20px ${bk.ctaShadow.replace('0.4', '0.25')}`,
+                      transform: active === bk.id ? 'translateY(-2px)' : 'none',
+                      transition: 'all 0.2s ease',
+                    }}
+                  >
+                    {bk.cta}
+                  </a>
+                  <div style={{ fontSize: '12px', color: '#888', textAlign: 'center' }}>{bk.note}</div>
+                  <div style={{ fontSize: '11px', color: '#555', textAlign: 'center' }}>18+ | T&Cs apply | Gamble responsibly</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* TRUST BADGES */}
+        <div style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: '12px',
+          justifyContent: 'center',
+          marginBottom: '40px',
+        }}>
+          {[
+            '🔒 Fully Licensed & Regulated',
+            '⚡ Instant Deposits',
+            '🎯 Verified Affiliate Links',
+            '✅ No Hidden Fees',
+            '🌍 Available Worldwide',
+          ].map((b) => (
+            <div key={b} style={{
+              background: 'rgba(255,255,255,0.05)',
+              border: '1px solid rgba(255,255,255,0.1)',
+              borderRadius: '999px',
+              padding: '8px 16px',
+              fontSize: '12px',
+              color: '#aaa',
+              fontWeight: 600,
+            }}>
+              {b}
+            </div>
+          ))}
+        </div>
+
+        {/* FAQ */}
         <div style={{
           background: 'rgba(255,255,255,0.03)',
-          border: '1px solid rgba(255,255,255,0.1)',
-          borderRadius: '12px',
-          padding: '32px 24px',
+          border: '1px solid rgba(255,255,255,0.08)',
+          borderRadius: '14px',
+          padding: '28px 24px',
         }}>
-          <h3 style={{
-            fontSize: '18px',
-            fontWeight: 800,
-            marginBottom: '24px',
-            textAlign: 'center',
-          }}>
-            Quick Comparison
+          <h3 style={{ fontSize: '17px', fontWeight: 800, marginBottom: '20px', color: '#fff' }}>
+            Frequently Asked Questions
           </h3>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '32px',
-          }}>
-            <div>
-              <h4 style={{ fontSize: '16px', fontWeight: 800, color: '#00d084', marginBottom: '12px' }}>
-                ✅ Pinnacle
-              </h4>
-              <ul style={{
-                fontSize: '13px',
-                color: '#aaa',
-                listStyle: 'none',
-                padding: 0,
-                lineHeight: 1.8,
-              }}>
-                {[
-                  'Works immediately - no VPN needed',
-                  'Available in 180+ countries',
-                  'Great World Cup odds',
-                  'Perfect for most users',
-                ].map((item, i) => (
-                  <li key={i}>
-                    <span style={{ color: '#00d084', marginRight: '8px' }}>✓</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+          {[
+            { q: 'Do I need a promo code?', a: 'No promo code needed. The bonus is applied automatically when you register through our link and make your first deposit.' },
+            { q: 'What is the minimum deposit?', a: 'Betsson requires a minimum deposit of €10 to activate the 100% welcome bonus. The maximum bonus is €100.' },
+            { q: 'How long does registration take?', a: 'About 60 seconds. You need your name, email, date of birth, and a password. No document upload required to start.' },
+            { q: 'What are the wagering requirements?', a: 'Betsson has a 5x wagering requirement on the bonus amount. This is one of the lowest in the industry.' },
+          ].map(({ q, a }) => (
+            <div key={q} style={{ marginBottom: '16px', paddingBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+              <div style={{ fontSize: '14px', fontWeight: 700, color: '#fff', marginBottom: '6px' }}>{q}</div>
+              <div style={{ fontSize: '13px', color: '#999', lineHeight: 1.6 }}>{a}</div>
             </div>
-
-            <div>
-              <h4 style={{ fontSize: '16px', fontWeight: 800, color: '#60a5fa', marginBottom: '12px' }}>
-                🎯 1xBet
-              </h4>
-              <ul style={{
-                fontSize: '13px',
-                color: '#aaa',
-                listStyle: 'none',
-                padding: 0,
-                lineHeight: 1.8,
-              }}>
-                {[
-                  'Requires VPN for restricted regions',
-                  'More betting markets (200+)',
-                  'Better odds on some matches',
-                  'Higher betting limits',
-                ].map((item, i) => (
-                  <li key={i}>
-                    <span style={{ color: item.includes('Requires') ? '#ff6b6b' : '#60a5fa', marginRight: '8px' }}>
-                      {item.includes('Requires') ? '⚠️' : '✓'}
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          ))}
         </div>
 
-        {/* FOOTNOTE */}
-        <div style={{
-          textAlign: 'center',
-          marginTop: '40px',
-          fontSize: '12px',
-          color: '#666',
-        }}>
-          * VPN required for: Germany, UK, France, Netherlands, Spain, Sweden, Finland, Iceland, and other restricted regions.
+        <div style={{ textAlign: 'center', marginTop: '30px', fontSize: '12px', color: '#444', lineHeight: 1.8 }}>
+          WorldCupBet26.com is an affiliate website. We may earn a commission when you register through our links at no extra cost to you.
+          All bookmakers listed are licensed and regulated. 18+ only. Please gamble responsibly.
+          <br />
+          <a href="/responsible-gambling" style={{ color: '#666', textDecoration: 'underline' }}>Responsible Gambling</a>
         </div>
       </div>
     </div>
