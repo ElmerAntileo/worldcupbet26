@@ -1,12 +1,15 @@
 "use client";
 
-// Both sportsbooks require VPN for restricted regions
+import { useGeo } from '@/hooks/useGeo';
+
 const AFFILIATE_BOOKMAKERS = [
   { name: "Betsson", logo: "🏆", home: "1.65", draw: "3.70", away: "5.50", url: "https://record.betsson.com/C.ashx?btag=a_45907b_3&affid=25535&siteid=45907&adid=3&pid=3", isAffiliate: true },
   { name: "1xBet",   logo: "🎯", home: "1.67", draw: "3.65", away: "5.40", url: "https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97", isAffiliate: true },
 ];
 
 export default function StickyOddsBar() {
+  const { is1xBetRestricted, loading: geoLoading } = useGeo();
+
   return (
     <div style={{
       background: "rgba(4,10,20,0.97)",
@@ -114,20 +117,29 @@ export default function StickyOddsBar() {
         </span>
       </div>
 
-      {/* VPN Disclaimer */}
-      <div style={{
-        background: "rgba(255,107,107,0.08)",
-        borderTop: "1px solid rgba(255,107,107,0.2)",
-        padding: "8px 20px",
-        fontSize: "10px",
-        color: "var(--muted-light)",
-        textAlign: "center",
-      }}>
-        * Betsson & 1xBet require VPN for access from: Germany, UK, France, Netherlands, Spain, Sweden, Finland, Iceland & other restricted regions.{" "}
-        <a href="/choose-betting" style={{ color: "#ff6b6b", textDecoration: "underline" }}>
-          View options
-        </a>
-      </div>
+      {/* Geo-aware disclaimer — shown only while loading or when visitor is in a restricted country.
+          Visitors in non-restricted countries see a green confirmation instead of a VPN warning. */}
+      {!geoLoading && (
+        <div style={{
+          background: is1xBetRestricted ? "rgba(255,107,107,0.08)" : "rgba(0,208,132,0.06)",
+          borderTop: is1xBetRestricted ? "1px solid rgba(255,107,107,0.2)" : "1px solid rgba(0,208,132,0.15)",
+          padding: "8px 20px",
+          fontSize: "10px",
+          color: is1xBetRestricted ? "var(--muted-light)" : "#00d084",
+          textAlign: "center",
+        }}>
+          {is1xBetRestricted ? (
+            <>
+              ⚠️ Betsson &amp; 1xBet require VPN for access from your region.{" "}
+              <a href="/choose-betting" style={{ color: "#ff6b6b", textDecoration: "underline" }}>
+                View options
+              </a>
+            </>
+          ) : (
+            <>✅ Both Betsson &amp; 1xBet are available in your region — no VPN needed.</>
+          )}
+        </div>
+      )}
     </div>
   );
 }

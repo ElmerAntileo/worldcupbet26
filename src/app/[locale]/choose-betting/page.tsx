@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useGeo } from '@/hooks/useGeo';
 
 const BETSSON_URL = 'https://record.betsson.com/C.ashx?btag=a_45907b_3&affid=25535&siteid=45907&adid=3&pid=3';
 const ONEXBET_URL = 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97';
@@ -71,12 +72,12 @@ const bookmakers = [
     bonus: '100% up to €100',
     bonusDetail: 'First deposit bonus — 200+ markets',
     url: ONEXBET_URL,
-    pros: ['200+ markets per match', 'Best in-play odds', 'Huge live betting selection', 'Fast mobile app', '⚠️ VPN may be needed in some regions'],
+    pros: ['200+ markets per match', 'Best in-play odds', 'Huge live betting selection', 'Fast mobile app'],
     cta: '🚀 GET 100% BONUS',
     ctaBg: 'linear-gradient(135deg, #3b82f6, #1d4ed8)',
     ctaColor: '#fff',
     ctaShadow: 'rgba(59,130,246,0.4)',
-    note: '⚠️ VPN may be required in your region',
+    note: null, // computed dynamically from geo — see ChooseBetting component
     highlighted: false,
   },
   {
@@ -105,6 +106,16 @@ const bookmakers = [
 export default function ChooseBetting() {
   const countdown = useCountdown();
   const [active, setActive] = useState<string | null>(null);
+  const { is1xBetRestricted, loading: geoLoading } = useGeo();
+
+  // Geo-aware strings for 1xBet — shown once ipapi.co resolves the visitor's country.
+  // While loading we default to no warning (optimistic) to avoid false positives.
+  const onexbetGeoPro = is1xBetRestricted
+    ? '⚠️ VPN may be needed in your region'
+    : '✅ Available in your region — no VPN needed';
+  const onexbetGeoNote = is1xBetRestricted
+    ? '⚠️ VPN may be required in your region'
+    : '✅ Available in your region — no VPN needed';
 
   return (
     <div style={{
@@ -256,12 +267,13 @@ export default function ChooseBetting() {
                 {/* Right: Pros + steps */}
                 <div style={{ flex: '1 1 200px' }}>
                   <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 16px', fontSize: '13px', lineHeight: 1.7 }}>
-                    {bk.pros.map((p, i) => (
-                      <li key={i} style={{ color: p.includes('⚠️') ? '#ff8c00' : '#ccc' }}>
-                        <span style={{ marginRight: '8px', color: p.includes('⚠️') ? '#ff8c00' : bk.color }}>
-                          {p.includes('⚠️') ? '⚠️' : '✓'}
+                    {/* For 1xBet append the geo-aware availability bullet; hide it while geo is loading */}
+                    {[...bk.pros, ...(bk.id === 'onexbet' && !geoLoading ? [onexbetGeoPro] : [])].map((p, i) => (
+                      <li key={i} style={{ color: p.includes('⚠️') ? '#ff8c00' : p.includes('✅') ? '#00d084' : '#ccc' }}>
+                        <span style={{ marginRight: '8px', color: p.includes('⚠️') ? '#ff8c00' : p.includes('✅') ? '#00d084' : bk.color }}>
+                          {p.includes('⚠️') ? '⚠️' : p.includes('✅') ? '✅' : '✓'}
                         </span>
-                        {p.replace('⚠️ ', '')}
+                        {p.replace('⚠️ ', '').replace('✅ ', '')}
                       </li>
                     ))}
                   </ul>
@@ -333,7 +345,18 @@ export default function ChooseBetting() {
                 >
                   {bk.cta}
                 </a>
-                <div style={{ fontSize: '12px', color: '#888', textAlign: 'center' }}>{bk.note}</div>
+                {/* 1xBet note is geo-aware; all other bookmakers use the static note */}
+                {!geoLoading && (
+                  <div style={{
+                    fontSize: '12px',
+                    color: bk.id === 'onexbet'
+                      ? (is1xBetRestricted ? '#ff8c00' : '#00d084')
+                      : '#888',
+                    textAlign: 'center',
+                  }}>
+                    {bk.id === 'onexbet' ? onexbetGeoNote : bk.note}
+                  </div>
+                )}
                 <div style={{ fontSize: '11px', color: '#555', textAlign: 'center' }}>18+ | T&Cs apply | Gamble responsibly</div>
               </div>
             </div>
