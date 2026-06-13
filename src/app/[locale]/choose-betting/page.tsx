@@ -212,7 +212,8 @@ export default function ChooseBetting() {
                 }} />
               )}
 
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', alignItems: 'flex-start' }}>
+              {/* Top row: Logo/badge + pros side by side */}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', alignItems: 'flex-start', marginBottom: '20px' }}>
 
                 {/* Left: Logo + badge */}
                 <div style={{ minWidth: '160px', flex: '0 0 auto', textAlign: 'center' }}>
@@ -252,7 +253,7 @@ export default function ChooseBetting() {
                   </div>
                 </div>
 
-                {/* Middle: Pros + steps */}
+                {/* Right: Pros + steps */}
                 <div style={{ flex: '1 1 200px' }}>
                   <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 16px', fontSize: '13px', lineHeight: 1.7 }}>
                     {bk.pros.map((p, i) => (
@@ -293,38 +294,47 @@ export default function ChooseBetting() {
                     </div>
                   )}
                 </div>
+              </div>
 
-                {/* Right: CTA */}
-                <div style={{ flex: '0 0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', minWidth: '200px' }}>
-                  <a
-                    href={bk.url}
-                    target="_blank"
-                    rel="noopener noreferrer nofollow sponsored"
-                    onMouseEnter={() => setActive(bk.id)}
-                    onMouseLeave={() => setActive(null)}
-                    style={{
-                      display: 'block',
-                      background: bk.ctaBg,
-                      color: bk.ctaColor,
-                      padding: '18px 24px',
-                      borderRadius: '12px',
-                      fontWeight: 900,
-                      fontSize: '15px',
-                      textDecoration: 'none',
-                      textAlign: 'center',
-                      width: '100%',
-                      boxShadow: active === bk.id
-                        ? `0 12px 36px ${bk.ctaShadow}`
-                        : `0 6px 20px ${bk.ctaShadow.replace('0.4', '0.25')}`,
-                      transform: active === bk.id ? 'translateY(-2px)' : 'none',
-                      transition: 'all 0.2s ease',
-                    }}
-                  >
-                    {bk.cta}
-                  </a>
-                  <div style={{ fontSize: '12px', color: '#888', textAlign: 'center' }}>{bk.note}</div>
-                  <div style={{ fontSize: '11px', color: '#555', textAlign: 'center' }}>18+ | T&Cs apply | Gamble responsibly</div>
+              {/* Bottom: CTA — always anchored to this card, full width */}
+              <div style={{
+                borderTop: `1px solid ${bk.highlighted ? 'rgba(0,208,132,0.2)' : 'rgba(255,255,255,0.07)'}`,
+                paddingTop: '18px',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'stretch',
+                gap: '8px',
+              }}>
+                <div style={{ fontSize: '13px', fontWeight: 700, color: bk.color, textAlign: 'center', marginBottom: '4px' }}>
+                  Register with {bk.name}
                 </div>
+                <a
+                  href={bk.url}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow sponsored"
+                  onMouseEnter={() => setActive(bk.id)}
+                  onMouseLeave={() => setActive(null)}
+                  style={{
+                    display: 'block',
+                    background: bk.ctaBg,
+                    color: bk.ctaColor,
+                    padding: '18px 24px',
+                    borderRadius: '12px',
+                    fontWeight: 900,
+                    fontSize: '16px',
+                    textDecoration: 'none',
+                    textAlign: 'center',
+                    boxShadow: active === bk.id
+                      ? `0 12px 36px ${bk.ctaShadow}`
+                      : `0 6px 20px ${bk.ctaShadow.replace('0.4', '0.25')}`,
+                    transform: active === bk.id ? 'translateY(-2px)' : 'none',
+                    transition: 'all 0.2s ease',
+                  }}
+                >
+                  {bk.cta}
+                </a>
+                <div style={{ fontSize: '12px', color: '#888', textAlign: 'center' }}>{bk.note}</div>
+                <div style={{ fontSize: '11px', color: '#555', textAlign: 'center' }}>18+ | T&Cs apply | Gamble responsibly</div>
               </div>
             </div>
           ))}
