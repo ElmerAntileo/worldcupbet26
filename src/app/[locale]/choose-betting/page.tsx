@@ -38,6 +38,21 @@ const steps = [
   { n: 4, icon: '🎁', title: 'Bonus credited instantly', desc: '100% matched up to €100 — ready to bet' },
 ];
 
+const onexbetSteps = [
+  { n: 1, icon: '🖱️', title: 'Click the button below', desc: 'Opens 1xBet in a new tab' },
+  { n: 2, icon: '📝', title: 'Fill in your details', desc: 'Name, email, date of birth — takes 60 seconds' },
+  { n: 3, icon: '💳', title: 'Make your first deposit', desc: 'Minimum €10 to activate the bonus' },
+  { n: 4, icon: '🎁', title: 'Bonus credited instantly', desc: '100% up to €100 — ready to bet' },
+];
+
+const onexbetFaqs = [
+  { q: 'Do I need a promo code for 1xBet?', a: 'No promo code needed. The bonus is applied automatically when you register through our link and make your first deposit.' },
+  { q: 'Which countries can use 1xBet without a VPN?', a: '1xBet is available without a VPN in most of Latin America, Africa, Asia, and Eastern Europe. A VPN may be required in the UK, Germany, France, Netherlands, Spain, Sweden, and a few other European markets.' },
+  { q: "What is 1xBet's minimum deposit?", a: '€10 to activate the 100% welcome bonus. Maximum bonus is €100.' },
+  { q: 'How long does 1xBet registration take?', a: 'About 60 seconds. You need your name, email, and date of birth. No document upload required to start betting.' },
+  { q: 'Does 1xBet have a mobile app?', a: 'Yes, 1xBet has a fast mobile app available for iOS and Android with full live betting support.' },
+];
+
 const bookmakers = [
   {
     id: 'betsson',
@@ -107,6 +122,7 @@ const bookmakers = [
 export default function ChooseBetting() {
   const countdown = useCountdown();
   const [active, setActive] = useState<string | null>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const { is1xBetRestricted, loading: geoLoading } = useGeo();
 
   // Geo-aware strings for 1xBet — shown once ipapi.co resolves the visitor's country.
@@ -305,6 +321,66 @@ export default function ChooseBetting() {
                         ))}
                       </div>
                     </div>
+                  )}
+
+                  {bk.id === 'onexbet' && (
+                    <>
+                      {/* Pre-sell paragraph */}
+                      <p style={{ fontSize: '13px', color: '#bbb', lineHeight: 1.65, marginBottom: '14px' }}>
+                        1xBet is our recommended choice for in-play World Cup betting. With 200+ markets per match and the best live odds in our daily comparison, it&apos;s the sharper pick if you&apos;re betting during the match. The 100% welcome bonus up to €100 makes it worth registering even if you plan to use both bookmakers.
+                      </p>
+
+                      {/* 4-step claim guide */}
+                      <div style={{
+                        background: 'rgba(59,130,246,0.08)',
+                        border: '1px solid rgba(59,130,246,0.2)',
+                        borderRadius: '10px',
+                        padding: '14px 16px',
+                        marginBottom: '14px',
+                      }}>
+                        <div style={{ fontSize: '12px', fontWeight: 700, color: '#60a5fa', marginBottom: '10px', letterSpacing: '0.05em' }}>
+                          HOW TO CLAIM YOUR BONUS — 4 STEPS
+                        </div>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px' }}>
+                          {onexbetSteps.map((s) => (
+                            <div key={s.n} style={{
+                              background: 'rgba(0,0,0,0.2)',
+                              borderRadius: '8px',
+                              padding: '10px 12px',
+                              fontSize: '12px',
+                            }}>
+                              <span style={{ fontSize: '16px' }}>{s.icon}</span>
+                              <span style={{ color: '#60a5fa', fontWeight: 700, marginLeft: '6px' }}>Step {s.n}</span>
+                              <div style={{ color: '#ddd', marginTop: '4px', fontWeight: 600 }}>{s.title}</div>
+                              <div style={{ color: '#888', marginTop: '2px' }}>{s.desc}</div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* FAQ accordion */}
+                      <div>
+                        <div style={{ fontSize: '12px', fontWeight: 700, color: '#60a5fa', marginBottom: '10px', letterSpacing: '0.05em' }}>
+                          FREQUENTLY ASKED QUESTIONS
+                        </div>
+                        {onexbetFaqs.map((faq, i) => (
+                          <div key={i} style={{ background: 'rgba(0,0,0,0.2)', borderRadius: '8px', marginBottom: '6px', overflow: 'hidden' }}>
+                            <button
+                              onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                              style={{ width: '100%', textAlign: 'left', background: 'none', border: 'none', color: '#ddd', padding: '10px 12px', cursor: 'pointer', fontSize: '12px', fontWeight: 600, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
+                            >
+                              {faq.q}
+                              <span style={{ color: '#60a5fa', marginLeft: '8px', flexShrink: 0 }}>{openFaq === i ? '−' : '+'}</span>
+                            </button>
+                            {openFaq === i && (
+                              <div style={{ padding: '0 12px 10px', fontSize: '12px', color: '#888', lineHeight: 1.6 }}>
+                                {faq.a}
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </>
                   )}
                 </div>
               </div>
