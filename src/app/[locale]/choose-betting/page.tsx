@@ -397,6 +397,11 @@ export default function ChooseBetting() {
                 <div style={{ fontSize: '13px', fontWeight: 700, color: bk.color, textAlign: 'center', marginBottom: '4px' }}>
                   Register with {bk.name}
                 </div>
+                {bk.id === 'onexbet' && (
+                  <p style={{ fontSize: '13px', color: '#bbb', lineHeight: 1.65, textAlign: 'center', margin: '0 0 14px' }}>
+                    1xBet is our pick for in-play World Cup betting — 200+ markets per match means you can find value even during the game. If 1xBet is available in your country, their odds consistently beat the competition on live markets. The 100% bonus up to €100 is credited instantly after your first deposit.
+                  </p>
+                )}
                 <a
                   href={bk.url}
                   target="_blank"

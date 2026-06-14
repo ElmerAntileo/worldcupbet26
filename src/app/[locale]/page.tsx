@@ -483,17 +483,22 @@ export default async function HomePage() {
                   <div style={{ textAlign: 'right' }}>
                     {/* 1xBet routes to /1xbet-bonus pre-sell page; others go directly to affiliate */}
                     {bk.name === '1xBet' ? (
-                      <Link href="/1xbet-bonus"
-                        style={{
-                          display: 'inline-block',
-                          background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)',
-                          color: 'white',
-                          padding: '11px 22px', borderRadius: '8px', fontWeight: 800,
-                          fontSize: '13px', textDecoration: 'none', whiteSpace: 'nowrap',
-                          boxShadow: '0 4px 14px rgba(59,130,246,0.35)',
-                        }}>
-                        Get 100% Bonus — Best In-Play Odds →
-                      </Link>
+                      <>
+                        <p style={{ fontSize: '12px', color: 'var(--muted)', lineHeight: 1.6, textAlign: 'right', marginBottom: '10px' }}>
+                          New to 1xBet? Over 200 markets per World Cup match, the best live odds we&apos;ve tracked this tournament, and a 100% welcome bonus up to €100 for new customers. Takes 60 seconds to register.
+                        </p>
+                        <Link href="/1xbet-bonus"
+                          style={{
+                            display: 'inline-block',
+                            background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)',
+                            color: 'white',
+                            padding: '11px 22px', borderRadius: '8px', fontWeight: 800,
+                            fontSize: '13px', textDecoration: 'none', whiteSpace: 'nowrap',
+                            boxShadow: '0 4px 14px rgba(59,130,246,0.35)',
+                          }}>
+                          Get 100% Bonus — Best In-Play Odds →
+                        </Link>
+                      </>
                     ) : (
                       <a href={bk.url} target="_blank" rel="noopener noreferrer nofollow sponsored"
                         data-affiliate={bk.name}

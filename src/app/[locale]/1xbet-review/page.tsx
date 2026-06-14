@@ -159,6 +159,9 @@ export default function OnexBetReviewPage({ params }: Props) {
             ))}
           </div>
 
+          <p style={{ fontSize: "14px", color: "var(--muted)", lineHeight: 1.7, maxWidth: "560px", margin: "0 auto 20px" }}>
+            You might be wondering whether 1xBet is the right choice over other bookmakers — here&apos;s our honest take: for in-play World Cup betting with maximum market choice, 1xBet is consistently the sharpest option in our daily comparison. The welcome bonus makes it worth registering now even if you plan to bet across multiple platforms.
+          </p>
           <a href={ONEXBET_URL} target="_blank" rel="noopener noreferrer nofollow sponsored"
             style={{ display: "inline-block", background: "var(--accent)", color: "#000", padding: "16px 40px", borderRadius: "8px", fontWeight: 800, fontSize: "16px", textDecoration: "none" }} data-affiliate="1xBet">
             Claim 1xBet Bonus — 100% up to €100
@@ -231,6 +234,9 @@ export default function OnexBetReviewPage({ params }: Props) {
               </div>
             ))}
           </div>
+          <p style={{ fontSize: "14px", color: "var(--muted)", lineHeight: 1.7, maxWidth: "560px", margin: "0 auto 20px" }}>
+            You might be wondering whether 1xBet is the right choice over other bookmakers — here&apos;s our honest take: for in-play World Cup betting with maximum market choice, 1xBet is consistently the sharpest option in our daily comparison. The welcome bonus makes it worth registering now even if you plan to bet across multiple platforms.
+          </p>
           <a href={ONEXBET_URL} target="_blank" rel="noopener noreferrer nofollow sponsored"
             style={{ display: "inline-block", background: "var(--accent)", color: "#000", padding: "16px 40px", borderRadius: "8px", fontWeight: 800, fontSize: "15px", textDecoration: "none" }} data-affiliate="1xBet">
             Get 1xBet Bonus Now →

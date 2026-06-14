@@ -116,6 +116,11 @@ export default function Access1xBet() {
           </div>
         </div>
 
+        {/* Pre-sell paragraph */}
+        <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, maxWidth: '560px', margin: '0 auto 28px', textAlign: 'center' }}>
+          You might be wondering whether 1xBet is the right choice over other bookmakers — here&apos;s our honest take: for in-play World Cup betting with maximum market choice, 1xBet is consistently the sharpest option in our daily comparison. The welcome bonus makes it worth registering now even if you plan to bet across multiple platforms.
+        </p>
+
         {/* MAIN CTA BUTTON - HUGE AND UNMISSABLE */}
         <a
           href={affiliateLink1xBet}
