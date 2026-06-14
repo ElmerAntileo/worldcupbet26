@@ -147,8 +147,8 @@ function CTAButton({ label = "🎯 Claim 100% Bonus Now →", large = false }: {
   );
 }
 
-export default function OnexBetBonusPage({ params }: Props) {
-  const locale = params.locale;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export default function OnexBetBonusPage(_props: Props) {
 
   return (
     <div style={{ background: "var(--background)", minHeight: "100vh", color: "var(--foreground)" }}>
