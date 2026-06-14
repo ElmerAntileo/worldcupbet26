@@ -141,7 +141,7 @@ export default function EnglandCroatiaPage() {
             History says England vs Croatia is always competitive, but England at 1.55 in 2026 represents fair value given their current squad strength. Back England to win and advance from Group L as group winners.
           </p>
           <div style={{ marginTop: "14px" }}>
-            <a href="https://record.betsson.com/C.ashx?btag=a_45907b_3&affid=25535&siteid=45907&adid=3&pid=3" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "var(--accent)", color: "#040c18", padding: "10px 20px", borderRadius: "8px", fontWeight: 800, fontSize: "13px", textDecoration: "none", display: "inline-block" }}>
+            <a href="https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "var(--accent)", color: "#040c18", padding: "10px 20px", borderRadius: "8px", fontWeight: 800, fontSize: "13px", textDecoration: "none", display: "inline-block" }}>
               Back England @ 1.55 on Betsson
             </a>
           </div>
@@ -162,7 +162,7 @@ export default function EnglandCroatiaPage() {
             </thead>
             <tbody>
               {[
-                { name: "Betsson", eng: "1.55", draw: "4.00", cro: "6.50", o25: "2.10", best: true, url: "https://record.betsson.com/C.ashx?btag=a_45907b_3&affid=25535&siteid=45907&adid=3&pid=3" },
+                { name: "Betsson", eng: "1.55", draw: "4.00", cro: "6.50", o25: "2.10", best: true, url: "https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" },
                 { name: "1xBet", eng: "1.57", draw: "3.95", cro: "6.40", o25: "2.08", best: false, url: "https://reffpa.com/L?tag=d_3575282m_57760c_&site=3575282&ad=57760" },
                 { name: "Bet365", eng: "1.53", draw: "4.10", cro: "6.00", o25: "2.05", best: false, url: "#" },
                 { name: "Betway", eng: "1.50", draw: "3.90", cro: "6.25", o25: "2.00", best: false, url: "#" },
@@ -264,7 +264,7 @@ export default function EnglandCroatiaPage() {
           <h3 style={{ fontSize: "1.3rem", fontWeight: 800, marginBottom: "8px" }}>Back England vs Croatia</h3>
           <p style={{ color: "var(--muted)", fontSize: "14px", marginBottom: "1.5rem" }}>Best odds: England to Win @ 1.55 on Betsson. New to betting? Claim your welcome bonus today.</p>
           <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="https://record.betsson.com/C.ashx?btag=a_45907b_3&affid=25535&siteid=45907&adid=3&pid=3" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "var(--accent)", color: "#040c18", padding: "12px 24px", borderRadius: "8px", fontWeight: 800, textDecoration: "none", fontSize: "14px" }}>
+            <a href="https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "var(--accent)", color: "#040c18", padding: "12px 24px", borderRadius: "8px", fontWeight: 800, textDecoration: "none", fontSize: "14px" }}>
               Bet on Betsson
             </a>
             <a href="https://reffpa.com/L?tag=d_3575282m_57760c_&site=3575282&ad=57760" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "transparent", border: "2px solid var(--accent)", color: "var(--accent)", padding: "12px 24px", borderRadius: "8px", fontWeight: 800, textDecoration: "none", fontSize: "14px" }}>

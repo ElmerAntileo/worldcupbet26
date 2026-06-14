@@ -2,7 +2,7 @@
 
 **Affiliate links:**
 - 1xBet: `https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97`
-- Betsson: `https://record.betsson.com/C.ashx?btag=a_45907b_3&affid=25535&siteid=45907&adid=3&pid=3`
+- Betsson: `https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/`
 
 Fill in `[TEAM A]`, `[TEAM B]`, `[ODDS]`, `[DATE]` before posting.
 Character counts are for the finished post with real values substituted.
@@ -160,7 +160,7 @@ In-play market closes at kick-off — act fast.
 Works everywhere. No VPN, no restrictions.
 MGA licensed, payouts in 24–48h.
 
-👉 https://record.betsson.com/C.ashx?btag=a_45907b_3&affid=25535&siteid=45907&adid=3&pid=3
+👉 https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/
 
 18+ | T&Cs apply | Gamble responsibly
 ```
@@ -178,7 +178,7 @@ MGA licensed, payouts in 24–48h.
 Betsson includes live streaming for registered users.
 100% bonus on your first deposit to get started.
 
-👉 https://record.betsson.com/C.ashx?btag=a_45907b_3&affid=25535&siteid=45907&adid=3&pid=3
+👉 https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/
 
 18+ | T&Cs apply | Gamble responsibly
 ```
@@ -198,7 +198,7 @@ Key match: [TEAM A] vs [TEAM B] on [DATE]
 
 Register now and get 100% up to €100 on your first deposit.
 
-👉 https://record.betsson.com/C.ashx?btag=a_45907b_3&affid=25535&siteid=45907&adid=3&pid=3
+👉 https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/
 
 18+ | T&Cs apply | Gamble responsibly
 ```
@@ -220,7 +220,7 @@ Register now and get 100% up to €100 on your first deposit.
 
 All prices at Betsson. Updated after [LAST RESULT].
 
-👉 https://record.betsson.com/C.ashx?btag=a_45907b_3&affid=25535&siteid=45907&adid=3&pid=3
+👉 https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/
 
 18+ | Gamble responsibly
 ```
@@ -238,7 +238,7 @@ All prices at Betsson. Updated after [LAST RESULT].
 [PLAYER NAME] to top scorer: [ODDS] at Betsson
 [TEAM] have [X] group games still to play.
 
-👉 https://record.betsson.com/C.ashx?btag=a_45907b_3&affid=25535&siteid=45907&adid=3&pid=3
+👉 https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/
 
 18+ | Gamble responsibly
 ```
@@ -256,7 +256,7 @@ All prices at Betsson. Updated after [LAST RESULT].
 [TEAM A] to win: [ODDS] — Betsson
 100% welcome bonus still available for new accounts.
 
-👉 https://record.betsson.com/C.ashx?btag=a_45907b_3&affid=25535&siteid=45907&adid=3&pid=3
+👉 https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/
 
 18+ | T&Cs apply | Gamble responsibly
 ```
@@ -277,7 +277,7 @@ All prices at Betsson. Updated after [LAST RESULT].
 
 New user? Claim your 100% bonus first:
 — 1xBet: https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97
-— Betsson: https://record.betsson.com/C.ashx?btag=a_45907b_3&affid=25535&siteid=45907&adid=3&pid=3
+— Betsson: https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/
 
 18+ | Not financial advice | Gamble responsibly
 ```

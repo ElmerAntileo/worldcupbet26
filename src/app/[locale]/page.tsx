@@ -81,7 +81,7 @@ const bookmakers = [
     rating: 4.8,
     bonus: '100% Welcome Bonus up to €100',
     features: ['World Cup Specials', 'Live Streaming', 'Cash Out'],
-    url: 'https://record.betsson.com/C.ashx?btag=a_45907b_3&affid=25535&siteid=45907&adid=3&pid=3',
+    url: 'https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/',
     country: ['EU', 'NO', 'SE', 'FI', 'CA'],
   },
   {
@@ -251,7 +251,7 @@ export default async function HomePage() {
               )}
             </div>
           </div>
-          <a href="https://record.betsson.com/C.ashx?btag=a_45907b_3&affid=25535&siteid=45907&adid=3&pid=3" target="_blank" rel="noopener noreferrer nofollow sponsored"
+          <a href="https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow sponsored"
             style={{ background: 'linear-gradient(135deg,#ef4444,#dc2626)', color: 'white', padding: '8px 20px', borderRadius: '7px', fontWeight: 800, fontSize: '12px', textDecoration: 'none', whiteSpace: 'nowrap', boxShadow: '0 3px 10px rgba(239,68,68,0.3)' }} data-affiliate="Betsson">
             Claim Bonus →
           </a>
@@ -330,7 +330,7 @@ export default async function HomePage() {
           <CountdownTimer />
 
           <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap', marginTop: '32px' }}>
-            <a href="https://record.betsson.com/C.ashx?btag=a_45907b_3&affid=25535&siteid=45907&adid=3&pid=3" target="_blank" rel="noopener noreferrer nofollow sponsored" style={{ background: 'linear-gradient(135deg, #ef4444, #dc2626)', color: 'white', padding: '15px 36px', fontSize: '15px', borderRadius: '9px', fontWeight: 800, textDecoration: 'none', boxShadow: '0 4px 12px rgba(239,68,68,0.3)' }}>
+            <a href="https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow sponsored" style={{ background: 'linear-gradient(135deg, #ef4444, #dc2626)', color: 'white', padding: '15px 36px', fontSize: '15px', borderRadius: '9px', fontWeight: 800, textDecoration: 'none', boxShadow: '0 4px 12px rgba(239,68,68,0.3)' }}>
               🎁 Claim €100 Bonus
             </a>
             <Link href="/world-cup-2026-matches" className="btn-outline" style={{ padding: '15px 36px', fontSize: '15px', borderRadius: '9px' }}>

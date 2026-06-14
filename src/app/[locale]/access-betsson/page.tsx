@@ -3,7 +3,7 @@
 
 import AccessGuide from '@/components/AccessGuide';
 
-const affiliateLink = 'https://record.betsson.com/C.ashx?btag=a_45907b_3&affid=25535&siteid=45907&adid=3&pid=3';
+const affiliateLink = 'https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/';
 
 export default function AccessBetsson() {
 

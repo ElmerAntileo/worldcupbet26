@@ -146,7 +146,7 @@ export default function ArgentinaAustriaPage() {
             Austria under Rangnick play a high-press style that can leave space on the counter. With Argentina&apos;s forwards and midfielders of the highest calibre, expect a 3-0 or 2-0 Argentina win.
           </p>
           <div style={{ marginTop: "14px" }}>
-            <a href="https://record.betsson.com/C.ashx?btag=a_45907b_3&affid=25535&siteid=45907&adid=3&pid=3" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "var(--gold)", color: "#040c18", padding: "10px 20px", borderRadius: "8px", fontWeight: 800, fontSize: "13px", textDecoration: "none", display: "inline-block" }}>
+            <a href="https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "var(--gold)", color: "#040c18", padding: "10px 20px", borderRadius: "8px", fontWeight: 800, fontSize: "13px", textDecoration: "none", display: "inline-block" }}>
               Back Argentina -1.5 AH @ 2.15 on Betsson
             </a>
           </div>
@@ -167,7 +167,7 @@ export default function ArgentinaAustriaPage() {
             </thead>
             <tbody>
               {[
-                { name: "Betsson", arg: "1.50", draw: "4.10", aut: "6.50", ah: "2.15", best: true, url: "https://record.betsson.com/C.ashx?btag=a_45907b_3&affid=25535&siteid=45907&adid=3&pid=3" },
+                { name: "Betsson", arg: "1.50", draw: "4.10", aut: "6.50", ah: "2.15", best: true, url: "https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" },
                 { name: "1xBet", arg: "1.52", draw: "4.05", aut: "6.40", ah: "2.10", best: false, url: "https://reffpa.com/L?tag=d_3575282m_57760c_&site=3575282&ad=57760" },
                 { name: "Bet365", arg: "1.50", draw: "4.20", aut: "6.00", ah: "2.05", best: false, url: "#" },
                 { name: "Betway", arg: "1.48", draw: "4.00", aut: "6.25", ah: "2.00", best: false, url: "#" },
@@ -258,7 +258,7 @@ export default function ArgentinaAustriaPage() {
           <h3 style={{ fontSize: "1.3rem", fontWeight: 800, marginBottom: "8px" }}>Back Argentina -1.5 AH @ 2.15</h3>
           <p style={{ color: "var(--muted)", fontSize: "14px", marginBottom: "1.5rem" }}>Best value bet for the defending champions&apos; opener. Claim your welcome bonus on Betsson before June 13.</p>
           <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="https://record.betsson.com/C.ashx?btag=a_45907b_3&affid=25535&siteid=45907&adid=3&pid=3" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "var(--accent)", color: "#040c18", padding: "12px 24px", borderRadius: "8px", fontWeight: 800, textDecoration: "none", fontSize: "14px" }}>
+            <a href="https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "var(--accent)", color: "#040c18", padding: "12px 24px", borderRadius: "8px", fontWeight: 800, textDecoration: "none", fontSize: "14px" }}>
               Bet on Betsson
             </a>
             <a href="https://reffpa.com/L?tag=d_3575282m_57760c_&site=3575282&ad=57760" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "transparent", border: "2px solid var(--accent)", color: "var(--accent)", padding: "12px 24px", borderRadius: "8px", fontWeight: 800, textDecoration: "none", fontSize: "14px" }}>

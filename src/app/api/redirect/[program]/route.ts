@@ -41,19 +41,7 @@ export async function GET(
     // Log conversion event to console (will be picked up by GA4)
     console.log(`[AFFILIATE_CLICK] Program: ${program}, IP: ${ip}, Referer: ${referer}`);
 
-    // Route through advanced multi-layer proxy system for geo-blocking bypass
-    let finalUrl = affiliateLink;
-
-    try {
-      // Use our advanced proxy with failover chain
-      const encodedUrl = encodeURIComponent(affiliateLink);
-      // NextResponse.redirect() requires absolute URLs
-      const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.worldcupbet26.com';
-      finalUrl = `${baseUrl}/api/proxy/${encodedUrl}`;
-    } catch (error) {
-      console.error('Proxy routing error, using direct link:', error);
-      finalUrl = affiliateLink;
-    }
+    const finalUrl = affiliateLink;
 
     // CRITICAL: Send GA4 event before redirect
     // This ensures conversion is tracked even if user doesn't complete signup

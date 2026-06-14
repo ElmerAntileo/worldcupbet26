@@ -72,7 +72,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const BETWAY_URL = "https://betway.com";
-const BETSSON_URL = "https://record.betsson.com/C.ashx?btag=a_45907b_3&affid=25535&siteid=45907&adid=3&pid=3";
+const BETSSON_URL = "https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/";
 
 const pros = [
   "100% matched first-bet bonus up to $50 for new customers",
