@@ -3,7 +3,8 @@
 import { useEffect, useState } from 'react';
 import { RESTRICTED_COUNTRIES_1XBET } from '@/lib/geoConstants';
 
-const CACHE_KEY = 'wcb26_geo';
+// v2 — busts any stale cache from the previous ipapi.co-only implementation
+const CACHE_KEY = 'wcb26_geo_v2';
 const CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24 hours
 
 export interface GeoState {
@@ -15,25 +16,35 @@ export interface GeoState {
 /**
  * Detect the visitor's ISO country code.
  *
- * Primary:  api.country.is — Cloudflare CDN, free, no rate limit, ~10ms
- * Fallback: ipapi.co       — free but capped at 1,000 req/day
+ * Primary:   /api/detect-country — reads Vercel's x-vercel-ip-country header
+ *            server-side. No rate limits, no external dependency, authoritative.
+ * Fallback1: api.country.is     — Cloudflare CDN, free, no rate limit
+ * Fallback2: ipapi.co           — free but capped at 1,000 req/day
  *
- * Returns null only if both APIs fail. The caller treats null as "restricted"
- * (conservative: better to warn an unrestricted user than to silently miss a
- * restricted one like Germany or France).
+ * Returns null only if all three sources fail. null is treated as restricted
+ * (conservative: better to warn an unrestricted user than to miss Germany/France).
  */
 async function detectCountry(): Promise<string | null> {
+  // 1. Our own server endpoint — uses Vercel edge geo, most reliable
+  try {
+    const r = await fetch('/api/detect-country', { cache: 'no-store' });
+    const data = (await r.json()) as { country?: string | null };
+    if (data.country) return data.country.toUpperCase();
+  } catch { /* fall through */ }
+
+  // 2. Cloudflare-backed external API
   try {
     const r = await fetch('https://api.country.is/', { cache: 'no-store' });
     const data = (await r.json()) as { country?: string };
     if (data.country) return data.country;
-  } catch { /* fall through to backup */ }
+  } catch { /* fall through */ }
 
+  // 3. Last resort
   try {
     const r = await fetch('https://ipapi.co/json/', { cache: 'no-store' });
     const data = (await r.json()) as { country_code?: string };
     if (data.country_code) return data.country_code;
-  } catch { /* both failed */ }
+  } catch { /* all failed */ }
 
   return null;
 }
@@ -41,7 +52,7 @@ async function detectCountry(): Promise<string | null> {
 export function useGeo(): GeoState {
   const [state, setState] = useState<GeoState>({
     countryCode: null,
-    is1xBetRestricted: false, // optimistic while loading — bar stays hidden until resolved
+    is1xBetRestricted: false, // optimistic while loading — disclaimer hidden until resolved
     loading: true,
   });
 
@@ -54,7 +65,6 @@ export function useGeo(): GeoState {
         if (Date.now() - ts < CACHE_TTL_MS) {
           setState({
             countryCode,
-            // null means both APIs failed on a prior visit → conservative: treat as restricted
             is1xBetRestricted: countryCode === null
               ? true
               : RESTRICTED_COUNTRIES_1XBET.includes(countryCode as never),
@@ -63,9 +73,9 @@ export function useGeo(): GeoState {
           return;
         }
       }
-    } catch { /* sessionStorage unavailable (private-browsing edge-cases) */ }
+    } catch { /* sessionStorage unavailable */ }
 
-    // 2. Fetch live
+    // 2. Fetch live (server-side primary, two external fallbacks)
     detectCountry().then((countryCode) => {
       try {
         sessionStorage.setItem(CACHE_KEY, JSON.stringify({ countryCode, ts: Date.now() }));
@@ -73,9 +83,7 @@ export function useGeo(): GeoState {
 
       setState({
         countryCode,
-        // Conservative fallback: if both APIs failed (null) → assume restricted.
-        // It is far better to show a VPN warning to a visitor who doesn't need one
-        // than to incorrectly tell Germany / France they're good when they're not.
+        // Conservative: null (all sources failed) → treat as restricted
         is1xBetRestricted: countryCode === null
           ? true
           : RESTRICTED_COUNTRIES_1XBET.includes(countryCode as never),
