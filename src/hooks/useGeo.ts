@@ -3,19 +3,6 @@
 import { useEffect, useState } from 'react';
 import { RESTRICTED_COUNTRIES_1XBET } from '@/lib/geoConstants';
 
-/**
- * Geo-detection hook — uses ipapi.co (free, no API key required) to identify
- * the visitor's country code on first render, then caches the result in
- * sessionStorage so subsequent page loads within the same session are instant.
- *
- * Default while loading: is1xBetRestricted = false (optimistic — avoids
- * showing a VPN warning to non-restricted visitors during the brief fetch).
- * If ipapi.co fails, we keep the optimistic default rather than punishing
- * visitors with an incorrect warning.
- *
- * Cache TTL: 24 hours (stored as a timestamp alongside the country code).
- */
-
 const CACHE_KEY = 'wcb26_geo';
 const CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24 hours
 
@@ -25,54 +12,76 @@ export interface GeoState {
   loading: boolean;
 }
 
+/**
+ * Detect the visitor's ISO country code.
+ *
+ * Primary:  api.country.is — Cloudflare CDN, free, no rate limit, ~10ms
+ * Fallback: ipapi.co       — free but capped at 1,000 req/day
+ *
+ * Returns null only if both APIs fail. The caller treats null as "restricted"
+ * (conservative: better to warn an unrestricted user than to silently miss a
+ * restricted one like Germany or France).
+ */
+async function detectCountry(): Promise<string | null> {
+  try {
+    const r = await fetch('https://api.country.is/', { cache: 'no-store' });
+    const data = (await r.json()) as { country?: string };
+    if (data.country) return data.country;
+  } catch { /* fall through to backup */ }
+
+  try {
+    const r = await fetch('https://ipapi.co/json/', { cache: 'no-store' });
+    const data = (await r.json()) as { country_code?: string };
+    if (data.country_code) return data.country_code;
+  } catch { /* both failed */ }
+
+  return null;
+}
+
 export function useGeo(): GeoState {
   const [state, setState] = useState<GeoState>({
     countryCode: null,
-    is1xBetRestricted: false, // optimistic default while fetching
+    is1xBetRestricted: false, // optimistic while loading — bar stays hidden until resolved
     loading: true,
   });
 
   useEffect(() => {
-    // 1. Check sessionStorage cache to avoid re-fetching on every page
+    // 1. Check sessionStorage cache (24-hour TTL)
     try {
       const raw = sessionStorage.getItem(CACHE_KEY);
       if (raw) {
-        const { countryCode, ts } = JSON.parse(raw) as { countryCode: string; ts: number };
+        const { countryCode, ts } = JSON.parse(raw) as { countryCode: string | null; ts: number };
         if (Date.now() - ts < CACHE_TTL_MS) {
           setState({
             countryCode,
-            is1xBetRestricted: RESTRICTED_COUNTRIES_1XBET.includes(countryCode as never),
+            // null means both APIs failed on a prior visit → conservative: treat as restricted
+            is1xBetRestricted: countryCode === null
+              ? true
+              : RESTRICTED_COUNTRIES_1XBET.includes(countryCode as never),
             loading: false,
           });
           return;
         }
       }
-    } catch {
-      // sessionStorage unavailable (private browsing edge-cases) — fall through
-    }
+    } catch { /* sessionStorage unavailable (private-browsing edge-cases) */ }
 
-    // 2. Fetch country from ipapi.co — free tier, no API key, ~50ms typical latency
-    fetch('https://ipapi.co/json/', { cache: 'no-store' })
-      .then((r) => r.json())
-      .then((data: { country_code?: string }) => {
-        const countryCode = data.country_code ?? null;
+    // 2. Fetch live
+    detectCountry().then((countryCode) => {
+      try {
+        sessionStorage.setItem(CACHE_KEY, JSON.stringify({ countryCode, ts: Date.now() }));
+      } catch { /* ignore */ }
 
-        // Cache for 24 hours so repeat visits don't re-fetch
-        try {
-          sessionStorage.setItem(CACHE_KEY, JSON.stringify({ countryCode, ts: Date.now() }));
-        } catch { /* ignore */ }
-
-        setState({
-          countryCode,
-          is1xBetRestricted: RESTRICTED_COUNTRIES_1XBET.includes(countryCode as never),
-          loading: false,
-        });
-      })
-      .catch(() => {
-        // Network error or ipapi.co down — optimistic default (no VPN warning)
-        // to avoid falsely discouraging visitors in non-restricted countries
-        setState({ countryCode: null, is1xBetRestricted: false, loading: false });
+      setState({
+        countryCode,
+        // Conservative fallback: if both APIs failed (null) → assume restricted.
+        // It is far better to show a VPN warning to a visitor who doesn't need one
+        // than to incorrectly tell Germany / France they're good when they're not.
+        is1xBetRestricted: countryCode === null
+          ? true
+          : RESTRICTED_COUNTRIES_1XBET.includes(countryCode as never),
+        loading: false,
       });
+    });
   }, []);
 
   return state;

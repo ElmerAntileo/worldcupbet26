@@ -403,7 +403,9 @@ export default function ChooseBetting() {
                   </p>
                 )}
                 <a
-                  href={bk.url}
+                  href={bk.id === 'onexbet' && !geoLoading && is1xBetRestricted
+                    ? '/access-1xbet'
+                    : bk.url}
                   target="_blank"
                   rel="noopener noreferrer nofollow sponsored"
                   onMouseEnter={() => setActive(bk.id)}
@@ -425,7 +427,9 @@ export default function ChooseBetting() {
                     transition: 'all 0.2s ease',
                   }}
                 >
-                  {bk.cta}
+                  {bk.id === 'onexbet' && !geoLoading && is1xBetRestricted
+                    ? '🔓 How to Access 1xBet from Your Region →'
+                    : bk.cta}
                 </a>
                 {/* 1xBet note is geo-aware; all other bookmakers use the static note */}
                 {!geoLoading && (

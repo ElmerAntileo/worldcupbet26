@@ -91,7 +91,9 @@ export default function StickyOddsBar() {
               </div>
             ))}
             <a
-              href={bk.url}
+              href={bk.name === '1xBet' && !geoLoading && is1xBetRestricted
+                ? '/access-1xbet'
+                : bk.url}
               target="_blank"
               rel="noopener noreferrer nofollow sponsored"
               data-affiliate={bk.name}
@@ -107,7 +109,9 @@ export default function StickyOddsBar() {
                 boxShadow: "0 2px 8px rgba(0,208,132,0.25)",
               }}
             >
-              {bk.name === '1xBet' ? 'Bet with 1xBet →' : 'Bet →'}
+              {bk.name === '1xBet' && !geoLoading && is1xBetRestricted
+                ? 'VPN guide →'
+                : bk.name === '1xBet' ? 'Bet with 1xBet →' : 'Bet →'}
             </a>
           </div>
         ))}
@@ -130,9 +134,9 @@ export default function StickyOddsBar() {
         }}>
           {is1xBetRestricted ? (
             <>
-              ⚠️ Betsson &amp; 1xBet require VPN for access from your region.{" "}
-              <a href="/choose-betting" style={{ color: "#ff6b6b", textDecoration: "underline" }}>
-                View options
+              ⚠️ 1xBet requires a VPN in your region.{" "}
+              <a href="/access-1xbet" style={{ color: "#ff6b6b", textDecoration: "underline" }}>
+                How to access 1xBet →
               </a>
             </>
           ) : (
