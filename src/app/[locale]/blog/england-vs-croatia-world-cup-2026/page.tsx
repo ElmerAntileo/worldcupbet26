@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
+import OnexBetBanner from "@/components/OnexBetBanner";
 
 export const metadata: Metadata = {
   title: "England vs Croatia World Cup 2026 Odds, Tips & Prediction | Group L",
@@ -182,6 +183,8 @@ export default function EnglandCroatiaPage() {
             </tbody>
           </table>
         </div>
+
+        <OnexBetBanner />
 
         {/* Head to head history */}
         <div style={{ background: "rgba(255,68,68,0.05)", border: "1px solid rgba(255,68,68,0.15)", borderRadius: "12px", padding: "1.25rem", marginBottom: "2.5rem" }}>

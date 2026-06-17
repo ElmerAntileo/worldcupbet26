@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
+import OnexBetBanner from "@/components/OnexBetBanner";
 
 export const metadata: Metadata = {
   title: "Brazil vs Morocco World Cup 2026 Odds, Tips & Prediction | Group C",
@@ -184,6 +185,8 @@ export default function BrazilMoroccoPage() {
             </tbody>
           </table>
         </div>
+
+        <OnexBetBanner />
 
         {/* Match preview sections */}
         <h2 style={{ fontSize: "1.4rem", fontWeight: 800, marginBottom: "1rem" }}>Match Preview</h2>

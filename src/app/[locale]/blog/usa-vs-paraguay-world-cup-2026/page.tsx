@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
+import OnexBetBanner from "@/components/OnexBetBanner";
 import Script from "next/script";
 
 const base = "https://www.worldcupbet26.com";
@@ -184,6 +185,8 @@ export default function USAVsParaguayPage() {
             </a>
           </div>
         </section>
+
+        <OnexBetBanner />
 
         {/* Preview */}
         <section style={{ marginBottom: "2rem" }}>

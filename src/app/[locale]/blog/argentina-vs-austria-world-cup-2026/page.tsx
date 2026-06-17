@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
+import OnexBetBanner from "@/components/OnexBetBanner";
 
 export const metadata: Metadata = {
   title: "Argentina vs Austria World Cup 2026 Odds, Tips & Prediction | Group J",
@@ -187,6 +188,8 @@ export default function ArgentinaAustriaPage() {
             </tbody>
           </table>
         </div>
+
+        <OnexBetBanner />
 
         {/* Team previews */}
         <h2 style={{ fontSize: "1.4rem", fontWeight: 800, marginBottom: "1rem" }}>Team Analysis</h2>
