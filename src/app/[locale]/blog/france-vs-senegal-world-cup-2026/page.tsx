@@ -165,7 +165,7 @@ export default function FranceSenegalPage() {
             <tbody>
               {[
                 { name: "Betsson", france: "1.70", draw: "3.75", senegal: "5.50", btts: "2.10", best: true, url: "https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" },
-                { name: "1xBet", france: "1.72", draw: "3.70", senegal: "5.40", btts: "2.05", best: false, url: "https://reffpa.com/L?tag=d_3575282m_57760c_&site=3575282&ad=57760" },
+                { name: "1xBet", france: "1.72", draw: "3.70", senegal: "5.40", btts: "2.05", best: false, url: "https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" },
                 { name: "Bet365", france: "1.68", draw: "3.80", senegal: "5.75", btts: "2.00", best: false, url: "#" },
                 { name: "Betway", france: "1.65", draw: "3.70", senegal: "5.25", btts: "1.95", best: false, url: "#" },
               ].map((bk) => (
@@ -258,7 +258,7 @@ export default function FranceSenegalPage() {
             <a href="https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "var(--accent)", color: "#040c18", padding: "12px 24px", borderRadius: "8px", fontWeight: 800, textDecoration: "none", fontSize: "14px" }}>
               Bet on Betsson
             </a>
-            <a href="https://reffpa.com/L?tag=d_3575282m_57760c_&site=3575282&ad=57760" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "transparent", border: "2px solid var(--accent)", color: "var(--accent)", padding: "12px 24px", borderRadius: "8px", fontWeight: 800, textDecoration: "none", fontSize: "14px" }}>
+            <a href="https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "transparent", border: "2px solid var(--accent)", color: "var(--accent)", padding: "12px 24px", borderRadius: "8px", fontWeight: 800, textDecoration: "none", fontSize: "14px" }}>
               Bet on 1xBet
             </a>
           </div>

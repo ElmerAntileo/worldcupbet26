@@ -168,7 +168,7 @@ export default function ArgentinaAustriaPage() {
             <tbody>
               {[
                 { name: "Betsson", arg: "1.50", draw: "4.10", aut: "6.50", ah: "2.15", best: true, url: "https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" },
-                { name: "1xBet", arg: "1.52", draw: "4.05", aut: "6.40", ah: "2.10", best: false, url: "https://reffpa.com/L?tag=d_3575282m_57760c_&site=3575282&ad=57760" },
+                { name: "1xBet", arg: "1.52", draw: "4.05", aut: "6.40", ah: "2.10", best: false, url: "https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" },
                 { name: "Bet365", arg: "1.50", draw: "4.20", aut: "6.00", ah: "2.05", best: false, url: "#" },
                 { name: "Betway", arg: "1.48", draw: "4.00", aut: "6.25", ah: "2.00", best: false, url: "#" },
               ].map((bk) => (
@@ -261,7 +261,7 @@ export default function ArgentinaAustriaPage() {
             <a href="https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "var(--accent)", color: "#040c18", padding: "12px 24px", borderRadius: "8px", fontWeight: 800, textDecoration: "none", fontSize: "14px" }}>
               Bet on Betsson
             </a>
-            <a href="https://reffpa.com/L?tag=d_3575282m_57760c_&site=3575282&ad=57760" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "transparent", border: "2px solid var(--accent)", color: "var(--accent)", padding: "12px 24px", borderRadius: "8px", fontWeight: 800, textDecoration: "none", fontSize: "14px" }}>
+            <a href="https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "transparent", border: "2px solid var(--accent)", color: "var(--accent)", padding: "12px 24px", borderRadius: "8px", fontWeight: 800, textDecoration: "none", fontSize: "14px" }}>
               Bet on 1xBet
             </a>
           </div>

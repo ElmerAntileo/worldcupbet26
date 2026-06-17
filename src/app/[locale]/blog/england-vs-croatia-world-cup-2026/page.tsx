@@ -163,7 +163,7 @@ export default function EnglandCroatiaPage() {
             <tbody>
               {[
                 { name: "Betsson", eng: "1.55", draw: "4.00", cro: "6.50", o25: "2.10", best: true, url: "https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" },
-                { name: "1xBet", eng: "1.57", draw: "3.95", cro: "6.40", o25: "2.08", best: false, url: "https://reffpa.com/L?tag=d_3575282m_57760c_&site=3575282&ad=57760" },
+                { name: "1xBet", eng: "1.57", draw: "3.95", cro: "6.40", o25: "2.08", best: false, url: "https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" },
                 { name: "Bet365", eng: "1.53", draw: "4.10", cro: "6.00", o25: "2.05", best: false, url: "#" },
                 { name: "Betway", eng: "1.50", draw: "3.90", cro: "6.25", o25: "2.00", best: false, url: "#" },
               ].map((bk) => (
@@ -267,7 +267,7 @@ export default function EnglandCroatiaPage() {
             <a href="https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "var(--accent)", color: "#040c18", padding: "12px 24px", borderRadius: "8px", fontWeight: 800, textDecoration: "none", fontSize: "14px" }}>
               Bet on Betsson
             </a>
-            <a href="https://reffpa.com/L?tag=d_3575282m_57760c_&site=3575282&ad=57760" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "transparent", border: "2px solid var(--accent)", color: "var(--accent)", padding: "12px 24px", borderRadius: "8px", fontWeight: 800, textDecoration: "none", fontSize: "14px" }}>
+            <a href="https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "transparent", border: "2px solid var(--accent)", color: "var(--accent)", padding: "12px 24px", borderRadius: "8px", fontWeight: 800, textDecoration: "none", fontSize: "14px" }}>
               Bet on 1xBet
             </a>
           </div>
