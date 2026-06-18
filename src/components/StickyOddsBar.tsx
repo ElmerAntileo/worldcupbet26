@@ -3,12 +3,12 @@
 import { useGeo } from '@/hooks/useGeo';
 
 const AFFILIATE_BOOKMAKERS = [
-  { name: "Betsson", logo: "🏆", home: "1.65", draw: "3.70", away: "5.50", url: "https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/", isAffiliate: true },
-  { name: "1xBet",   logo: "🎯", home: "1.67", draw: "3.65", away: "5.40", url: "https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97", isAffiliate: true },
+  { name: "Betsson", logo: "🏆", home: "1.95", draw: "3.30", away: "3.80", url: "https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/", isAffiliate: true },
+  { name: "1xBet",   logo: "🎯", home: "2.00", draw: "3.25", away: "3.70", url: "https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97", isAffiliate: true },
 ];
 
 export default function StickyOddsBar() {
-  const { is1xBetRestricted, loading: geoLoading } = useGeo();
+  useGeo();
 
   return (
     <div style={{
@@ -49,9 +49,9 @@ export default function StickyOddsBar() {
           }} />
           <span style={{ fontSize: "11px", fontWeight: 700, color: "var(--hot)", letterSpacing: "0.08em" }}>LIVE</span>
           <span style={{ fontSize: "11px", fontWeight: 600, color: "var(--muted-light)", whiteSpace: "nowrap" }}>
-            🇲🇽 Mexico vs South Africa 🇿🇦
+            🇲🇽 Mexico vs South Korea 🇰🇷
           </span>
-          <span style={{ fontSize: "10px", color: "var(--muted)", whiteSpace: "nowrap" }}>· Jun 11</span>
+          <span style={{ fontSize: "10px", color: "var(--muted)", whiteSpace: "nowrap" }}>· Jun 18</span>
         </div>
 
         {/* Affiliate bookmakers (both with CTA buttons) */}
