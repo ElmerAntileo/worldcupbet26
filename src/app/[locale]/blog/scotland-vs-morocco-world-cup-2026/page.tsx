@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: "Morocco 1.70 · Draw 3.60 · Scotland 5.50. Group C — June 19 at Gillette Stadium, Boston. Morocco favourites after holding Brazil to a draw.",
     type: "article",
     url: postUrl("en"),
-    images: [{ url: `${base}/og.png`, width: 1200, height: 630 }],
+    images: [{ url: `${base}/og-scotland-morocco.png`, width: 1200, height: 675 }],
   },
   twitter: {
     card: "summary_large_image",

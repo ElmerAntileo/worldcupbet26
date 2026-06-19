@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: "Brazil 1.12 · Draw 9.00 · Haiti 20.00. Group C — June 19 at Lincoln Financial Field, Philadelphia. Brazil need goals after opening draw with Morocco.",
     type: "article",
     url: postUrl("en"),
-    images: [{ url: `${base}/og.png`, width: 1200, height: 630 }],
+    images: [{ url: `${base}/og-brazil-haiti.png`, width: 1200, height: 675 }],
   },
   twitter: {
     card: "summary_large_image",

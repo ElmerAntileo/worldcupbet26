@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: "USA 1.60 · Draw 3.40 · Australia 5.00. Group D — June 19 at Lumen Field, Seattle. Winner advances to knockouts. Expert betting tips.",
     type: "article",
     url: postUrl("en"),
-    images: [{ url: `${base}/og.png`, width: 1200, height: 630 }],
+    images: [{ url: `${base}/og-usa-australia.png`, width: 1200, height: 675 }],
   },
   twitter: {
     card: "summary_large_image",
