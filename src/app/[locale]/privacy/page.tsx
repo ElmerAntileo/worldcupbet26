@@ -32,7 +32,7 @@ export default function PrivacyPage() {
       <h2 className="text-xl font-bold mt-6 mb-3">Third Party Services</h2>
       <p className="mb-4">We use Vercel for hosting and The Odds API for live odds data. Please refer to their privacy policies for data handling information.</p>
       <h2 className="text-xl font-bold mt-6 mb-3">Contact</h2>
-      <p className="mb-4">For privacy questions contact: elmer.antileo@gmail.com</p>
+      <p className="mb-4">For privacy questions contact: contact@worldcupbet26.com</p>
     </div>
   );
 }
