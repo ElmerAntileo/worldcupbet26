@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     siteName: "WorldCupBet26",
     type: "website",
     locale: "en_US",
-    images: [{ url: "https://www.worldcupbet26.com/og-home.jpg", width: 1200, height: 630, alt: "World Cup 2026 Betting Odds Comparison" }],
+    images: [{ url: "https://www.worldcupbet26.com/og.png", width: 1200, height: 630, alt: "World Cup 2026 Betting Odds Comparison" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "World Cup 2026 Betting Sites — Best Odds, Bonuses & Tips ⚽",
     description: "FIFA World Cup 2026 is LIVE. Compare odds from 30+ bookmakers, claim bonuses up to €100 & expert tips for all 48 matches.",
-    images: ["https://www.worldcupbet26.com/og-home.jpg"],
+    images: ["https://www.worldcupbet26.com/og.png"],
   },
 };
 
