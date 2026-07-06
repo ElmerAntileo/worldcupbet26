@@ -35,6 +35,62 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "world-cup-2026-quarter-final-odds",
+    title: "World Cup 2026 Quarter-Final Odds, Predictions & Best Bets — July 8–9",
+    description: "All four quarter-finals on July 8–9 covered. Tournament winner odds, expert tips and where to get the best value. Argentina, France and England the top picks.",
+    tag: "Quarter-Finals",
+    hot: true,
+  },
+  {
+    slug: "france-quarter-final-world-cup-2026",
+    title: "France Quarter-Final World Cup 2026 — Odds, Tips & Prediction",
+    description: "France enter the QF as the #1 tournament favourites at 6.00. Mbappé, Griezmann and the deepest squad in the competition. Full QF betting preview and best odds.",
+    tag: "QF Preview",
+    hot: true,
+  },
+  {
+    slug: "argentina-quarter-final-world-cup-2026",
+    title: "Argentina Quarter-Final World Cup 2026 — Odds, Tips & Prediction",
+    description: "Reigning world champions Argentina in the quarter-finals. Messi's last World Cup campaign — expert betting tips, best odds at Betsson and 1xBet, and QF opponent analysis.",
+    tag: "QF Preview",
+    hot: true,
+  },
+  {
+    slug: "usa-quarter-final-world-cup-2026",
+    title: "USA Quarter-Final World Cup 2026 — Odds, Tips & Prediction | Host Nation",
+    description: "Can the USMNT reach the semi-finals on home soil? Full QF preview with host nation stats, Pulisic form guide, and best odds for US bettors on 1xBet.",
+    tag: "QF Preview",
+    hot: true,
+  },
+  {
+    slug: "argentina-vs-egypt-world-cup-2026",
+    title: "Argentina vs Egypt World Cup 2026 Odds, Tips & Prediction | Round of 16",
+    description: "Argentina face Egypt in the Round of 16 on July 7. Expert tip: Argentina Win & Over 2.5 Goals @ 2.10. Full odds comparison across Betsson and 1xBet.",
+    tag: "Round of 16",
+    hot: true,
+  },
+  {
+    slug: "switzerland-vs-colombia-world-cup-2026",
+    title: "Switzerland vs Colombia World Cup 2026 Odds, Tips & Prediction | Round of 16",
+    description: "Switzerland vs Colombia on July 7. Expert tip: Colombia to Win @ 3.60 — value bet angle. Full odds from Betsson and 1xBet.",
+    tag: "Round of 16",
+    hot: true,
+  },
+  {
+    slug: "portugal-vs-spain-world-cup-2026",
+    title: "Portugal vs Spain World Cup 2026 Odds, Tips & Prediction | Round of 16",
+    description: "The Iberian derby in the Round of 16. Expert tip: Over 2.5 Goals @ 1.75. Full odds from Betsson, 1xBet and Bet365.",
+    tag: "Round of 16",
+    hot: true,
+  },
+  {
+    slug: "usa-vs-belgium-world-cup-2026",
+    title: "USA vs Belgium World Cup 2026 Odds, Tips & Prediction | Round of 16",
+    description: "USA face Belgium in the Round of 16 on July 7. Expert tip: Belgium to Win @ 1.85. Full odds from Betsson and 1xBet.",
+    tag: "Round of 16",
+    hot: true,
+  },
+  {
     slug: "world-cup-2026-opening-day-tips",
     title: "World Cup 2026 Opening Day Betting Tips — June 11, 2026",
     description: "5 expert bets for World Cup 2026 opening day: Mexico @ 1.65, Canada @ 1.80, USA @ 1.75, Argentina -1.5 @ 2.15, and a co-host accumulator paying 5.20. Full analysis inside.",
