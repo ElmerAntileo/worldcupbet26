@@ -117,6 +117,24 @@ const bookmakers = [
 
 const featuredOdds = [
   {
+    match: 'Argentina vs Egypt',
+    date: 'Jul 7, 2026',
+    time: '12:00 ET',
+    home: { team: 'Argentina', odds: '1.22', flag: '🇦🇷' },
+    draw: { odds: '7.00' },
+    away: { team: 'Egypt', odds: '11.00', flag: '🇪🇬' },
+    group: 'Round of 16 — TODAY',
+  },
+  {
+    match: 'Switzerland vs Colombia',
+    date: 'Jul 7, 2026',
+    time: '16:00 ET',
+    home: { team: 'Switzerland', odds: '2.60', flag: '🇨🇭' },
+    draw: { odds: '3.10' },
+    away: { team: 'Colombia', odds: '2.70', flag: '🇨🇴' },
+    group: 'Round of 16 — TODAY',
+  },
+  {
     match: 'France vs Morocco',
     date: 'Jul 9, 2026',
     time: '16:00 ET',
@@ -124,24 +142,6 @@ const featuredOdds = [
     draw: { odds: '4.50' },
     away: { team: 'Morocco', odds: '6.50', flag: '🇲🇦' },
     group: 'Quarter-Final — THU',
-  },
-  {
-    match: 'Spain vs Belgium',
-    date: 'Jul 10, 2026',
-    time: '15:00 ET',
-    home: { team: 'Spain', odds: '1.90', flag: '🇪🇸' },
-    draw: { odds: '3.50' },
-    away: { team: 'Belgium', odds: '4.00', flag: '🇧🇪' },
-    group: 'Quarter-Final — FRI',
-  },
-  {
-    match: 'Norway vs England',
-    date: 'Jul 11, 2026',
-    time: '17:00 ET',
-    home: { team: 'Norway', odds: '3.60', flag: '🇳🇴' },
-    draw: { odds: '3.30' },
-    away: { team: 'England', odds: '2.00', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿' },
-    group: 'Quarter-Final — SAT',
   },
 ];
 
