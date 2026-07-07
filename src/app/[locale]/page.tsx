@@ -3,6 +3,8 @@ import CountdownTimer from '@/components/CountdownTimer';
 import Link from 'next/link';
 import Script from 'next/script';
 import { getLocale } from 'next-intl/server';
+import { cookies } from 'next/headers';
+import { BLOCKED_COUNTRIES_BETSSON, BETWAY_PRIORITY_COUNTRIES } from '@/lib/geoConstants';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -81,7 +83,7 @@ const bookmakers = [
     rating: 4.8,
     bonus: '100% Welcome Bonus up to €100',
     features: ['World Cup Specials', 'Live Streaming', 'Cash Out'],
-    url: 'https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/',
+    url: 'https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/',
     country: ['EU', 'NO', 'SE', 'FI', 'CA'],
   },
   {
@@ -108,38 +110,38 @@ const bookmakers = [
     rating: 4.6,
     bonus: '100% up to €100',
     features: ['World Cup Specials', 'Early Payout', 'Acca Insurance'],
-    url: 'https://betway.com',
+    url: '/api/redirect/betway',
     country: ['UK', 'DE', 'CA', 'ZA'],
   },
 ];
 
 const featuredOdds = [
   {
-    match: 'Mexico vs South Africa',
-    date: 'Jun 11, 2026',
-    time: '15:00 ET',
-    home: { team: 'Mexico', odds: '1.65', flag: '🇲🇽' },
-    draw: { odds: '3.70' },
-    away: { team: 'South Africa', odds: '5.50', flag: '🇿🇦' },
-    group: 'Group A — Opening Match',
+    match: 'Canada vs Morocco',
+    date: 'Jul 4, 2026',
+    time: '13:00 ET',
+    home: { team: 'Canada', odds: '2.80', flag: '🇨🇦' },
+    draw: { odds: '3.10' },
+    away: { team: 'Morocco', odds: '2.60', flag: '🇲🇦' },
+    group: 'Round of 16 — TODAY',
   },
   {
-    match: 'USA vs Paraguay',
-    date: 'Jun 12, 2026',
-    time: '21:00 ET',
-    home: { team: 'USA', odds: '1.75', flag: '🇺🇸' },
-    draw: { odds: '3.60' },
-    away: { team: 'Paraguay', odds: '5.00', flag: '🇵🇾' },
-    group: 'Group D',
+    match: 'Paraguay vs France',
+    date: 'Jul 4, 2026',
+    time: '17:00 ET',
+    home: { team: 'Paraguay', odds: '6.00', flag: '🇵🇾' },
+    draw: { odds: '4.20' },
+    away: { team: 'France', odds: '1.55', flag: '🇫🇷' },
+    group: 'Round of 16 — TONIGHT',
   },
   {
-    match: 'Spain vs Cape Verde',
-    date: 'Jun 15, 2026',
-    time: '18:00 ET',
-    home: { team: 'Spain', odds: '1.18', flag: '🇪🇸' },
-    draw: { odds: '7.00' },
-    away: { team: 'Cape Verde', odds: '16.00', flag: '🇨🇻' },
-    group: 'Group H',
+    match: 'Brazil vs Norway',
+    date: 'Jul 5, 2026',
+    time: '16:00 ET',
+    home: { team: 'Brazil', odds: '1.70', flag: '🇧🇷' },
+    draw: { odds: '3.50' },
+    away: { team: 'Norway', odds: '4.80', flag: '🇳🇴' },
+    group: 'Round of 16 — TOMORROW',
   },
 ];
 
@@ -219,6 +221,10 @@ const homeFaqSchema = {
 export default async function HomePage() {
   const locale = await getLocale();
   const isDE = locale === 'de';
+  const cookieStore = await cookies();
+  const geo = cookieStore.get('geo')?.value?.toUpperCase() ?? '';
+  const betssonBlocked = (BLOCKED_COUNTRIES_BETSSON as readonly string[]).includes(geo);
+  const betwayPriority = (BETWAY_PRIORITY_COUNTRIES as readonly string[]).includes(geo);
 
   // For German visitors: 1xBet available in DE; Betsson is geo-blocked — rank accordingly
   const displayBookmakers = isDE
@@ -231,30 +237,59 @@ export default async function HomePage() {
     <div style={{ background: 'var(--bg-base)', minHeight: '100vh', color: 'var(--foreground)' }}>
       <Script id="homepage-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      {/* ── BETSSON PROMO BANNER ── */}
+      {/* ── GEO-AWARE PROMO BANNER ── */}
       <div style={{
         background: 'linear-gradient(90deg, #071525 0%, #0a1e12 50%, #071525 100%)',
         borderBottom: '1px solid rgba(0,208,132,0.2)',
         padding: '10px 20px',
       }}>
         <div style={{ maxWidth: '960px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', flexWrap: 'wrap' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <span style={{ fontSize: '18px' }}>🏆</span>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
-              <span style={{ fontWeight: 800, fontSize: '13px', color: 'var(--foreground)' }}>Betsson</span>
-              <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '13px' }}>— 100% Bonus up to €100</span>
-              <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· World Cup 2026 specials</span>
-              {isDE && (
-                <span style={{ background: 'rgba(239,68,68,0.12)', border: '1px solid rgba(239,68,68,0.35)', color: '#f87171', borderRadius: '4px', padding: '1px 7px', fontSize: '10px', fontWeight: 600 }}>
-                  ⚠️ Möglicherweise in DE nicht verfügbar
-                </span>
-              )}
-            </div>
-          </div>
-          <a href="https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow sponsored"
-            style={{ background: 'linear-gradient(135deg,#ef4444,#dc2626)', color: 'white', padding: '8px 20px', borderRadius: '7px', fontWeight: 800, fontSize: '12px', textDecoration: 'none', whiteSpace: 'nowrap', boxShadow: '0 3px 10px rgba(239,68,68,0.3)' }} data-affiliate="Betsson">
-            Claim Bonus →
-          </a>
+          {betwayPriority ? (
+            <>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{ fontSize: '18px' }}>⚡</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
+                  <span style={{ fontWeight: 800, fontSize: '13px', color: 'var(--foreground)' }}>Betway</span>
+                  <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '13px' }}>— 100% Sports Welcome Bonus</span>
+                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· World Cup Quarter-Finals · Licensed in your region</span>
+                </div>
+              </div>
+              <a href="/api/redirect/betway" target="_blank" rel="noopener noreferrer nofollow sponsored"
+                style={{ background: 'linear-gradient(135deg,#00a651,#007a3c)', color: 'white', padding: '8px 20px', borderRadius: '7px', fontWeight: 800, fontSize: '12px', textDecoration: 'none', whiteSpace: 'nowrap', boxShadow: '0 3px 10px rgba(0,166,81,0.35)' }} data-affiliate="Betway">
+                Claim Bonus →
+              </a>
+            </>
+          ) : betssonBlocked ? (
+            <>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{ fontSize: '18px' }}>🎯</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
+                  <span style={{ fontWeight: 800, fontSize: '13px', color: 'var(--foreground)' }}>1xBet</span>
+                  <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '13px' }}>— 100% Bonus up to €100</span>
+                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· Round of 16 NOW LIVE · 200+ markets per match</span>
+                </div>
+              </div>
+              <a href="https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" target="_blank" rel="noopener noreferrer nofollow sponsored"
+                style={{ background: 'linear-gradient(135deg,#00d084,#00b870)', color: '#040c18', padding: '8px 20px', borderRadius: '7px', fontWeight: 800, fontSize: '12px', textDecoration: 'none', whiteSpace: 'nowrap', boxShadow: '0 3px 10px rgba(0,208,132,0.35)' }} data-affiliate="1xBet">
+                Claim Bonus →
+              </a>
+            </>
+          ) : (
+            <>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{ fontSize: '18px' }}>🏆</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
+                  <span style={{ fontWeight: 800, fontSize: '13px', color: 'var(--foreground)' }}>Betsson</span>
+                  <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '13px' }}>— 100% Bonus up to €100</span>
+                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· Round of 16 NOW LIVE · Final Jul 19</span>
+                </div>
+              </div>
+              <a href={isDE ? 'https://www.betsson.com/de/sport?affcode=AE3051334481&utm_medium=Affiliate&utm_source=10700602' : 'https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/'} target="_blank" rel="noopener noreferrer nofollow sponsored"
+                style={{ background: 'linear-gradient(135deg,#ef4444,#dc2626)', color: 'white', padding: '8px 20px', borderRadius: '7px', fontWeight: 800, fontSize: '12px', textDecoration: 'none', whiteSpace: 'nowrap', boxShadow: '0 3px 10px rgba(239,68,68,0.3)' }} data-affiliate="Betsson">
+                Claim Bonus →
+              </a>
+            </>
+          )}
         </div>
       </div>
 
@@ -330,7 +365,7 @@ export default async function HomePage() {
           <CountdownTimer />
 
           <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap', marginTop: '32px' }}>
-            <a href="https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow sponsored" style={{ background: 'linear-gradient(135deg, #ef4444, #dc2626)', color: 'white', padding: '15px 36px', fontSize: '15px', borderRadius: '9px', fontWeight: 800, textDecoration: 'none', boxShadow: '0 4px 12px rgba(239,68,68,0.3)' }}>
+            <a href="https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow sponsored" style={{ background: 'linear-gradient(135deg, #ef4444, #dc2626)', color: 'white', padding: '15px 36px', fontSize: '15px', borderRadius: '9px', fontWeight: 800, textDecoration: 'none', boxShadow: '0 4px 12px rgba(239,68,68,0.3)' }}>
               🎁 Claim €100 Bonus
             </a>
             <Link href="/world-cup-2026-matches" className="btn-outline" style={{ padding: '15px 36px', fontSize: '15px', borderRadius: '9px' }}>

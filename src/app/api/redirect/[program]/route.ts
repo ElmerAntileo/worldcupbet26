@@ -5,7 +5,8 @@ import { NextRequest, NextResponse } from 'next/server';
 // Using global alternatives instead
 const DEFAULT_AFFILIATE_LINKS: Record<string, string> = {
   '1xbet': 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97',
-  'betsson': 'https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/',
+  'betsson': 'https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/',
+  'betway': 'https://betway.com/bwp/bet10get60?s=sp52697', // ROW fallback (World Cup landing)
   'pinnacle': 'https://www.pinnacle.com',
   'betfair': 'https://www.betfair.com/exchange/football',
   'intertops': 'https://www.intertops.com',
@@ -13,6 +14,19 @@ const DEFAULT_AFFILIATE_LINKS: Record<string, string> = {
   'alfaleads': 'https://alfaleads.com',
   'clickdealer': 'https://clickdealer.com',
   'pmaff': 'https://pmaff.com',
+};
+
+// German market: betsson.com/de with affiliate tracking via affcode parameter
+// Germany is our #1 Betsson traffic source (36% of clicks) but converts 0 on the ROW English link
+const BETSSON_DE = 'https://www.betsson.com/de/sport?affcode=AE3051334481&utm_medium=Affiliate&utm_source=10700602';
+
+// Betway geo-specific links via Super Partners (sp52697)
+const BETWAY_LINKS: Record<string, string> = {
+  GB: 'https://betway.com/bwp/bet10get60?s=sp52697',          // UK — World Cup landing
+  ES: 'https://betway.es/bwp/sports-welcome/es-es/?s=sp52697',  // Spain — local license
+  DE: 'https://betway.de/bwp/sports-100-welcome-bonus/de-de/?s=sp52697', // Germany
+  CA: 'https://betway.ca/bwp/welcome-sports-on-300-50/en-ca/?s=sp52697', // Canada (Ontario)
+  MX: 'https://betway.mx/bwp/sports-welcome-2022-1/es-mx/?s=sp52697',    // Mexico
 };
 
 // Note: The actual proxy services are defined in /api/proxy/[...slug]/route.ts
@@ -24,8 +38,16 @@ export async function GET(
 ) {
   try {
     const program = params.program.toLowerCase();
-    // Use default link (can be overridden on client-side via localStorage)
-    const affiliateLink = DEFAULT_AFFILIATE_LINKS[program];
+
+    // GEO-based routing: serve German Betsson page for DE users
+    const geo = request.cookies.get('geo')?.value?.toUpperCase() ?? '';
+    let affiliateLink = DEFAULT_AFFILIATE_LINKS[program];
+    if (program === 'betsson' && geo === 'DE') {
+      affiliateLink = BETSSON_DE;
+    }
+    if (program === 'betway' && BETWAY_LINKS[geo]) {
+      affiliateLink = BETWAY_LINKS[geo];
+    }
 
     if (!affiliateLink) {
       return NextResponse.json(

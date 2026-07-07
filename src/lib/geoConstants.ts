@@ -36,3 +36,33 @@ export const RESTRICTED_COUNTRIES_1XBET: readonly string[] = [
   'SK', // Slovakia
   'SI', // Slovenia
 ] as const;
+
+/**
+ * Countries where Betsson's ROW affiliate link is blocked or geo-restricted.
+ * Users from these countries should NOT be shown Betsson CTAs — they will hit
+ * a country-blocked page and never convert.
+ */
+export const BLOCKED_COUNTRIES_BETSSON: readonly string[] = [
+  'US', // United States — fully blocked
+  'CA', // Canada — fully blocked
+  'AU', // Australia — fully blocked
+  'GB', // UK — separate license, ROW link doesn't apply
+  'FR', // France — separate license
+  'IL', // Israel — blocked
+  'GH', // Ghana — blocked
+  'NG', // Nigeria — blocked
+] as const;
+
+/**
+ * Countries where Betway operates a locally licensed brand via Super Partners.
+ * Visitors from these countries should be shown Betway as primary CTA since
+ * both Betsson ROW and/or 1xBet may be restricted.
+ * Links route through /api/redirect/betway which geo-selects the right brand.
+ */
+export const BETWAY_PRIORITY_COUNTRIES: readonly string[] = [
+  'GB', // UK — betway.com/bwp/bet10get60 (World Cup page); 1xBet & Betsson both unavailable
+  'ES', // Spain — betway.es; 1xBet restricted, Betsson partially blocked
+  'CA', // Canada — betway.ca (Ontario market); Betsson fully blocked
+  'MX', // Mexico — betway.mx; adds a licensed local alternative
+  'DE', // Germany — betway.de; 1xBet restricted, Betway DE adds local licensed option
+] as const;
