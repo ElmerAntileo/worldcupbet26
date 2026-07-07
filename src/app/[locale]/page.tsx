@@ -117,31 +117,31 @@ const bookmakers = [
 
 const featuredOdds = [
   {
-    match: 'France vs England',
-    date: 'Jul 8, 2026',
-    time: '15:00 ET',
-    home: { team: 'France', odds: '1.80', flag: '🇫🇷' },
-    draw: { odds: '3.80' },
-    away: { team: 'England', odds: '4.20', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿' },
-    group: 'Quarter-Final — TOMORROW',
-  },
-  {
-    match: 'Argentina vs Germany',
-    date: 'Jul 8, 2026',
-    time: '19:00 ET',
-    home: { team: 'Argentina', odds: '2.10', flag: '🇦🇷' },
-    draw: { odds: '3.40' },
-    away: { team: 'Germany', odds: '3.30', flag: '🇩🇪' },
-    group: 'Quarter-Final — TOMORROW',
-  },
-  {
-    match: 'Belgium vs Brazil',
+    match: 'France vs Morocco',
     date: 'Jul 9, 2026',
+    time: '16:00 ET',
+    home: { team: 'France', odds: '1.45', flag: '🇫🇷' },
+    draw: { odds: '4.50' },
+    away: { team: 'Morocco', odds: '6.50', flag: '🇲🇦' },
+    group: 'Quarter-Final — THU',
+  },
+  {
+    match: 'Spain vs Belgium',
+    date: 'Jul 10, 2026',
     time: '15:00 ET',
-    home: { team: 'Belgium', odds: '3.10', flag: '🇧🇪' },
-    draw: { odds: '3.25' },
-    away: { team: 'Brazil', odds: '2.20', flag: '🇧🇷' },
-    group: 'Quarter-Final — WED',
+    home: { team: 'Spain', odds: '1.90', flag: '🇪🇸' },
+    draw: { odds: '3.50' },
+    away: { team: 'Belgium', odds: '4.00', flag: '🇧🇪' },
+    group: 'Quarter-Final — FRI',
+  },
+  {
+    match: 'Norway vs England',
+    date: 'Jul 11, 2026',
+    time: '17:00 ET',
+    home: { team: 'Norway', odds: '3.60', flag: '🇳🇴' },
+    draw: { odds: '3.30' },
+    away: { team: 'England', odds: '2.00', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿' },
+    group: 'Quarter-Final — SAT',
   },
 ];
 
@@ -628,9 +628,9 @@ export default async function HomePage() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '14px' }}>
             {[
-              { tag: 'QF Preview', title: 'France vs England — Quarter-Final Odds & Tip', slug: 'france-vs-england-world-cup-2026', desc: 'France favoured at 1.80. Expert tip: France Win & Under 2.5 Goals @ 2.60. Jul 8.', hot: true },
-              { tag: 'QF Preview', title: 'Argentina vs Germany — Quarter-Final Odds & Tip', slug: 'argentina-vs-germany-world-cup-2026', desc: 'Reigning champions vs the giants. Expert tip: Argentina Win @ 2.10. Jul 8.', hot: true },
-              { tag: 'QF Preview', title: 'Spain vs Portugal — The Iberian Derby Odds & Tip', slug: 'spain-vs-portugal-world-cup-2026', desc: "Yamal vs Leão — the duel of the tournament. Expert tip: Over 2.5 Goals @ 1.95. Jul 9.", hot: true },
+              { tag: 'QF Preview', title: 'France vs Morocco — Quarter-Final Odds & Tip', slug: 'france-vs-morocco-world-cup-2026', desc: 'France 1.45 favourites. Repeat of 2022 semi-final. Expert tip: France Win & Under 2.5 @ 2.20. Jul 9.', hot: true },
+              { tag: 'QF Preview', title: 'Spain vs Belgium — Quarter-Final Odds & Tip', slug: 'spain-vs-belgium-world-cup-2026', desc: 'Spain 1.90 favourites in Los Angeles. Belgium beat USA 4-1. Expert tip: Spain Win @ 1.90. Jul 10.', hot: true },
+              { tag: 'QF Preview', title: 'Norway vs England — Quarter-Final Odds & Tip', slug: 'norway-vs-england-world-cup-2026', desc: 'Haaland vs Kane. England 2.00 favourites. Expert tip: England Win @ 2.00. Jul 11.', hot: true },
             ].map((a) => (
               <Link key={a.slug} href={`/blog/${a.slug}`} style={{ textDecoration: 'none' }}>
                 <div className="card" style={{ padding: '22px', borderRadius: '14px', height: '100%', cursor: 'pointer' }}>

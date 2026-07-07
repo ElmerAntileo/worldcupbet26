@@ -8,8 +8,8 @@ const BETSSON_DE  = 'https://www.betsson.com/de/sport?affcode=AE3051334481&utm_m
 const ONEXBET_URL = 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97';
 const BETWAY_URL  = '/api/redirect/betway';
 
-// France vs England QF odds — Jul 8
-const QF_HOME = "1.80"; const QF_DRAW = "3.80"; const QF_AWAY = "4.20";
+// France vs Morocco QF odds — Jul 9
+const QF_HOME = "1.45"; const QF_DRAW = "4.50"; const QF_AWAY = "6.50";
 
 export default function StickyOddsBar() {
   const { countryCode } = useGeo();
@@ -65,9 +65,9 @@ export default function StickyOddsBar() {
           }} />
           <span style={{ fontSize: "11px", fontWeight: 700, color: "var(--hot)", letterSpacing: "0.08em" }}>LIVE</span>
           <span style={{ fontSize: "11px", fontWeight: 600, color: "var(--muted-light)", whiteSpace: "nowrap" }}>
-            🇫🇷 France vs England 🏴󠁧󠁢󠁥󠁮󠁧󠁿
+            🇫🇷 France vs Morocco 🇲🇦
           </span>
-          <span style={{ fontSize: "10px", color: "var(--muted)", whiteSpace: "nowrap" }}>· QF · Jul 8 · 21:00 CEST</span>
+          <span style={{ fontSize: "10px", color: "var(--muted)", whiteSpace: "nowrap" }}>· QF · Jul 9 · 22:00 CEST</span>
         </div>
 
         {/* Affiliate bookmakers (both with CTA buttons) */}
