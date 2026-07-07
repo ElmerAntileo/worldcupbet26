@@ -451,6 +451,31 @@ export default async function HomePage() {
                     <div className="odds-badge" style={{ display: 'inline-block', minWidth: '68px', textAlign: 'center', fontSize: '1.1rem' }}>{m.away.odds}</div>
                   </div>
                 </div>
+                {/* BET NOW row */}
+                <div style={{ marginTop: '18px', display: 'flex', gap: '10px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                  {betwayPriority ? (
+                    <a href="/api/redirect/betway" target="_blank" rel="noopener noreferrer nofollow sponsored"
+                      style={{ background: 'linear-gradient(135deg,#00a651,#007a3c)', color: 'white', padding: '11px 28px', borderRadius: '8px', fontWeight: 800, fontSize: '13px', textDecoration: 'none', boxShadow: '0 4px 12px rgba(0,166,81,0.3)' }}>
+                      ⚡ Bet Now at Betway
+                    </a>
+                  ) : betssonBlocked ? (
+                    <a href="https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" target="_blank" rel="noopener noreferrer nofollow sponsored"
+                      style={{ background: 'linear-gradient(135deg,#00d084,#00b870)', color: '#040c18', padding: '11px 28px', borderRadius: '8px', fontWeight: 800, fontSize: '13px', textDecoration: 'none', boxShadow: '0 4px 12px rgba(0,208,132,0.3)' }}>
+                      🎯 Bet Now at 1xBet
+                    </a>
+                  ) : (
+                    <>
+                      <a href="https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow sponsored"
+                        style={{ background: 'linear-gradient(135deg,#ef4444,#dc2626)', color: 'white', padding: '11px 28px', borderRadius: '8px', fontWeight: 800, fontSize: '13px', textDecoration: 'none', boxShadow: '0 4px 12px rgba(239,68,68,0.3)' }}>
+                        🏆 Bet at Betsson
+                      </a>
+                      <a href="https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" target="_blank" rel="noopener noreferrer nofollow sponsored"
+                        style={{ background: 'rgba(255,255,255,0.06)', color: 'var(--accent)', border: '1px solid rgba(0,208,132,0.3)', padding: '11px 22px', borderRadius: '8px', fontWeight: 700, fontSize: '13px', textDecoration: 'none' }}>
+                        1xBet →
+                      </a>
+                    </>
+                  )}
+                </div>
               </div>
             ))}
           </div>
@@ -603,9 +628,9 @@ export default async function HomePage() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '14px' }}>
             {[
-              { tag: 'Odds Guide', title: 'Best World Cup 2026 Betting Odds', slug: 'best-world-cup-2026-betting-odds', desc: 'Compare odds across 30+ bookmakers and find maximum value on every group stage match.', hot: true },
-              { tag: 'Preview', title: 'Group Stage Preview 2026', slug: 'group-stage-preview', desc: 'Complete breakdown of all 8 groups with predictions and value bets.' },
-              { tag: 'Guide', title: 'How to Bet on the World Cup', slug: 'how-to-bet-world-cup', desc: "A beginner's guide to betting on the 2026 World Cup safely and smartly." },
+              { tag: 'QF Preview', title: 'France vs England — Quarter-Final Odds & Tip', slug: 'france-vs-england-world-cup-2026', desc: 'France favoured at 1.80. Expert tip: France Win & Under 2.5 Goals @ 2.60. Jul 8.', hot: true },
+              { tag: 'QF Preview', title: 'Argentina vs Germany — Quarter-Final Odds & Tip', slug: 'argentina-vs-germany-world-cup-2026', desc: 'Reigning champions vs the giants. Expert tip: Argentina Win @ 2.10. Jul 8.', hot: true },
+              { tag: 'QF Preview', title: 'Spain vs Portugal — The Iberian Derby Odds & Tip', slug: 'spain-vs-portugal-world-cup-2026', desc: "Yamal vs Leão — the duel of the tournament. Expert tip: Over 2.5 Goals @ 1.95. Jul 9.", hot: true },
             ].map((a) => (
               <Link key={a.slug} href={`/blog/${a.slug}`} style={{ textDecoration: 'none' }}>
                 <div className="card" style={{ padding: '22px', borderRadius: '14px', height: '100%', cursor: 'pointer' }}>
