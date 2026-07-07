@@ -35,6 +35,34 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "france-vs-england-world-cup-2026",
+    title: "France vs England World Cup 2026 Odds, Tips & Prediction | Quarter-Final",
+    description: "France vs England QF on July 8. France favoured at 1.80. Expert tip: France Win & Under 2.5 Goals @ 2.60. Full odds from Betsson, 1xBet and Betway.",
+    tag: "QF Preview",
+    hot: true,
+  },
+  {
+    slug: "argentina-vs-germany-world-cup-2026",
+    title: "Argentina vs Germany World Cup 2026 Odds, Tips & Prediction | Quarter-Final",
+    description: "The champions vs the giants. Argentina 2.10 to retain their title. Expert tip: Argentina to Win @ 2.10. Full odds from Betsson, 1xBet and Betway.",
+    tag: "QF Preview",
+    hot: true,
+  },
+  {
+    slug: "belgium-vs-brazil-world-cup-2026",
+    title: "Belgium vs Brazil World Cup 2026 Odds, Tips & Prediction | Quarter-Final",
+    description: "Belgium vs Brazil QF on July 9. Brazil favoured at 2.20. Expert tip: Brazil Win @ 2.20. Vinícius Júnior vs the Golden Generation. Full odds inside.",
+    tag: "QF Preview",
+    hot: true,
+  },
+  {
+    slug: "spain-vs-portugal-world-cup-2026",
+    title: "Spain vs Portugal World Cup 2026 Odds, Tips & Prediction | Quarter-Final",
+    description: "The Iberian derby. Spain 2.40 vs Portugal 2.90. Expert tip: Over 2.5 Goals @ 1.95. Yamal vs Leão — the duel of the tournament. Full odds from Betsson, 1xBet and Betway.",
+    tag: "QF Preview",
+    hot: true,
+  },
+  {
     slug: "world-cup-2026-quarter-final-odds",
     title: "World Cup 2026 Quarter-Final Odds, Predictions & Best Bets — July 8–9",
     description: "All four quarter-finals on July 8–9 covered. Tournament winner odds, expert tips and where to get the best value. Argentina, France and England the top picks.",
