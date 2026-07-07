@@ -272,7 +272,7 @@ export default function ArgentinaEgyptPage() {
         <div style={{ marginTop: "2.5rem", paddingTop: "1.5rem", borderTop: "1px solid var(--card-border)" }}>
           <h3 style={{ fontSize: "14px", fontWeight: 700, color: "var(--muted)", marginBottom: "12px" }}>MORE WORLD CUP 2026 BETTING GUIDES</h3>
           <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-            [
+            {[
               { href: "/blog/argentina-quarter-final-world-cup-2026", label: "Argentina Quarter-Final Preview" },
               { href: "/blog/world-cup-2026-quarter-final-odds", label: "All QF Odds & Tips" },
               { href: "/blog/switzerland-vs-colombia-world-cup-2026", label: "Switzerland vs Colombia R16" },
