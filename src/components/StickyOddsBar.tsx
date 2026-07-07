@@ -1,14 +1,30 @@
 "use client";
 
 import { useGeo } from '@/hooks/useGeo';
+import { BLOCKED_COUNTRIES_BETSSON, BETWAY_PRIORITY_COUNTRIES } from '@/lib/geoConstants';
 
-const AFFILIATE_BOOKMAKERS = [
-  { name: "Betsson", logo: "🏆", home: "1.95", draw: "3.30", away: "3.80", url: "https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/", isAffiliate: true },
-  { name: "1xBet",   logo: "🎯", home: "2.00", draw: "3.25", away: "3.70", url: "https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97", isAffiliate: true },
-];
+const BETSSON_ROW = 'https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/';
+const BETSSON_DE  = 'https://www.betsson.com/de/sport?affcode=AE3051334481&utm_medium=Affiliate&utm_source=10700602';
+const ONEXBET_URL = 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97';
+const BETWAY_URL  = '/api/redirect/betway';
+
+// France vs England QF odds — Jul 8
+const QF_HOME = "1.80"; const QF_DRAW = "3.80"; const QF_AWAY = "4.20";
 
 export default function StickyOddsBar() {
-  useGeo();
+  const { countryCode } = useGeo();
+  const betssonBlocked = countryCode !== null && (BLOCKED_COUNTRIES_BETSSON as readonly string[]).includes(countryCode);
+  const betwayPriority = countryCode !== null && (BETWAY_PRIORITY_COUNTRIES as readonly string[]).includes(countryCode);
+  const betssonUrl = countryCode === 'DE' ? BETSSON_DE : BETSSON_ROW;
+
+  const AFFILIATE_BOOKMAKERS = betwayPriority
+    ? [{ name: "Betway", logo: "⚡", home: QF_HOME, draw: QF_DRAW, away: QF_AWAY, url: BETWAY_URL, isAffiliate: true }]
+    : betssonBlocked
+    ? [{ name: "1xBet", logo: "🎯", home: QF_HOME, draw: QF_DRAW, away: QF_AWAY, url: ONEXBET_URL, isAffiliate: true }]
+    : [
+        { name: "Betsson", logo: "🏆", home: QF_HOME, draw: QF_DRAW, away: QF_AWAY, url: betssonUrl, isAffiliate: true },
+        { name: "1xBet",   logo: "🎯", home: "1.85", draw: "3.75", away: "4.10",   url: ONEXBET_URL, isAffiliate: true },
+      ];
 
   return (
     <div style={{
@@ -49,9 +65,9 @@ export default function StickyOddsBar() {
           }} />
           <span style={{ fontSize: "11px", fontWeight: 700, color: "var(--hot)", letterSpacing: "0.08em" }}>LIVE</span>
           <span style={{ fontSize: "11px", fontWeight: 600, color: "var(--muted-light)", whiteSpace: "nowrap" }}>
-            🇲🇽 Mexico vs South Korea 🇰🇷
+            🇫🇷 France vs England 🏴󠁧󠁢󠁥󠁮󠁧󠁿
           </span>
-          <span style={{ fontSize: "10px", color: "var(--muted)", whiteSpace: "nowrap" }}>· Jun 18</span>
+          <span style={{ fontSize: "10px", color: "var(--muted)", whiteSpace: "nowrap" }}>· QF · Jul 8 · 21:00 CEST</span>
         </div>
 
         {/* Affiliate bookmakers (both with CTA buttons) */}
@@ -107,7 +123,7 @@ export default function StickyOddsBar() {
                 boxShadow: "0 2px 8px rgba(0,208,132,0.25)",
               }}
             >
-              {bk.name === '1xBet' ? 'Bet with 1xBet →' : 'Bet →'}
+              {bk.name === '1xBet' ? 'Bet with 1xBet →' : bk.name === 'Betway' ? 'Bet with Betway →' : 'Bet →'}
             </a>
           </div>
         ))}
