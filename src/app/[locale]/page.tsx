@@ -117,38 +117,38 @@ const bookmakers = [
 
 const featuredOdds = [
   {
-    match: 'Canada vs Morocco',
-    date: 'Jul 4, 2026',
-    time: '13:00 ET',
-    home: { team: 'Canada', odds: '2.80', flag: '🇨🇦' },
-    draw: { odds: '3.10' },
-    away: { team: 'Morocco', odds: '2.60', flag: '🇲🇦' },
-    group: 'Round of 16 — TODAY',
+    match: 'France vs England',
+    date: 'Jul 8, 2026',
+    time: '15:00 ET',
+    home: { team: 'France', odds: '1.80', flag: '🇫🇷' },
+    draw: { odds: '3.80' },
+    away: { team: 'England', odds: '4.20', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿' },
+    group: 'Quarter-Final — TOMORROW',
   },
   {
-    match: 'Paraguay vs France',
-    date: 'Jul 4, 2026',
-    time: '17:00 ET',
-    home: { team: 'Paraguay', odds: '6.00', flag: '🇵🇾' },
-    draw: { odds: '4.20' },
-    away: { team: 'France', odds: '1.55', flag: '🇫🇷' },
-    group: 'Round of 16 — TONIGHT',
+    match: 'Argentina vs Germany',
+    date: 'Jul 8, 2026',
+    time: '19:00 ET',
+    home: { team: 'Argentina', odds: '2.10', flag: '🇦🇷' },
+    draw: { odds: '3.40' },
+    away: { team: 'Germany', odds: '3.30', flag: '🇩🇪' },
+    group: 'Quarter-Final — TOMORROW',
   },
   {
-    match: 'Brazil vs Norway',
-    date: 'Jul 5, 2026',
-    time: '16:00 ET',
-    home: { team: 'Brazil', odds: '1.70', flag: '🇧🇷' },
-    draw: { odds: '3.50' },
-    away: { team: 'Norway', odds: '4.80', flag: '🇳🇴' },
-    group: 'Round of 16 — TOMORROW',
+    match: 'Belgium vs Brazil',
+    date: 'Jul 9, 2026',
+    time: '15:00 ET',
+    home: { team: 'Belgium', odds: '3.10', flag: '🇧🇪' },
+    draw: { odds: '3.25' },
+    away: { team: 'Brazil', odds: '2.20', flag: '🇧🇷' },
+    group: 'Quarter-Final — WED',
   },
 ];
 
 const homeFaqs = [
   {
     q: "Who is the favourite to win the 2026 World Cup?",
-    a: "Spain are the current market favourite at 5.75 with Betsson, boosted by back-to-back Euro 2024 and Nations League titles. France (6.00) are second, followed by England (7.50), Brazil (9.50) and Argentina (10.00). Spain's draw into Group H is the softest among the heavyweights, which may see their odds shorten further before June 11.",
+    a: "With the Quarter-Finals set for July 8–9, France are the narrow tournament favourites at 3.50 with Betsson after their dominant run to the last eight. Argentina (4.00) are second, Brazil (4.50) third and England (6.00) fourth. Germany have drifted to 9.00 after a nervy R16 win. Compare current outright odds across Betsson and 1xBet on our odds page.",
   },
   {
     q: "When does the 2026 FIFA World Cup start?",
@@ -172,7 +172,7 @@ const homeFaqs = [
   },
   {
     q: "What is the best value bet for World Cup 2026?",
-    a: "Our analysts rate France (6.00) as the best value tournament winner — Mbappé at peak, the deepest squad in the tournament and the experience of two consecutive Finals. For dark horse value, Germany (10.00) and Morocco (45.00) stand out. Morocco reached the 2022 semi-finals as huge outsiders and have retained much of that squad.",
+    a: "At the Quarter-Final stage our analysts favour Argentina (4.00) as the best remaining value — Messi driving the reigning champions looks underpriced given their defensive record. Germany at 9.00 also stands out as a dark horse with momentum. For match betting, France vs England has the tournament's biggest clash potential and both clubs are priced competitively by Betsson and 1xBet.",
   },
   {
     q: "Can I get a welcome bonus for World Cup betting?",
@@ -192,7 +192,7 @@ const homeFaqs = [
   },
   {
     q: "Who will win the World Cup 2026?",
-    a: "According to current betting odds, Spain are favourites to win the 2026 FIFA World Cup at 5.75 (implied probability ~17%). France are second at 6.00, England third at 7.50, Brazil fourth at 9.50 and Argentina fifth at 10.00. Spain are boosted by back-to-back Euro 2024 and Nations League 2025 titles. France are considered best value by our analysts at 6.00 given Mbappé's form and squad depth.",
+    a: "Four Quarter-Finals remain on July 8–9 with the tournament's best teams still standing. France lead the market at 3.50, Argentina sit at 4.00, Brazil at 4.50 and England at 6.00. Belgium and Germany are outsiders at 12.00+. Our analysts tip France vs Argentina as the most likely semi-final, with France narrowly favoured to lift the trophy on July 19 at MetLife Stadium.",
   },
   {
     q: "What is the World Cup 2026 schedule?",
@@ -251,7 +251,7 @@ export default async function HomePage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
                   <span style={{ fontWeight: 800, fontSize: '13px', color: 'var(--foreground)' }}>Betway</span>
                   <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '13px' }}>— 100% Sports Welcome Bonus</span>
-                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· World Cup Quarter-Finals · Licensed in your region</span>
+                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· Quarter-Finals Jul 8–9 · Licensed in your region</span>
                 </div>
               </div>
               <a href="/api/redirect/betway" target="_blank" rel="noopener noreferrer nofollow sponsored"
@@ -266,7 +266,7 @@ export default async function HomePage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
                   <span style={{ fontWeight: 800, fontSize: '13px', color: 'var(--foreground)' }}>1xBet</span>
                   <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '13px' }}>— 100% Bonus up to €100</span>
-                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· Round of 16 NOW LIVE · 200+ markets per match</span>
+                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· Quarter-Finals NOW LIVE · 200+ markets per match</span>
                 </div>
               </div>
               <a href="https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" target="_blank" rel="noopener noreferrer nofollow sponsored"
@@ -281,7 +281,7 @@ export default async function HomePage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
                   <span style={{ fontWeight: 800, fontSize: '13px', color: 'var(--foreground)' }}>Betsson</span>
                   <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '13px' }}>— 100% Bonus up to €100</span>
-                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· Round of 16 NOW LIVE · Final Jul 19</span>
+                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· Quarter-Finals NOW LIVE · Final Jul 19</span>
                 </div>
               </div>
               <a href={isDE ? 'https://www.betsson.com/de/sport?affcode=AE3051334481&utm_medium=Affiliate&utm_source=10700602' : 'https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/'} target="_blank" rel="noopener noreferrer nofollow sponsored"
