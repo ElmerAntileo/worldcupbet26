@@ -74,6 +74,11 @@ export default function NorwayEnglandQF() {
         </div>
         <div style={{ fontSize: "11px", color: "var(--muted)", marginTop: "10px" }}>18+ | T&Cs apply | Gamble Responsibly</div>
       </div>
+      <div style={{ background: "rgba(0,208,132,0.06)", border: "1px solid rgba(0,208,132,0.15)", borderRadius: "10px", padding: "1rem", marginBottom: "1rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "12px" }}>
+        <div style={{ fontSize: "0.875rem", fontWeight: 700 }}>🇬🇧 New to Betway? <span style={{ color: "var(--muted)", fontWeight: 400 }}>Bet £10 Get £60 in Free Bets</span></div>
+        <a href="/api/redirect/betway" target="_blank" rel="noopener noreferrer nofollow sponsored" style={{ background: "linear-gradient(135deg,#00d084,#00b870)", color: "#040c18", padding: "8px 20px", borderRadius: "6px", fontWeight: 800, textDecoration: "none", fontSize: "0.85rem", whiteSpace: "nowrap" }}>Claim Offer →</a>
+      </div>
+      <Link href="/blog/betway-welcome-offer-world-cup-2026" style={{ color: "var(--accent)", textDecoration: "none", fontSize: "0.875rem", fontWeight: 600, display: "block", marginBottom: "0.75rem" }}>→ Betway Welcome Offer: Bet £10 Get £60 in Free Bets</Link>
       <Link href="/blog" style={{ color: "var(--accent)", textDecoration: "none", fontSize: "0.9rem", fontWeight: 600 }}>← All Quarter-Final previews</Link>
     </div>
   );

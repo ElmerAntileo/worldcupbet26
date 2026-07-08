@@ -35,6 +35,13 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "betway-welcome-offer-world-cup-2026",
+    title: "Betway Welcome Offer 2026: Bet £10 Get £60 in Free Bets — World Cup",
+    description: "New Betway customers get £60 in Free Bets on the World Cup quarter-finals. Step-by-step claim guide, key T&Cs and expert tips for France vs Morocco, Spain vs Belgium and Norway vs England.",
+    tag: "Betway Bonus",
+    hot: true,
+  },
+  {
     slug: "france-vs-morocco-world-cup-2026",
     title: "France vs Morocco World Cup 2026 Odds, Tips & Prediction | Quarter-Final",
     description: "France vs Morocco QF on July 9 in Boston. France favoured at 1.45. Expert tip: France Win & Under 2.5 Goals @ 2.20. Repeat of the 2022 semi-final.",
