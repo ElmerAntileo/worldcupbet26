@@ -10,7 +10,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: "World Cup 2026 Betting Sites — Best Odds, Bonuses & Tips ⚽",
   description:
-    "FIFA World Cup 2026 QF TONIGHT: Norway vs England (3.60/3.30/2.00) + Argentina vs Switzerland (1.80/3.60/4.20). France & Spain into semis. France vs Spain SF Jul 14 Dallas. Best odds from Betsson, 1xBet & Betway.",
+    "FIFA World Cup 2026 QF4 TONIGHT: Argentina vs Switzerland (1.80/3.60/4.20). Messi vs Switzerland — 21:00 ET Kansas City. France vs Spain SF1 Jul 14 Dallas. Best odds from 1xBet, Betway & Betsson.",
   alternates: {
     canonical: "https://www.worldcupbet26.com/",
     languages: {
@@ -117,17 +117,8 @@ const bookmakers = [
 
 const featuredOdds = [
   {
-    match: 'Norway vs England',
-    date: 'Jul 11, 2026',
-    time: '17:00 ET',
-    home: { team: 'Norway', odds: '3.60', flag: '🇳🇴' },
-    draw: { odds: '3.30' },
-    away: { team: 'England', odds: '2.00', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿' },
-    group: 'Quarter-Final — TONIGHT',
-  },
-  {
     match: 'Argentina vs Switzerland',
-    date: 'Jul 11/12, 2026',
+    date: 'Jul 12, 2026',
     time: '21:00 ET',
     home: { team: 'Argentina', odds: '1.80', flag: '🇦🇷' },
     draw: { odds: '3.60' },
@@ -263,7 +254,7 @@ export default async function HomePage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
                   <span style={{ fontWeight: 800, fontSize: '13px', color: 'var(--foreground)' }}>Betway</span>
                   <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '13px' }}>— 100% Sports Welcome Bonus</span>
-                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· QF Tonight: Norway vs England · Licensed in your region</span>
+                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· QF Tonight: Argentina vs Switzerland · Licensed in your region</span>
                 </div>
               </div>
               <a href="/api/redirect/betway" target="_blank" rel="noopener noreferrer nofollow sponsored"
@@ -278,7 +269,7 @@ export default async function HomePage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
                   <span style={{ fontWeight: 800, fontSize: '13px', color: 'var(--foreground)' }}>1xBet</span>
                   <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '13px' }}>— 100% Bonus up to €100</span>
-                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· QF Tonight: Norway vs England · 200+ markets per match</span>
+                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· QF Tonight: Argentina vs Switzerland · 200+ markets per match</span>
                 </div>
               </div>
               <a href="https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" target="_blank" rel="noopener noreferrer nofollow sponsored"
@@ -293,7 +284,7 @@ export default async function HomePage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
                   <span style={{ fontWeight: 800, fontSize: '13px', color: 'var(--foreground)' }}>Betsson</span>
                   <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '13px' }}>— 100% Bonus up to €100</span>
-                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· QF Tonight: Norway vs England · Final Jul 19</span>
+                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· QF Tonight: Argentina vs Switzerland · Final Jul 19</span>
                 </div>
               </div>
               <a href={isDE ? 'https://www.betsson.com/de/sport?affcode=AE3051334481&utm_medium=Affiliate&utm_source=10700602' : 'https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/'} target="_blank" rel="noopener noreferrer nofollow sponsored"
@@ -438,8 +429,8 @@ export default async function HomePage() {
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px', padding: '8px 14px', background: 'rgba(255,68,68,0.08)', border: '1px solid rgba(255,68,68,0.2)', borderRadius: '8px' }}>
             <span style={{ width: '7px', height: '7px', background: 'var(--hot)', borderRadius: '50%', display: 'inline-block', animation: 'pulse 1.5s infinite', flexShrink: 0 }} />
-            <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--hot)' }}>2 QFs TONIGHT</span>
-            <span style={{ fontSize: '12px', color: 'var(--muted)' }}>· Norway vs England 17:00 ET · Argentina vs Switzerland 21:00 ET · Odds update live before kick-off</span>
+            <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--hot)' }}>QF4 TONIGHT · LAST QF</span>
+            <span style={{ fontSize: '12px', color: 'var(--muted)' }}>· Argentina vs Switzerland 21:00 ET · Kansas City · Messi final QF · SF1 France vs Spain Jul 14</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             {featuredOdds.map((m) => (
@@ -709,9 +700,9 @@ export default async function HomePage() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '14px' }}>
             {[
+              { tag: 'QF4 TONIGHT', title: 'Argentina vs Switzerland — QF Odds & Messi Analysis', slug: 'messi-last-world-cup-argentina-2026', desc: "Messi's last World Cup QF. Argentina 1.80 vs Switzerland 4.20. Kansas City, 21:00 ET tonight. Full preview.", hot: true },
               { tag: 'SF Preview', title: 'France vs Spain — Semi-Final Odds & Prediction', slug: 'france-vs-spain-semi-final-world-cup-2026', desc: 'Mbappé vs Yamal in Dallas on Jul 14. France 1.80 vs Spain 2.10. Our tip: Spain to win at 2.10. Full preview inside.', hot: true },
-              { tag: 'QF Tonight', title: 'Norway vs England — Quarter-Final Odds & Prediction', slug: 'norway-vs-england-world-cup-2026', desc: 'Haaland (7G) vs Kane (5G). England 2.00 favourites. Norway 3.60 is the value. Miami, 17:00 ET. Expert tip inside.', hot: true },
-              { tag: 'QF Tonight', title: 'Argentina vs Switzerland — QF Odds & Messi Analysis', slug: 'messi-last-world-cup-argentina-2026', desc: "Messi's last World Cup. Argentina 1.80 vs Switzerland 4.20. Kansas City, 21:00 ET tonight. Full preview.", hot: true },
+              { tag: 'QF Result', title: 'Norway vs England — Quarter-Final Result', slug: 'norway-vs-england-world-cup-2026', desc: 'Norway vs England QF result from Jul 11. Who made it to the semi-finals? Full match report and next round odds.', hot: false },
             ].map((a) => (
               <Link key={a.slug} href={`/blog/${a.slug}`} style={{ textDecoration: 'none' }}>
                 <div className="card" style={{ padding: '22px', borderRadius: '14px', height: '100%', cursor: 'pointer' }}>
