@@ -69,7 +69,16 @@ const teamPages = [
 ];
 
 const blogPosts = [
-  // Match previews — high priority, tournament countdown
+  // QF/SF previews — TONIGHT & this week (highest priority)
+  "/blog/norway-vs-england-world-cup-2026",
+  "/blog/messi-last-world-cup-argentina-2026",
+  "/blog/france-vs-spain-semi-final-world-cup-2026",
+  // QF result articles
+  "/blog/france-2-0-morocco-world-cup-2026-result",
+  "/blog/spain-2-1-belgium-world-cup-2026-result",
+  // Bonus page
+  "/blog/betway-welcome-offer-world-cup-2026",
+  // Group stage match previews
   "/blog/world-cup-2026-opening-day-tips",
   "/blog/mexico-vs-south-africa-world-cup-2026",
   "/blog/usa-vs-paraguay-world-cup-2026",
@@ -137,8 +146,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entry(slug, { priority: 0.88, changeFrequency: "daily" })
     ),
 
+    // QF/SF live articles — highest priority, indexed today
+    ...entry("/blog/norway-vs-england-world-cup-2026",          { priority: 0.97, changeFrequency: "daily" }),
+    ...entry("/blog/messi-last-world-cup-argentina-2026",       { priority: 0.97, changeFrequency: "daily" }),
+    ...entry("/blog/france-vs-spain-semi-final-world-cup-2026", { priority: 0.95, changeFrequency: "daily" }),
+    ...entry("/blog/france-2-0-morocco-world-cup-2026-result",  { priority: 0.93, changeFrequency: "weekly" }),
+    ...entry("/blog/spain-2-1-belgium-world-cup-2026-result",   { priority: 0.93, changeFrequency: "weekly" }),
+
     // Blog posts
-    ...blogPosts.flatMap((slug) =>
+    ...blogPosts.filter(s => ![
+      "/blog/norway-vs-england-world-cup-2026",
+      "/blog/messi-last-world-cup-argentina-2026",
+      "/blog/france-vs-spain-semi-final-world-cup-2026",
+      "/blog/france-2-0-morocco-world-cup-2026-result",
+      "/blog/spain-2-1-belgium-world-cup-2026-result",
+    ].includes(s)).flatMap((slug) =>
       entry(slug, { priority: 0.80, changeFrequency: "weekly" })
     ),
 
