@@ -51,6 +51,10 @@ export const BLOCKED_COUNTRIES_BETSSON: readonly string[] = [
   'IL', // Israel — blocked
   'GH', // Ghana — blocked
   'NG', // Nigeria — blocked
+  'BD', // Bangladesh — blocked
+  'MM', // Myanmar — blocked
+  'ID', // Indonesia — blocked
+  'CN', // China — blocked
 ] as const;
 
 /**
