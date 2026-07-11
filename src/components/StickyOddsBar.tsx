@@ -8,8 +8,8 @@ const BETSSON_DE  = 'https://www.betsson.com/de/sport?affcode=AE3051334481&utm_m
 const ONEXBET_URL = 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97';
 const BETWAY_URL  = '/api/redirect/betway';
 
-// France vs Morocco QF odds — Jul 9
-const QF_HOME = "1.45"; const QF_DRAW = "4.50"; const QF_AWAY = "6.50";
+// Norway vs England QF odds — Jul 11
+const QF_HOME = "3.60"; const QF_DRAW = "3.30"; const QF_AWAY = "2.00";
 
 export default function StickyOddsBar() {
   const { countryCode } = useGeo();
@@ -23,7 +23,7 @@ export default function StickyOddsBar() {
     ? [{ name: "1xBet", logo: "🎯", home: QF_HOME, draw: QF_DRAW, away: QF_AWAY, url: ONEXBET_URL, isAffiliate: true }]
     : [
         { name: "Betsson", logo: "🏆", home: QF_HOME, draw: QF_DRAW, away: QF_AWAY, url: betssonUrl, isAffiliate: true },
-        { name: "1xBet",   logo: "🎯", home: "1.85", draw: "3.75", away: "4.10",   url: ONEXBET_URL, isAffiliate: true },
+        { name: "1xBet",   logo: "🎯", home: "1.95", draw: "3.30", away: "3.80",   url: ONEXBET_URL, isAffiliate: true },
       ];
 
   return (
@@ -65,9 +65,9 @@ export default function StickyOddsBar() {
           }} />
           <span style={{ fontSize: "11px", fontWeight: 700, color: "var(--hot)", letterSpacing: "0.08em" }}>LIVE</span>
           <span style={{ fontSize: "11px", fontWeight: 600, color: "var(--muted-light)", whiteSpace: "nowrap" }}>
-            🇫🇷 France vs Morocco 🇲🇦
+            🇳🇴 Norway vs England 🏴󠁧󠁢󠁥󠁮󠁧󠁿
           </span>
-          <span style={{ fontSize: "10px", color: "var(--muted)", whiteSpace: "nowrap" }}>· QF · Jul 9 · 22:00 CEST</span>
+          <span style={{ fontSize: "10px", color: "var(--muted)", whiteSpace: "nowrap" }}>· QF · Jul 11 · 23:00 CEST</span>
         </div>
 
         {/* Affiliate bookmakers (both with CTA buttons) */}

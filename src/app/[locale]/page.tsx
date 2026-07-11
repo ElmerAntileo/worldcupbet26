@@ -10,7 +10,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: "World Cup 2026 Betting Sites — Best Odds, Bonuses & Tips ⚽",
   description:
-    "FIFA World Cup 2026 is LIVE. Compare odds from 30+ bookmakers, claim 100% bonuses up to €100 & get expert predictions for all 48 matches. Spain 5.75 · France 6.00 · England 7.50. Updated daily.",
+    "FIFA World Cup 2026 Quarter-Finals TONIGHT. Norway vs England + Argentina vs Switzerland. France & Spain through to semis. Best odds from 30+ bookmakers. France 3.50 · Spain 3.50 · Argentina 4.00. Updated live.",
   alternates: {
     canonical: "https://www.worldcupbet26.com/",
     languages: {
@@ -117,38 +117,38 @@ const bookmakers = [
 
 const featuredOdds = [
   {
-    match: 'Argentina vs Egypt',
-    date: 'Jul 7, 2026',
-    time: '12:00 ET',
-    home: { team: 'Argentina', odds: '1.22', flag: '🇦🇷' },
-    draw: { odds: '7.00' },
-    away: { team: 'Egypt', odds: '11.00', flag: '🇪🇬' },
-    group: 'Round of 16 — TODAY',
+    match: 'Norway vs England',
+    date: 'Jul 11, 2026',
+    time: '17:00 ET',
+    home: { team: 'Norway', odds: '3.60', flag: '🇳🇴' },
+    draw: { odds: '3.30' },
+    away: { team: 'England', odds: '2.00', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿' },
+    group: 'Quarter-Final — TONIGHT',
   },
   {
-    match: 'Switzerland vs Colombia',
-    date: 'Jul 7, 2026',
-    time: '16:00 ET',
-    home: { team: 'Switzerland', odds: '2.60', flag: '🇨🇭' },
-    draw: { odds: '3.10' },
-    away: { team: 'Colombia', odds: '2.70', flag: '🇨🇴' },
-    group: 'Round of 16 — TODAY',
+    match: 'Argentina vs Switzerland',
+    date: 'Jul 11/12, 2026',
+    time: '21:00 ET',
+    home: { team: 'Argentina', odds: '1.80', flag: '🇦🇷' },
+    draw: { odds: '3.60' },
+    away: { team: 'Switzerland', odds: '4.20', flag: '🇨🇭' },
+    group: 'Quarter-Final — TONIGHT',
   },
   {
-    match: 'France vs Morocco',
-    date: 'Jul 9, 2026',
-    time: '16:00 ET',
-    home: { team: 'France', odds: '1.45', flag: '🇫🇷' },
-    draw: { odds: '4.50' },
-    away: { team: 'Morocco', odds: '6.50', flag: '🇲🇦' },
-    group: 'Quarter-Final — THU',
+    match: 'France vs Spain',
+    date: 'Jul 14, 2026',
+    time: 'TBC',
+    home: { team: 'France', odds: '1.80' , flag: '🇫🇷' },
+    draw: { odds: '3.60' },
+    away: { team: 'Spain', odds: '2.10', flag: '🇪🇸' },
+    group: 'Semi-Final — TUE',
   },
 ];
 
 const homeFaqs = [
   {
     q: "Who is the favourite to win the 2026 World Cup?",
-    a: "With the Quarter-Finals set for July 8–9, France are the narrow tournament favourites at 3.50 with Betsson after their dominant run to the last eight. Argentina (4.00) are second, Brazil (4.50) third and England (6.00) fourth. Germany have drifted to 9.00 after a nervy R16 win. Compare current outright odds across Betsson and 1xBet on our odds page.",
+    a: "At the semi-final stage, France and Spain are co-favourites at 3.50 each after both won their quarter-finals. Argentina are 4.00 — Messi's reigning champions face Switzerland tonight. England are 5.00 if they beat Norway tonight in the other QF. Compare current outright odds across Betsson and 1xBet on our odds page.",
   },
   {
     q: "When does the 2026 FIFA World Cup start?",
@@ -172,7 +172,7 @@ const homeFaqs = [
   },
   {
     q: "What is the best value bet for World Cup 2026?",
-    a: "At the Quarter-Final stage our analysts favour Argentina (4.00) as the best remaining value — Messi driving the reigning champions looks underpriced given their defensive record. Germany at 9.00 also stands out as a dark horse with momentum. For match betting, France vs England has the tournament's biggest clash potential and both clubs are priced competitively by Betsson and 1xBet.",
+    a: "At the semi-final stage our analysts favour Argentina at 4.00 — Messi has 4 goals and 4 assists and the reigning champions have the best defensive record of the remaining teams. For tonight's quarter-finals, Norway 3.60 is the value punt if you believe in Haaland (7 goals) against England. Compare match odds in real time at Betsson and 1xBet.",
   },
   {
     q: "Can I get a welcome bonus for World Cup betting?",
@@ -192,11 +192,11 @@ const homeFaqs = [
   },
   {
     q: "Who will win the World Cup 2026?",
-    a: "Four Quarter-Finals remain on July 8–9 with the tournament's best teams still standing. France lead the market at 3.50, Argentina sit at 4.00, Brazil at 4.50 and England at 6.00. Belgium and Germany are outsiders at 12.00+. Our analysts tip France vs Argentina as the most likely semi-final, with France narrowly favoured to lift the trophy on July 19 at MetLife Stadium.",
+    a: "Two quarter-finals remain tonight (Norway vs England, Argentina vs Switzerland) before the semi-finals on July 14–15. France and Spain are through and share 3.50 favouritism. Argentina at 4.00 are our value pick — Messi and the reigning champions have the experience and the defensive solidity to go back-to-back. Our analysts tip a France vs Argentina semi-final, with France narrowly favoured to lift the trophy on July 19 at MetLife Stadium.",
   },
   {
     q: "What is the World Cup 2026 schedule?",
-    a: "The FIFA World Cup 2026 runs from June 11 to July 19, 2026. The tournament features 48 teams across 12 groups, with 104 matches total — the most in World Cup history. The opening match is Mexico vs South Africa on June 11 at Estadio Azteca, Mexico City. The Round of 32 runs June 27 – July 3, Round of 16 July 4–7, Quarter-finals July 9–10, Semi-finals July 14–15, and the Final on July 19 at MetLife Stadium, New Jersey.",
+    a: "The FIFA World Cup 2026 runs from June 11 to July 19, 2026. The tournament features 48 teams across 12 groups, with 104 matches total — the most in World Cup history. The opening match was Mexico vs South Africa on June 11 at Estadio Azteca. Quarter-finals run July 9–12, Semi-finals July 14–15, Third-place play-off July 18, and the Final on July 19 at MetLife Stadium, New Jersey.",
   },
   {
     q: "What bonus can I get for betting on World Cup 2026?",
@@ -251,7 +251,7 @@ export default async function HomePage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
                   <span style={{ fontWeight: 800, fontSize: '13px', color: 'var(--foreground)' }}>Betway</span>
                   <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '13px' }}>— 100% Sports Welcome Bonus</span>
-                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· Quarter-Finals Jul 8–9 · Licensed in your region</span>
+                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· QF Tonight: Norway vs England · Licensed in your region</span>
                 </div>
               </div>
               <a href="/api/redirect/betway" target="_blank" rel="noopener noreferrer nofollow sponsored"
@@ -266,7 +266,7 @@ export default async function HomePage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
                   <span style={{ fontWeight: 800, fontSize: '13px', color: 'var(--foreground)' }}>1xBet</span>
                   <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '13px' }}>— 100% Bonus up to €100</span>
-                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· Quarter-Finals NOW LIVE · 200+ markets per match</span>
+                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· QF Tonight: Norway vs England · 200+ markets per match</span>
                 </div>
               </div>
               <a href="https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" target="_blank" rel="noopener noreferrer nofollow sponsored"
@@ -281,7 +281,7 @@ export default async function HomePage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
                   <span style={{ fontWeight: 800, fontSize: '13px', color: 'var(--foreground)' }}>Betsson</span>
                   <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '13px' }}>— 100% Bonus up to €100</span>
-                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· Quarter-Finals NOW LIVE · Final Jul 19</span>
+                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· QF Tonight: Norway vs England · Final Jul 19</span>
                 </div>
               </div>
               <a href={isDE ? 'https://www.betsson.com/de/sport?affcode=AE3051334481&utm_medium=Affiliate&utm_source=10700602' : 'https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/'} target="_blank" rel="noopener noreferrer nofollow sponsored"
@@ -628,9 +628,9 @@ export default async function HomePage() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '14px' }}>
             {[
-              { tag: 'QF Preview', title: 'France vs Morocco — Quarter-Final Odds & Tip', slug: 'france-vs-morocco-world-cup-2026', desc: 'France 1.45 favourites. Repeat of 2022 semi-final. Expert tip: France Win & Under 2.5 @ 2.20. Jul 9.', hot: true },
-              { tag: 'QF Preview', title: 'Spain vs Belgium — Quarter-Final Odds & Tip', slug: 'spain-vs-belgium-world-cup-2026', desc: 'Spain 1.90 favourites in Los Angeles. Belgium beat USA 4-1. Expert tip: Spain Win @ 1.90. Jul 10.', hot: true },
-              { tag: 'QF Preview', title: 'Norway vs England — Quarter-Final Odds & Tip', slug: 'norway-vs-england-world-cup-2026', desc: 'Haaland vs Kane. England 2.00 favourites. Expert tip: England Win @ 2.00. Jul 11.', hot: true },
+              { tag: 'QF Tonight', title: 'Norway vs England — Quarter-Final Odds & Prediction', slug: 'norway-vs-england-world-cup-2026', desc: 'Haaland (7G) vs Kane (5G). England 2.00 favourites. Norway 3.60. Miami, Jul 11 21:00 UTC. Expert tip inside.', hot: true },
+              { tag: 'QF Tonight', title: 'Argentina vs Switzerland — QF Odds & Messi Analysis', slug: 'messi-last-world-cup-argentina-2026', desc: 'Messi\'s last World Cup bid? Argentina 1.80 vs Switzerland 4.20. Kansas City, Jul 12 01:00 UTC. Full preview.', hot: true },
+              { tag: 'Golden Boot', title: 'World Cup 2026 Golden Boot Race — Updated Standings', slug: 'world-cup-2026-golden-boot-race', desc: 'Haaland leads with 7 goals. Kane on 5. Yamal on 4. Who wins the top scorer award? Full odds and analysis.', hot: true },
             ].map((a) => (
               <Link key={a.slug} href={`/blog/${a.slug}`} style={{ textDecoration: 'none' }}>
                 <div className="card" style={{ padding: '22px', borderRadius: '14px', height: '100%', cursor: 'pointer' }}>
