@@ -12,16 +12,16 @@ function pageUrl(l: string) {
 }
 
 export const metadata: Metadata = {
-  title: "World Cup 2026 Bracket & Knockout Odds — Full Tournament Path",
+  title: "World Cup 2026 Bracket — Semi-Finals & Knockout Odds Updated",
   description:
-    "World Cup 2026 knockout bracket with betting odds for every round. See projected paths for France, Brazil, England and all 48 teams from Round of 32 to the Final on July 19.",
+    "World Cup 2026 semi-final bracket: France vs Spain (Jul 14) and SF2 TBC (Jul 15). France 3.50 · Spain 3.50 · Argentina 4.00 · England 5.00. Live odds updated.",
   alternates: {
     canonical: pageUrl("en"),
     languages: { ...Object.fromEntries(locales.map((l) => [l, pageUrl(l)])), "x-default": pageUrl("en") },
   },
   openGraph: {
-    title: "World Cup 2026 Bracket & Knockout Odds — Full Tournament Path",
-    description: "World Cup 2026 knockout bracket with betting odds for every round. Projected paths for France, Brazil, England and all 48 teams from Round of 32 to the Final.",
+    title: "World Cup 2026 Bracket — Semi-Finals & Final Odds",
+    description: "Semi-final bracket set: France vs Spain · SF2 TBC. France 3.50 · Spain 3.50 · Argentina 4.00 · England 5.00 · Norway 8.00 · Switzerland 20.00.",
     url: pageUrl("en"),
     siteName: "WorldCupBet26",
     type: "website",
@@ -35,72 +35,56 @@ export const metadata: Metadata = {
   },
 };
 
-const BETSSON_URL = "https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/";
+const BETSSON_URL = "https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/";
 
-// Tournament Winner Odds — used across bracket
+// Tournament Winner Odds — Semi-Final stage, Jul 11 2026
 const contenders = [
-  { name: "France",      flag: "🇫🇷", odds: "6.00",  group: "D", form: "A+", tier: 1 },
-  { name: "Brazil",      flag: "🇧🇷", odds: "6.50",  group: "C", form: "A+", tier: 1 },
-  { name: "Spain",       flag: "🇪🇸", odds: "7.00",  group: "F", form: "A",  tier: 1 },
-  { name: "England",     flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", odds: "7.50",  group: "E", form: "A",  tier: 1 },
-  { name: "Argentina",   flag: "🇦🇷", odds: "8.00",  group: "C", form: "A",  tier: 1 },
-  { name: "Germany",     flag: "🇩🇪", odds: "10.00", group: "D", form: "B+", tier: 2 },
-  { name: "Portugal",    flag: "🇵🇹", odds: "12.00", group: "G", form: "B+", tier: 2 },
-  { name: "Netherlands", flag: "🇳🇱", odds: "14.00", group: "H", form: "B",  tier: 2 },
-  { name: "Belgium",     flag: "🇧🇪", odds: "18.00", group: "—", form: "B",  tier: 2 },
-  { name: "USA",         flag: "🇺🇸", odds: "20.00", group: "B", form: "B",  tier: 3 },
-  { name: "Morocco",     flag: "🇲🇦", odds: "25.00", group: "G", form: "B",  tier: 3 },
-  { name: "Croatia",     flag: "🇭🇷", odds: "30.00", group: "F", form: "B-", tier: 3 },
-  { name: "Mexico",      flag: "🇲🇽", odds: "35.00", group: "A", form: "C+", tier: 3 },
-  { name: "Japan",       flag: "🇯🇵", odds: "40.00", group: "D", form: "C+", tier: 3 },
+  { name: "France",      flag: "🇫🇷", odds: "3.50", group: "SF1", form: "A+", tier: 1 },
+  { name: "Spain",       flag: "🇪🇸", odds: "3.50", group: "SF1", form: "A+", tier: 1 },
+  { name: "Argentina",   flag: "🇦🇷", odds: "4.00", group: "QF4", form: "A",  tier: 1 },
+  { name: "England",     flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", odds: "5.00", group: "QF3", form: "A",  tier: 1 },
+  { name: "Norway",      flag: "🇳🇴", odds: "8.00", group: "QF3", form: "A",  tier: 2 },
+  { name: "Switzerland", flag: "🇨🇭", odds: "20.00", group: "QF4", form: "B+", tier: 2 },
 ];
 
 const stages = [
   {
     stage: "Group Stage",
     dates: "Jun 11 – Jul 2",
-    teams: "48 teams",
-    desc: "12 groups of 4. Top 2 from each group + 8 best 3rd-place finishers advance to the Round of 32.",
-    tipIcon: "📊",
-    tip: "Group winner odds and BTTS bets offer best value early in the tournament.",
+    teams: "48 teams → 32",
+    desc: "COMPLETE. 12 groups of 4 played out. France, Spain, Norway, England, Argentina and Switzerland all advanced.",
+    tipIcon: "✅",
+    tip: "Group stage is done — focus on semi-final and outright winner markets now.",
   },
   {
-    stage: "Round of 32",
-    dates: "Jul 4 – Jul 7",
-    teams: "32 teams",
-    desc: "First knockout round. 16 matches played across USA, Canada and Mexico host venues.",
-    tipIcon: "⚡",
-    tip: "Heavy favourites often win comfortably here — look for Asian Handicap -1.5 on top seeds.",
-  },
-  {
-    stage: "Round of 16",
-    dates: "Jul 10 – Jul 13",
-    teams: "16 teams",
-    desc: "Potential clashes between group winners and 3rd-place qualifiers. Expect upsets.",
-    tipIcon: "🎯",
-    tip: "First real test for favourites. Over 2.5 goals lands in 62% of R16 matches historically.",
+    stage: "Round of 32 & R16",
+    dates: "Jul 4 – Jul 8",
+    teams: "32 → 8 teams",
+    desc: "COMPLETE. Eight teams survive into the Quarter-Finals. Norway's run is the story of the tournament.",
+    tipIcon: "✅",
+    tip: "Both rounds complete. All Quarter-Final results are in.",
   },
   {
     stage: "Quarter-Finals",
-    dates: "Jul 17 – Jul 18",
-    teams: "8 teams",
-    desc: "Elite 8 clashes at the biggest venues. High-tension, low-scoring affairs typical.",
+    dates: "Jul 9 – Jul 12",
+    teams: "8 → 4 teams",
+    desc: "UNDERWAY. France beat Morocco 2-0 · Spain beat Belgium 2-1 · Norway vs England TONIGHT · Argentina vs Switzerland Jul 12.",
     tipIcon: "🏟️",
-    tip: "Under 2.5 goals has hit in 70% of World Cup QFs since 2010. Fade the over here.",
+    tip: "Two QFs still to play. Norway vs England at 17:00 ET and Argentina vs Switzerland Jul 12 21:00 ET.",
   },
   {
     stage: "Semi-Finals",
     dates: "Jul 14 – Jul 15",
     teams: "4 teams",
-    desc: "The two semi-finals decide who meets in the final. Often played at neutral mega-venues.",
+    desc: "Semi-Final 1: France vs Spain confirmed for Jul 14 at MetLife Stadium. SF2 TBC after QF3/QF4 complete.",
     tipIcon: "🔥",
-    tip: "Draw/extra time is more likely — check double chance markets and both-teams-to-score.",
+    tip: "France vs Spain is the bet of the tournament. Spain 2.10 / France 1.80 — lean France at home form.",
   },
   {
     stage: "3rd Place Play-Off",
     dates: "Jul 18",
     teams: "2 teams",
-    desc: "Consolation match. Teams often experiment with lineups after the exhaustion of the semis.",
+    desc: "Consolation match for the two semi-final losers.",
     tipIcon: "🥉",
     tip: "High-scoring matches historically (avg 2.9 goals). Over 2.5 goals is excellent value.",
   },
@@ -110,39 +94,39 @@ const stages = [
     teams: "2 teams",
     desc: "The World Cup 2026 Final at MetLife Stadium, East Rutherford, NJ. Capacity 82,500.",
     tipIcon: "🏆",
-    tip: "Lock in outright winner bets now before France and Brazil odds shorten further.",
+    tip: "France 3.50 and Spain 3.50 co-favourites. Lock in outright bets before the SF odds shift.",
   },
 ];
 
 const projectedFinal = [
-  { team: "France", flag: "🇫🇷", odds: "6.00", path: "Group D → R32 → R16 → QF → SF → Final", color: "#1d4ed8" },
-  { team: "Brazil", flag: "🇧🇷", odds: "6.50", path: "Group C → R32 → R16 → QF → SF → Final", color: "#16a34a" },
+  { team: "France",  flag: "🇫🇷", odds: "3.50", path: "Group → R32 → R16 → QF (beat Morocco 2-0) → SF vs Spain (Jul 14)", color: "#1d4ed8" },
+  { team: "Spain",   flag: "🇪🇸", odds: "3.50", path: "Group → R32 → R16 → QF (beat Belgium 2-1) → SF vs France (Jul 14)", color: "#ef4444" },
 ];
 
 const bracketFaqs = [
   {
-    q: "How does the World Cup 2026 bracket work?",
-    a: "The 2026 FIFA World Cup has 48 teams split into 12 groups of 4. The top 2 from each group plus the 8 best third-place finishers (32 teams total) advance to the knockout stage. The knockout rounds are: Round of 32, Round of 16, Quarter-finals, Semi-finals, Third Place Play-off, and the Final on July 19, 2026.",
+    q: "What stage is the World Cup 2026 bracket at now?",
+    a: "As of July 11, 2026, the tournament is in the Quarter-Finals. France beat Morocco 2-0 and Spain beat Belgium 2-1. Norway vs England plays tonight (Jul 11) and Argentina vs Switzerland is on Jul 12. Semi-finals are Jul 14 and 15, with the Final on July 19 at MetLife Stadium.",
   },
   {
-    q: "Who are the favourites to win the World Cup 2026 bracket?",
-    a: "France (6.00), Brazil (6.50) and Spain (7.00) are the three shortest-priced tournament winner bets as of May 2026. England (7.50) and Argentina (8.00) complete the top 5. Germany at 10.00 is the standout dark horse value bet.",
+    q: "Who are the favourites to win the World Cup 2026?",
+    a: "France (3.50) and Spain (3.50) are joint favourites as of July 11, both through to the semi-finals. Argentina (4.00) and England (5.00) are next, though both still have a Quarter-Final to play. Norway (8.00) are the tournament's biggest surprise package.",
+  },
+  {
+    q: "When is the World Cup 2026 Semi-Final?",
+    a: "Semi-Final 1 is on Monday July 14, 2026 at MetLife Stadium in New Jersey — France vs Spain. Semi-Final 2 is on Tuesday July 15 at AT&T Stadium in Dallas, between the winners of Norway vs England and Argentina vs Switzerland.",
   },
   {
     q: "When is the World Cup 2026 Final?",
-    a: "The FIFA World Cup 2026 Final is on Sunday, July 19, 2026 at MetLife Stadium in East Rutherford, New Jersey. The stadium holds 82,500 fans and is one of the largest in North America.",
-  },
-  {
-    q: "How many teams qualify from each group to the knockout bracket?",
-    a: "In 2026, the top 2 teams from each of the 12 groups automatically qualify for the Round of 32. In addition, the 8 best-performing third-place teams also advance, creating a 32-team knockout bracket — a new format introduced specifically for this expanded tournament.",
+    a: "The FIFA World Cup 2026 Final is on Sunday, July 19, 2026 at MetLife Stadium in East Rutherford, New Jersey. The stadium holds 82,500 fans.",
   },
   {
     q: "What is the best bet on the World Cup 2026 bracket right now?",
-    a: "For outright value, Germany at 10.00 stands out — a four-time champion with a rebuilt squad and an easier projected draw in Group D. For in-tournament bets, backing top-seed tournament favourites on Asian Handicap -1.5 in the Round of 32 offers consistent value.",
+    a: "The value bet at this stage is Norway to win the tournament at 8.00 — Erling Haaland has 7 goals in 5 games and the team has beaten bigger favourites at every turn. If you want safer ground, Spain each-way at 3.50 looks excellent value given Yamal's form.",
   },
   {
-    q: "Which bracket section is hardest — the Group of Death?",
-    a: "Group C (Brazil + Argentina + Ecuador) and Group D (Germany + France + Japan) are widely considered the toughest groups in the 2026 bracket. Both groups guarantee that at least one top-6 world-ranked team finishes 3rd and must rely on a best-of-third-place spot to advance.",
+    q: "How does the World Cup 2026 bracket work?",
+    a: "The 2026 FIFA World Cup started with 48 teams in 12 groups of 4. The top 2 from each group plus the 8 best third-place finishers (32 teams) advanced to the knockout stage. The knockout rounds are: Round of 32, Round of 16, Quarter-finals (underway now), Semi-finals, Third Place Play-off, and the Final on July 19, 2026.",
   },
 ];
 
