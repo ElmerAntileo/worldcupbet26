@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { getLocale } from "next-intl/server";
 import "./globals.css";
 import ServiceWorkerRegister from "@/components/ServiceWorkerRegister";
 
@@ -17,6 +16,9 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.worldcupbet26.com"),
+  verification: {
+    google: "lHbxCYQ_xPOJFpNRhRwZ1MDXbpV3Qi24tvmsvFw9khY",
+  },
   title: {
     default: 'World Cup Betting Odds 2026 — Live Odds Comparison | Betsson, 1xBet, Bet365',
     template: '%s | WorldCupBet26',
@@ -42,15 +44,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const locale = await getLocale();
-
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
