@@ -10,7 +10,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: "World Cup 2026 Betting Sites — Best Odds, Bonuses & Tips ⚽",
   description:
-    "FIFA World Cup 2026 Quarter-Finals TONIGHT. Norway vs England + Argentina vs Switzerland. France & Spain through to semis. Best odds from 30+ bookmakers. France 3.50 · Spain 3.50 · Argentina 4.00. Updated live.",
+    "FIFA World Cup 2026 QF TONIGHT: Norway vs England (3.60/3.30/2.00) + Argentina vs Switzerland (1.80/3.60/4.20). France & Spain into semis. France vs Spain SF Jul 14 Dallas. Best odds from Betsson, 1xBet & Betway.",
   alternates: {
     canonical: "https://www.worldcupbet26.com/",
     languages: {
@@ -164,7 +164,7 @@ const homeFaqs = [
   },
   {
     q: "Which bookmaker has the best World Cup 2026 odds?",
-    a: "Betsson and 1xBet consistently offer the highest World Cup 2026 winner odds in our daily comparison. Betsson prices Spain at 5.75, France at 6.00 and England at 7.50. Always compare across multiple bookmakers — even a 0.25 price difference on a £50 bet adds meaningful value over a tournament.",
+    a: "Betsson and 1xBet consistently offer the highest World Cup 2026 winner odds in our daily comparison. At the semi-final stage, France and Spain are 3.50 each, Argentina are 4.00, England 5.00 and Norway 8.00. Always compare across multiple bookmakers — even a 0.25 price difference on a £50 bet adds meaningful value over a tournament.",
   },
   {
     q: "What types of bets can I place on the World Cup?",
@@ -172,7 +172,7 @@ const homeFaqs = [
   },
   {
     q: "What is the best value bet for World Cup 2026?",
-    a: "At the semi-final stage our analysts favour Argentina at 4.00 — Messi has 4 goals and 4 assists and the reigning champions have the best defensive record of the remaining teams. For tonight's quarter-finals, Norway 3.60 is the value punt if you believe in Haaland (7 goals) against England. Compare match odds in real time at Betsson and 1xBet.",
+    a: "With two QFs still to play tonight, our best value bets are: Norway at 3.60 to beat England — Haaland has 7 goals and Norway have beaten everyone in front of them. For the semi-final, Spain at 2.10 to beat France represents excellent value — Yamal is the best player in the tournament and Spain's system is the best remaining. Compare match odds in real time at Betsson and 1xBet.",
   },
   {
     q: "Can I get a welcome bonus for World Cup betting?",
@@ -192,7 +192,7 @@ const homeFaqs = [
   },
   {
     q: "Who will win the World Cup 2026?",
-    a: "Two quarter-finals remain tonight (Norway vs England, Argentina vs Switzerland) before the semi-finals on July 14–15. France and Spain are through and share 3.50 favouritism. Argentina at 4.00 are our value pick — Messi and the reigning champions have the experience and the defensive solidity to go back-to-back. Our analysts tip a France vs Argentina semi-final, with France narrowly favoured to lift the trophy on July 19 at MetLife Stadium.",
+    a: "France and Spain are joint favourites at 3.50 each and meet in SF1 on July 14 at Dallas. Argentina (4.00) and England (5.00) still have their QF to play tonight, as does Norway (8.00) — Haaland's side are the shock of the tournament. Our analysts tip a France vs Spain final, with Spain narrowly favoured at 3.50 — Yamal, Pedri and Morata make them the most complete team remaining.",
   },
   {
     q: "What is the World Cup 2026 schedule?",
@@ -391,7 +391,7 @@ export default async function HomePage() {
             { value: '32+', label: 'Bookmakers', icon: '📊' },
             { value: '100%', label: 'Free to Use', icon: '✅' },
             { value: '6', label: 'Languages', icon: '🌍' },
-            { value: '48', label: 'Group Matches', icon: '⚽' },
+            { value: 'QF', label: 'Stage: Tonight', icon: '⚽' },
           ].map((s, i) => (
             <div key={s.label} style={{
               padding: '22px 12px',
@@ -617,6 +617,34 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* ── QF RESULTS ── */}
+      <section style={{ padding: '40px 20px 0' }}>
+        <div style={{ maxWidth: '960px', margin: '0 auto' }}>
+          <h2 className="section-title" style={{ marginBottom: '20px' }}>Quarter-Final Results</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '12px', marginBottom: '12px' }}>
+            {[
+              { home: 'France', homeFlag: '🇫🇷', homeScore: 2, awayScore: 0, away: 'Morocco', awayFlag: '🇲🇦', scorers: "Mbappé 34' · Griezmann 67'", date: 'Jul 9 · Boston', slug: 'france-2-0-morocco-world-cup-2026-result' },
+              { home: 'Spain', homeFlag: '🇪🇸', homeScore: 2, awayScore: 1, away: 'Belgium', awayFlag: '🇧🇪', scorers: "Yamal 28' · De Ketelaere 55' · Morata 71'", date: 'Jul 10 · Los Angeles', slug: 'spain-2-1-belgium-world-cup-2026-result' },
+            ].map(m => (
+              <Link key={m.slug} href={`/blog/${m.slug}`} style={{ textDecoration: 'none' }}>
+                <div className="card" style={{ padding: '18px 22px', borderRadius: '12px', cursor: 'pointer' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+                    <span style={{ fontSize: '10px', fontWeight: 700, color: 'var(--accent)', letterSpacing: '0.08em' }}>✅ FULL TIME · {m.date}</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px' }}>
+                    <span style={{ fontWeight: 800, fontSize: '15px' }}>{m.homeFlag} {m.home}</span>
+                    <span style={{ fontWeight: 900, fontSize: '22px', color: 'var(--accent)', letterSpacing: '-1px' }}>{m.homeScore}–{m.awayScore}</span>
+                    <span style={{ fontWeight: 800, fontSize: '15px' }}>{m.away} {m.awayFlag}</span>
+                  </div>
+                  <div style={{ color: 'var(--muted)', fontSize: '11px', marginTop: '8px', textAlign: 'center' }}>{m.scorers}</div>
+                  <div style={{ color: 'var(--accent)', fontSize: '12px', fontWeight: 600, marginTop: '10px', textAlign: 'center' }}>Match Report →</div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── LATEST ANALYSIS ── */}
       <section style={{ padding: '56px 20px' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto' }}>
@@ -628,9 +656,9 @@ export default async function HomePage() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '14px' }}>
             {[
-              { tag: 'QF Tonight', title: 'Norway vs England — Quarter-Final Odds & Prediction', slug: 'norway-vs-england-world-cup-2026', desc: 'Haaland (7G) vs Kane (5G). England 2.00 favourites. Norway 3.60. Miami, Jul 11 21:00 UTC. Expert tip inside.', hot: true },
-              { tag: 'QF Tonight', title: 'Argentina vs Switzerland — QF Odds & Messi Analysis', slug: 'messi-last-world-cup-argentina-2026', desc: 'Messi\'s last World Cup bid? Argentina 1.80 vs Switzerland 4.20. Kansas City, Jul 12 01:00 UTC. Full preview.', hot: true },
-              { tag: 'Golden Boot', title: 'World Cup 2026 Golden Boot Race — Updated Standings', slug: 'world-cup-2026-golden-boot-race', desc: 'Haaland leads with 7 goals. Kane on 5. Yamal on 4. Who wins the top scorer award? Full odds and analysis.', hot: true },
+              { tag: 'SF Preview', title: 'France vs Spain — Semi-Final Odds & Prediction', slug: 'france-vs-spain-semi-final-world-cup-2026', desc: 'Mbappé vs Yamal in Dallas on Jul 14. France 1.80 vs Spain 2.10. Our tip: Spain to win at 2.10. Full preview inside.', hot: true },
+              { tag: 'QF Tonight', title: 'Norway vs England — Quarter-Final Odds & Prediction', slug: 'norway-vs-england-world-cup-2026', desc: 'Haaland (7G) vs Kane (5G). England 2.00 favourites. Norway 3.60 is the value. Miami, 17:00 ET. Expert tip inside.', hot: true },
+              { tag: 'QF Tonight', title: 'Argentina vs Switzerland — QF Odds & Messi Analysis', slug: 'messi-last-world-cup-argentina-2026', desc: "Messi's last World Cup. Argentina 1.80 vs Switzerland 4.20. Kansas City, 21:00 ET tonight. Full preview.", hot: true },
             ].map((a) => (
               <Link key={a.slug} href={`/blog/${a.slug}`} style={{ textDecoration: 'none' }}>
                 <div className="card" style={{ padding: '22px', borderRadius: '14px', height: '100%', cursor: 'pointer' }}>
