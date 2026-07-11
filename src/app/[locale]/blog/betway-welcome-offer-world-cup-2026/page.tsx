@@ -23,7 +23,6 @@ const accent = "var(--accent)";
 const muted = "var(--muted)";
 const cardStyle = { background: "var(--card)", border: "1px solid var(--border)", borderRadius: "12px", padding: "1.5rem", marginBottom: "1.5rem" };
 const btnPrimary = { display: "inline-block", background: "linear-gradient(135deg,#00d084,#00b870)", color: "#040c18", padding: "14px 32px", borderRadius: "8px", fontWeight: 800, textDecoration: "none", fontSize: "1rem" };
-const btnSecondary = { display: "inline-block", background: "linear-gradient(135deg,#1a4fd6,#1240b0)", color: "white", padding: "14px 32px", borderRadius: "8px", fontWeight: 800, textDecoration: "none", fontSize: "1rem" };
 
 export default function BetwayWelcomeOffer() {
   return (

@@ -114,32 +114,6 @@ const matches = [
   },
 ];
 
-function FormBadge({ result }: { result: string }) {
-  const colors: Record<string, { bg: string; color: string }> = {
-    W: { bg: '#00d084', color: '#000' },
-    D: { bg: '#f59e0b', color: '#000' },
-    L: { bg: '#ef4444', color: '#fff' },
-  };
-  const style = colors[result] || { bg: '#333', color: '#fff' };
-  return (
-    <span style={{
-      display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-      width: '20px', height: '20px', borderRadius: '4px',
-      fontSize: '10px', fontWeight: 700,
-      background: style.bg, color: style.color,
-    }}>{result}</span>
-  );
-}
-
-function BestOdds({ bookmakers, type }: { bookmakers: typeof matches[0]['bookmakers']; type: 'home' | 'draw' | 'away' }) {
-  const values = bookmakers.map(b => parseFloat(b[type]));
-  const best = Math.max(...values);
-  return (
-    <span style={{ color: '#00d084', fontSize: '11px', fontWeight: 600 }}>
-      Best: {best.toFixed(2)}
-    </span>
-  );
-}
 
 function getBestByType(bookmakers: typeof matches[0]['bookmakers'], type: 'home' | 'draw' | 'away'): number {
   const values = bookmakers.map(b => parseFloat(b[type])).filter(v => !isNaN(v));

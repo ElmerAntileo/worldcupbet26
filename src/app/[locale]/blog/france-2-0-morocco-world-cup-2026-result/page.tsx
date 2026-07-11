@@ -46,7 +46,7 @@ export default function FranceMoroccoResult() {
           </div>
         </div>
         <div style={{ marginTop: "1.25rem", display: "flex", justifyContent: "space-around", fontSize: "0.82rem", color: muted }}>
-          <div><span style={{ color: "var(--foreground)", fontWeight: 700 }}>Mbappé 34'</span><br />Griezmann 67'</div>
+          <div><span style={{ color: "var(--foreground)", fontWeight: 700 }}>Mbappé 34&apos;</span><br />Griezmann 67&apos;</div>
           <div style={{ color: "rgba(255,255,255,0.15)", fontSize: "1.2rem" }}>|</div>
           <div>No scorers</div>
         </div>

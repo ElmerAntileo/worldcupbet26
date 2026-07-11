@@ -46,9 +46,9 @@ export default function SpainBelgiumResult() {
           </div>
         </div>
         <div style={{ marginTop: "1.25rem", display: "flex", justifyContent: "space-around", fontSize: "0.82rem", color: muted }}>
-          <div><span style={{ color: "var(--foreground)", fontWeight: 700 }}>Yamal 28'</span><br />Morata 71'</div>
+          <div><span style={{ color: "var(--foreground)", fontWeight: 700 }}>Yamal 28&apos;</span><br />Morata 71&apos;</div>
           <div style={{ color: "rgba(255,255,255,0.15)", fontSize: "1.2rem" }}>|</div>
-          <div><span style={{ color: "var(--foreground)", fontWeight: 700 }}>De Ketelaere 55'</span></div>
+          <div><span style={{ color: "var(--foreground)", fontWeight: 700 }}>De Ketelaere 55&apos;</span></div>
         </div>
       </div>
 
