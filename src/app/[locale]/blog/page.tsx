@@ -35,6 +35,20 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "spain-2-1-belgium-world-cup-2026-result",
+    title: "Spain 2-1 Belgium World Cup 2026 Result — Quarter-Final Report",
+    description: "Spain beat Belgium 2-1 in Los Angeles on July 10. Yamal opened, De Ketelaere levelled, Morata won it late. Spain face France in the semi-final. Full report + semi-final odds.",
+    tag: "Match Result",
+    hot: true,
+  },
+  {
+    slug: "france-2-0-morocco-world-cup-2026-result",
+    title: "France 2-0 Morocco World Cup 2026 Result — Quarter-Final Report",
+    description: "France beat Morocco 2-0 in Boston on July 9. Mbappé and Griezmann on target. France into the semi-finals. Full match report and semi-final betting odds.",
+    tag: "Match Result",
+    hot: true,
+  },
+  {
     slug: "betway-welcome-offer-world-cup-2026",
     title: "Betway Welcome Offer 2026: Bet £10 Get £60 in Free Bets — World Cup",
     description: "New Betway customers get £60 in Free Bets on the World Cup quarter-finals. Step-by-step claim guide, key T&Cs and expert tips for France vs Morocco, Spain vs Belgium and Norway vs England.",
