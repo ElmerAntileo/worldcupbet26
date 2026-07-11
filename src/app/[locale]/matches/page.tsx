@@ -86,7 +86,7 @@ const matches = [
       { name: 'Betway',   home: '1.78', draw: '3.65', away: '2.12', url: BETWAY_URL },
     ],
     status: 'upcoming',
-    blogSlug: null,
+    blogSlug: 'france-vs-spain-semi-final-world-cup-2026',
   },
   {
     id: 6, group: 'SF', stage: 'Semi-Final 2',

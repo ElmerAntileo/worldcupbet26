@@ -35,6 +35,20 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "france-vs-spain-semi-final-world-cup-2026",
+    title: "France vs Spain — World Cup 2026 Semi-Final Preview, Odds & Prediction",
+    description: "The match of the tournament. France 1.80 vs Spain 2.10 at AT&T Stadium, Dallas on July 14. Mbappé vs Yamal. Full preview, key battles and best semi-final odds.",
+    tag: "Semi-Final Preview",
+    hot: true,
+  },
+  {
+    slug: "norway-vs-england-world-cup-2026",
+    title: "Norway vs England — World Cup 2026 QF Odds & Prediction",
+    description: "Haaland (7 goals) vs Kane (5 goals). England 2.00 favourites but Norway at 3.60 is the value bet. Miami Stadium, Jul 11, 21:00 UTC. Expert tip inside.",
+    tag: "Match Preview",
+    hot: true,
+  },
+  {
     slug: "spain-2-1-belgium-world-cup-2026-result",
     title: "Spain 2-1 Belgium World Cup 2026 Result — Quarter-Final Report",
     description: "Spain beat Belgium 2-1 in Los Angeles on July 10. Yamal opened, De Ketelaere levelled, Morata won it late. Spain face France in the semi-final. Full report + semi-final odds.",
