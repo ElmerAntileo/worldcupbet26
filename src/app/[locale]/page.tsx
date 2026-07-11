@@ -226,10 +226,22 @@ export default async function HomePage() {
   const betssonBlocked = (BLOCKED_COUNTRIES_BETSSON as readonly string[]).includes(geo);
   const betwayPriority = (BETWAY_PRIORITY_COUNTRIES as readonly string[]).includes(geo);
 
-  // For German visitors: 1xBet available in DE; Betsson is geo-blocked — rank accordingly
-  const displayBookmakers = isDE
-    ? [...bookmakers].sort((a) => (a.name === '1xBet' ? -1 : 0))
-    : bookmakers;
+  // Rank bookmakers by what converts for this visitor's geo
+  const displayBookmakers = (() => {
+    if (betwayPriority) {
+      // UK/ES/CA/MX/DE: Betway first, Betsson hidden (blocked or wrong license)
+      return [...bookmakers].filter(b => b.name !== 'Betsson').sort((a) => (a.name === 'Betway' ? -1 : 0));
+    }
+    if (betssonBlocked) {
+      // US and other blocked countries: hide Betsson entirely, show 1xBet first
+      return [...bookmakers].filter(b => b.name !== 'Betsson').sort((a) => (a.name === '1xBet' ? -1 : 0));
+    }
+    if (isDE) {
+      // DE handled above via betwayPriority, but fallback: 1xBet first
+      return [...bookmakers].sort((a) => (a.name === '1xBet' ? -1 : 0));
+    }
+    return bookmakers;
+  })();
 
   const rankBorder = ['3px solid #FFB800', '3px solid #c0c0c0', '3px solid #cd7f32', '1px solid rgba(255,255,255,0.07)'];
 
