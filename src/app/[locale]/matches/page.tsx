@@ -58,7 +58,7 @@ const matches = [
   },
   {
     id: 4, group: 'QF', stage: 'Quarter-Final 4',
-    date: 'Jul 12, 2026', time: '21:00 ET', venue: 'Arrowhead Stadium', city: 'Kansas City, USA',
+    date: 'Jul 11/12, 2026', time: '21:00 ET', venue: 'Arrowhead Stadium', city: 'Kansas City, USA',
     home: { team: 'Argentina', flag: '🇦🇷', form: ['W','W','W','W','W'] },
     away: { team: 'Switzerland', flag: '🇨🇭', form: ['W','W','W','W','W'] },
     odds: { home: '1.80', draw: '3.60', away: '4.20' },
@@ -74,7 +74,7 @@ const matches = [
   },
   {
     id: 5, group: 'SF', stage: 'Semi-Final 1',
-    date: 'Jul 14, 2026', time: 'TBC', venue: 'MetLife Stadium', city: 'New York, USA',
+    date: 'Jul 14, 2026', time: '15:00 ET', venue: 'AT&T Stadium', city: 'Dallas, USA',
     home: { team: 'France', flag: '🇫🇷', form: ['W','W','W','W','W'] },
     away: { team: 'Spain', flag: '🇪🇸', form: ['W','W','W','W','W'] },
     odds: { home: '1.80', draw: '3.60', away: '2.10' },
@@ -90,7 +90,7 @@ const matches = [
   },
   {
     id: 6, group: 'SF', stage: 'Semi-Final 2',
-    date: 'Jul 15, 2026', time: 'TBC', venue: 'AT&T Stadium', city: 'Dallas, USA',
+    date: 'Jul 15, 2026', time: '15:00 ET', venue: 'Mercedes-Benz Stadium', city: 'Atlanta, USA',
     home: { team: 'Norway / England', flag: '⚔️', form: [] },
     away: { team: 'Argentina / Switzerland', flag: '⚔️', form: [] },
     odds: { home: 'TBC', draw: 'TBC', away: 'TBC' },
@@ -102,7 +102,7 @@ const matches = [
   },
   {
     id: 7, group: 'Final', stage: 'World Cup Final',
-    date: 'Jul 19, 2026', time: 'TBC', venue: 'MetLife Stadium', city: 'New York, USA',
+    date: 'Jul 19, 2026', time: '15:00 ET', venue: 'MetLife Stadium', city: 'East Rutherford, USA',
     home: { team: 'SF1 Winner', flag: '🏆', form: [] },
     away: { team: 'SF2 Winner', flag: '🏆', form: [] },
     odds: { home: 'TBC', draw: 'TBC', away: 'TBC' },

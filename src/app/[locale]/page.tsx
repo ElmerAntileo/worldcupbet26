@@ -137,11 +137,11 @@ const featuredOdds = [
   {
     match: 'France vs Spain',
     date: 'Jul 14, 2026',
-    time: 'TBC',
+    time: '15:00 ET',
     home: { team: 'France', odds: '1.80' , flag: '🇫🇷' },
     draw: { odds: '3.60' },
     away: { team: 'Spain', odds: '2.10', flag: '🇪🇸' },
-    group: 'Semi-Final — TUE',
+    group: 'Semi-Final — TUE · Dallas',
   },
 ];
 

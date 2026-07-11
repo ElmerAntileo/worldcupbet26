@@ -76,7 +76,7 @@ const stages = [
     stage: "Semi-Finals",
     dates: "Jul 14 – Jul 15",
     teams: "4 teams",
-    desc: "Semi-Final 1: France vs Spain confirmed for Jul 14 at MetLife Stadium. SF2 TBC after QF3/QF4 complete.",
+    desc: "SF1: France vs Spain · Jul 14 · AT&T Stadium, Dallas · 15:00 ET. SF2: Jul 15 · Mercedes-Benz Stadium, Atlanta · 15:00 ET.",
     tipIcon: "🔥",
     tip: "France vs Spain is the bet of the tournament. Spain 2.10 / France 1.80 — lean France at home form.",
   },
@@ -114,7 +114,7 @@ const bracketFaqs = [
   },
   {
     q: "When is the World Cup 2026 Semi-Final?",
-    a: "Semi-Final 1 is on Monday July 14, 2026 at MetLife Stadium in New Jersey — France vs Spain. Semi-Final 2 is on Tuesday July 15 at AT&T Stadium in Dallas, between the winners of Norway vs England and Argentina vs Switzerland.",
+    a: "Semi-Final 1 is on Tuesday July 14, 2026 at AT&T Stadium in Dallas — France vs Spain at 15:00 ET. Semi-Final 2 is on Wednesday July 15 at Mercedes-Benz Stadium in Atlanta at 15:00 ET, between the winners of Norway vs England and Argentina vs Switzerland.",
   },
   {
     q: "When is the World Cup 2026 Final?",
