@@ -365,9 +365,19 @@ export default async function HomePage() {
           <CountdownTimer />
 
           <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap', marginTop: '32px' }}>
-            <a href="https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow sponsored" style={{ background: 'linear-gradient(135deg, #ef4444, #dc2626)', color: 'white', padding: '15px 36px', fontSize: '15px', borderRadius: '9px', fontWeight: 800, textDecoration: 'none', boxShadow: '0 4px 12px rgba(239,68,68,0.3)' }}>
-              🎁 Claim €100 Bonus
-            </a>
+            {betwayPriority ? (
+              <a href="/api/redirect/betway" target="_blank" rel="noopener noreferrer nofollow sponsored" data-affiliate="Betway" style={{ background: 'linear-gradient(135deg,#00a651,#007a3c)', color: 'white', padding: '15px 36px', fontSize: '15px', borderRadius: '9px', fontWeight: 800, textDecoration: 'none', boxShadow: '0 4px 12px rgba(0,166,81,0.35)' }}>
+                ⚡ Claim Betway Bonus — QF Tonight
+              </a>
+            ) : betssonBlocked ? (
+              <a href="https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" target="_blank" rel="noopener noreferrer nofollow sponsored" data-affiliate="1xBet" style={{ background: 'linear-gradient(135deg,#00d084,#00b870)', color: '#040c18', padding: '15px 36px', fontSize: '15px', borderRadius: '9px', fontWeight: 800, textDecoration: 'none', boxShadow: '0 4px 12px rgba(0,208,132,0.35)' }}>
+                🎯 Claim 1xBet €100 Bonus — Tonight
+              </a>
+            ) : (
+              <a href={isDE ? 'https://www.betsson.com/de/sport?affcode=AE3051334481&utm_medium=Affiliate&utm_source=10700602' : 'https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/'} target="_blank" rel="noopener noreferrer nofollow sponsored" data-affiliate="Betsson" style={{ background: 'linear-gradient(135deg, #ef4444, #dc2626)', color: 'white', padding: '15px 36px', fontSize: '15px', borderRadius: '9px', fontWeight: 800, textDecoration: 'none', boxShadow: '0 4px 12px rgba(239,68,68,0.3)' }}>
+                🎁 Claim Betsson €100 Bonus
+              </a>
+            )}
             <Link href="/world-cup-2026-matches" className="btn-outline" style={{ padding: '15px 36px', fontSize: '15px', borderRadius: '9px' }}>
               All Matches →
             </Link>
@@ -408,11 +418,16 @@ export default async function HomePage() {
       {/* ── FEATURED MATCH ODDS ── */}
       <section id="odds" style={{ padding: '56px 20px 48px' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '28px' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
             <h2 className="section-title" style={{ marginBottom: 0 }}>Featured Match Odds</h2>
             <Link href="/world-cup-2026-matches" style={{ color: 'var(--accent)', fontSize: '13px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '4px' }}>
-              All 24 Matches →
+              All Matches →
             </Link>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px', padding: '8px 14px', background: 'rgba(255,68,68,0.08)', border: '1px solid rgba(255,68,68,0.2)', borderRadius: '8px' }}>
+            <span style={{ width: '7px', height: '7px', background: 'var(--hot)', borderRadius: '50%', display: 'inline-block', animation: 'pulse 1.5s infinite', flexShrink: 0 }} />
+            <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--hot)' }}>2 QFs TONIGHT</span>
+            <span style={{ fontSize: '12px', color: 'var(--muted)' }}>· Norway vs England 17:00 ET · Argentina vs Switzerland 21:00 ET · Odds update live before kick-off</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             {featuredOdds.map((m) => (
@@ -465,13 +480,13 @@ export default async function HomePage() {
                     </a>
                   ) : (
                     <>
-                      <a href="https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow sponsored"
+                      <a href={isDE ? 'https://www.betsson.com/de/sport?affcode=AE3051334481&utm_medium=Affiliate&utm_source=10700602' : 'https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/'} target="_blank" rel="noopener noreferrer nofollow sponsored" data-affiliate="Betsson"
                         style={{ background: 'linear-gradient(135deg,#ef4444,#dc2626)', color: 'white', padding: '11px 28px', borderRadius: '8px', fontWeight: 800, fontSize: '13px', textDecoration: 'none', boxShadow: '0 4px 12px rgba(239,68,68,0.3)' }}>
-                        🏆 Bet at Betsson
+                        🏆 Bet at Betsson — Best Odds
                       </a>
-                      <a href="https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" target="_blank" rel="noopener noreferrer nofollow sponsored"
-                        style={{ background: 'rgba(255,255,255,0.06)', color: 'var(--accent)', border: '1px solid rgba(0,208,132,0.3)', padding: '11px 22px', borderRadius: '8px', fontWeight: 700, fontSize: '13px', textDecoration: 'none' }}>
-                        1xBet →
+                      <a href="https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" target="_blank" rel="noopener noreferrer nofollow sponsored" data-affiliate="1xBet"
+                        style={{ background: 'linear-gradient(135deg,#1a4fd6,#1240b0)', color: 'white', padding: '11px 22px', borderRadius: '8px', fontWeight: 800, fontSize: '13px', textDecoration: 'none', boxShadow: '0 4px 12px rgba(26,79,214,0.35)' }}>
+                        🎯 1xBet — €100 Bonus
                       </a>
                     </>
                   )}
@@ -559,6 +574,32 @@ export default async function HomePage() {
                           Get 100% Bonus — Best In-Play Odds →
                         </Link>
                       </>
+                    ) : bk.name === 'Betsson' ? (
+                      <a href={isDE ? 'https://www.betsson.com/de/sport?affcode=AE3051334481&utm_medium=Affiliate&utm_source=10700602' : 'https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/'} target="_blank" rel="noopener noreferrer nofollow sponsored"
+                        data-affiliate="Betsson"
+                        style={{
+                          display: 'inline-block',
+                          background: 'linear-gradient(135deg,#ef4444,#dc2626)',
+                          color: 'white',
+                          padding: '11px 22px', borderRadius: '8px', fontWeight: 800,
+                          fontSize: '13px', textDecoration: 'none', whiteSpace: 'nowrap',
+                          boxShadow: '0 4px 14px rgba(239,68,68,0.3)',
+                        }}>
+                        Claim €100 Bonus →
+                      </a>
+                    ) : bk.name === 'Betway' ? (
+                      <a href="/api/redirect/betway" target="_blank" rel="noopener noreferrer nofollow sponsored"
+                        data-affiliate="Betway"
+                        style={{
+                          display: 'inline-block',
+                          background: 'linear-gradient(135deg,#00a651,#007a3c)',
+                          color: 'white',
+                          padding: '11px 22px', borderRadius: '8px', fontWeight: 800,
+                          fontSize: '13px', textDecoration: 'none', whiteSpace: 'nowrap',
+                          boxShadow: '0 4px 14px rgba(0,166,81,0.35)',
+                        }}>
+                        Claim €100 Bonus →
+                      </a>
                     ) : (
                       <a href={bk.url} target="_blank" rel="noopener noreferrer nofollow sponsored"
                         data-affiliate={bk.name}
@@ -570,7 +611,7 @@ export default async function HomePage() {
                           fontSize: '13px', textDecoration: 'none', whiteSpace: 'nowrap',
                           boxShadow: '0 4px 14px rgba(239,68,68,0.3)',
                         }}>
-                        Claim Bonus
+                        Claim Bonus →
                       </a>
                     )}
                     <div style={{ color: 'var(--muted)', fontSize: '10px', marginTop: '6px' }}>T&Cs apply · 18+</div>
