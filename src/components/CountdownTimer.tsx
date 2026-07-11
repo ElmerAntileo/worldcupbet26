@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 
-const KICKOFF = new Date("2026-07-09T20:00:00Z").getTime(); // France vs Morocco QF · Jul 9 22:00 CEST
+const KICKOFF = new Date("2026-07-11T21:00:00Z").getTime(); // Norway vs England QF · Jul 11 17:00 ET
 
 export default function CountdownTimer() {
   const [t, setT] = useState({ d: 20, h: 0, m: 0, s: 0 });
@@ -67,7 +67,7 @@ export default function CountdownTimer() {
         marginBottom: "12px",
         fontWeight: 700,
       }}>
-        NEXT QUARTER-FINAL IN
+        QF TONIGHT
       </div>
       <div style={{
         display: "inline-flex",
@@ -104,7 +104,7 @@ export default function CountdownTimer() {
         color: "rgba(255,255,255,0.3)",
         marginTop: "10px",
       }}>
-        🇫🇷 France vs Morocco 🇲🇦 · Quarter-Final · Jul 9, 2026
+        🇳🇴 Norway vs England 🏴󠁧󠁢󠁥󠁮󠁧󠁿 · QF · 17:00 ET · Then Argentina vs Switzerland 21:00 ET
       </div>
     </div>
   );
