@@ -25,7 +25,7 @@ const BETWAY_LINKS: Record<string, string> = {
   GB: 'https://betway.com/bwp/bet10get60?s=sp52697',          // UK — World Cup landing
   ES: 'https://betway.es/bwp/sports-welcome/es-es/?s=sp52697',  // Spain — local license
   DE: 'https://betway.de/bwp/sports-100-welcome-bonus/de-de/?s=sp52697', // Germany
-  CA: 'https://betway.ca/bwp/welcome-sports-on-300-50/en-ca/?s=sp52697', // Canada (Ontario)
+  CA: 'https://betway.com/bwp/welcome-sports-ca-300-50/en-ca/?s=sp52697', // Canada (Rest of Canada sports)
   MX: 'https://betway.mx/bwp/sports-welcome-2022-1/es-mx/?s=sp52697',    // Mexico
 };
 
