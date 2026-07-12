@@ -10,7 +10,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: "World Cup 2026 Betting Sites — Best Odds, Bonuses & Tips ⚽",
   description:
-    "FIFA World Cup 2026 QF4 TONIGHT: Argentina vs Switzerland (1.80/3.60/4.20). Messi vs Switzerland — 21:00 ET Kansas City. France vs Spain SF1 Jul 14 Dallas. Best odds from 1xBet, Betway & Betsson.",
+    "World Cup 2026 Semi-Finals: France vs Spain SF1 TOMORROW (1.67/3.50/2.20) · Argentina vs England SF2 Jul 15 Atlanta. All 4 QF winners set. Best odds from 1xBet, Betway & Betsson.",
   alternates: {
     canonical: "https://www.worldcupbet26.com/",
     languages: {
@@ -117,29 +117,29 @@ const bookmakers = [
 
 const featuredOdds = [
   {
-    match: 'Argentina vs Switzerland',
-    date: 'Jul 12, 2026',
-    time: '21:00 ET',
-    home: { team: 'Argentina', odds: '1.80', flag: '🇦🇷' },
-    draw: { odds: '3.60' },
-    away: { team: 'Switzerland', odds: '4.20', flag: '🇨🇭' },
-    group: 'Quarter-Final — TONIGHT',
-  },
-  {
     match: 'France vs Spain',
     date: 'Jul 14, 2026',
     time: '15:00 ET',
-    home: { team: 'France', odds: '1.80' , flag: '🇫🇷' },
-    draw: { odds: '3.60' },
-    away: { team: 'Spain', odds: '2.10', flag: '🇪🇸' },
-    group: 'Semi-Final — TUE · Dallas',
+    home: { team: 'France', odds: '1.67', flag: '🇫🇷' },
+    draw: { odds: '3.50' },
+    away: { team: 'Spain', odds: '2.20', flag: '🇪🇸' },
+    group: 'Semi-Final 1 — TOMORROW · Dallas',
+  },
+  {
+    match: 'Argentina vs England',
+    date: 'Jul 15, 2026',
+    time: '15:00 ET',
+    home: { team: 'Argentina', odds: '2.10', flag: '🇦🇷' },
+    draw: { odds: '3.50' },
+    away: { team: 'England', odds: '1.77', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿' },
+    group: 'Semi-Final 2 — WED · Atlanta',
   },
 ];
 
 const homeFaqs = [
   {
     q: "Who is the favourite to win the 2026 World Cup?",
-    a: "At the semi-final stage, France and Spain are co-favourites at 3.50 each after both won their quarter-finals. Argentina are 4.00 — Messi's reigning champions face Switzerland tonight. England are 5.00 if they beat Norway tonight in the other QF. Compare current outright odds across Betsson and 1xBet on our odds page.",
+    a: "France (3.50) and Spain (3.50) are joint favourites entering the semi-finals. Argentina (4.00) beat Switzerland 3-1 AET and face England (4.50) in SF2 on Jul 15 — Messi vs Bellingham. Compare current outright odds across Betsson and 1xBet on our odds page.",
   },
   {
     q: "When does the 2026 FIFA World Cup start?",
@@ -155,7 +155,7 @@ const homeFaqs = [
   },
   {
     q: "Which bookmaker has the best World Cup 2026 odds?",
-    a: "Betsson and 1xBet consistently offer the highest World Cup 2026 winner odds in our daily comparison. At the semi-final stage, France and Spain are 3.50 each, Argentina are 4.00, England 5.00 and Norway 8.00. Always compare across multiple bookmakers — even a 0.25 price difference on a £50 bet adds meaningful value over a tournament.",
+    a: "Betsson and 1xBet consistently offer the highest World Cup 2026 winner odds in our daily comparison. At the semi-final stage, France and Spain are 3.50 each and face each other in SF1 tomorrow, while Argentina are 4.00 vs England 4.50 in SF2. Always compare across multiple bookmakers — even a 0.25 price difference on a £50 bet adds meaningful value.",
   },
   {
     q: "What types of bets can I place on the World Cup?",
@@ -163,7 +163,7 @@ const homeFaqs = [
   },
   {
     q: "What is the best value bet for World Cup 2026?",
-    a: "With two QFs still to play tonight, our best value bets are: Norway at 3.60 to beat England — Haaland has 7 goals and Norway have beaten everyone in front of them. For the semi-final, Spain at 2.10 to beat France represents excellent value — Yamal is the best player in the tournament and Spain's system is the best remaining. Compare match odds in real time at Betsson and 1xBet.",
+    a: "Our top semi-final value bets: Spain at 2.20 to beat France — Yamal is the best player in the tournament and Spain's system outperforms France's. For SF2, Argentina at 2.10 to beat England — Messi and Álvarez (2 goals vs Switzerland AET) are in unstoppable form. Compare match odds in real time at Betsson and 1xBet.",
   },
   {
     q: "Can I get a welcome bonus for World Cup betting?",
@@ -183,7 +183,7 @@ const homeFaqs = [
   },
   {
     q: "Who will win the World Cup 2026?",
-    a: "France and Spain are joint favourites at 3.50 each and meet in SF1 on July 14 at Dallas. Argentina (4.00) and England (5.00) still have their QF to play tonight, as does Norway (8.00) — Haaland's side are the shock of the tournament. Our analysts tip a France vs Spain final, with Spain narrowly favoured at 3.50 — Yamal, Pedri and Morata make them the most complete team remaining.",
+    a: "France and Spain are joint favourites at 3.50 each and face off in SF1 tomorrow (Jul 14, Dallas). Argentina beat Switzerland 3-1 AET and face England in SF2 (Jul 15, Atlanta). Our analysts tip a Spain vs Argentina final — Yamal, Pedri and Morata are the most complete team remaining, while Messi's form demands respect at 4.00.",
   },
   {
     q: "What is the World Cup 2026 schedule?",
@@ -254,7 +254,7 @@ export default async function HomePage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
                   <span style={{ fontWeight: 800, fontSize: '13px', color: 'var(--foreground)' }}>Betway</span>
                   <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '13px' }}>— 100% Sports Welcome Bonus</span>
-                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· QF Tonight: Argentina vs Switzerland · Licensed in your region</span>
+                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· SF1 TOMORROW: France vs Spain · Licensed in your region</span>
                 </div>
               </div>
               <a href="/api/redirect/betway" target="_blank" rel="noopener noreferrer nofollow sponsored"
@@ -269,7 +269,7 @@ export default async function HomePage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
                   <span style={{ fontWeight: 800, fontSize: '13px', color: 'var(--foreground)' }}>1xBet</span>
                   <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '13px' }}>— 100% Bonus up to €100</span>
-                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· QF Tonight: Argentina vs Switzerland · 200+ markets per match</span>
+                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· SF1 TOMORROW: France vs Spain · 200+ markets per match</span>
                 </div>
               </div>
               <a href="https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" target="_blank" rel="noopener noreferrer nofollow sponsored"
@@ -284,7 +284,7 @@ export default async function HomePage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
                   <span style={{ fontWeight: 800, fontSize: '13px', color: 'var(--foreground)' }}>Betsson</span>
                   <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '13px' }}>— 100% Bonus up to €100</span>
-                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· QF Tonight: Argentina vs Switzerland · Final Jul 19</span>
+                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· SF1 TOMORROW: France vs Spain · Final Jul 19</span>
                 </div>
               </div>
               <a href={isDE ? 'https://www.betsson.com/de/sport?affcode=AE3051334481&utm_medium=Affiliate&utm_source=10700602' : 'https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/'} target="_blank" rel="noopener noreferrer nofollow sponsored"
@@ -370,11 +370,11 @@ export default async function HomePage() {
           <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap', marginTop: '32px' }}>
             {betwayPriority ? (
               <a href="/api/redirect/betway" target="_blank" rel="noopener noreferrer nofollow sponsored" data-affiliate="Betway" style={{ background: 'linear-gradient(135deg,#00a651,#007a3c)', color: 'white', padding: '15px 36px', fontSize: '15px', borderRadius: '9px', fontWeight: 800, textDecoration: 'none', boxShadow: '0 4px 12px rgba(0,166,81,0.35)' }}>
-                ⚡ Claim Betway Bonus — QF Tonight
+                ⚡ Claim Betway Bonus — SF1 Tomorrow
               </a>
             ) : betssonBlocked ? (
               <a href="https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" target="_blank" rel="noopener noreferrer nofollow sponsored" data-affiliate="1xBet" style={{ background: 'linear-gradient(135deg,#00d084,#00b870)', color: '#040c18', padding: '15px 36px', fontSize: '15px', borderRadius: '9px', fontWeight: 800, textDecoration: 'none', boxShadow: '0 4px 12px rgba(0,208,132,0.35)' }}>
-                🎯 Claim 1xBet €100 Bonus — Tonight
+                🎯 Claim 1xBet €100 Bonus — SF1 Tomorrow
               </a>
             ) : (
               <a href={isDE ? 'https://www.betsson.com/de/sport?affcode=AE3051334481&utm_medium=Affiliate&utm_source=10700602' : 'https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/'} target="_blank" rel="noopener noreferrer nofollow sponsored" data-affiliate="Betsson" style={{ background: 'linear-gradient(135deg, #ef4444, #dc2626)', color: 'white', padding: '15px 36px', fontSize: '15px', borderRadius: '9px', fontWeight: 800, textDecoration: 'none', boxShadow: '0 4px 12px rgba(239,68,68,0.3)' }}>
@@ -404,7 +404,7 @@ export default async function HomePage() {
             { value: '32+', label: 'Bookmakers', icon: '📊' },
             { value: '100%', label: 'Free to Use', icon: '✅' },
             { value: '6', label: 'Languages', icon: '🌍' },
-            { value: 'QF', label: 'Stage: Tonight', icon: '⚽' },
+            { value: 'SF', label: 'Stage: Semi-Final', icon: '⚽' },
           ].map((s, i) => (
             <div key={s.label} style={{
               padding: '22px 12px',
@@ -429,8 +429,8 @@ export default async function HomePage() {
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px', padding: '8px 14px', background: 'rgba(255,68,68,0.08)', border: '1px solid rgba(255,68,68,0.2)', borderRadius: '8px' }}>
             <span style={{ width: '7px', height: '7px', background: 'var(--hot)', borderRadius: '50%', display: 'inline-block', animation: 'pulse 1.5s infinite', flexShrink: 0 }} />
-            <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--hot)' }}>QF4 TONIGHT · LAST QF</span>
-            <span style={{ fontSize: '12px', color: 'var(--muted)' }}>· Argentina vs Switzerland 21:00 ET · Kansas City · Messi final QF · SF1 France vs Spain Jul 14</span>
+            <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--hot)' }}>SEMI-FINALS SET · 2 MATCHES LEFT</span>
+            <span style={{ fontSize: '12px', color: 'var(--muted)' }}>· SF1: France vs Spain TOMORROW 15:00 ET Dallas · SF2: Argentina vs England Jul 15 Atlanta · Final Jul 19 MetLife</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             {featuredOdds.map((m) => (
@@ -700,9 +700,9 @@ export default async function HomePage() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '14px' }}>
             {[
-              { tag: 'QF4 TONIGHT', title: 'Argentina vs Switzerland — QF Odds & Messi Analysis', slug: 'messi-last-world-cup-argentina-2026', desc: "Messi's last World Cup QF. Argentina 1.80 vs Switzerland 4.20. Kansas City, 21:00 ET tonight. Full preview.", hot: true },
-              { tag: 'SF Preview', title: 'France vs Spain — Semi-Final Odds & Prediction', slug: 'france-vs-spain-semi-final-world-cup-2026', desc: 'Mbappé vs Yamal in Dallas on Jul 14. France 1.80 vs Spain 2.10. Our tip: Spain to win at 2.10. Full preview inside.', hot: true },
-              { tag: 'QF Result', title: 'Norway vs England — Quarter-Final Result', slug: 'norway-vs-england-world-cup-2026', desc: 'Norway vs England QF result from Jul 11. Who made it to the semi-finals? Full match report and next round odds.', hot: false },
+              { tag: 'SF1 TOMORROW', title: 'France vs Spain — Semi-Final Odds & Prediction', slug: 'france-vs-spain-semi-final-world-cup-2026', desc: 'Mbappé vs Yamal in Dallas on Jul 14. France 1.67 vs Spain 2.20. Our tip: Spain to win at 2.20. Full preview inside.', hot: true },
+              { tag: 'SF2 WED', title: 'Argentina vs England — Semi-Final Odds & Messi Analysis', slug: 'messi-last-world-cup-argentina-2026', desc: 'Messi vs Bellingham in Atlanta on Jul 15. Argentina 2.10 vs England 1.77. Argentina beat Switzerland 3-1 AET. Full preview.', hot: true },
+              { tag: 'QF Result', title: 'Argentina 3-1 Switzerland — AET Quarter-Final Report', slug: 'norway-vs-england-world-cup-2026', desc: 'Álvarez seals it in extra time. England also through after beating Norway 2-1. All four semi-finalists confirmed.', hot: false },
             ].map((a) => (
               <Link key={a.slug} href={`/blog/${a.slug}`} style={{ textDecoration: 'none' }}>
                 <div className="card" style={{ padding: '22px', borderRadius: '14px', height: '100%', cursor: 'pointer' }}>

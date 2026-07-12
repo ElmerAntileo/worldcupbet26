@@ -8,8 +8,8 @@ const BETSSON_DE  = 'https://www.betsson.com/de/sport?affcode=AE3051334481&utm_m
 const ONEXBET_URL = 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97';
 const BETWAY_URL  = '/api/redirect/betway';
 
-// Argentina vs Switzerland QF odds — Jul 12
-const QF_HOME = "1.80"; const QF_DRAW = "3.60"; const QF_AWAY = "4.20";
+// France vs Spain SF1 odds — Jul 14
+const QF_HOME = "1.67"; const QF_DRAW = "3.50"; const QF_AWAY = "2.20";
 
 export default function StickyOddsBar() {
   const { countryCode } = useGeo();
@@ -65,9 +65,9 @@ export default function StickyOddsBar() {
           }} />
           <span style={{ fontSize: "11px", fontWeight: 700, color: "var(--hot)", letterSpacing: "0.08em" }}>LIVE</span>
           <span style={{ fontSize: "11px", fontWeight: 600, color: "var(--muted-light)", whiteSpace: "nowrap" }}>
-            🇦🇷 Argentina vs Switzerland 🇨🇭
+            🇫🇷 France vs Spain 🇪🇸
           </span>
-          <span style={{ fontSize: "10px", color: "var(--muted)", whiteSpace: "nowrap" }}>· QF4 · Jul 12 · 21:00 ET</span>
+          <span style={{ fontSize: "10px", color: "var(--muted)", whiteSpace: "nowrap" }}>· SF1 · Jul 14 · 15:00 ET</span>
         </div>
 
         {/* Affiliate bookmakers (both with CTA buttons) */}
