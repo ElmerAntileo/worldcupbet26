@@ -240,6 +240,36 @@ export default async function HomePage() {
     <div style={{ background: 'var(--bg-base)', minHeight: '100vh', color: 'var(--foreground)' }}>
       <Script id="homepage-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
+      {/* ── LAST CHANCE REGISTRATION BANNER ── */}
+      <div style={{
+        background: 'linear-gradient(90deg, #1a0505 0%, #200a0a 50%, #1a0505 100%)',
+        borderBottom: '1px solid rgba(255,68,68,0.3)',
+        padding: '9px 20px',
+      }}>
+        <div style={{ maxWidth: '960px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <span style={{ width: '7px', height: '7px', background: '#ff4444', borderRadius: '50%', display: 'inline-block', flexShrink: 0, animation: 'pulse 1.5s infinite' }} />
+            <span style={{ fontWeight: 800, fontSize: '13px', color: '#ff6b6b' }}>⏰ 6 DAYS LEFT</span>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '13px' }}>— Last chance to register before the World Cup Final on Jul 19.</span>
+            <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '11px' }}>SF1 Tomorrow · SF2 Wed · Final Sun</span>
+          </div>
+          <div style={{ display: 'flex', gap: '8px', flexShrink: 0 }}>
+            <a href="https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow sponsored" data-affiliate="Betsson"
+              style={{ background: 'linear-gradient(135deg,#ef4444,#dc2626)', color: 'white', padding: '6px 14px', borderRadius: '6px', fontWeight: 800, fontSize: '11px', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+              Join Betsson
+            </a>
+            <a href="https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" target="_blank" rel="noopener noreferrer nofollow sponsored" data-affiliate="1xBet"
+              style={{ background: 'linear-gradient(135deg,#00d084,#00b870)', color: '#040c18', padding: '6px 14px', borderRadius: '6px', fontWeight: 800, fontSize: '11px', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+              Join 1xBet
+            </a>
+            <a href="/api/redirect/betway" target="_blank" rel="noopener noreferrer nofollow sponsored" data-affiliate="Betway"
+              style={{ background: 'linear-gradient(135deg,#1a4fd6,#1240b0)', color: 'white', padding: '6px 14px', borderRadius: '6px', fontWeight: 800, fontSize: '11px', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+              Join Betway
+            </a>
+          </div>
+        </div>
+      </div>
+
       {/* ── GEO-AWARE PROMO BANNER ── */}
       <div style={{
         background: 'linear-gradient(90deg, #071525 0%, #0a1e12 50%, #071525 100%)',
@@ -701,8 +731,8 @@ export default async function HomePage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '14px' }}>
             {[
               { tag: 'SF1 TOMORROW', title: 'France vs Spain — Semi-Final Odds & Prediction', slug: 'france-vs-spain-semi-final-world-cup-2026', desc: 'Mbappé vs Yamal in Dallas on Jul 14. France 1.67 vs Spain 2.20. Our tip: Spain to win at 2.20. Full preview inside.', hot: true },
-              { tag: 'SF2 WED', title: 'Argentina vs England — Semi-Final Odds & Messi Analysis', slug: 'messi-last-world-cup-argentina-2026', desc: 'Messi vs Bellingham in Atlanta on Jul 15. Argentina 2.10 vs England 1.77. Argentina beat Switzerland 3-1 AET. Full preview.', hot: true },
-              { tag: 'QF Result', title: 'Argentina 3-1 Switzerland — AET Quarter-Final Report', slug: 'norway-vs-england-world-cup-2026', desc: 'Álvarez seals it in extra time. England also through after beating Norway 2-1. All four semi-finalists confirmed.', hot: false },
+              { tag: 'SF2 WED · NEW', title: 'Argentina vs England — Semi-Final Odds & Prediction', slug: 'argentina-vs-england-semi-final-world-cup-2026', desc: 'Messi vs Bellingham. 40 years after 1986. Argentina 2.10 vs England 1.77 in Atlanta on Jul 15. Full preview & our pick.', hot: true },
+              { tag: 'SF Preview', title: 'Register Before the Final — 100% Bonus at Betsson & 1xBet', slug: 'best-world-cup-2026-betting-odds', desc: '6 days left in the tournament. New accounts get 100% on first deposit — bet both SFs and the Final Jul 19.', hot: false },
             ].map((a) => (
               <Link key={a.slug} href={`/blog/${a.slug}`} style={{ textDecoration: 'none' }}>
                 <div className="card" style={{ padding: '22px', borderRadius: '14px', height: '100%', cursor: 'pointer' }}>

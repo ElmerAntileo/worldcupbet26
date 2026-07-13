@@ -3,11 +3,11 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "France vs Spain Semi-Final World Cup 2026 — Odds, Preview & Prediction",
-  description: "France vs Spain World Cup 2026 Semi-Final on July 14 at AT&T Stadium, Dallas. France 1.80 favourites vs Spain 2.10. Mbappé vs Yamal. Full preview, team news and best odds from Betsson, 1xBet and Betway.",
+  description: "France vs Spain World Cup 2026 Semi-Final on July 14 at AT&T Stadium, Dallas. France 1.67 favourites vs Spain 2.20. Mbappé vs Yamal. Full preview, team news and best odds from Betsson, 1xBet and Betway.",
   alternates: { canonical: "https://www.worldcupbet26.com/blog/france-vs-spain-semi-final-world-cup-2026" },
   openGraph: {
     title: "France vs Spain — World Cup 2026 Semi-Final Odds & Preview",
-    description: "The match of the tournament. France 1.80 vs Spain 2.10. Mbappé vs Yamal. Dallas, Jul 14, 15:00 ET. Best odds inside.",
+    description: "The match of the tournament. France 1.67 vs Spain 2.20. Mbappé vs Yamal. Dallas, Jul 14, 15:00 ET. Best odds inside.",
   },
 };
 
@@ -35,16 +35,16 @@ export default function FranceSpainSF() {
           <div style={{ textAlign: "center" }}>
             <div style={{ fontSize: "3rem", marginBottom: "4px" }}>🇫🇷</div>
             <div style={{ fontWeight: 800, fontSize: "1rem" }}>France</div>
-            <div style={{ color: accent, fontSize: "1.4rem", fontWeight: 900, marginTop: "4px" }}>1.80</div>
+            <div style={{ color: accent, fontSize: "1.4rem", fontWeight: 900, marginTop: "4px" }}>1.67</div>
           </div>
           <div style={{ textAlign: "center" }}>
             <div style={{ fontSize: "1.2rem", fontWeight: 900, color: muted, lineHeight: 1 }}>vs</div>
-            <div style={{ color: muted, fontSize: "0.78rem", marginTop: "6px" }}>Draw 3.60</div>
+            <div style={{ color: muted, fontSize: "0.78rem", marginTop: "6px" }}>Draw 3.50</div>
           </div>
           <div style={{ textAlign: "center" }}>
             <div style={{ fontSize: "3rem", marginBottom: "4px" }}>🇪🇸</div>
             <div style={{ fontWeight: 800, fontSize: "1rem" }}>Spain</div>
-            <div style={{ color: accent, fontSize: "1.4rem", fontWeight: 900, marginTop: "4px" }}>2.10</div>
+            <div style={{ color: accent, fontSize: "1.4rem", fontWeight: 900, marginTop: "4px" }}>2.20</div>
           </div>
         </div>
         <p style={{ color: muted, fontSize: "0.8rem", textAlign: "center", marginTop: "1rem" }}>
@@ -103,23 +103,23 @@ export default function FranceSpainSF() {
       <h2 style={{ fontSize: "1.3rem", fontWeight: 800, marginBottom: "1rem" }}>Our Prediction</h2>
       <div style={{ background: "rgba(0,208,132,0.06)", border: "1px solid rgba(0,208,132,0.2)", borderRadius: "10px", padding: "1.25rem", marginBottom: "2rem" }}>
         <p style={{ color: muted, lineHeight: 1.8, marginBottom: "0.5rem" }}>
-          This is the hardest match to call in the entire tournament. France&apos;s 1.80 reflects their status as the slightly more complete team — deeper squad, more experience of winning at major tournaments, Mbappé at peak powers. But Spain at 2.10 represents outstanding value. They have the better system, the better ball retention, and a 18-year-old who has already announced himself as the player of this World Cup.
+          This is the hardest match to call in the entire tournament. France&apos;s 1.67 reflects their status as the slightly more complete team — deeper squad, more experience of winning at major tournaments, Mbappé at peak powers. But Spain at 2.20 represents outstanding value. They have the better system, the better ball retention, and a 18-year-old who has already announced himself as the player of this World Cup.
         </p>
         <p style={{ color: muted, lineHeight: 1.8 }}>
-          <strong style={{ color: accent }}>Pick:</strong> Spain to Win or Draw (Double Chance) at ~1.30 for safety. For value: <strong style={{ color: accent }}>Spain to Win at 2.10</strong>. This is the best price you will see on Spain to reach the final.
+          <strong style={{ color: accent }}>Pick:</strong> Spain to Win or Draw (Double Chance) at ~1.30 for safety. For value: <strong style={{ color: accent }}>Spain to Win at 2.20</strong>. This is the best price you will see on Spain to reach the final.
         </p>
       </div>
 
       <div style={{ background: "linear-gradient(135deg,rgba(0,208,132,0.08),rgba(0,208,132,0.03))", border: "1px solid rgba(0,208,132,0.25)", borderRadius: "12px", padding: "1.25rem", marginBottom: "2rem" }}>
         <div style={{ fontSize: "0.75rem", fontWeight: 800, color: accent, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "8px" }}>Semi-Final Betting Markets</div>
         {[
-          { label: "France to Win", odds: "1.80" },
-          { label: "Draw after 90 mins", odds: "3.60" },
-          { label: "Spain to Win", odds: "2.10" },
+          { label: "France to Win", odds: "1.67" },
+          { label: "Draw after 90 mins", odds: "3.50" },
+          { label: "Spain to Win", odds: "2.20" },
           { label: "Mbappé Anytime Scorer", odds: "1.70" },
           { label: "Yamal Anytime Scorer", odds: "2.00" },
           { label: "Both Teams to Score", odds: "1.95" },
-          { label: "Over 2.5 Goals", odds: "2.10" },
+          { label: "Over 2.5 Goals", odds: "2.20" },
           { label: "France to Win the World Cup", odds: "3.50" },
           { label: "Spain to Win the World Cup", odds: "3.50" },
         ].map(b => (
