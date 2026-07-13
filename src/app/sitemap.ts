@@ -69,10 +69,11 @@ const teamPages = [
 ];
 
 const blogPosts = [
-  // QF/SF previews — TONIGHT & this week (highest priority)
+  // SF previews — highest priority
+  "/blog/france-vs-spain-semi-final-world-cup-2026",
+  "/blog/argentina-vs-england-semi-final-world-cup-2026",
   "/blog/norway-vs-england-world-cup-2026",
   "/blog/messi-last-world-cup-argentina-2026",
-  "/blog/france-vs-spain-semi-final-world-cup-2026",
   // QF result articles
   "/blog/france-2-0-morocco-world-cup-2026-result",
   "/blog/spain-2-1-belgium-world-cup-2026-result",
@@ -146,12 +147,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entry(slug, { priority: 0.88, changeFrequency: "daily" })
     ),
 
-    // QF/SF live articles — highest priority, indexed today
-    ...entry("/blog/norway-vs-england-world-cup-2026",          { priority: 0.97, changeFrequency: "daily" }),
-    ...entry("/blog/messi-last-world-cup-argentina-2026",       { priority: 0.97, changeFrequency: "daily" }),
-    ...entry("/blog/france-vs-spain-semi-final-world-cup-2026", { priority: 0.95, changeFrequency: "daily" }),
-    ...entry("/blog/france-2-0-morocco-world-cup-2026-result",  { priority: 0.93, changeFrequency: "weekly" }),
-    ...entry("/blog/spain-2-1-belgium-world-cup-2026-result",   { priority: 0.93, changeFrequency: "weekly" }),
+    // SF live articles — highest priority, crawl daily
+    ...entry("/blog/france-vs-spain-semi-final-world-cup-2026",         { priority: 0.98, changeFrequency: "daily" }),
+    ...entry("/blog/argentina-vs-england-semi-final-world-cup-2026",    { priority: 0.98, changeFrequency: "daily" }),
+    ...entry("/blog/norway-vs-england-world-cup-2026",                  { priority: 0.93, changeFrequency: "weekly" }),
+    ...entry("/blog/messi-last-world-cup-argentina-2026",               { priority: 0.93, changeFrequency: "weekly" }),
+    ...entry("/blog/france-2-0-morocco-world-cup-2026-result",          { priority: 0.90, changeFrequency: "weekly" }),
+    ...entry("/blog/spain-2-1-belgium-world-cup-2026-result",           { priority: 0.90, changeFrequency: "weekly" }),
 
     // Blog posts
     ...blogPosts.filter(s => ![
@@ -160,6 +162,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       "/blog/france-vs-spain-semi-final-world-cup-2026",
       "/blog/france-2-0-morocco-world-cup-2026-result",
       "/blog/spain-2-1-belgium-world-cup-2026-result",
+      "/blog/argentina-vs-england-semi-final-world-cup-2026",
     ].includes(s)).flatMap((slug) =>
       entry(slug, { priority: 0.80, changeFrequency: "weekly" })
     ),
