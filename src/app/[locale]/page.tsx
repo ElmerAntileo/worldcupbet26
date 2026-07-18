@@ -8,9 +8,9 @@ import { BLOCKED_COUNTRIES_BETSSON, BETWAY_PRIORITY_COUNTRIES } from '@/lib/geoC
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "World Cup 2026 Betting Sites — Best Odds, Bonuses & Tips ⚽",
+  title: "World Cup 2026 Final — Spain vs Argentina Odds, Prediction & Best Bets ⚽🏆",
   description:
-    "World Cup 2026 Semi-Finals: France vs Spain SF1 TOMORROW (1.67/3.50/2.20) · Argentina vs England SF2 Jul 15 Atlanta. All 4 QF winners set. Best odds from 1xBet, Betway & Betsson.",
+    "🏆 World Cup 2026 FINAL: Spain vs Argentina — TOMORROW Jul 19 MetLife Stadium, New Jersey. Spain 1.70 · Draw 3.50 · Argentina 2.20. Best odds from Betsson, 1xBet & Betway.",
   alternates: {
     canonical: "https://www.worldcupbet26.com/",
     languages: {
@@ -117,29 +117,20 @@ const bookmakers = [
 
 const featuredOdds = [
   {
-    match: 'France vs Spain',
-    date: 'Jul 14, 2026',
+    match: 'Spain vs Argentina',
+    date: 'Jul 19, 2026',
     time: '15:00 ET',
-    home: { team: 'France', odds: '1.67', flag: '🇫🇷' },
+    home: { team: 'Spain', odds: '1.70', flag: '🇪🇸' },
     draw: { odds: '3.50' },
-    away: { team: 'Spain', odds: '2.20', flag: '🇪🇸' },
-    group: 'Semi-Final 1 — TOMORROW · Dallas',
-  },
-  {
-    match: 'Argentina vs England',
-    date: 'Jul 15, 2026',
-    time: '15:00 ET',
-    home: { team: 'Argentina', odds: '2.10', flag: '🇦🇷' },
-    draw: { odds: '3.50' },
-    away: { team: 'England', odds: '1.77', flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿' },
-    group: 'Semi-Final 2 — WED · Atlanta',
+    away: { team: 'Argentina', odds: '2.20', flag: '🇦🇷' },
+    group: '🏆 THE FINAL — TOMORROW · MetLife Stadium, NJ',
   },
 ];
 
 const homeFaqs = [
   {
     q: "Who is the favourite to win the 2026 World Cup?",
-    a: "France (3.50) and Spain (3.50) are joint favourites entering the semi-finals. Argentina (4.00) beat Switzerland 3-1 AET and face England (4.50) in SF2 on Jul 15 — Messi vs Bellingham. Compare current outright odds across Betsson and 1xBet on our odds page.",
+    a: "Spain are the outright favourites at 1.70 to win the World Cup Final against Argentina (2.20) tomorrow Jul 19 at MetLife Stadium. Spain were the most dominant team of the tournament, conceding just one goal. Argentina come in as defending champions — Messi, Álvarez and De Paul are in the form of their lives. Compare current Final odds at Betsson and 1xBet.",
   },
   {
     q: "When does the 2026 FIFA World Cup start?",
@@ -155,7 +146,7 @@ const homeFaqs = [
   },
   {
     q: "Which bookmaker has the best World Cup 2026 odds?",
-    a: "Betsson and 1xBet consistently offer the highest World Cup 2026 winner odds in our daily comparison. At the semi-final stage, France and Spain are 3.50 each and face each other in SF1 tomorrow, while Argentina are 4.00 vs England 4.50 in SF2. Always compare across multiple bookmakers — even a 0.25 price difference on a £50 bet adds meaningful value.",
+    a: "Betsson and 1xBet consistently offer the highest World Cup 2026 Final odds in our comparison. For Spain vs Argentina: Spain 1.70 and Argentina 2.20 — Argentina at 2.20 represents excellent value given they are the defending champions and Messi is in unstoppable form. Always compare across multiple bookmakers — even a 0.25 price difference on a £50 bet adds meaningful value.",
   },
   {
     q: "What types of bets can I place on the World Cup?",
@@ -163,7 +154,7 @@ const homeFaqs = [
   },
   {
     q: "What is the best value bet for World Cup 2026?",
-    a: "Our top semi-final value bets: Spain at 2.20 to beat France — Yamal is the best player in the tournament and Spain's system outperforms France's. For SF2, Argentina at 2.10 to beat England — Messi and Álvarez (2 goals vs Switzerland AET) are in unstoppable form. Compare match odds in real time at Betsson and 1xBet.",
+    a: "Our top Final value bet: Argentina at 2.20 to beat Spain. Spain are the technically superior team, but Argentina have won two comeback matches in the knockouts and Messi has delivered assists in the biggest moments. The draw at 3.50 is also worth considering given how tight World Cup finals historically are. Compare Final odds in real time at Betsson and 1xBet.",
   },
   {
     q: "Can I get a welcome bonus for World Cup betting?",
@@ -183,7 +174,7 @@ const homeFaqs = [
   },
   {
     q: "Who will win the World Cup 2026?",
-    a: "France and Spain are joint favourites at 3.50 each and face off in SF1 tomorrow (Jul 14, Dallas). Argentina beat Switzerland 3-1 AET and face England in SF2 (Jul 15, Atlanta). Our analysts tip a Spain vs Argentina final — Yamal, Pedri and Morata are the most complete team remaining, while Messi's form demands respect at 4.00.",
+    a: "Spain will face Argentina in the World Cup 2026 Final on July 19 at MetLife Stadium, New Jersey. Spain (1.70) beat France 2-0 in SF1 with goals from Yamal and Pedri. Argentina (2.20) beat England 2-1 in a dramatic comeback — Messi assisted both goals, Fernández equalised in the 85th minute and Lautaro Martínez scored the winner in stoppage time. Our analysts give Spain the edge, but Argentina at 2.20 offers excellent value.",
   },
   {
     q: "What is the World Cup 2026 schedule?",
@@ -249,9 +240,9 @@ export default async function HomePage() {
         <div style={{ maxWidth: '960px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', flexWrap: 'wrap' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <span style={{ width: '7px', height: '7px', background: '#ff4444', borderRadius: '50%', display: 'inline-block', flexShrink: 0, animation: 'pulse 1.5s infinite' }} />
-            <span style={{ fontWeight: 800, fontSize: '13px', color: '#ff6b6b' }}>⏰ 6 DAYS LEFT</span>
-            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '13px' }}>— Last chance to register before the World Cup Final on Jul 19.</span>
-            <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '11px' }}>SF1 Tomorrow · SF2 Wed · Final Sun</span>
+            <span style={{ fontWeight: 800, fontSize: '13px', color: '#ff6b6b' }}>🏆 FINAL TOMORROW</span>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '13px' }}>— Spain vs Argentina · Jul 19 · MetLife Stadium, New Jersey · 15:00 ET</span>
+            <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '11px' }}>Last chance to register & claim your bonus</span>
           </div>
           <div style={{ display: 'flex', gap: '8px', flexShrink: 0 }}>
             <a href="https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow sponsored" data-affiliate="Betsson"
@@ -284,7 +275,7 @@ export default async function HomePage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
                   <span style={{ fontWeight: 800, fontSize: '13px', color: 'var(--foreground)' }}>Betway</span>
                   <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '13px' }}>— 100% Sports Welcome Bonus</span>
-                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· SF1 TOMORROW: France vs Spain · Licensed in your region</span>
+                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· FINAL TOMORROW: Spain vs Argentina · Licensed in your region</span>
                 </div>
               </div>
               <a href="/api/redirect/betway" target="_blank" rel="noopener noreferrer nofollow sponsored"
@@ -299,7 +290,7 @@ export default async function HomePage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
                   <span style={{ fontWeight: 800, fontSize: '13px', color: 'var(--foreground)' }}>1xBet</span>
                   <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '13px' }}>— 100% Bonus up to €100</span>
-                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· SF1 TOMORROW: France vs Spain · 200+ markets per match</span>
+                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· FINAL TOMORROW: Spain vs Argentina · 200+ markets per match</span>
                 </div>
               </div>
               <a href="https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" target="_blank" rel="noopener noreferrer nofollow sponsored"
@@ -314,7 +305,7 @@ export default async function HomePage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
                   <span style={{ fontWeight: 800, fontSize: '13px', color: 'var(--foreground)' }}>Betsson</span>
                   <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '13px' }}>— 100% Bonus up to €100</span>
-                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· SF1 TOMORROW: France vs Spain · Final Jul 19</span>
+                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· FINAL TOMORROW: Spain vs Argentina · Jul 19 MetLife</span>
                 </div>
               </div>
               <a href={isDE ? 'https://www.betsson.com/de/sport?affcode=AE3051334481&utm_medium=Affiliate&utm_source=10700602' : 'https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/'} target="_blank" rel="noopener noreferrer nofollow sponsored"
@@ -400,11 +391,11 @@ export default async function HomePage() {
           <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap', marginTop: '32px' }}>
             {betwayPriority ? (
               <a href="/api/redirect/betway" target="_blank" rel="noopener noreferrer nofollow sponsored" data-affiliate="Betway" style={{ background: 'linear-gradient(135deg,#00a651,#007a3c)', color: 'white', padding: '15px 36px', fontSize: '15px', borderRadius: '9px', fontWeight: 800, textDecoration: 'none', boxShadow: '0 4px 12px rgba(0,166,81,0.35)' }}>
-                ⚡ Claim Betway Bonus — SF1 Tomorrow
+                ⚡ Claim Betway Bonus — Final Tomorrow
               </a>
             ) : betssonBlocked ? (
               <a href="https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" target="_blank" rel="noopener noreferrer nofollow sponsored" data-affiliate="1xBet" style={{ background: 'linear-gradient(135deg,#00d084,#00b870)', color: '#040c18', padding: '15px 36px', fontSize: '15px', borderRadius: '9px', fontWeight: 800, textDecoration: 'none', boxShadow: '0 4px 12px rgba(0,208,132,0.35)' }}>
-                🎯 Claim 1xBet €100 Bonus — SF1 Tomorrow
+                🎯 Claim 1xBet €100 Bonus — Final Tomorrow
               </a>
             ) : (
               <a href={isDE ? 'https://www.betsson.com/de/sport?affcode=AE3051334481&utm_medium=Affiliate&utm_source=10700602' : 'https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/'} target="_blank" rel="noopener noreferrer nofollow sponsored" data-affiliate="Betsson" style={{ background: 'linear-gradient(135deg, #ef4444, #dc2626)', color: 'white', padding: '15px 36px', fontSize: '15px', borderRadius: '9px', fontWeight: 800, textDecoration: 'none', boxShadow: '0 4px 12px rgba(239,68,68,0.3)' }}>
@@ -434,7 +425,7 @@ export default async function HomePage() {
             { value: '32+', label: 'Bookmakers', icon: '📊' },
             { value: '100%', label: 'Free to Use', icon: '✅' },
             { value: '6', label: 'Languages', icon: '🌍' },
-            { value: 'SF', label: 'Stage: Semi-Final', icon: '⚽' },
+            { value: '🏆', label: 'Stage: THE FINAL', icon: '⭐' },
           ].map((s, i) => (
             <div key={s.label} style={{
               padding: '22px 12px',
@@ -459,8 +450,8 @@ export default async function HomePage() {
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px', padding: '8px 14px', background: 'rgba(255,68,68,0.08)', border: '1px solid rgba(255,68,68,0.2)', borderRadius: '8px' }}>
             <span style={{ width: '7px', height: '7px', background: 'var(--hot)', borderRadius: '50%', display: 'inline-block', animation: 'pulse 1.5s infinite', flexShrink: 0 }} />
-            <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--hot)' }}>SEMI-FINALS SET · 2 MATCHES LEFT</span>
-            <span style={{ fontSize: '12px', color: 'var(--muted)' }}>· SF1: France vs Spain TOMORROW 15:00 ET Dallas · SF2: Argentina vs England Jul 15 Atlanta · Final Jul 19 MetLife</span>
+            <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--hot)' }}>🏆 THE FINAL IS TOMORROW</span>
+            <span style={{ fontSize: '12px', color: 'var(--muted)' }}>· Spain vs Argentina · Jul 19 · 15:00 ET · MetLife Stadium, East Rutherford, New Jersey</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             {featuredOdds.map((m) => (
@@ -694,11 +685,11 @@ export default async function HomePage() {
       {/* ── QF RESULTS ── */}
       <section style={{ padding: '40px 20px 0' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto' }}>
-          <h2 className="section-title" style={{ marginBottom: '20px' }}>Quarter-Final Results</h2>
+          <h2 className="section-title" style={{ marginBottom: '20px' }}>Semi-Final Results</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '12px', marginBottom: '12px' }}>
             {[
-              { home: 'France', homeFlag: '🇫🇷', homeScore: 2, awayScore: 0, away: 'Morocco', awayFlag: '🇲🇦', scorers: "Mbappé 34' · Griezmann 67'", date: 'Jul 9 · Boston', slug: 'france-2-0-morocco-world-cup-2026-result' },
-              { home: 'Spain', homeFlag: '🇪🇸', homeScore: 2, awayScore: 1, away: 'Belgium', awayFlag: '🇧🇪', scorers: "Yamal 28' · De Ketelaere 55' · Morata 71'", date: 'Jul 10 · Los Angeles', slug: 'spain-2-1-belgium-world-cup-2026-result' },
+              { home: 'France', homeFlag: '🇫🇷', homeScore: 0, awayScore: 2, away: 'Spain', awayFlag: '🇪🇸', scorers: "Yamal 38' · Pedri 74'", date: 'Jul 14 · Dallas', slug: 'france-vs-spain-semi-final-world-cup-2026' },
+              { home: 'England', homeFlag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', homeScore: 1, awayScore: 2, away: 'Argentina', awayFlag: '🇦🇷', scorers: "Kane 62' · Fernández 85' · L.Martínez 90+3'", date: 'Jul 15 · Atlanta', slug: 'argentina-vs-england-semi-final-world-cup-2026' },
             ].map(m => (
               <Link key={m.slug} href={`/blog/${m.slug}`} style={{ textDecoration: 'none' }}>
                 <div className="card" style={{ padding: '18px 22px', borderRadius: '12px', cursor: 'pointer' }}>
@@ -730,9 +721,9 @@ export default async function HomePage() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '14px' }}>
             {[
-              { tag: 'SF1 TOMORROW', title: 'France vs Spain — Semi-Final Odds & Prediction', slug: 'france-vs-spain-semi-final-world-cup-2026', desc: 'Mbappé vs Yamal in Dallas on Jul 14. France 1.67 vs Spain 2.20. Our tip: Spain to win at 2.20. Full preview inside.', hot: true },
-              { tag: 'SF2 WED · NEW', title: 'Argentina vs England — Semi-Final Odds & Prediction', slug: 'argentina-vs-england-semi-final-world-cup-2026', desc: 'Messi vs Bellingham. 40 years after 1986. Argentina 2.10 vs England 1.77 in Atlanta on Jul 15. Full preview & our pick.', hot: true },
-              { tag: 'SF Preview', title: 'Register Before the Final — 100% Bonus at Betsson & 1xBet', slug: 'best-world-cup-2026-betting-odds', desc: '6 days left in the tournament. New accounts get 100% on first deposit — bet both SFs and the Final Jul 19.', hot: false },
+              { tag: '🏆 FINAL TOMORROW', title: 'Spain vs Argentina — World Cup 2026 Final Odds & Prediction', slug: 'spain-vs-argentina-final-world-cup-2026', desc: 'Yamal vs Messi. The Final the world wanted. Spain 1.70 vs Argentina 2.20. MetLife Stadium, Jul 19. Our full prediction inside.', hot: true },
+              { tag: 'SF Result', title: 'Argentina 2-1 England — Semi-Final Match Report', slug: 'argentina-vs-england-semi-final-world-cup-2026', desc: "Messi's assists. Fernández 85'. Lautaro 90+3'. Argentina staged a dramatic comeback to reach the Final. Full match report.", hot: false },
+              { tag: 'Last Chance', title: 'Claim 100% Bonus Before the Final — Betsson, 1xBet & Betway', slug: 'best-world-cup-2026-betting-odds', desc: 'Final day to register. New accounts at Betsson and 1xBet get 100% on first deposit. Bet on Spain vs Argentina Jul 19.', hot: false },
             ].map((a) => (
               <Link key={a.slug} href={`/blog/${a.slug}`} style={{ textDecoration: 'none' }}>
                 <div className="card" style={{ padding: '22px', borderRadius: '14px', height: '100%', cursor: 'pointer' }}>

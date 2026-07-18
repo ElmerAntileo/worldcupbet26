@@ -11,7 +11,7 @@ function postUrl(slug: string, l: string) {
   return l === "en" ? `${base}/blog/${slug}` : `${base}/${l}/blog/${slug}`;
 }
 
-// Fallback summaries for any slugs that don't have a dedicated page.tsx
+// Fallback summaries for any slugs that don&apos;t have a dedicated page.tsx
 // (The dedicated pages take priority via Next.js file-based routing.)
 const articles: Record<string, { title: string; description: string; content: string }> = {
   "group-stage-preview": {

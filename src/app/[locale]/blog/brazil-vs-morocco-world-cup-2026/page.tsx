@@ -144,7 +144,7 @@ export default function BrazilMoroccoPage() {
             We expect a cagey Group C opener with Brazil grinding out a 1-0 or the match ending goalless after normal time. Under 2.5 Goals at 1.75 with Betsson represents strong value.
           </p>
           <div style={{ marginTop: "14px" }}>
-            <a href="https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "var(--accent)", color: "#040c18", padding: "10px 20px", borderRadius: "8px", fontWeight: 800, fontSize: "13px", textDecoration: "none", display: "inline-block" }}>
+            <a href="https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "var(--accent)", color: "#040c18", padding: "10px 20px", borderRadius: "8px", fontWeight: 800, fontSize: "13px", textDecoration: "none", display: "inline-block" }}>
               Bet Under 2.5 @ 1.75 on Betsson
             </a>
           </div>
@@ -165,7 +165,7 @@ export default function BrazilMoroccoPage() {
             </thead>
             <tbody>
               {[
-                { name: "Betsson", brazil: "1.62", draw: "3.90", morocco: "6.00", u25: "1.75", best: true, url: "https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" },
+                { name: "Betsson", brazil: "1.62", draw: "3.90", morocco: "6.00", u25: "1.75", best: true, url: "https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/" },
                 { name: "1xBet", brazil: "1.64", draw: "3.85", morocco: "5.90", u25: "1.73", best: false, url: "https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" },
                 { name: "Bet365", brazil: "1.60", draw: "4.00", morocco: "6.50", u25: "1.72", best: false, url: "#" },
                 { name: "Betway", brazil: "1.63", draw: "3.80", morocco: "5.75", u25: "1.70", best: false, url: "#" },
@@ -266,7 +266,7 @@ export default function BrazilMoroccoPage() {
           <h3 style={{ fontSize: "1.3rem", fontWeight: 800, marginBottom: "8px" }}>Ready to Bet on Brazil vs Morocco?</h3>
           <p style={{ color: "var(--muted)", fontSize: "14px", marginBottom: "1.5rem" }}>Best odds: Under 2.5 Goals @ 1.75 on Betsson. New customer? Claim your welcome bonus today.</p>
           <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "var(--accent)", color: "#040c18", padding: "12px 24px", borderRadius: "8px", fontWeight: 800, textDecoration: "none", fontSize: "14px" }}>
+            <a href="https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "var(--accent)", color: "#040c18", padding: "12px 24px", borderRadius: "8px", fontWeight: 800, textDecoration: "none", fontSize: "14px" }}>
               Bet on Betsson
             </a>
             <a href="https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "transparent", border: "2px solid var(--accent)", color: "var(--accent)", padding: "12px 24px", borderRadius: "8px", fontWeight: 800, textDecoration: "none", fontSize: "14px" }}>

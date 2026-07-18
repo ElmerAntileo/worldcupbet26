@@ -144,7 +144,7 @@ export default function FranceSenegalPage() {
             Senegal are dangerous — Sadio Man&#233;&apos;s legacy continues with a new generation — but France at 1.70 represents solid value for a team expected to top Group I comfortably.
           </p>
           <div style={{ marginTop: "14px" }}>
-            <a href="https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "var(--accent)", color: "#040c18", padding: "10px 20px", borderRadius: "8px", fontWeight: 800, fontSize: "13px", textDecoration: "none", display: "inline-block" }}>
+            <a href="https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "var(--accent)", color: "#040c18", padding: "10px 20px", borderRadius: "8px", fontWeight: 800, fontSize: "13px", textDecoration: "none", display: "inline-block" }}>
               Back France @ 1.70 on Betsson
             </a>
           </div>
@@ -165,7 +165,7 @@ export default function FranceSenegalPage() {
             </thead>
             <tbody>
               {[
-                { name: "Betsson", france: "1.70", draw: "3.75", senegal: "5.50", btts: "2.10", best: true, url: "https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" },
+                { name: "Betsson", france: "1.70", draw: "3.75", senegal: "5.50", btts: "2.10", best: true, url: "https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/" },
                 { name: "1xBet", france: "1.72", draw: "3.70", senegal: "5.40", btts: "2.05", best: false, url: "https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" },
                 { name: "Bet365", france: "1.68", draw: "3.80", senegal: "5.75", btts: "2.00", best: false, url: "#" },
                 { name: "Betway", france: "1.65", draw: "3.70", senegal: "5.25", btts: "1.95", best: false, url: "#" },
@@ -258,7 +258,7 @@ export default function FranceSenegalPage() {
           <h3 style={{ fontSize: "1.3rem", fontWeight: 800, marginBottom: "8px" }}>Back France vs Senegal Today</h3>
           <p style={{ color: "var(--muted)", fontSize: "14px", marginBottom: "1.5rem" }}>Best odds: France to Win @ 1.70 on Betsson. Claim your welcome bonus before kick-off.</p>
           <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "var(--accent)", color: "#040c18", padding: "12px 24px", borderRadius: "8px", fontWeight: 800, textDecoration: "none", fontSize: "14px" }}>
+            <a href="https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "var(--accent)", color: "#040c18", padding: "12px 24px", borderRadius: "8px", fontWeight: 800, textDecoration: "none", fontSize: "14px" }}>
               Bet on Betsson
             </a>
             <a href="https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" target="_blank" rel="noopener noreferrer nofollow" style={{ background: "transparent", border: "2px solid var(--accent)", color: "var(--accent)", padding: "12px 24px", borderRadius: "8px", fontWeight: 800, textDecoration: "none", fontSize: "14px" }}>

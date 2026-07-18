@@ -1,0 +1,48 @@
+<svg viewBox="0 0 1200 628" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="628" fill="#0d1b2a"/>
+  <rect width="1200" height="42" fill="#00cc44"/>
+  <text x="600" y="28" font-family="Arial Black, Arial, sans-serif" font-size="16" font-weight="900" fill="#000000" text-anchor="middle" letter-spacing="1">🏆  FIFA WORLD CUP 2026™  |  QUARTER-FINAL</text>
+  <rect x="460" y="58" width="280" height="32" rx="16" fill="#1e3050"/>
+  <text x="600" y="79" font-family="Arial Black, Arial, sans-serif" font-size="13" font-weight="900" fill="#7a9cc0" text-anchor="middle" letter-spacing="2">QUARTER-FINAL</text>
+  <!-- Argentina flag -->
+  <rect x="90" y="108" width="420" height="73" fill="#74ACDF"/>
+  <rect x="90" y="181" width="420" height="73" fill="#FFFFFF"/>
+  <rect x="90" y="254" width="420" height="73" fill="#74ACDF"/>
+  <g transform="translate(300,218)">
+    <line x1="0" y1="-35" x2="0" y2="-24" stroke="#F6B40E" stroke-width="5" stroke-linecap="round"/>
+    <line x1="0" y1="35" x2="0" y2="24" stroke="#F6B40E" stroke-width="5" stroke-linecap="round"/>
+    <line x1="-35" y1="0" x2="-24" y2="0" stroke="#F6B40E" stroke-width="5" stroke-linecap="round"/>
+    <line x1="35" y1="0" x2="24" y2="0" stroke="#F6B40E" stroke-width="5" stroke-linecap="round"/>
+    <line x1="-25" y1="-25" x2="-17" y2="-17" stroke="#F6B40E" stroke-width="5" stroke-linecap="round"/>
+    <line x1="25" y1="-25" x2="17" y2="-17" stroke="#F6B40E" stroke-width="5" stroke-linecap="round"/>
+    <line x1="-25" y1="25" x2="-17" y2="17" stroke="#F6B40E" stroke-width="5" stroke-linecap="round"/>
+    <line x1="25" y1="25" x2="17" y2="17" stroke="#F6B40E" stroke-width="5" stroke-linecap="round"/>
+    <circle r="20" fill="#F6B40E" stroke="#85340A" stroke-width="2"/>
+    <circle cx="-6" cy="-4" r="2.5" fill="#85340A"/>
+    <circle cx="6" cy="-4" r="2.5" fill="#85340A"/>
+    <path d="M -6 5 Q 0 11 6 5" stroke="#85340A" stroke-width="1.5" fill="none"/>
+  </g>
+  <!-- Switzerland flag -->
+  <rect x="690" y="108" width="420" height="219" fill="#D52B1E"/>
+  <rect x="870" y="138" width="60" height="160" fill="#FFFFFF"/>
+  <rect x="830" y="178" width="140" height="60" fill="#FFFFFF"/>
+  <!-- Center -->
+  <text x="600" y="210" font-family="Arial Black, Arial, sans-serif" font-size="32" font-weight="900" fill="rgba(255,255,255,0.22)" text-anchor="middle">vs</text>
+  <text x="600" y="272" font-family="Arial Black, Arial, sans-serif" font-size="38" font-weight="900" fill="#FFFFFF" text-anchor="middle">21:00 ET  •  Jul 12</text>
+  <text x="600" y="306" font-family="Arial, sans-serif" font-size="15" fill="#5a85b0" text-anchor="middle">Sun 12 Jul · FIFA World Cup 2026 · Quarter-Final · Kansas City</text>
+  <!-- Team names -->
+  <text x="300" y="368" font-family="Arial Black, Arial, sans-serif" font-size="56" font-weight="900" fill="#74ACDF" text-anchor="middle">Argentina</text>
+  <text x="900" y="368" font-family="Arial Black, Arial, sans-serif" font-size="56" font-weight="900" fill="#D52B1E" text-anchor="middle">Switzerland</text>
+  <!-- Divider -->
+  <line x1="90" y1="392" x2="1110" y2="392" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+  <!-- Odds pills -->
+  <rect x="90" y="416" width="300" height="52" rx="26" fill="#1a2e45"/>
+  <text x="240" y="447" font-family="Arial Black, Arial, sans-serif" font-size="18" font-weight="900" fill="#FFFFFF" text-anchor="middle">Argentina Win  1.80</text>
+  <rect x="450" y="416" width="300" height="52" rx="26" fill="#1a2e45"/>
+  <text x="600" y="447" font-family="Arial Black, Arial, sans-serif" font-size="18" font-weight="900" fill="#FFFFFF" text-anchor="middle">Draw  3.60</text>
+  <rect x="810" y="416" width="300" height="52" rx="26" fill="#1a2e45"/>
+  <text x="960" y="447" font-family="Arial Black, Arial, sans-serif" font-size="18" font-weight="900" fill="#FFFFFF" text-anchor="middle">Switzerland Win  4.20</text>
+  <!-- Footer -->
+  <text x="90" y="600" font-family="Arial, sans-serif" font-size="15" fill="rgba(255,255,255,0.35)">WorldCupBet26.com</text>
+  <text x="1110" y="600" font-family="Arial, sans-serif" font-size="15" fill="rgba(255,255,255,0.35)" text-anchor="end">18+ | Gamble Responsibly | T&amp;Cs Apply</text>
+</svg>

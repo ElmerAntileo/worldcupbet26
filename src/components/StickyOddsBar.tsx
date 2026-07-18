@@ -60,31 +60,9 @@ export default function StickyOddsBar() {
         <div style={{ display: "flex", alignItems: "center", gap: "8px", paddingRight: "16px", borderRight: "1px solid rgba(255,255,255,0.06)", flexShrink: 0 }}>
           <span style={{ width: "7px", height: "7px", background: "var(--hot)", borderRadius: "50%", display: "inline-block", animation: "pulse 1.5s infinite", flexShrink: 0 }} />
           <span style={{ fontSize: "11px", fontWeight: 700, color: "var(--hot)", letterSpacing: "0.08em" }}>SF1</span>
-          <span style={{ fontSize: "11px", fontWeight: 600, color: "var(--muted-light)", whiteSpace: "nowrap" }}>🇫🇷 France vs Spain 🇪🇸</span>
-          <span style={{ fontSize: "10px", color: "var(--muted)", whiteSpace: "nowrap" }}>· Jul 14 · 15:00 ET</span>
-        </div>
-
-        {/* SF1 odds + CTA */}
-        <div style={{ display: "flex", alignItems: "center", gap: "10px", padding: "0 16px", borderRight: "1px solid rgba(255,255,255,0.06)", flexShrink: 0 }}>
-          <span style={{ fontSize: "12px", fontWeight: 700, color: "var(--foreground)", whiteSpace: "nowrap" }}>
-            {primaryLogo} {primaryName}<span style={{ color: "#ff6b6b", marginLeft: "2px" }}>*</span>
+          <span style={{ fontSize: "11px", fontWeight: 600, color: "var(--muted-light)", whiteSpace: "nowrap" }}>
+            🇲🇽 Mexico vs South Korea 🇰🇷
           </span>
-          {[{ label: "1", val: SF1_HOME }, { label: "X", val: SF1_DRAW }, { label: "2", val: SF1_AWAY }].map((o) => (
-            <div key={o.label} style={{ textAlign: "center" }}>
-              <div style={{ fontSize: "9px", color: "var(--muted)", fontWeight: 700, lineHeight: 1, letterSpacing: "0.05em" }}>{o.label}</div>
-              <div style={oddsBoxStyle}>{o.val}</div>
-            </div>
-          ))}
-          <a href={primaryUrl} target="_blank" rel="noopener noreferrer nofollow sponsored" data-affiliate={primaryName}
-            style={{ background: "linear-gradient(135deg,#00d084,#00b870)", color: "#040c18", padding: "4px 12px", borderRadius: "6px", fontWeight: 800, fontSize: "11px", textDecoration: "none", whiteSpace: "nowrap", boxShadow: "0 2px 8px rgba(0,208,132,0.25)" }}>
-            Bet SF1 →
-          </a>
-        </div>
-
-        {/* SF2: Argentina vs England */}
-        <div style={{ display: "flex", alignItems: "center", gap: "8px", padding: "0 16px", borderRight: "1px solid rgba(255,255,255,0.06)", flexShrink: 0 }}>
-          <span style={{ fontSize: "11px", fontWeight: 700, color: "#f0a500", letterSpacing: "0.08em" }}>SF2</span>
-          <span style={{ fontSize: "11px", fontWeight: 600, color: "var(--muted-light)", whiteSpace: "nowrap" }}>🇦🇷 Argentina vs England 🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
           <span style={{ fontSize: "10px", color: "var(--muted)", whiteSpace: "nowrap" }}>· Jul 15 · 15:00 ET</span>
         </div>
 

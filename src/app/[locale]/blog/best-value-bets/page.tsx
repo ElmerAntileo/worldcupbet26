@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 type Props = { params: { locale: string } };
 
-const BETSSON_URL = "https://record.betsson.com/_2mAn34GNrh0d2bMnnkYwymNd7ZgqdRLk/1/";
+const BETSSON_URL = "https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/";
 const ONEXBET_URL = "https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97";
 
 const locales = ["en", "es", "pt", "de", "fr", "it"];
@@ -49,7 +49,7 @@ const faqs = [
   },
   {
     q: "What are BTTS tips for World Cup 2026?",
-    a: "Both Teams to Score (BTTS — Yes) is most effective in closely matched knockout round fixtures. In the group stage, it's risky as weaker teams may park the bus. Look for BTTS on matches like France vs England, Argentina vs Germany or Spain vs Brazil — elite teams who all attack aggressively.",
+    a: "Both Teams to Score (BTTS — Yes) is most effective in closely matched knockout round fixtures. In the group stage, it&apos;s risky as weaker teams may park the bus. Look for BTTS on matches like France vs England, Argentina vs Germany or Spain vs Brazil — elite teams who all attack aggressively.",
   },
   {
     q: "How should I build a World Cup accumulator?",
