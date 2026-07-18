@@ -147,13 +147,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entry(slug, { priority: 0.88, changeFrequency: "daily" })
     ),
 
-    // SF live articles — highest priority, crawl daily
-    ...entry("/blog/france-vs-spain-semi-final-world-cup-2026",         { priority: 0.98, changeFrequency: "daily" }),
-    ...entry("/blog/argentina-vs-england-semi-final-world-cup-2026",    { priority: 0.98, changeFrequency: "daily" }),
-    ...entry("/blog/norway-vs-england-world-cup-2026",                  { priority: 0.93, changeFrequency: "weekly" }),
+    // FINAL — highest priority, crawl daily
+    ...entry("/blog/spain-vs-argentina-final-world-cup-2026",           { priority: 1.0,  changeFrequency: "daily" }),
+
+    // SF live articles
+    ...entry("/blog/france-vs-spain-semi-final-world-cup-2026",         { priority: 0.95, changeFrequency: "weekly" }),
+    ...entry("/blog/argentina-vs-england-semi-final-world-cup-2026",    { priority: 0.95, changeFrequency: "weekly" }),
+    ...entry("/blog/norway-vs-england-world-cup-2026",                  { priority: 0.90, changeFrequency: "weekly" }),
     ...entry("/blog/messi-last-world-cup-argentina-2026",               { priority: 0.93, changeFrequency: "weekly" }),
-    ...entry("/blog/france-2-0-morocco-world-cup-2026-result",          { priority: 0.90, changeFrequency: "weekly" }),
-    ...entry("/blog/spain-2-1-belgium-world-cup-2026-result",           { priority: 0.90, changeFrequency: "weekly" }),
+    ...entry("/blog/france-2-0-morocco-world-cup-2026-result",          { priority: 0.88, changeFrequency: "weekly" }),
+    ...entry("/blog/spain-2-1-belgium-world-cup-2026-result",           { priority: 0.88, changeFrequency: "weekly" }),
+
+    // Player/feature articles
+    ...entry("/blog/lamine-yamal-world-cup-2026",                       { priority: 0.92, changeFrequency: "weekly" }),
+    ...entry("/blog/world-cup-2026-best-xi",                            { priority: 0.85, changeFrequency: "weekly" }),
+    ...entry("/blog/world-cup-2026-golden-boot-race",                   { priority: 0.87, changeFrequency: "weekly" }),
+    ...entry("/blog/world-cup-2026-quarter-final-odds",                 { priority: 0.80, changeFrequency: "weekly" }),
 
     // Blog posts
     ...blogPosts.filter(s => ![
