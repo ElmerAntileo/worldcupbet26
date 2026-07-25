@@ -54,30 +54,24 @@ export default function StickyOddsBar() {
         scrollbarWidth: "none",
       }}>
 
-        {/* FINAL label */}
+        {/* Champions label */}
         <div style={{ display: "flex", alignItems: "center", gap: "8px", paddingRight: "16px", borderRight: "1px solid rgba(255,255,255,0.06)", flexShrink: 0 }}>
-          <span style={{ width: "7px", height: "7px", background: "#f0a500", borderRadius: "50%", display: "inline-block", animation: "pulse 1.5s infinite", flexShrink: 0 }} />
-          <span style={{ fontSize: "11px", fontWeight: 700, color: "#f0a500", letterSpacing: "0.08em" }}>🏆 FINAL</span>
+          <span style={{ fontSize: "14px" }}>🏆</span>
+          <span style={{ fontSize: "11px", fontWeight: 700, color: "#f0a500", letterSpacing: "0.08em" }}>SPAIN WORLD CHAMPIONS 2026</span>
           <span style={{ fontSize: "11px", fontWeight: 600, color: "var(--muted-light)", whiteSpace: "nowrap" }}>
-            🇪🇸 Spain vs Argentina 🇦🇷
+            🇪🇸 Spain 1–0 Argentina 🇦🇷 (AET)
           </span>
-          <span style={{ fontSize: "10px", color: "var(--muted)", whiteSpace: "nowrap" }}>· Jul 19 · 15:00 ET · MetLife Stadium</span>
+          <span style={{ fontSize: "10px", color: "var(--muted)", whiteSpace: "nowrap" }}>· Ferran Torres 106&apos;</span>
         </div>
 
-        {/* Final odds + CTA */}
+        {/* Bonus CTA */}
         <div style={{ display: "flex", alignItems: "center", gap: "10px", padding: "0 16px", flexShrink: 0 }}>
           <span style={{ fontSize: "12px", fontWeight: 700, color: "var(--foreground)", whiteSpace: "nowrap" }}>
-            {primaryLogo} {primaryName}<span style={{ color: "#ff6b6b", marginLeft: "2px" }}>*</span>
+            {primaryLogo} {primaryName} — €100 Welcome Bonus
           </span>
-          {[{ label: "🇪🇸", val: SF2_HOME }, { label: "X", val: SF2_DRAW }, { label: "🇦🇷", val: SF2_AWAY }].map((o) => (
-            <div key={o.label} style={{ textAlign: "center" }}>
-              <div style={{ fontSize: "9px", color: "var(--muted)", fontWeight: 700, lineHeight: 1, letterSpacing: "0.05em" }}>{o.label}</div>
-              <div style={oddsBoxStyle}>{o.val}</div>
-            </div>
-          ))}
           <a href={primaryUrl} target="_blank" rel="noopener noreferrer nofollow sponsored" data-affiliate={primaryName}
             style={{ background: "linear-gradient(135deg,#f0a500,#d4900a)", color: "#040c18", padding: "4px 12px", borderRadius: "6px", fontWeight: 800, fontSize: "11px", textDecoration: "none", whiteSpace: "nowrap", boxShadow: "0 2px 8px rgba(240,165,0,0.3)" }}>
-            Bet the Final →
+            Claim Bonus →
           </a>
         </div>
 

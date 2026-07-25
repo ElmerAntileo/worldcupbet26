@@ -1,5 +1,4 @@
 import WorldCupBg from '@/components/WorldCupBg';
-import CountdownTimer from '@/components/CountdownTimer';
 import Link from 'next/link';
 import Script from 'next/script';
 import { getLocale } from 'next-intl/server';
@@ -8,9 +7,9 @@ import { BLOCKED_COUNTRIES_BETSSON, BETWAY_PRIORITY_COUNTRIES } from '@/lib/geoC
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "World Cup 2026 Final — Spain vs Argentina Odds, Prediction & Best Bets ⚽🏆",
+  title: "Spain World Cup 2026 Champions 🏆 | Best Betting Sites & Bonuses",
   description:
-    "🏆 World Cup 2026 FINAL: Spain vs Argentina — TOMORROW Jul 19 MetLife Stadium, New Jersey. Spain 1.70 · Draw 3.50 · Argentina 2.20. Best odds from Betsson, 1xBet & Betway.",
+    "🏆 Spain are FIFA World Cup 2026 Champions! Spain 1-0 Argentina (AET) · Ferran Torres 106'. Compare odds & claim welcome bonuses up to €100 at Betsson, 1xBet & Betway.",
   alternates: {
     canonical: "https://www.worldcupbet26.com/",
     languages: {
@@ -119,18 +118,19 @@ const featuredOdds = [
   {
     match: 'Spain vs Argentina',
     date: 'Jul 19, 2026',
-    time: '15:00 ET',
-    home: { team: 'Spain', odds: '1.70', flag: '🇪🇸' },
-    draw: { odds: '3.50' },
-    away: { team: 'Argentina', odds: '2.20', flag: '🇦🇷' },
-    group: '🏆 THE FINAL — TOMORROW · MetLife Stadium, NJ',
+    time: 'Full Time · AET',
+    home: { team: 'Spain', odds: '1', flag: '🇪🇸' },
+    draw: { odds: 'AET' },
+    away: { team: 'Argentina', odds: '0', flag: '🇦🇷' },
+    group: "🏆 WORLD CUP 2026 FINAL · MetLife Stadium, NJ",
+    scorers: "⚽ Ferran Torres 106' · 🟥 Enzo Fernández 90+3'",
   },
 ];
 
 const homeFaqs = [
   {
     q: "Who is the favourite to win the 2026 World Cup?",
-    a: "Spain are the outright favourites at 1.70 to win the World Cup Final against Argentina (2.20) tomorrow Jul 19 at MetLife Stadium. Spain were the most dominant team of the tournament, conceding just one goal. Argentina come in as defending champions — Messi, Álvarez and De Paul are in the form of their lives. Compare current Final odds at Betsson and 1xBet.",
+    a: "Spain won the 2026 World Cup, defeating Argentina 1-0 in extra time in the Final at MetLife Stadium on July 19, 2026. Ferran Torres scored the winner in the 106th minute. Spain were the most dominant team of the tournament, conceding just one goal throughout the entire competition.",
   },
   {
     q: "When does the 2026 FIFA World Cup start?",
@@ -154,7 +154,7 @@ const homeFaqs = [
   },
   {
     q: "What is the best value bet for World Cup 2026?",
-    a: "Our top Final value bet: Argentina at 2.20 to beat Spain. Spain are the technically superior team, but Argentina have won two comeback matches in the knockouts and Messi has delivered assists in the biggest moments. The draw at 3.50 is also worth considering given how tight World Cup finals historically are. Compare Final odds in real time at Betsson and 1xBet.",
+    a: "The World Cup 2026 tournament is now over. Spain won the Final 1-0 against Argentina (AET). For ongoing football betting value, Betsson and 1xBet offer competitive odds on the next major tournaments — Euro 2028, Copa América 2027, and club football throughout the season.",
   },
   {
     q: "Can I get a welcome bonus for World Cup betting?",
@@ -174,7 +174,7 @@ const homeFaqs = [
   },
   {
     q: "Who will win the World Cup 2026?",
-    a: "Spain will face Argentina in the World Cup 2026 Final on July 19 at MetLife Stadium, New Jersey. Spain (1.70) beat France 2-0 in SF1 with goals from Yamal and Pedri. Argentina (2.20) beat England 2-1 in a dramatic comeback — Messi assisted both goals, Fernández equalised in the 85th minute and Lautaro Martínez scored the winner in stoppage time. Our analysts give Spain the edge, but Argentina at 2.20 offers excellent value.",
+    a: "Spain won the 2026 FIFA World Cup, beating Argentina 1-0 in extra time at MetLife Stadium, New Jersey on July 19, 2026. Ferran Torres scored the only goal in the 106th minute. Spain beat France 2-0 in the semi-final (Yamal 38', Pedri 74'). Argentina beat England 2-1 in their semi-final before falling to Spain in the Final.",
   },
   {
     q: "What is the World Cup 2026 schedule?",
@@ -231,18 +231,17 @@ export default async function HomePage() {
     <div style={{ background: 'var(--bg-base)', minHeight: '100vh', color: 'var(--foreground)' }}>
       <Script id="homepage-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      {/* ── LAST CHANCE REGISTRATION BANNER ── */}
+      {/* ── CHAMPIONS BANNER ── */}
       <div style={{
-        background: 'linear-gradient(90deg, #1a0505 0%, #200a0a 50%, #1a0505 100%)',
-        borderBottom: '1px solid rgba(255,68,68,0.3)',
+        background: 'linear-gradient(90deg, #0a0a00 0%, #1a1200 50%, #0a0a00 100%)',
+        borderBottom: '1px solid rgba(240,165,0,0.4)',
         padding: '9px 20px',
       }}>
         <div style={{ maxWidth: '960px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', flexWrap: 'wrap' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <span style={{ width: '7px', height: '7px', background: '#ff4444', borderRadius: '50%', display: 'inline-block', flexShrink: 0, animation: 'pulse 1.5s infinite' }} />
-            <span style={{ fontWeight: 800, fontSize: '13px', color: '#ff6b6b' }}>🏆 FINAL TOMORROW</span>
-            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '13px' }}>— Spain vs Argentina · Jul 19 · MetLife Stadium, New Jersey · 15:00 ET</span>
-            <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '11px' }}>Last chance to register & claim your bonus</span>
+            <span style={{ fontSize: '16px' }}>🏆</span>
+            <span style={{ fontWeight: 800, fontSize: '13px', color: '#f0a500' }}>🇪🇸 SPAIN ARE WORLD CHAMPIONS!</span>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '13px' }}>Spain 1–0 Argentina (AET) · Ferran Torres 106' · Jul 19 · MetLife Stadium</span>
           </div>
           <div style={{ display: 'flex', gap: '8px', flexShrink: 0 }}>
             <a href="https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow sponsored" data-affiliate="Betsson"
@@ -275,7 +274,7 @@ export default async function HomePage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
                   <span style={{ fontWeight: 800, fontSize: '13px', color: 'var(--foreground)' }}>Betway</span>
                   <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '13px' }}>— 100% Sports Welcome Bonus</span>
-                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· FINAL TOMORROW: Spain vs Argentina · Licensed in your region</span>
+                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· 🏆 Spain World Champions · Licensed in your region</span>
                 </div>
               </div>
               <a href="/api/redirect/betway" target="_blank" rel="noopener noreferrer nofollow sponsored"
@@ -290,7 +289,7 @@ export default async function HomePage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
                   <span style={{ fontWeight: 800, fontSize: '13px', color: 'var(--foreground)' }}>1xBet</span>
                   <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '13px' }}>— 100% Bonus up to €100</span>
-                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· FINAL TOMORROW: Spain vs Argentina · 200+ markets per match</span>
+                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· 🏆 Spain World Champions · 200+ sports markets</span>
                 </div>
               </div>
               <a href="https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" target="_blank" rel="noopener noreferrer nofollow sponsored"
@@ -305,7 +304,7 @@ export default async function HomePage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
                   <span style={{ fontWeight: 800, fontSize: '13px', color: 'var(--foreground)' }}>Betsson</span>
                   <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: '13px' }}>— 100% Bonus up to €100</span>
-                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· FINAL TOMORROW: Spain vs Argentina · Jul 19 MetLife</span>
+                  <span style={{ color: 'var(--muted)', fontSize: '11px' }}>· 🏆 Spain World Champions 2026 · World Cup Final</span>
                 </div>
               </div>
               <a href={isDE ? 'https://www.betsson.com/de/sport?affcode=AE3051334481&utm_medium=Affiliate&utm_source=10700602' : 'https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/'} target="_blank" rel="noopener noreferrer nofollow sponsored"
@@ -337,10 +336,9 @@ export default async function HomePage() {
         }} />
 
         <div style={{ position: 'relative', maxWidth: '820px', margin: '0 auto' }}>
-          {/* Live pill */}
-          <div className="live-pill" style={{ marginBottom: '28px' }}>
-            <span className="live-dot" />
-            LIVE — FIFA World Cup 2026™ · Jun 11 – Jul 19
+          {/* Tournament complete pill */}
+          <div className="live-pill" style={{ marginBottom: '28px', background: 'rgba(240,165,0,0.12)', border: '1px solid rgba(240,165,0,0.3)', color: '#f0a500' }}>
+            🏆 FIFA World Cup 2026™ · TOURNAMENT COMPLETE · Spain Champions
           </div>
 
           {/* Host nations */}
@@ -386,24 +384,34 @@ export default async function HomePage() {
             Compare live odds from 32+ licensed bookmakers. Find the best value bets, claim exclusive bonuses, and follow every match.
           </p>
 
-          <CountdownTimer />
+          {/* Final result display */}
+          <div style={{ margin: '24px auto 0', maxWidth: '420px', background: 'rgba(240,165,0,0.08)', border: '1px solid rgba(240,165,0,0.25)', borderRadius: '14px', padding: '20px 28px', textAlign: 'center' }}>
+            <div style={{ fontSize: '11px', fontWeight: 700, color: '#f0a500', letterSpacing: '0.1em', marginBottom: '12px' }}>✅ FULL TIME · AET · JUL 19, 2026</div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px' }}>
+              <span style={{ fontWeight: 800, fontSize: '18px' }}>🇪🇸 Spain</span>
+              <span style={{ fontWeight: 900, fontSize: '36px', color: '#ffffff', letterSpacing: '-2px' }}>1–0</span>
+              <span style={{ fontWeight: 800, fontSize: '18px' }}>Argentina 🇦🇷</span>
+            </div>
+            <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.5)', marginTop: '8px' }}>⚽ Ferran Torres 106&apos; · 🟥 Enzo Fernández 90+3&apos;</div>
+            <div style={{ fontSize: '11px', color: '#f0a500', fontWeight: 700, marginTop: '6px' }}>🏆 SPAIN — WORLD CHAMPIONS 2026</div>
+          </div>
 
-          <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap', marginTop: '32px' }}>
+          <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap', marginTop: '28px' }}>
             {betwayPriority ? (
               <a href="/api/redirect/betway" target="_blank" rel="noopener noreferrer nofollow sponsored" data-affiliate="Betway" style={{ background: 'linear-gradient(135deg,#00a651,#007a3c)', color: 'white', padding: '15px 36px', fontSize: '15px', borderRadius: '9px', fontWeight: 800, textDecoration: 'none', boxShadow: '0 4px 12px rgba(0,166,81,0.35)' }}>
-                ⚡ Claim Betway Bonus — Final Tomorrow
+                ⚡ Claim Betway €100 Bonus
               </a>
             ) : betssonBlocked ? (
               <a href="https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" target="_blank" rel="noopener noreferrer nofollow sponsored" data-affiliate="1xBet" style={{ background: 'linear-gradient(135deg,#00d084,#00b870)', color: '#040c18', padding: '15px 36px', fontSize: '15px', borderRadius: '9px', fontWeight: 800, textDecoration: 'none', boxShadow: '0 4px 12px rgba(0,208,132,0.35)' }}>
-                🎯 Claim 1xBet €100 Bonus — Final Tomorrow
+                🎯 Claim 1xBet €100 Bonus
               </a>
             ) : (
               <a href={isDE ? 'https://www.betsson.com/de/sport?affcode=AE3051334481&utm_medium=Affiliate&utm_source=10700602' : 'https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/'} target="_blank" rel="noopener noreferrer nofollow sponsored" data-affiliate="Betsson" style={{ background: 'linear-gradient(135deg, #ef4444, #dc2626)', color: 'white', padding: '15px 36px', fontSize: '15px', borderRadius: '9px', fontWeight: 800, textDecoration: 'none', boxShadow: '0 4px 12px rgba(239,68,68,0.3)' }}>
                 🎁 Claim Betsson €100 Bonus
               </a>
             )}
-            <Link href="/world-cup-2026-matches" className="btn-outline" style={{ padding: '15px 36px', fontSize: '15px', borderRadius: '9px' }}>
-              All Matches →
+            <Link href="/blog/spain-vs-argentina-final-world-cup-2026" className="btn-outline" style={{ padding: '15px 36px', fontSize: '15px', borderRadius: '9px' }}>
+              Final Report →
             </Link>
           </div>
         </div>
@@ -425,7 +433,7 @@ export default async function HomePage() {
             { value: '32+', label: 'Bookmakers', icon: '📊' },
             { value: '100%', label: 'Free to Use', icon: '✅' },
             { value: '6', label: 'Languages', icon: '🌍' },
-            { value: '🏆', label: 'Stage: THE FINAL', icon: '⭐' },
+            { value: '🇪🇸', label: 'Champions: Spain', icon: '🏆' },
           ].map((s, i) => (
             <div key={s.label} style={{
               padding: '22px 12px',
@@ -443,15 +451,15 @@ export default async function HomePage() {
       <section id="odds" style={{ padding: '56px 20px 48px' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-            <h2 className="section-title" style={{ marginBottom: 0 }}>Featured Match Odds</h2>
+            <h2 className="section-title" style={{ marginBottom: 0 }}>World Cup 2026 Final — Result</h2>
             <Link href="/world-cup-2026-matches" style={{ color: 'var(--accent)', fontSize: '13px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '4px' }}>
               All Matches →
             </Link>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px', padding: '8px 14px', background: 'rgba(255,68,68,0.08)', border: '1px solid rgba(255,68,68,0.2)', borderRadius: '8px' }}>
-            <span style={{ width: '7px', height: '7px', background: 'var(--hot)', borderRadius: '50%', display: 'inline-block', animation: 'pulse 1.5s infinite', flexShrink: 0 }} />
-            <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--hot)' }}>🏆 THE FINAL IS TOMORROW</span>
-            <span style={{ fontSize: '12px', color: 'var(--muted)' }}>· Spain vs Argentina · Jul 19 · 15:00 ET · MetLife Stadium, East Rutherford, New Jersey</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px', padding: '8px 14px', background: 'rgba(240,165,0,0.08)', border: '1px solid rgba(240,165,0,0.25)', borderRadius: '8px' }}>
+            <span style={{ fontSize: '15px' }}>🏆</span>
+            <span style={{ fontSize: '12px', fontWeight: 700, color: '#f0a500' }}>SPAIN ARE WORLD CHAMPIONS 2026!</span>
+            <span style={{ fontSize: '12px', color: 'var(--muted)' }}>· Spain 1–0 Argentina (AET) · Ferran Torres 106&apos; · MetLife Stadium, New Jersey</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             {featuredOdds.map((m) => (
@@ -462,51 +470,57 @@ export default async function HomePage() {
                     <span className="tag">{m.group}</span>
                     <span style={{ color: 'var(--muted)', fontSize: '12px' }}>{m.date} · {m.time}</span>
                   </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '5px', background: 'rgba(255,68,68,0.1)', border: '1px solid rgba(255,68,68,0.25)', borderRadius: '4px', padding: '2px 8px' }}>
-                    <span style={{ width: '6px', height: '6px', background: 'var(--hot)', borderRadius: '50%', animation: 'pulse 1.5s infinite', display: 'inline-block' }} />
-                    <span style={{ fontSize: '10px', fontWeight: 700, color: 'var(--hot)', letterSpacing: '0.05em' }}>LIVE ODDS</span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '5px', background: 'rgba(240,165,0,0.08)', border: '1px solid rgba(240,165,0,0.25)', borderRadius: '4px', padding: '2px 8px' }}>
+                    <span style={{ fontSize: '10px', fontWeight: 700, color: '#f0a500', letterSpacing: '0.05em' }}>✅ FULL TIME · AET</span>
                   </div>
                 </div>
-                {/* Odds grid */}
+                {/* Result grid */}
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', gap: '16px', alignItems: 'center' }}>
                   <div style={{ textAlign: 'center' }}>
                     <div style={{ fontSize: '36px', marginBottom: '6px', filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))' }}>{m.home.flag}</div>
                     <div style={{ fontWeight: 800, fontSize: '15px', marginBottom: '10px', letterSpacing: '-0.01em' }}>{m.home.team}</div>
-                    <div className="odds-badge" style={{ display: 'inline-block', minWidth: '68px', textAlign: 'center', fontSize: '1.1rem' }}>{m.home.odds}</div>
+                    <div style={{ display: 'inline-block', minWidth: '68px', textAlign: 'center', fontSize: '2.4rem', fontWeight: 900, color: '#f0a500' }}>{m.home.odds}</div>
+                    <div style={{ fontSize: '11px', color: '#f0a500', fontWeight: 700, marginTop: '4px' }}>🏆 CHAMPIONS</div>
                   </div>
                   <div style={{ textAlign: 'center', padding: '0 8px' }}>
-                    <div style={{ color: 'var(--muted)', fontSize: '10px', marginBottom: '6px', fontWeight: 700, letterSpacing: '0.08em' }}>DRAW</div>
+                    <div style={{ color: 'var(--muted)', fontSize: '10px', marginBottom: '6px', fontWeight: 700, letterSpacing: '0.08em' }}>RESULT</div>
                     <div style={{
                       background: 'linear-gradient(135deg, #0a1e36, #0d2544)',
-                      border: '1px solid rgba(255,255,255,0.1)',
+                      border: '1px solid rgba(240,165,0,0.3)',
                       borderRadius: '8px', padding: '10px 20px',
-                      fontWeight: 800, fontSize: '18px', color: 'var(--muted-light)',
+                      fontWeight: 800, fontSize: '14px', color: '#f0a500',
                     }}>{m.draw.odds}</div>
-                    <div style={{ color: 'var(--muted)', fontSize: '10px', marginTop: '6px', fontWeight: 700, letterSpacing: '0.12em' }}>VS</div>
+                    <div style={{ color: 'var(--muted)', fontSize: '10px', marginTop: '6px', fontWeight: 700, letterSpacing: '0.08em' }}>EXTRA TIME</div>
                   </div>
                   <div style={{ textAlign: 'center' }}>
                     <div style={{ fontSize: '36px', marginBottom: '6px', filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))' }}>{m.away.flag}</div>
-                    <div style={{ fontWeight: 800, fontSize: '15px', marginBottom: '10px', letterSpacing: '-0.01em' }}>{m.away.team}</div>
-                    <div className="odds-badge" style={{ display: 'inline-block', minWidth: '68px', textAlign: 'center', fontSize: '1.1rem' }}>{m.away.odds}</div>
+                    <div style={{ fontWeight: 800, fontSize: '15px', marginBottom: '10px', letterSpacing: '-0.01em', color: 'var(--muted-light)' }}>{m.away.team}</div>
+                    <div style={{ display: 'inline-block', minWidth: '68px', textAlign: 'center', fontSize: '2.4rem', fontWeight: 900, color: 'var(--muted)' }}>{m.away.odds}</div>
+                    <div style={{ fontSize: '11px', color: 'var(--muted)', fontWeight: 600, marginTop: '4px' }}>Runners-up</div>
                   </div>
                 </div>
-                {/* BET NOW row */}
+                {'scorers' in m && m.scorers && (
+                  <div style={{ textAlign: 'center', marginTop: '14px', fontSize: '12px', color: 'rgba(255,255,255,0.5)', background: 'rgba(255,255,255,0.03)', borderRadius: '6px', padding: '7px' }}>
+                    {m.scorers}
+                  </div>
+                )}
+                {/* Claim bonus row */}
                 <div style={{ marginTop: '18px', display: 'flex', gap: '10px', justifyContent: 'center', flexWrap: 'wrap' }}>
                   {betwayPriority ? (
                     <a href="/api/redirect/betway" target="_blank" rel="noopener noreferrer nofollow sponsored"
                       style={{ background: 'linear-gradient(135deg,#00a651,#007a3c)', color: 'white', padding: '11px 28px', borderRadius: '8px', fontWeight: 800, fontSize: '13px', textDecoration: 'none', boxShadow: '0 4px 12px rgba(0,166,81,0.3)' }}>
-                      ⚡ Bet Now at Betway
+                      ⚡ Claim Betway €100 Bonus
                     </a>
                   ) : betssonBlocked ? (
                     <a href="https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" target="_blank" rel="noopener noreferrer nofollow sponsored"
                       style={{ background: 'linear-gradient(135deg,#00d084,#00b870)', color: '#040c18', padding: '11px 28px', borderRadius: '8px', fontWeight: 800, fontSize: '13px', textDecoration: 'none', boxShadow: '0 4px 12px rgba(0,208,132,0.3)' }}>
-                      🎯 Bet Now at 1xBet
+                      🎯 Claim 1xBet €100 Bonus
                     </a>
                   ) : (
                     <>
                       <a href={isDE ? 'https://www.betsson.com/de/sport?affcode=AE3051334481&utm_medium=Affiliate&utm_source=10700602' : 'https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/'} target="_blank" rel="noopener noreferrer nofollow sponsored" data-affiliate="Betsson"
                         style={{ background: 'linear-gradient(135deg,#ef4444,#dc2626)', color: 'white', padding: '11px 28px', borderRadius: '8px', fontWeight: 800, fontSize: '13px', textDecoration: 'none', boxShadow: '0 4px 12px rgba(239,68,68,0.3)' }}>
-                        🏆 Bet at Betsson — Best Odds
+                        🏆 Claim Betsson €100 Bonus
                       </a>
                       <a href="https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97" target="_blank" rel="noopener noreferrer nofollow sponsored" data-affiliate="1xBet"
                         style={{ background: 'linear-gradient(135deg,#1a4fd6,#1240b0)', color: 'white', padding: '11px 22px', borderRadius: '8px', fontWeight: 800, fontSize: '13px', textDecoration: 'none', boxShadow: '0 4px 12px rgba(26,79,214,0.35)' }}>
@@ -685,8 +699,23 @@ export default async function HomePage() {
       {/* ── QF RESULTS ── */}
       <section style={{ padding: '40px 20px 0' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto' }}>
-          <h2 className="section-title" style={{ marginBottom: '20px' }}>Semi-Final Results</h2>
+          <h2 className="section-title" style={{ marginBottom: '20px' }}>Tournament Results</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '12px', marginBottom: '12px' }}>
+            {/* Final result */}
+            <Link href="/blog/spain-vs-argentina-final-world-cup-2026" style={{ textDecoration: 'none', gridColumn: '1 / -1' }}>
+              <div className="card" style={{ padding: '18px 22px', borderRadius: '12px', cursor: 'pointer', border: '1px solid rgba(240,165,0,0.3)', background: 'rgba(240,165,0,0.04)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+                  <span style={{ fontSize: '10px', fontWeight: 700, color: '#f0a500', letterSpacing: '0.08em' }}>🏆 WORLD CUP FINAL · ✅ FULL TIME · AET · Jul 19 · MetLife Stadium</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px' }}>
+                  <span style={{ fontWeight: 800, fontSize: '15px' }}>🇪🇸 Spain</span>
+                  <span style={{ fontWeight: 900, fontSize: '22px', color: '#f0a500', letterSpacing: '-1px' }}>1–0</span>
+                  <span style={{ fontWeight: 800, fontSize: '15px', color: 'var(--muted-light)' }}>Argentina 🇦🇷</span>
+                </div>
+                <div style={{ color: 'var(--muted)', fontSize: '11px', marginTop: '8px', textAlign: 'center' }}>⚽ Ferran Torres 106&apos; · 🟥 Enzo Fernández 90+3&apos;</div>
+                <div style={{ color: '#f0a500', fontSize: '12px', fontWeight: 700, marginTop: '8px', textAlign: 'center' }}>🏆 SPAIN — WORLD CHAMPIONS 2026 · Match Report →</div>
+              </div>
+            </Link>
             {[
               { home: 'France', homeFlag: '🇫🇷', homeScore: 0, awayScore: 2, away: 'Spain', awayFlag: '🇪🇸', scorers: "Yamal 38' · Pedri 74'", date: 'Jul 14 · Dallas', slug: 'france-vs-spain-semi-final-world-cup-2026' },
               { home: 'England', homeFlag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', homeScore: 1, awayScore: 2, away: 'Argentina', awayFlag: '🇦🇷', scorers: "Kane 62' · Fernández 85' · L.Martínez 90+3'", date: 'Jul 15 · Atlanta', slug: 'argentina-vs-england-semi-final-world-cup-2026' },
@@ -721,9 +750,9 @@ export default async function HomePage() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '14px' }}>
             {[
-              { tag: '🏆 FINAL TOMORROW', title: 'Spain vs Argentina — World Cup 2026 Final Odds & Prediction', slug: 'spain-vs-argentina-final-world-cup-2026', desc: 'Yamal vs Messi. The Final the world wanted. Spain 1.70 vs Argentina 2.20. MetLife Stadium, Jul 19. Our full prediction inside.', hot: true },
+              { tag: '🏆 FINAL RESULT', title: 'Spain 1-0 Argentina (AET) — World Cup 2026 Final Match Report', slug: 'spain-vs-argentina-final-world-cup-2026', desc: 'Ferran Torres 106\'. Enzo Fernández sent off 90+3\'. Spain dethrone the defending champions in extra time. Full match report.', hot: true },
               { tag: 'SF Result', title: 'Argentina 2-1 England — Semi-Final Match Report', slug: 'argentina-vs-england-semi-final-world-cup-2026', desc: "Messi's assists. Fernández 85'. Lautaro 90+3'. Argentina staged a dramatic comeback to reach the Final. Full match report.", hot: false },
-              { tag: 'Last Chance', title: 'Claim 100% Bonus Before the Final — Betsson, 1xBet & Betway', slug: 'best-world-cup-2026-betting-odds', desc: 'Final day to register. New accounts at Betsson and 1xBet get 100% on first deposit. Bet on Spain vs Argentina Jul 19.', hot: false },
+              { tag: '🎁 Bonus', title: 'Best Betting Sites — Claim €100 Welcome Bonus', slug: 'best-world-cup-2026-betting-odds', desc: 'New accounts at Betsson and 1xBet get 100% on first deposit up to €100. Compare the best welcome offers from licensed bookmakers.', hot: false },
             ].map((a) => (
               <Link key={a.slug} href={`/blog/${a.slug}`} style={{ textDecoration: 'none' }}>
                 <div className="card" style={{ padding: '22px', borderRadius: '14px', height: '100%', cursor: 'pointer' }}>
