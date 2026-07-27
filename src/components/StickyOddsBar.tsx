@@ -8,21 +8,6 @@ const BETSSON_DE  = 'https://www.betsson.com/de/sport?affcode=AE3051334481&utm_m
 const ONEXBET_URL = 'https://reffpa.com/L?tag=d_5617152m_97c_&site=5617152&ad=97';
 const BETWAY_URL  = '/api/redirect/betway';
 
-// FINAL: Spain vs Argentina — Jul 19
-const SF2_HOME = "1.70"; const SF2_DRAW = "3.50"; const SF2_AWAY = "2.20";
-
-const oddsBoxStyle = {
-  background: "rgba(13,31,56,0.8)",
-  border: "1px solid rgba(0,208,132,0.2)",
-  borderRadius: "5px",
-  padding: "2px 8px",
-  fontSize: "12px",
-  fontWeight: 800,
-  color: "var(--accent)",
-  minWidth: "40px",
-  textAlign: "center" as const,
-  fontVariantNumeric: "tabular-nums" as const,
-};
 
 export default function StickyOddsBar() {
   const { countryCode } = useGeo();

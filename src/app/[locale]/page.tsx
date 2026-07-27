@@ -241,7 +241,7 @@ export default async function HomePage() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <span style={{ fontSize: '16px' }}>🏆</span>
             <span style={{ fontWeight: 800, fontSize: '13px', color: '#f0a500' }}>🇪🇸 SPAIN ARE WORLD CHAMPIONS!</span>
-            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '13px' }}>Spain 1–0 Argentina (AET) · Ferran Torres 106' · Jul 19 · MetLife Stadium</span>
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '13px' }}>Spain 1–0 Argentina (AET) · Ferran Torres 106&apos; · Jul 19 · MetLife Stadium</span>
           </div>
           <div style={{ display: 'flex', gap: '8px', flexShrink: 0 }}>
             <a href="https://record.betsson.com/_2mAn34GNrh2wcAgXsjz1uGNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer nofollow sponsored" data-affiliate="Betsson"
